@@ -1,4 +1,40 @@
-/**index.wxss**/
-.ucenter{
-    background:#f6f6f6;
+.ucenter {
+  background: #F6F6F6;
+  width: 750rpx;
+  height: 100%;
+}
+
+.search-bar {
+  position: fixed;
+  top: 0rpx;
+  height: 110rpx;
+  width: 100%;
+  background: #fff;
+  z-index: 100;
+}
+.search-bar .search {
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  width: 90%;
+  align-items: center;
+  -webkit-border-radius: 35rpx;
+  -moz-border-radius: 35rpx;
+  border-radius: 35rpx;
+  background: #E6E6E6;
+  height: 70rpx;
+  padding: 0 50px;
+  line-height: 70rpx;
+  text-align: center;
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+.search-bar .search-logo {
+  width: 27rpx;
+  height: 27rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5rpx;
 }

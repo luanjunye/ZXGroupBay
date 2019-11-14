@@ -1,4 +1,15 @@
 <!--index.wxml-->
 <view class="ucenter">
-    
+    <!-- 搜索框 -->
+    <view class="search-bar">
+        <view class="search" bindtap="toSearch">
+            <image class="search-logo" src="/assets/find.png" mode="aspectFit"></image>
+          <text>搜索你要的商品</text>
+        </view>
+    </view>
+
+<!--    团长信息-->
+    <view class="head">
+
+    </view>
 </view>
