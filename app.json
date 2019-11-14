@@ -1,13 +1,49 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/shopCart/shopCart",
+    "pages/mine/mine",
+    "pages/sort/sort"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "泽轩优选",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#9a9a9a",
+    "selectedColor": "#88E9CA",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/index.png",
+        "selectedIconPath": "assets/clickIndex.png"
+      },
+      {
+        "pagePath": "pages/sort/sort",
+        "text": "订单",
+        "iconPath": "assets/sort.png",
+        "selectedIconPath": "assets/clickSort.png"
+      },
+      {
+        "pagePath": "pages/shopCart/shopCart",
+        "text": "购物车",
+        "iconPath": "assets/shopCart.png",
+        "selectedIconPath": "assets/clickShopCart.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "个人中心",
+        "iconPath": "assets/mine.png",
+        "selectedIconPath": "assets/clickMine.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
