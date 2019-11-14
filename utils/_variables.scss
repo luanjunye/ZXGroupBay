@@ -1,4 +1,4 @@
-// Colors
+//  root colors
 $green:         #4CD964;
 $syan:          #5AC8FA;
 $blue:          #007AFF;
@@ -10,45 +10,29 @@ $yellow:        #FFCC00;
 $gray:          #8E8E93;
 $green-grass:   #8bc34a;
 
-//index
-$bg-list-selected:  #FFF0D1;
-$bg-navbar:         #373737;
-$bg-menu:           #4A4A4A;
-$bg-body:           #EFEFF4;
-$color-text-date:     #9B9B9B;
-$color-seperator:     #E5E5EA;
+// border color
+$color-border: #F0F0EC;
+$color-border-dark: #D9D9D6;
 
-$color-searchbar-bg:  #E5E5EA;
+// background color
+$bg-main:     #F6F6F6;
+$bg-search:   #666666;
+$bg-active:   #FF3948;
 
+$color-input-outline-focus: rgba(70, 117, 150, 0.54);
 
-$list-header-height: 40px;
-$list-header-font-size: 20px;
-$list-item-height: 28px;
-$list-item-font-size: 14px;
-
-$color-diary-title: #232323;
-$color-diary-date: #232323;
-
-// Register
-$size-note:14px;
-$size-big:20px;
-$size-text: 16px;
-$height-input:48px;
-$radius:5px;
-
-$height-navbar: 45px;
-$font-family: "SF UI Display", "PingFang SC", "Microsoft Yahei UI", "Microsoft Yahei", "Helvetica", sans-serif;
-$load-box-height: 30px;
-
-// Grid
-$width-seprator: 765px;
+// text color
+$text-main:     #333333;
+$text-subtitle: #666666;
+$text-comment:  #999999;
+$text-price:    #FF3948;
 
 
-//index
-$index-category-width: 3px;
-$index-date-width: 25px;
 
-$z-toast: 600;
-$z-navbar: 500;
-$z-menu: 400;
-$z-modal: 300;
+// z-index
+
+$z-toast:   600;
+$z-mask:    550;
+$z-navbar:  500;
+$z-menu:    400;
+$z-modal:   300;
