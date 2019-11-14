@@ -3,21 +3,41 @@
 const app = getApp()
 //主页面
 Page({
-  data: {
+    data: {
+        banner: [
+            {
+              id:1,
+              url: "/assets/first.jpg"
+            },
+          {
+            id:2,
+            url: "/assets/second.jpg"
+          }
+          // {
+          //   id:3,
+          //   url: "/assets/third.jpg"
+          // }
+          ]
 
-  },
-  onload(){
+    },
+    onload() {
 
-  },
+    },
 
-  // ========================
-  onReady: function () { },
-  onShow: function () { },
-  onHide: function () { },
-  onUnload: function () { },
-  onPullDownRefresh: function () {
-    wx.stopPullDownRefresh()
-  },
-  onReachBottom: function () { },
-  onShareAppMessage: function () { }
+    // ========================
+    onReady: function () {
+    },
+    onShow: function () {
+    },
+    onHide: function () {
+    },
+    onUnload: function () {
+    },
+    onPullDownRefresh: function () {
+        wx.stopPullDownRefresh()
+    },
+    onReachBottom: function () {
+    },
+    onShareAppMessage: function () {
+    }
 });

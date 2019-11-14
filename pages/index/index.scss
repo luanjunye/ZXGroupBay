@@ -4,15 +4,18 @@
   background: $bg-main;
   width: 750rpx;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: -2;
 }
 
 .search-bar {
-  position: fixed;
   top: 0rpx;
   height: 110rpx;
   width: 100%;
-  background: #fff;
-  z-index: 100;
+  background: $bg-main;
+
 
   .search {
     margin: 0 auto;
@@ -37,10 +40,78 @@
     height: 27rpx;
     display: inline-block;
     vertical-align: middle;
-    //margin-bottom: 6rpx;
     margin-right: 5rpx;
   }
 }
 
+.head{
+  width: 100%;
+  height: auto;
+
+  .head_info{
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    background: $bg-main;
+    justify-content: space-around;
+
+    .head-avater{
+      height: 35px;
+      width: 35px;
+      @include border-radius(50%);
+    }
+
+    .box{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .name{
+        font-size: 12px;
+      }
+
+      .address{
+        font-size: 11px;
+      }
+
+      .img{
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    .box_a{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .name{
+        font-size: 12px;
+      }
+
+      .address{
+        font-size: 11px;
+      }
+
+      .img{
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+}
+.banner_box{
+
+
+.banner{
+
+  image{
+    display: block;
+    height: auto;
+    width: 100%;
+  }
+}
+}
 
 
