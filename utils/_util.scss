@@ -1,0 +1,83 @@
+@mixin bg-orange  { background-color: $orange; }
+@mixin bg-yellow  { background-color: $yellow; }
+@mixin bg-green   { background-color: $green; }
+@mixin bg-blue    { background-color: $blue; }
+@mixin bg-syan    { background-color: $syan; }
+@mixin bg-purple  { background-color: $purple; }
+@mixin bg-gray    { background-color: $gray; }
+@mixin bg-magenta { background-color: $magenta; }
+@mixin bg-red     { background-color: $red; }
+@mixin bg-grass   { background-color: $green-grass; }
+
+@mixin orange  { color: $orange !important; }
+@mixin yellow  { color: $yellow !important; }
+@mixin green   { color: $green !important; }
+@mixin blue    { color: $blue !important; }
+@mixin syan    { color: $syan !important; }
+@mixin purple  { color: $purple !important; }
+@mixin gray    { color: $gray !important; }
+@mixin magenta { color: $magenta !important; }
+@mixin red     { color: $red !important; }
+@mixin grass   { color: $green-grass !important; }
+
+
+// box-shadow
+@mixin box-shadow($value){
+  -webkit-box-shadow:  $value;
+  -moz-box-shadow:  $value;
+  box-shadow:  $value;
+}
+
+// border-radius
+@mixin border-radius($corner: 5px){
+  -webkit-border-radius: $corner;
+  -moz-border-radius: $corner;
+  border-radius: $corner;
+}
+
+// unable to select
+@mixin unselectable(){
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin clearfix(){
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+@mixin transform($value){
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  -ms-transform: $value;
+  -o-transform: $value;
+  transform: $value;
+}
+
+
+@mixin transition($value){
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  -ms-transition: $value;
+  -o-transition: $value;
+  transition: $value;
+}
+
+
+
+@mixin linear-gradient($direct, $colors){
+  background: linear-gradient($direct, $colors);
+  background: -webkit-linear-gradient($direct, $colors);
+  background: -moz-linear-gradient($direct, $colors);
+}
+
+@mixin backdrop-filter($value){
+  backdrop-filter: $value ;
+  -webkit-backdrop-filter: $value;
+}
