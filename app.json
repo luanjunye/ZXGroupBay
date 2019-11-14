@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/shopCart/shopCart",
     "pages/mine/mine",
-    "pages/sort/sort"
+    "pages/sort/sort",
+    "pages/test/test"
   ],
   "window": {
     "backgroundTextStyle": "light",

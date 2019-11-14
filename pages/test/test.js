@@ -1,13 +1,16 @@
-// pages/shopCart/shopCart.js
+// pages/test/test.js
 Page({
-//购物车
+
   /**
-   * 页面的初始数据
+   * Page initial data
    */
   data: {
 
   },
 
+  /**
+   * Lifecycle function--Called when page load
+   */
   onLoad: function (options) {
 
   },
