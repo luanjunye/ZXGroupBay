@@ -27,7 +27,7 @@
       },
       {
         "pagePath": "pages/sort/sort",
-        "text": "订单",
+        "text": "分类",
         "iconPath": "assets/sort.png",
         "selectedIconPath": "assets/clickSort.png"
       },
