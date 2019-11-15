@@ -1,0 +1,169 @@
+@import "../../utils/mixin";
+
+$height-sidemenu-item: 46px;
+$height-sidemenu-text: 30px;
+$height-sidemenu-sign: 20px;
+
+.sort {
+  position: relative;
+  background-color: $bg-main;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.side-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: $bg-main;
+  width: 25%;
+  flex-shrink: 0;
+
+  .side-menu-item {
+    border-bottom: 1rpx solid $color-border;
+    line-height: $height-sidemenu-text;
+    padding: ($height-sidemenu-item - $height-sidemenu-text)/2 0;
+    background-color: transparent;
+    text-align: center;
+    color: $text-subtitle;
+
+
+    &.active {
+      background-color: white;
+      color: $text-main;
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: $height-sidemenu-sign;
+        left: 0;
+        background-color: $bg-active;
+        top: ($height-sidemenu-item - $height-sidemenu-sign) / 2;
+      }
+    }
+  }
+}
+
+
+$height-good: 100px;
+
+
+.goods {
+  margin-left: 25%;
+
+  .goods-item {
+    border-bottom: 1rpx solid $color-border;
+    padding: 10px 20px 10px 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: white;
+
+    &:active{
+      background-color: transparent;
+    }
+
+    .goods-pic {
+      margin-right: 10px;
+      width: $height-good - 10px * 2;
+      @include border-radius(5px);
+      overflow: hidden;
+
+      image {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    .goods-info {
+      padding: 5px 0;
+      flex-grow: 1;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+
+      .name {
+        line-height: 25px;
+        flex-shrink: 0;
+        font-size: 1rem;
+        color: $text-main;
+      }
+
+      .type {
+        line-height: 20px;
+        flex-shrink: 0;
+        color: $text-comment;
+        font-size: .8rem;
+      }
+
+      .bottom {
+        height: $height-good - 10px * 2 - 25px - 20px - 5px * 2;
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      .price-content {
+
+        .sub {
+          font-size: .8rem;
+          color: $text-price;
+          vertical-align: bottom;
+        }
+
+        .price {
+          font-size: 1.1rem;
+          color: $text-price;
+        }
+      }
+
+      .price-origin {
+        margin-bottom: 2px;
+        text-decoration: line-through;
+        font-size: .8rem;
+        color: $text-comment;
+      }
+
+      .cart-add {
+        height: 30px;
+        width: 30px;
+        display: block;
+        position: relative;
+        border: 2rpx solid $text-comment;
+        @include border-radius(30px);
+        &:active{
+          @include transform(translateY(2px));
+        }
+        &:before,&:after{
+          content: " ";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          background-color: $text-comment;
+        }
+        &:before{
+          width: 2px;
+          height: 16px;
+        }
+        &:after{
+          width: 16px;
+          height: 2px;
+        }
+      }
+
+      .sell-out {
+        margin-bottom: 2px;
+        font-size: .8rem;
+        background-color: $text-price;
+        color: white;
+        text-align: center;
+        @include border-radius(20px);
+        padding: 2px 5px;
+      }
+    }
+  }
+}
