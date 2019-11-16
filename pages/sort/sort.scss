@@ -26,7 +26,7 @@ $height-sidemenu-sign: 20px;
     background-color: transparent;
     text-align: center;
     color: $text-subtitle;
-
+    font-size: $font-size-title;
 
     &.active {
       background-color: white;
@@ -86,7 +86,7 @@ $height-good: 100px;
       .name {
         line-height: 25px;
         flex-shrink: 0;
-        font-size: 1rem;
+        font-size: $font-size-title;
         color: $text-main;
       }
 
@@ -94,7 +94,7 @@ $height-good: 100px;
         line-height: 20px;
         flex-shrink: 0;
         color: $text-comment;
-        font-size: .8rem;
+        font-size: $font-size-comment;
       }
 
       .bottom {
@@ -108,21 +108,20 @@ $height-good: 100px;
       .price-content {
 
         .sub {
-          font-size: .8rem;
+          font-size: $font-size-comment;
           color: $text-price;
           vertical-align: bottom;
         }
 
         .price {
-          font-size: 1.1rem;
+          font-size: $font-size-title;
           color: $text-price;
         }
       }
 
       .price-origin {
-        margin-bottom: 2px;
         text-decoration: line-through;
-        font-size: .8rem;
+        font-size: $font-size-subtitle;
         color: $text-comment;
       }
 
@@ -157,7 +156,7 @@ $height-good: 100px;
 
       .sell-out {
         margin-bottom: 2px;
-        font-size: .8rem;
+        font-size: $font-size-subtitle;
         background-color: $text-price;
         color: white;
         text-align: center;

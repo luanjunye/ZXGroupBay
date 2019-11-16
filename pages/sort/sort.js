@@ -18,14 +18,20 @@ Page({
       {id: 10, name: '生活服务', active: false},
       {id: 11, name: '粮油调味', active: false},
       {id: 12, name: '居家百货', active: false},
+      {id: 12, name: '居家百货', active: false},
+      {id: 12, name: '居家百货', active: false},
+      {id: 12, name: '居家百货', active: false},
+      {id: 12, name: '居家百货', active: false},
+      {id: 12, name: '居家百货', active: false},
     ],
     goods: [
       {
         id: 1,
         pic: '/assets/test/goods-4.jpg',
+        // state: 'sellOut',
         state: 'sell',
         name: "鲜冻小河虾",
-        type: '中国•1盒 220克',
+        type: '中国 1盒 220克',
         priceOrigin: 1945,
         price: 409.9
       },
@@ -49,7 +55,8 @@ Page({
     })
 
     this.setData({
-      categories: tempArray
+      categories: tempArray,
+      [`goods[0].state`]: this.data.goods[0].state === 'sellOut'? 'sell': 'sellOut'
     })
   },
 

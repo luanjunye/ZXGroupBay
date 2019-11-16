@@ -1,3 +1,6 @@
+/*
+  SIZE
+*/
 .sort {
   position: relative;
   background-color: #F6F6F6;
@@ -20,6 +23,7 @@
   background-color: transparent;
   text-align: center;
   color: #666666;
+  font-size: 16px;
 }
 .side-menu .side-menu-item.active {
   background-color: white;
@@ -71,14 +75,14 @@
 .goods .goods-item .goods-info .name {
   line-height: 25px;
   flex-shrink: 0;
-  font-size: 1rem;
+  font-size: 16px;
   color: #333333;
 }
 .goods .goods-item .goods-info .type {
   line-height: 20px;
   flex-shrink: 0;
   color: #999999;
-  font-size: 0.8rem;
+  font-size: 11.2px;
 }
 .goods .goods-item .goods-info .bottom {
   height: 25px;
@@ -88,18 +92,17 @@
   align-items: flex-end;
 }
 .goods .goods-item .goods-info .price-content .sub {
-  font-size: 0.8rem;
+  font-size: 11.2px;
   color: #FF3948;
   vertical-align: bottom;
 }
 .goods .goods-item .goods-info .price-content .price {
-  font-size: 1.1rem;
+  font-size: 16px;
   color: #FF3948;
 }
 .goods .goods-item .goods-info .price-origin {
-  margin-bottom: 2px;
   text-decoration: line-through;
-  font-size: 0.8rem;
+  font-size: 12.8px;
   color: #999999;
 }
 .goods .goods-item .goods-info .cart-add {
@@ -138,7 +141,7 @@
 }
 .goods .goods-item .goods-info .sell-out {
   margin-bottom: 2px;
-  font-size: 0.8rem;
+  font-size: 12.8px;
   background-color: #FF3948;
   color: white;
   text-align: center;
