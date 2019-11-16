@@ -1,7 +1,7 @@
 <view class="sort">
 
 <!--    sidemenu-->
-    <scroll-view class="side-menu">
+    <scroll-view class="side-menu" scroll-x="false" scroll-y="true" style="height: {{windowHeight}}px">
         <view   wx:for="{{categories}}"
                 bindtap="switchCategory"
                 data-index="{{index}}"
@@ -15,7 +15,9 @@
     <scroll-view class="goods">
         <view class="goods-item" wx:for="{{10}}" wx:key="{{index}}">
             <view class="goods-pic">
-                <image mode="widthFix" src="{{goods[0].pic}}"></image>
+                <image wx:if="{{goods[0].state === 'sellOut'}}" class="sell-out" src="/assets/sellout.png"></image>
+<!--                <image class="play"></image>-->
+                <image class="good" mode="widthFix" src="{{goods[0].pic}}"></image>
             </view>
             <view class="goods-info">
                 <view class="name">{{goods[0].name}}</view>

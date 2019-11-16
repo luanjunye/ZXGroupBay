@@ -1,6 +1,21 @@
 //app.js
 App({
   onLaunch: function () {
+
+    wx.getSystemInfo({
+      success: res => {
+        this.globalData.safeTop = res.safeArea.top;
+        this.globalData.safeBttom = res.safeArea.bottom;
+        this.globalData.safeLeft = res.safeArea.left;
+        this.globalData.safeRight = res.safeArea.right;
+        this.globalData.screenHeight = res.screenHeight; // 屏幕高度
+        this.globalData.screenWidth = res.screenWidth;
+        this.globalData.windowHeight = res.windowHeight; // 除去顶部 navbar 和 底部 tabbar 的内容高度
+        this.globalData.windowWidth = res.windowWidth;
+        console.log(res);
+      },
+    })
+
     // // 展示本地存储能力
     // var logs = wx.getStorageSync('logs') || []
     // logs.unshift(Date.now())
@@ -34,6 +49,15 @@ App({
     // })
   },
   globalData: {
+    safeTop:      Number,
+    safeBottom:   Number,
+    safeLeft:     Number,
+    safeRight:    Number,
+    screenHeight: Number,
+    screenWidth:  Number,
+    windowHeight: Number,
+    windowWidth:  Number,
+
     userInfo: null
   }
 })

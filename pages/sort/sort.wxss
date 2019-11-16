@@ -2,6 +2,7 @@
   SIZE
 */
 .sort {
+  width: 100%;
   position: relative;
   background-color: #F6F6F6;
   display: flex;
@@ -54,6 +55,7 @@
   background-color: transparent;
 }
 .goods .goods-item .goods-pic {
+  position: relative;
   margin-right: 10px;
   width: 80px;
   -webkit-border-radius: 5px;
@@ -61,9 +63,29 @@
   border-radius: 5px;
   overflow: hidden;
 }
-.goods .goods-item .goods-pic image {
+.goods .goods-item .goods-pic image.good {
   width: 100%;
   display: block;
+}
+.goods .goods-item .goods-pic image.sell-out {
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  margin-top: -20px;
+  margin-left: -20px;
+  height: 40px;
+  width: 40px;
+}
+.goods .goods-item .goods-pic image.play {
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  margin-top: -20px;
+  margin-left: -20px;
+  height: 40px;
+  width: 40px;
 }
 .goods .goods-item .goods-info {
   padding: 5px 0;
