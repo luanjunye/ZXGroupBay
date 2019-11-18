@@ -49,9 +49,9 @@
 
 <!--普通用户功能列表-->
     <view class="menu-list light-shadow">
-        <view class="menu-list-item">
+        <view class="menu-list-item" bindtap="applyGroupMaster">
             <image mode="aspectFit" class="menu-icon" src="/assets/mine/icon-submit.png"></image>
-            <text>我的钱包</text>
+            <text>申请团长</text>
             <view class="assets">
                 <view class="comment"></view>
                 <image mode="aspectFit" class="menu-more" src="/assets/mine/more.png"></image>

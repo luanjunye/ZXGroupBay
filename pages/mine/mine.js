@@ -5,6 +5,14 @@ Page({
 
   },
 
+
+  applyGroupMaster(){
+    wx.showToast({
+      icon: 'none',
+      title: '您已提交过申请了,请耐心等待审核'
+    })
+  },
+
   onLoad: function (options) {
 
   },
