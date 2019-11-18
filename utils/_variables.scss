@@ -17,7 +17,7 @@ $color-border-dark: #D9D9D6;
 // background color
 $bg-main:     #F6F6F6;
 $bg-search:   #E6E6E6;
-$bg-active:   #FF3948;
+$bg-active:   #0BE7C5;
 $bg-info:     #FFF;
 
 // text color
@@ -26,11 +26,17 @@ $text-subtitle: #666666;
 $text-comment:  #999999;
 $text-price:    #FF3948;
 
-
-
 // z-index
 $z-toast:   600;
 $z-mask:    550;
 $z-navbar:  500;
 $z-menu:    400;
 $z-modal:   300;
+
+
+/*
+  SIZE
+*/
+$font-size-title: 16px;
+$font-size-subtitle: .8 * $font-size-title;
+$font-size-comment: .7 * $font-size-title;

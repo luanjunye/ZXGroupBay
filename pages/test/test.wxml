@@ -1,2 +1,2 @@
-<!--pages/test/test.wxml-->
-<text>pages/test/test.wxml</text>
+<button bindtap="increaseIconBadge(1)">UP</button>
+<button bindtap="decreaseIconBadge(1)">DOWN</button>

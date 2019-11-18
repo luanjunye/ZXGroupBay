@@ -1,28 +1,69 @@
-// pages/test/test.js
+const util = require('../../utils/util');
+
 Page({
-
-  /**
-   * Page initial data
-   */
   data: {
-
+    count: 3,
+    index: 1
   },
 
-  /**
-   * Lifecycle function--Called when page load
-   */
   onLoad: function (options) {
 
   },
 
-  // ========================
-  onReady: function () { },
-  onShow: function () { },
-  onHide: function () { },
-  onUnload: function () { },
+  increaseIconBadge(count){
+    let that = this;
+    let currentCount = that.data.count + count;
+
+    wx.setTabBarBadge({
+      index: that.data.index,
+      text: currentCount.toString(),
+      success: () => {
+        that.setData({
+          count: currentCount
+        })
+      }
+    })
+  },
+
+  decreaseIconBadge(count){
+    let that = this;
+    let currentCount = that.data.count - count;
+
+    if (currentCount < 1){
+      wx.removeTabBarBadge({
+        index: that.data.index,
+        success: res => {
+          that.setData({
+            count: 0
+          })
+        }
+      });
+    } else {
+      wx.setTabBarBadge({
+        index: that.data.index,
+        text: currentCount.toString(),
+        success: () => {
+          that.setData({
+            count: currentCount
+          })
+        }
+      })
+    }
+  },
+
+
+
+
+// ========================
   onPullDownRefresh: function () {
     wx.stopPullDownRefresh()
   },
-  onReachBottom: function () { },
-  onShareAppMessage: function () { }
+
+  onReady: function () { },
+  onShow: function () { },
+
+  // onHide: function () { },
+  // onUnload: function () { },
+  // onReachBottom: function () { },
+  // onShareAppMessage: function () { }
 });
