@@ -45,6 +45,10 @@
       }
     ]
   },
+  "usingComponents": {
+    "thor-count-down": "lib/thor-ui/countdown/countdown",
+    "van-tag": "miniprogram_npm/vant-weapp/tag/index"
+  },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

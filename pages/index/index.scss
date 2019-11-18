@@ -102,16 +102,173 @@
   }
 }
 .banner_box{
-
-
+  margin-top: 10px;
 .banner{
-
+  height: 120px;
   image{
     display: block;
     height: auto;
     width: 100%;
   }
 }
+}
+
+.groupBay{
+  background: $bg-info;
+  margin-top: 5px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+
+
+  .groupBay_left{
+    display: flex;
+    align-items: flex-end;
+    .text{
+      margin-right: 5px;
+    }
+
+    .text_a{
+      font-size: 12px;
+      color:$text-subtitle;
+      margin-right: 5px;
+    }
+  }
+.groupBayRight{
+  font-size: 12px;
+  padding: 6px;
+  background: $bg-search;
+  @include border-radius(20px);
+  color: $text-subtitle;
+}
+}
+
+.second_box{
+  margin-top: 5px;
+  background: $bg-info;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+
+  .first{
+    display: flex;
+    justify-content: space-between;
+
+    .first_info{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+
+      .img{
+        height: 50px;
+        width: 50px;
+      }
+      .text{
+        margin-top: 3px;
+        color: $text-main;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .second{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    .second_info{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+      .img{
+          height: 50px;
+          width: 50px;
+        }
+        .text{
+          margin-top: 3px;
+          color: $text-main;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+.third_box{
+  margin: 5px 10px;
+  display: flex;
+  flex-direction: column;
+
+
+  .list{
+    margin: 5px 0;
+    background: $bg-info;
+    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+
+    .top{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .img{
+        width: 140px;
+        height: 110px;
+      }
+
+      .top_info{
+        padding-left: 10px;
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        flex-grow: 1;
+
+        .description{
+          font-size: 12px;
+          color: $text-comment;
+        }
+
+        .top_down{
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-end;
+          .money_f{
+            font-size: 10px;
+            color: #DD3C4A;
+            display: flex;
+            align-items: center;
+            .place{
+              font-size: 14px;
+            }
+            .money_s{
+              padding-left: 10px;
+              color: $text-comment;
+              display: flex;
+              align-items: center;
+              text-decoration: line-through;
+              .original{
+                font-size: 14px;
+
+              }
+            }
+          }
+
+          .icon{
+            height: 24px;
+            width: 24px;
+          }
+        }
+      }
+    }
+
+    .down{
+      display: flex;
+      justify-content: space-between;
+      padding-top: 10px;
+      font-size: 14px;
+      color:$text-comment;
+    }
+  }
 }
 
 
