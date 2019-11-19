@@ -15,7 +15,7 @@ Page({
             },
             {
                 id: 3,
-                url: "/assets/third.png"
+                url: "/assets/third.jpg"
             }
         ],
         first_i: [
@@ -119,6 +119,20 @@ Page({
                 remaining: "1395",
                 avaterList: []
             },
+        ],
+        down_avater:[
+            {
+                id:1,
+                url:"/assets/avater.png"
+            },
+            {
+                id:2,
+                url:"/assets/avater.png"
+            },
+            {
+                id:3,
+                url:"/assets/avater.png"
+            }
         ],
         targetTime: 12000,
         clearTimer: false

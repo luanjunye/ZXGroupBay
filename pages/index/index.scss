@@ -266,7 +266,33 @@
       justify-content: space-between;
       padding-top: 10px;
       font-size: 14px;
+
       color:$text-comment;
+
+      .down_right{
+        display: flex;
+        align-items: center;
+
+
+        .imglist{
+          height: 20px;
+          //margin-right: 5px;
+          .img{
+            @include border-radius(50%);
+            border: 1rpx solid $color-border;
+            margin-left: -10px;
+            height: 20px;
+            width: 20px;
+          }
+        }
+        .imglist-0{z-index: 3;}
+        .imglist-1{z-index: 2;}
+        .imglist-2{z-index: 1;}
+        .down_text{
+          margin-left: 5px;
+        }
+      }
+
     }
   }
 }

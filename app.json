@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/sort/sort",
+    "pages/product/product",
     "pages/index/index",
+    "pages/index/secondIndex/secondIndex",
+    "pages/sort/sort",
     "pages/shopCart/shopCart",
     "pages/test/test",
     "pages/mine/mine"
@@ -47,7 +49,8 @@
   },
   "usingComponents": {
     "thor-count-down": "lib/thor-ui/countdown/countdown",
-    "van-tag": "miniprogram_npm/vant-weapp/tag/index"
+    "van-tag": "miniprogram_npm/vant-weapp/tag/index",
+    "tui-nomore": "lib/thor-ui/nomore/nomore"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

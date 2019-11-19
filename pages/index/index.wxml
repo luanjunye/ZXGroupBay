@@ -43,7 +43,7 @@
     <view class="groupBay">
         <view class="groupBay_left">
             <text class="text">今日团购</text>
-            <text class="text_a">据结束</text>
+            <text class="text_a">距结束</text>
             <thor-count-down time="{{targetTime}}" color="#fff" bcolor="#e41f19" bgcolor="#e41f19"
                              colonColor="#e41f19"
                              bind:end="countDown"></thor-count-down>
@@ -92,7 +92,7 @@
                                 <view class="original">{{item.originalPrice}}</view>
                             </view>
                         </view>
-                        <image class="icon" src="/assets/resource.png"></image>
+                        <image class="icon" src="/assets/addCart.png"></image>
                     </view>
                 </view>
             </view>
@@ -100,11 +100,16 @@
                 <view class="down_left">
                     <text class="down_text">累计销量{{item.sale}}</text>
                 </view>
+
                 <view class="down_right">
+                    <view class="imglist  imglist-{{index}}" wx:for="{{down_avater}}" wx:for-item="item" wx:key="{{item.id}}"
+                          data-value="{{item}}" id="{{item.id}}">
+                    <image class="img" src="{{item.url}}"></image>
+                    </view>
                     <text class="down_text">已团{{item.group}}/剩余{{item.remaining}}</text>
                 </view>
             </view>
         </view>
     </view>
- 
+
 </view>
