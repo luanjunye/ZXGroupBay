@@ -2,15 +2,23 @@ const util = require('../../utils/util');
 
 Page({
   data: {
-
+    groupMaster: false,
+    applyState: 'none', // none | pending
   },
 
 
   applyGroupMaster(){
-    wx.showToast({
-      icon: 'none',
-      title: '您已提交过申请了,请耐心等待审核'
-    })
+    if (this.data.applyState === 'pending'){
+      wx.showToast({
+        icon: 'none',
+        title: '您已提交过申请了,请耐心等待审核'
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/group/apply/apply',
+      })
+    }
+
   },
 
   onLoad: function (options) {
@@ -19,6 +27,7 @@ Page({
 
 // ========================
   onPullDownRefresh: function () {
+
     wx.stopPullDownRefresh()
   },
 
