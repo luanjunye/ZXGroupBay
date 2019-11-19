@@ -6,10 +6,9 @@ Page({
     mobile: '',
     verifyCode: '',
     address:[],
+    addressString: '',
     addressDetail: '',
     invitation: '',
-
-
     countdown: 60, // 验证码倒计时
     verifyCodeReceiving: false,
     intervalHandle: null
@@ -28,6 +27,8 @@ Page({
       util.toast('请输入正确的手机号')
     } else if (this.data.verifyCode.length < 1) {
       util.toast('请填写验证码')
+    } else if (this.data.addressString.length < 1) {
+      util.toast('请选择省市区')
     } else if (this.data.addressDetail.length < 1) {
       util.toast('请填写详细地址')
     } else {
@@ -55,6 +56,16 @@ Page({
       }
 
     },1000)
+  },
+
+
+  // 修改地址时
+  locationChange(e){
+    let data = e.detail;
+    this.setData({
+      address: data.value,
+      addressString: data.value.join('-')
+    })
   },
 
 
