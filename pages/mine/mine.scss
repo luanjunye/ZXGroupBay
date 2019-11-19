@@ -1,0 +1,177 @@
+@import "../../utils/mixin";
+
+$tabbar-height: 50px;
+$menu-list-height: 50px;
+$menu-list-padding: 10px;
+$menu-list-lineheight: $menu-list-height - $menu-list-padding * 2;
+$menu-icon-height: $menu-list-lineheight - 10;
+
+
+page{
+  background-color: $bg-main;
+}
+
+
+
+// 用户信息
+
+.mine-head{
+  position: relative;
+  background-color: transparent;
+}
+
+.mine-bg{
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+.user-info{
+  top: 20px;
+  left: 5%;
+  width:75%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+
+  .user-head{
+    width: 25%;
+    margin-right: 3%;
+    border: 5px solid saturate($bg-active, 10%);
+    @include border-radius(60px);
+    overflow: hidden;
+    flex-shrink: 0;
+    image{
+      background-color: transparent;
+      width: 100%;
+      display: block;
+    }
+  }
+  .user-detail{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    flex-grow: 1;
+    color: white;
+    font-size: $font-size-title;
+    .name{
+      font-weight: bold;
+    }
+    .id{
+
+    }
+  }
+}
+
+
+// 用户操作
+.mine-container{
+  padding: 10px
+}
+
+.operate{
+  @include border-radius();
+  overflow: hidden;
+  margin-bottom: 15px;
+  .operate-header{
+    background-color: white;
+    margin-bottom: 1px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    .title{
+      line-height: 1;
+      font-size: $font-size-title;
+      color: $text-subtitle;
+    }
+    .more{
+      line-height: 1;
+      font-size: $font-size-subtitle;
+      color: $text-comment;
+    }
+  }
+
+  .operate-body{
+    background-color: white;
+    padding: 10px 10px 15px 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    &-item{
+      &:active{
+        background-color: $bg-main;
+      }
+      width: 20%;
+      .icon{
+        image{
+          width: 50%;
+          height: 50px;
+          margin: 0 auto;
+          display: block;
+        }
+      }
+      text{
+        display: block;
+        text-align: center;
+        font-size: $font-size-subtitle;
+        color: $text-subtitle;
+      }
+    }
+  }
+}
+
+
+.menu-list{
+  background-color: $bg-main;
+  @include border-radius();
+  overflow: hidden;
+}
+
+.menu-list-item{
+  margin-bottom: 1px;
+  background-color: white;
+  color: $text-subtitle;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: $menu-list-padding 5px $menu-list-padding $menu-list-padding + 5;
+  &:active{
+    background-color: transparent;;
+  }
+
+  text{
+    font-size: $font-size-title;
+    flex-grow: 1;
+    display: block;
+    line-height: $menu-list-lineheight;
+  }
+  .menu-icon{
+    margin-right: 10px;
+    flex-shrink: 0;
+    display: block;
+    height: $menu-icon-height;
+    width: $menu-icon-height;
+  }
+  .assets{
+    display: flex;
+    align-items: center;
+    .comment{
+      color: $text-price;
+      font-size: $font-size-subtitle;
+    }
+    .menu-more{
+      width: 30px;
+      flex-shrink: 0;
+      display: block;
+      height: $menu-icon-height - 4;
+    }
+  }
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+

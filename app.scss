@@ -2,3 +2,13 @@
 @import "utils/reset";
 @import "utils/util";
 
+.light-shadow{
+  @include box-shadow(1px 2px 5px rgba(0,0,0,0.05))
+}
+
+
+.btn{
+  &:active{
+    @include transform(translateY(2px));
+  }
+}

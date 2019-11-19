@@ -1,7 +1,13 @@
 // pages/sort/sort.js
+
+const app = getApp();
+
 Page({
 
   data: {
+    // page meta
+    windowHeight: Number,
+
     count: 0,
     cartTabIndex: 2,
     categories: [
@@ -39,6 +45,11 @@ Page({
   },
 
   onLoad: function (options) {
+
+    // INIT screenHeight
+    this.setData({
+      windowHeight: app.globalData.windowHeight
+    })
 
   },
 

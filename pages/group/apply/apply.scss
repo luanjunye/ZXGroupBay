@@ -1,0 +1,65 @@
+@import "../../../utils/mixin";
+
+page{
+  background-color: $bg-main;
+}
+
+$item-height: 46px;
+
+.apply-content{
+  margin: 10px 0;
+}
+
+.input-group{
+  justify-content: space-between;
+  background-color: white;
+  padding: 10px 20px;
+  margin-bottom: 1px;
+  display: flex;
+  text{
+    width: 30%;
+    line-height: $item-height - 10 * 2;
+    display: block;
+    color: $text-main;
+    font-size: $font-size-title ;
+  }
+  .input{
+    line-height: $item-height - 10 * 2;
+    flex-grow: 1;
+  }
+  .add-on{
+    margin-left: 1rem;
+    .btn-verify{
+      text-align: center;
+      white-space: nowrap;
+      font-size: $font-size-comment;
+      padding: 3px 5px;
+      @include border-radius();
+      color: $text-subtitle;
+      background-color: $bg-button;
+      line-height: $item-height - 10 * 2 - 3 * 2;
+    }
+  }
+}
+
+.footer{
+  padding: 15px;
+}
+
+.submit{
+  display: block;
+  width: 100% !important;
+  background-color: $bg-active;
+  @include border-radius(30px);
+  color: white;
+  line-height: 1;
+  font-size: $font-size-title;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.comment{
+  font-size: $font-size-comment;
+  color: $text-comment
+}

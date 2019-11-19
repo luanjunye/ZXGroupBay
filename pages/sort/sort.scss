@@ -5,6 +5,7 @@ $height-sidemenu-text: 30px;
 $height-sidemenu-sign: 20px;
 
 .sort {
+  width: 100%;
   position: relative;
   background-color: $bg-main;
   display: flex;
@@ -48,6 +49,7 @@ $height-sidemenu-sign: 20px;
 
 
 $height-good: 100px;
+$height-icon: ($height-good - 20) * .5;
 
 
 .goods {
@@ -65,14 +67,35 @@ $height-good: 100px;
     }
 
     .goods-pic {
+      position: relative;
       margin-right: 10px;
       width: $height-good - 10px * 2;
       @include border-radius(5px);
       overflow: hidden;
 
-      image {
+      image.good {
         width: 100%;
         display: block;
+      }
+      image.sell-out{
+        position: absolute;
+        display: block;
+        left: 50%;
+        top: 50%;
+        margin-top: -$height-icon/2;
+        margin-left: -$height-icon/2;
+        height: $height-icon;
+        width: $height-icon;
+      }
+      image.play{
+        position: absolute;
+        display: block;
+        left: 50%;
+        top: 50%;
+        margin-top: -$height-icon/2;
+        margin-left: -$height-icon/2;
+        height: $height-icon;
+        width: $height-icon;
       }
     }
 
