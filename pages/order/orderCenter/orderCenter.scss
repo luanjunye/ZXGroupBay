@@ -1,0 +1,141 @@
+@import "../../../utils/mixin";
+
+page{background-color: $bg-main;}
+
+
+$height-navbar: 30px;
+
+.navbar{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  &-item{
+    font-size: $font-size-subtitle;
+    color: $text-subtitle;
+    padding: 5px;
+    line-height: $height-navbar - 5 * 2;
+    &.active{
+      font-weight: bold;
+      border-bottom: 2px solid $bg-active;
+      color: $bg-active;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+  }
+}
+
+.order-list{
+  margin-top: $height-navbar;
+  padding: 10px;
+  margin-bottom: 10px;
+
+  &-item{
+    margin-bottom: 10px;
+    padding: 15px 10px;
+    .head{
+      display: flex;
+      justify-content: space-between;
+
+      .user-info{
+        display: flex;
+        justify-content: space-between;
+        .user-head{
+          width: 40px;
+          margin-right: 10px;
+          border: 1px solid $color-border;
+          @include border-radius(60px);
+          overflow: hidden;
+          flex-shrink: 0;
+          image{
+            background-color: transparent;
+            width: 100%;
+            display: block;
+          }
+        }
+        .user-detail{
+          display: flex;
+          flex-flow: column nowrap;
+          align-items: flex-start;
+          justify-content: center;
+          flex-grow: 1;
+          color: $text-main;
+          font-size: $font-size-subtitle;
+          .name{
+            color: $text-main;
+          }
+          .date{
+            color: $text-subtitle;
+          }
+        }
+      }
+
+      .state-wrapper{
+        text-align: right;
+        .state{
+          line-height: 25px;
+          font-size: $font-size-subtitle;
+          color: $text-price;
+        }
+        .time-left{
+          line-height: 15px;
+          font-size: $font-size-comment;
+          color: $text-subtitle;
+        }
+
+      }
+    }
+    .body{
+      padding: 15px 0;
+
+      @include border-radius(2px);
+      .goods-list{
+        margin-bottom: 15px;
+        display: flex;
+        flex-flow: row nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        image{
+          @include border-radius(3px);
+          flex-shrink: 0;
+          width: 70px;
+          height: 70px;
+          display: block;
+          margin-right: 10px;
+        }
+      }
+      .amount{
+        text-align: right;
+        font-size: $font-size-subtitle;
+        color: $text-main;
+      }
+    }
+    .footer{
+      display: flex;
+      justify-content: space-between;
+      .btn-fill{
+        font-size: $font-size-subtitle;
+        background-color: $bg-active;
+        color: white;
+        padding: 2px 8px;
+        @include border-radius(20px);
+        text-align: center;
+      }
+
+      .btn-outline{
+        font-size: $font-size-subtitle;
+        color: $bg-active;
+        font-weight: bold;
+        border: 1px solid $bg-active;
+        padding: 2px 8px;
+        @include border-radius(20px);
+        text-align: center;
+      }
+    }
+
+    background-color: white;
+    @include border-radius()
+  }
+}

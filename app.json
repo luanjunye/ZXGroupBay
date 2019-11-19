@@ -11,7 +11,8 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "泽轩优选",
     "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 100
   },
   "tabBar": {
     "color": "#9a9a9a",
