@@ -1,0 +1,100 @@
+<!--pages/product/product.wxml-->
+<view class="ucenter">
+    <!--    banner图-->
+    <view class="banner_box">
+        <swiper class="banner" indicator-dots="true" indicator-color="#e0e0e0" indicator-active-color="#fff"
+                autoplay="true" interval="3000" duration="1000">
+            <swiper-item wx:for="{{product.banner}}" wx:for-item="iitem" wx:key="{{iitem.id}}">
+                <image src="{{iitem.url}}" background-size="cover" mode="widthFix" data-value="{{iitem}}"
+                       bindtap="handleClick"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+
+    <!--    团购倒计时-->
+    <view class="groupDown">
+        <view class="groupDown_left">
+            <view class="price">
+                <view class="money_f">¥
+                    <view class="place">{{product.price}}</view>
+                    <view class="money_s">¥
+                        <view class="original">{{product.originalPrice}}</view>
+                    </view>
+                    <view class="remain">仅剩{{product.remain}}件</view>
+                </view>
+
+            </view>
+            <view class="bay">本次已团{{product.groupBay}}件</view>
+
+        </view>
+        <view class="groupDown_right">
+            <text>距结束</text>
+            <thor-count-down time="{{product.targetTime}}" color="#fff" bcolor="#666666" bgcolor="#666666"
+                             colonColor="#666666"
+                             bind:end="countDown"></thor-count-down>
+        </view>
+    </view>
+
+    <!--    商品标题-->
+    <view class="info">
+        <view class="info_top">
+            <view class="it_left">
+                <view class="title">{{product.title}}</view>
+                <view class="description">{{product.description}}</view>
+            </view>
+            <view class="it_right">
+                <image class="img" src="/assets/test/share.png"></image>
+                <text class="img_text">分享</text>
+            </view>
+        </view>
+        <view class="info_down">
+            <view class="id_item">
+                <view class="ii_title">到货时间</view>
+                <view class="ii_text">次日达</view>
+            </view>
+            <view class="id_item">
+                <view class="ii_title">商品产地</view>
+                <view class="ii_text">{{product.place}}</view>
+            </view>
+            <view class="id_item">
+                <view class="ii_title">商品类型</view>
+                <view class="ii_text">POP商品</view>
+            </view>
+
+        </view>
+    </view>
+
+    <!--    商品规格及活动-->
+    <view class="parameter">已选{{product.num}}，{{product.specification}}</view>
+    <view class="parameter">{{product.activity}}</view>
+
+    <!-- 商品参数 -->
+    <view class="product-attr">
+        <view class="tui-nomore-box">
+            <tui-nomore text="商品详情" visible="{{true}}" bgcolor="#f7f7f7"></tui-nomore>
+        </view>
+    </view>
+
+    <!-- 详情大拉页 -->
+    <view class="detail">
+        <image class="img" mode="widthFix" wx:for="{{product.goodsDetailsList}}" wx:key="{{index}}" src="{{item.url}}"/>
+    </view>
+
+    <!--    底部按钮-->
+    <view class="bottom">
+        <view class="bottom_left">
+            <view class="bl_item" bindtap="Click">
+                <image class="icon" src="/assets/test/index.png"></image>
+                <text class="text">首页</text>
+            </view>
+            <view class="bl_item" bindtap="Click">
+                <image class="icon" src="/assets/test/cart.png"></image>
+                <text class="text">购物车</text>
+            </view>
+        </view>
+        <view class="bottom_right">
+            <view class="br_left">加入购物车</view>
+            <view class="br_right">立即购买</view>
+        </view>
+    </view>
+</view>
