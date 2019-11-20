@@ -2,8 +2,16 @@ const util = require('../../utils/util');
 
 Page({
   data: {
-    groupMaster: false,
+    groupMaster: false,  // 是否为团长
     applyState: 'none', // none | pending
+
+    // 普通用户菜单组
+    menuListNormal: [
+      {id: 0, title: '待付款', iconUrl: '/assets/mine/tab-unpaid.png', badge: 4},
+      {id: 1, title: '待收货', iconUrl: '/assets/mine/tab-receive.png', badge: 412},
+      {id: 2, title: '待评价', iconUrl: '/assets/mine/tab-comment.png', badge: 0},
+      {id: 3, title: '退款售后', iconUrl: '/assets/mine/tab-service.png', badge: 0},
+    ]
   },
 
 
@@ -22,6 +30,10 @@ Page({
   },
 
   onLoad: function (options) {
+
+  },
+
+  switchToOrder(e){
 
   },
 
