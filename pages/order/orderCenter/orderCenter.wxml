@@ -3,7 +3,7 @@
             wx:for="{{orderStates}}"
             wx:key="{{item.id}}"
             data-index="{{item.id}}"
-            bindtap="switchState"
+            bindtap="navbarTaped"
             class="navbar-item {{item.active? 'active': ''}}">
         {{item.title}}
     </view>

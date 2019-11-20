@@ -14,13 +14,20 @@ Page({
   },
 
   onLoad: function (options) {
-
+    // console.log(options);
+    let currentTabId = options.tab; // 传参过来的 id 是 String
+    this.switchState(Number(currentTabId))
   },
 
 
-// 订单状态筛选
-  switchState(e){
+  // 订单状态点击
+  navbarTaped(e){
     let index = e.currentTarget.dataset.index;
+    this.switchState(index);
+  },
+
+// 订单状态切换
+  switchState(index){
     let tempArray = [];
     this.data.orderStates.forEach(item=>{
       tempArray.push({

@@ -17,15 +17,20 @@
     <view class="operate light-shadow">
         <view class="operate-header">
             <view class="title">我的订单</view>
-            <view class="more">查看全部订单 ></view>
+            <view class="more" data-url="/pages/order/orderCenter/orderCenter?tab=0" bindtap="switchMenu">查看全部订单 ></view>
         </view>
         <view class="operate-body">
-            <view wx:for="{{menuListNormal}}" wx:wx:key="{{item.id}}" data-index="{{item.id}}" class="operate-body-item" bindtap="switchToOrder" >
-                <view class="icon">
-                    <image src="{{item.iconUrl}}" mode="aspectFit"></image>
-                </view>
-                <text>{{item.title}}</text>
-                <view wx:if="{{item.badge > 0}}" class="badge">{{item.badge}}</view>
+            <view wx:for="{{menuListNormal}}"
+                  wx:key="{{item.id}}"
+                  data-index="{{item.id}}"
+                  data-url="{{item.url}}"
+                  class="operate-body-item"
+                  bindtap="switchMenu" >
+                    <view class="icon">
+                        <image src="{{item.iconUrl}}" mode="aspectFit"></image>
+                    </view>
+                    <text>{{item.title}}</text>
+                    <view wx:if="{{item.badge > 0}}" class="badge">{{item.badge}}</view>
             </view>
         </view>
     </view>
