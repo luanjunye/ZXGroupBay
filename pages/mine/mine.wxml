@@ -29,11 +29,44 @@
    </view>
 </view>
 
+<!--    团长任务情况-->
+<view class="group-progress">
+    <view class="grade-title">─── 团长进阶之路 ───</view>
+    <view class="grade-description light-shadow">您当月还有任务待完成，若未完成任务，将会关闭团长身份</view>
+    <view class="grade-progress-content">
+        <view class="prog">
+            <view class="prog-icon"><image src="/assets/mine/grade-medal.png" mode="widthFix"></image></view>
+            <view class="prog-content">
+                <view class="prog-title">11月实际销售额达 3000 元</view>
+                <progress class="progress" percent="{{2500/3000*100}}" color="#0BE7C5"></progress>
+                <view class="prog-detail">
+                    <view class="detail"><text class="now">2500</text> / 3000</view>
+                    <view class="time-left">还剩 17 天</view>
+                </view>
+            </view>
+        </view>
+        <view class="note">注：实际销售额 = 销售额 - 取消订单的金额</view>
+    </view>
+</view>
+
 
 <view class="mine-container">
-    <!--    团长任务情况-->
-    <view class="group-progress">
-
+    <view class="section">
+        <view class="section-title">业绩中心</view>
+        <view class="score-content">
+            <view class="score-content-item">
+                <view class="number">2500.00</view>
+                <view class="label">当前团销售额(元)</view>
+            </view>
+            <view class="score-content-item">
+                <view class="number">50</view>
+                <view class="label">主订单数量(元)</view>
+            </view>
+            <view class="score-content-item">
+                <view class="number">150.00</view>
+                <view class="label">当前团赚(元)</view>
+            </view>
+        </view>
     </view>
 
 </view>

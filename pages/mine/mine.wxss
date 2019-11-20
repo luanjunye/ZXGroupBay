@@ -88,14 +88,93 @@ page {
 }
 .amount-card .number {
   line-height: 1.8;
-  font-size: 24px;
+  font-size: 20.8px;
   color: #0BE7C5;
-  font-weight: bold;
 }
 .amount-card .label {
   line-height: 1.5;
-  font-size: 16px;
+  font-size: 12.8px;
   color: #333333;
+}
+
+.section {
+  background-color: white;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px;
+}
+.section-title {
+  line-height: 2;
+  font-size: 12.8px;
+}
+.section .score-content {
+  display: flex;
+  justify-content: space-between;
+}
+.section .score-content-item {
+  text-align: center;
+}
+.section .score-content-item .number {
+  color: #0BE7C5;
+  font-size: 12.8px;
+}
+.section .score-content-item .label {
+  font-size: 11.2px;
+}
+
+.group-progress {
+  background-color: white;
+  padding: 15px 10px;
+}
+.group-progress .grade-title {
+  line-height: 2;
+  font-size: 16px;
+  text-align: center;
+}
+.group-progress .grade-description {
+  border: 1px solid #F0F0EC;
+  margin: 10px 0;
+  text-align: center;
+  font-size: 11.2px;
+  padding: 5px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  background-color: white;
+}
+.group-progress .grade-progress-content .prog {
+  display: flex;
+  padding: 15px 30px;
+  align-items: stretch;
+}
+.group-progress .grade-progress-content .prog .prog-icon {
+  margin-right: 10px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.group-progress .grade-progress-content .prog .prog-icon image {
+  width: 45px;
+  height: 45px;
+  display: block;
+}
+.group-progress .grade-progress-content .prog .prog-content {
+  font-size: 11.2px;
+  flex-grow: 1;
+}
+.group-progress .grade-progress-content .prog .prog-content .prog-title {
+  line-height: 2;
+}
+.group-progress .grade-progress-content .prog .prog-content .prog-detail {
+  line-height: 2;
+  display: flex;
+  justify-content: space-between;
+}
+.group-progress .grade-progress-content .note {
+  text-align: center;
+  font-size: 12.8px;
 }
 
 .mine-container {
