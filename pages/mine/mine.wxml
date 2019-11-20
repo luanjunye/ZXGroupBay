@@ -1,19 +1,46 @@
 <view class="mine-head">
     <image class="mine-bg" src="/assets/mine/mine-bg.png" mode="widthFix"></image>
-    <view class="user-info">
-        <view class="user-head">
-            <image src="/assets/avater.png" mode="widthFix"></image>
-        </view>
-        <view class="user-detail">
-            <view class="name">昵称872345y</view>
-            <view class="id">用户ID: <text>29734659826</text></view>
-        </view>
+   <view class="user-info-container">
+       <view class="user-info">
+           <view class="user-head">
+               <image src="/assets/avater.png" mode="widthFix"></image>
+           </view>
+           <view class="user-detail">
+               <view class="name">昵称872345y</view>
+               <view class="id">用户ID: <text>29734659826</text></view>
+           </view>
+           <view class="message-wrapper">
+               <view class="message">
+                   <image src="/assets/mine/message.png" mode="aspectFit"></image>
+               </view>
+           </view>
+       </view>
+       <!--    团长总计-->
+       <view class="amount">
+           <view class="amount-card light-shadow">
+               <view class="number">{{7134.34}}</view>
+               <view class="label">累计收益(元)</view>
+           </view>
+           <view class="amount-card light-shadow">
+               <view class="number">{{4351.34}}</view>
+               <view class="label">账户余额(元)</view>
+           </view>
+       </view>
+   </view>
+</view>
+
+
+<view class="mine-container">
+    <!--    团长任务情况-->
+    <view class="group-progress">
+
     </view>
 
 </view>
 
-<view class="mine-container">
 
+<view class="mine-container">
+<!--    操作菜单 -->
     <view class="operate light-shadow">
         <view class="operate-header">
             <view class="title">我的订单</view>

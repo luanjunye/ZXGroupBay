@@ -3,26 +3,31 @@ page {
 }
 
 .mine-head {
+  padding: 10px;
   position: relative;
   background-color: transparent;
 }
 
 .mine-bg {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: transparent;
   display: block;
+}
+
+.user-info-container {
   width: 100%;
 }
 
 .user-info {
-  top: 20px;
-  left: 5%;
-  width: 75%;
-  position: absolute;
   display: flex;
   justify-content: space-between;
 }
 .user-info .user-head {
-  width: 25%;
+  width: 20%;
   margin-right: 3%;
   border: 5px solid #00f2cd;
   -webkit-border-radius: 60px;
@@ -37,18 +42,64 @@ page {
   display: block;
 }
 .user-info .user-detail {
+  flex-grow: 1;
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
   justify-content: center;
-  flex-grow: 1;
   color: white;
   font-size: 16px;
 }
 .user-info .user-detail .name {
   font-weight: bold;
 }
+.user-info .message-wrapper {
+  display: flex;
+  align-items: center;
+}
+.user-info .message-wrapper .message {
+  padding: 10px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+  background-color: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+}
+.user-info .message-wrapper .message image {
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+
+.amount {
+  width: 100%;
+  margin: 10px auto 0;
+  display: flex;
+  justify-content: space-between;
+}
+.amount-card {
+  width: 48%;
+  background-color: white;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+.amount-card .number {
+  line-height: 1.8;
+  font-size: 24px;
+  color: #0BE7C5;
+  font-weight: bold;
+}
+.amount-card .label {
+  line-height: 1.5;
+  font-size: 16px;
+  color: #333333;
+}
+
 .mine-container {
+  z-index: 400;
   padding: 10px;
 }
 
