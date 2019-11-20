@@ -25,12 +25,14 @@
                     <image src="/assets/mine/tab-unpaid.png" mode="aspectFit"></image>
                 </view>
                 <text>待付款</text>
+                <view class="badge">4</view>
             </view>
             <view class="operate-body-item">
                 <view class="icon">
                     <image src="/assets/mine/tab-receive.png" mode="aspectFit"></image>
                 </view>
                 <text>待收货</text>
+                <view class="badge">412</view>
             </view>
             <view class="operate-body-item">
                 <view class="icon">

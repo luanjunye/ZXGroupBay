@@ -12,7 +12,6 @@ page{
 }
 
 
-
 // 用户信息
 
 .mine-head{
@@ -100,10 +99,23 @@ page{
     justify-content: space-around;
 
     &-item{
+      position: relative;
       &:active{
         background-color: $bg-main;
       }
       width: 20%;
+      .badge{
+        text-align: center;
+        min-width: 20px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: white;
+        background-color: $text-price;
+        font-size: $font-size-comment;
+        padding: 3px 5px;
+        @include border-radius(10px);
+      }
       .icon{
         image{
           width: 50%;

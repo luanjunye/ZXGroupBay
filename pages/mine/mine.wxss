@@ -84,10 +84,25 @@ page {
   justify-content: space-around;
 }
 .operate .operate-body-item {
+  position: relative;
   width: 20%;
 }
 .operate .operate-body-item:active {
   background-color: #F6F6F6;
+}
+.operate .operate-body-item .badge {
+  text-align: center;
+  min-width: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  background-color: #FF3948;
+  font-size: 11.2px;
+  padding: 3px 5px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 .operate .operate-body-item .icon image {
   width: 50%;
