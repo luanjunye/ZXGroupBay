@@ -2,53 +2,51 @@ const util = require('../../../utils/util');
 
 Page({
   data: {
-    // navbar
-    navbarTabs: [
-      { id:0, title: '全部', active: true},
-      { id:1, title: '待审核', active: false},
-      { id:2, title: '处理中', active: false},
-      { id:3, title: '已完成', active: false},
-    ],
+    stateIcon: {
+      1: '/assets/mine/icon-about.png',
+      2: '/assets/mine/icon-about.png',
+      3: '/assets/mine/icon-about.png',
+    },
 
-    feedbackList: [
-      {id: 1, title: '果冻橙申请售后', date: '2019-11-21 13:24:23', state: 1},
-      {id: 2, title: '蓝莓申请退款', date: '2019-11-21 13:24:23', state: 2},
-      {id: 3, title: '玉米理赔', date: '2019-11-21 13:24:23', state: 3},
-      {id: 4, title: '蓝莓申请退款', date: '2019-11-21 13:24:23', state: 2},
-      {id: 5, title: '蓝莓申请退款', date: '2019-11-21 13:24:23', state: 2},
-      {id: 6, title: '果冻橙申请售后', date: '2019-11-21 13:24:23', state: 1},
-      {id: 7, title: '果冻橙申请售后', date: '2019-11-21 13:24:23', state: 1},
-    ]
-
+    detailData: {
+      productPrice: 15.3,
+      returnPrice: 15.3,
+      stateId: 1,
+      state:'已解决',
+      type: '质量问题',
+      no: '56283481614',
+      productId: 1536,
+      orderId: 7123568476,
+      nickName: '飞鱼',
+      applyDateTime: '2019-11-21 11:23:12',
+      applyCount: 1,
+      title: '果冻橙果申请退款',
+      description: '物品损坏，物品已退回公司，申请退款',
+      evidences: [
+        '/assets/list1.jpg',
+        '/assets/list1.jpg',
+        '/assets/list1.jpg',
+      ]
+    }
   },
 
   onLoad: function (options) {
 
   },
 
-  // 订单状态点击
-  navbarTaped(e){
+  // 预览图片
+  showCurrentPic(e) {
     let index = e.currentTarget.dataset.index;
-    this.switchState(index);
-  },
-
-
-// 订单状态切换
-  switchState(index){
-    let tempArray = [];
-    this.data.navbarTabs.forEach(item=>{
-      tempArray.push({
-        id: item.id,
-        title: item.title,
-        active: index === item.id
+    let that = this;
+    if (that.data.detailData.evidences.length < 1) {
+      return
+    } else {
+      wx.previewImage({
+        urls: [that.data.detailData.evidences[index]],
       })
-    })
-    this.setData({
-      navbarTabs: tempArray
-    })
-
-    // TODO: 加载对应页面的数据
+    }
   },
+
 
 
 // ========================

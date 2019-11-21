@@ -1,26 +1,49 @@
-<view class="navbar">
-    <view
-            wx:for="{{navbarTabs}}"
-            wx:key="{{item.id}}"
-            data-index="{{item.id}}"
-            bindtap="navbarTaped"
-            class="navbar-item {{item.active? 'active': ''}}">
-        {{item.title}}
-    </view>
+<view class="state">
+    <view class="state-text"><image mode="aspectFit" src="{{stateIcon[detailData.stateId]}}"></image>{{detailData.state}}</view>
+    <view class="state-return">应退款金额: {{detailData.productPrice}}元 <text wx:if="{{detailData.stateId === 3}}">，实际退款金额: {{detailData.returnPrice}}元</text></view>
 </view>
 
-<view class="list-group">
-    <view class="list-group-item"
-          wx:for="{{feedbackList}}"
-          wx:key="{{item.id}}">
-        <view class="list-content">
-            <view class="title">{{item.title}}</view>
-            <view class="date">{{item.date}}</view>
-        </view>
-        <view wx:if="{{item.state === 1}}" class="state">待审核 ></view>
-        <view wx:if="{{item.state === 2}}" class="state">待解决 ></view>
-        <view wx:if="{{item.state === 3}}" class="state">已完成 ></view>
+
+<view class="detail-list">
+    <view class="detail-list-item">
+        <view class="label">工单类型:</view>
+        <view class="content">{{detailData.type}}</view>
+    </view>
+    <view class="detail-list-item">
+        <view class="label">工单编号:</view>
+        <view class="content">{{detailData.no}}</view>
+    </view>
+    <view class="detail-list-item">
+        <view class="label">商品编号:</view>
+        <view class="content">{{detailData.productId}}</view>
+    </view>
+    <view class="detail-list-item">
+        <view class="label">关联订单:</view>
+        <view class="content">{{detailData.orderId}}</view>
+    </view>
+    <view class="detail-list-item">
+        <view class="label">客户昵称:</view>
+        <view class="content">{{detailData.nickName}}</view>
+    </view>
+    <view class="detail-list-item">
+        <view class="label">申请时间:</view>
+        <view class="content">{{detailData.applyDateTime}}</view>
+    </view>
+    <view class="detail-list-item">
+        <view class="label">工单标题:</view>
+        <view class="content">{{detailData.title}}</view>
+    </view>
+    <view class="detail-list-item">
+        <view class="label">工单描述:</view>
+        <view class="content">{{detailData.description}}</view>
+    </view>
+
+    <view class="evidences">
+        <image mode="widthFix"
+               bindtap='showCurrentPic'
+               data-index="{{index}}"
+               wx:for="{{detailData.evidences}}"
+               wx:key="{{index}}"
+               src="{{item}}"></image>
     </view>
 </view>
-
-<view class="btn btn-feedback">创建工单</view>
