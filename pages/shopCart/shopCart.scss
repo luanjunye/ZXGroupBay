@@ -1,0 +1,265 @@
+@import "../../utils/mixin";
+
+.ucenter {
+  background: $bg-main;
+  width: 750rpx;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-policy {
+  height: 75rpx;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20rpx;
+
+  .red-point {
+    width: 10rpx;
+    height: 10rpx;
+    margin-right: 10rpx;
+  }
+
+  .item {
+    padding-left: 20rpx;
+    display: flex;
+    align-items: center;
+    font-size: 25rpx;
+    color: #666;
+  }
+}
+
+.no-cart {
+  margin-top: 300rpx;
+  margin-bottom: 50rpx;
+}
+
+.no-cart-small {
+  margin-top: 100rpx;
+  margin-bottom: 100rpx;
+}
+
+.notice {
+  padding: 0 32rpx;
+  height: 75rpx;
+  color: #f48f18;
+  background-color: #fff8d8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 26rpx;
+}
+
+
+/* 无列表 */
+
+.add {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  .image {
+    width: 250rpx;
+    height: 250rpx;
+  }
+
+  .txt {
+    font-size: 29rpx;
+    color: #999;
+  }
+}
+
+.login-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.login {
+  width: 500rpx;
+  height: 90rpx;
+  font-size: 29rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: $bg-info;
+  background-color: #b4282d;
+  border-radius: 5rpx;
+}
+
+/* 购物车列表 */
+.cart-wrap{
+  padding-bottom: 65px;
+
+  .item {
+    height: 240rpx;
+    margin: 20rpx;
+    background: $bg-info;
+    border-bottom: none !important;
+  }
+
+  .product {
+    display: flex;
+    align-items: center;
+    height: 170rpx;
+    padding: 35rpx 32rpx;
+
+    .image {
+      width: 170rpx;
+      height: 170rpx;
+      background-color: #f4f4f4;
+      margin-left: 20rpx;
+      margin-right: 20rpx;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      height: 170rpx;
+      justify-content: space-between;
+      width: 438rpx;
+
+      .top {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .main {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          //.tlabel {
+          //  padding-bottom: 5rpx;
+          //}
+
+          .title {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: #333;
+            font-size: 26rpx;
+            padding-left: 10rpx;
+          }
+        }
+
+        .spec {
+          margin-top: 10rpx;
+          padding-left: 15rpx;
+          color: #999;
+          background: #fafafa;
+          border: 2rpx solid #efefef;
+          border-radius: 5rpx;
+          font-size: 22rpx;
+          display: flex;
+
+          .arrow {
+            margin-top: 4rpx;
+          }
+        }
+      }
+
+      .bottom {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+
+        .price {
+          font-size: 36rpx;
+          margin-bottom: 10rpx;
+          color: $text-price;
+          font-weight: bold;
+
+          .origin {
+            color: #999;
+            font-size: 22rpx;
+            margin-right: 20px;
+            text-decoration: line-through;
+            font-weight: normal;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+  }
+}
+
+.delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e83a3a;
+  height: 210rpx;
+  color:$bg-info;
+}
+
+/* 底部统计下单 */
+
+.cart-bottom {
+  z-index: 100;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0rpx;
+  justify-content: space-around;
+  width: 750rpx;
+  border-top: 2 rpx solid #f0f0f0;
+
+  .left {
+    margin-right: 100rpx;
+  }
+
+  .checked-all {
+    color: #999 !important;
+    font-size: 29rpx;
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .cost {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: center;
+
+
+      .total {
+        color:$text-price;
+        margin-right: 20rpx;
+        font-size: 16px;
+      }
+
+      .thrift {
+        font-size: 14px;
+        margin-right: 20rpx;
+      }
+    }
+
+    .checkout {
+      line-height: 100rpx;
+      width: 200rpx;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 5px;
+      background: $bg-active;
+      color: $bg-info;
+
+      .active {
+        background: #981d22;
+      }
+
+
+    }
+
+    .disabled {
+      background: #ccc !important;
+    }
+  }
+}

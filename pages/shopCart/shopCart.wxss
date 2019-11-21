@@ -1,1 +1,233 @@
-/* pages/shopCart/shopCart.wxss */
+@charset "UTF-8";
+/*
+  SIZE
+*/
+.ucenter {
+  background: #F6F6F6;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-policy {
+  height: 75rpx;
+  background: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20rpx;
+}
+.service-policy .red-point {
+  width: 10rpx;
+  height: 10rpx;
+  margin-right: 10rpx;
+}
+.service-policy .item {
+  padding-left: 20rpx;
+  display: flex;
+  align-items: center;
+  font-size: 25rpx;
+  color: #666;
+}
+
+.no-cart {
+  margin-top: 300rpx;
+  margin-bottom: 50rpx;
+}
+
+.no-cart-small {
+  margin-top: 100rpx;
+  margin-bottom: 100rpx;
+}
+
+.notice {
+  padding: 0 32rpx;
+  height: 75rpx;
+  color: #f48f18;
+  background-color: #fff8d8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 26rpx;
+}
+
+/* 无列表 */
+.add {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.add .image {
+  width: 250rpx;
+  height: 250rpx;
+}
+.add .txt {
+  font-size: 29rpx;
+  color: #999;
+}
+
+.login-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.login {
+  width: 500rpx;
+  height: 90rpx;
+  font-size: 29rpx;
+  line-height: 90rpx;
+  text-align: center;
+  color: #FFF;
+  background-color: #b4282d;
+  border-radius: 5rpx;
+}
+
+/* 购物车列表 */
+.cart-wrap {
+  padding-bottom: 65px;
+}
+.cart-wrap .item {
+  height: 240rpx;
+  margin: 20rpx;
+  background: #FFF;
+  border-bottom: none !important;
+}
+.cart-wrap .product {
+  display: flex;
+  align-items: center;
+  height: 170rpx;
+  padding: 35rpx 32rpx;
+  
+}
+.cart-wrap .product .image {
+  width: 170rpx;
+  height: 170rpx;
+  background-color: #f4f4f4;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.cart-wrap .product .info {
+  display: flex;
+  flex-direction: column;
+  height: 170rpx;
+  justify-content: space-between;
+  width: 438rpx;
+}
+.cart-wrap .product .info .top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.cart-wrap .product .info .top .main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart-wrap .product .info .top .main .title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #333;
+  font-size: 26rpx;
+  padding-left: 10rpx;
+}
+.cart-wrap .product .info .top .spec {
+  margin-top: 10rpx;
+  padding-left: 15rpx;
+  color: #999;
+  background: #fafafa;
+  border: 2rpx solid #efefef;
+  border-radius: 5rpx;
+  font-size: 22rpx;
+  display: flex;
+}
+.cart-wrap .product .info .top .spec .arrow {
+  margin-top: 4rpx;
+}
+.cart-wrap .product .info .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.cart-wrap .product .info .bottom .price {
+  font-size: 36rpx;
+  margin-bottom: 10rpx;
+  color: #FF3948;
+  font-weight: bold;
+}
+.cart-wrap .product .info .bottom .price .origin {
+  color: #999;
+  font-size: 22rpx;
+  margin-right: 20px;
+  text-decoration: line-through;
+  font-weight: normal;
+  overflow: hidden;
+}
+
+.delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e83a3a;
+  height: 100%;
+  color: #FFF;
+}
+
+/* 底部统计下单 */
+.cart-bottom {
+  z-index: 100;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0rpx;
+  justify-content: space-around;
+  width: 750rpx;
+  border-top: 2 rpx solid #f0f0f0;
+}
+.cart-bottom .left {
+  margin-right: 100rpx;
+}
+.cart-bottom .checked-all {
+  color: #999 !important;
+  font-size: 29rpx;
+}
+.cart-bottom .right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.cart-bottom .right .cost {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+}
+.cart-bottom .right .cost .total {
+  color: #FF3948;
+  margin-right: 20rpx;
+  font-size: 16px;
+}
+.cart-bottom .right .cost .thrift {
+  font-size: 14px;
+  margin-right: 20rpx;
+}
+.cart-bottom .right .checkout {
+  line-height: 100rpx;
+  width: 200rpx;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  background: #0BE7C5;
+  color: #FFF;
+}
+.cart-bottom .right .checkout .active {
+  background: #981d22;
+}
+.cart-bottom .right .disabled {
+  background: #ccc !important;
+}

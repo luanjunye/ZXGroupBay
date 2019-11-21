@@ -1,115 +1,137 @@
 <!--index.wxml-->
 <view class="ucenter">
-
-    <!-- 搜索框 -->
-    <view class="search-bar">
-        <view class="search" bindtap="toSearch">
-            <image class="search-logo" src="/assets/find.png" mode="aspectFit"></image>
-            <text>搜索你要的商品</text>
-        </view>
-    </view>
-
-    <!--    团长信息-->
-    <view class="head">
-        <view class="head_info">
-            <image class="head-avater" src="/assets/avater.png"></image>
-            <view class="box">
-                <text class="name">我的名字</text>
-                <text class="address">泽轩团购-高新区康虹路766号盛世花园</text>
-            </view>
-            <view class="box_a">
-                <image class="img" src="/assets/partake.png"></image>
-                <text class="address">分享</text>
-            </view>
-            <view class="box_a">
-                <image class="img" src="/assets/personal.png"></image>
-                <text class="address">附近团长</text>
+    <scroll-view class="scroll" scroll-y>
+        <!-- 搜索框 -->
+        <view class="search-bar">
+            <view class="search" bindtap="toSearch">
+                <image class="search-logo" src="/assets/find.png" mode="aspectFit"></image>
+                <text>搜索你要的商品</text>
             </view>
         </view>
-    </view>
 
-    <!--    banner图-->
-    <view class="banner_box">
-        <swiper class="banner" indicator-dots="true" indicator-color="#e0e0e0" indicator-active-color="#fff"
-                autoplay="true" interval="3000" duration="1000">
-            <swiper-item wx:for="{{banner}}" wx:for-item="iitem" wx:key="{{iitem.id}}">
-                <image src="{{iitem.url}}" background-size="cover" mode="widthFix" data-value="{{iitem}}"
-                       bindtap="handleClick"></image>
-            </swiper-item>
-        </swiper>
-    </view>
-
-    <!--    团购开始-->
-    <view class="groupBay">
-        <view class="groupBay_left">
-            <text class="text">今日团购</text>
-            <text class="text_a">距结束</text>
-            <thor-count-down time="{{targetTime}}" color="#fff" bcolor="#e41f19" bgcolor="#e41f19"
-                             colonColor="#e41f19"
-                             bind:end="countDown"></thor-count-down>
-        </view>
-        <view class="groupBayRight">
-            <view class="copy">复制拼团</view>
-        </view>
-    </view>
-
-    <!--    二级图标栏-->
-    <view class="second_box">
-        <view class="first">
-            <view class="first_info" wx:for="{{first_i}}" wx:for-item="item" wx:key="{{item.id}}"
-                  data-value="{{item}}"
-                  id="{{item.id}}" bindtap="toSecond">
-                <image class="img" src="{{item.url}}" background-size="cover" data-value="{{item}}"
-                       data-index="{{ index }}"/>
-                <text class="text">{{item.title}}</text>
+        <!--    团长信息-->
+        <view class="head">
+            <view class="head_info">
+                <image class="head-avater" src="/assets/avater.png"></image>
+                <view class="box">
+                    <text class="name">我的名字</text>
+                    <text class="address">泽轩团购-高新区康虹路766号盛世花园</text>
+                </view>
+                <view class="box_a">
+                    <image class="img" src="/assets/index/partake.png"></image>
+                    <text class="address">分享</text>
+                </view>
+                <view class="box_a">
+                    <image class="img" src="/assets/index/personal.png"></image>
+                    <text class="address">附近团长</text>
+                </view>
             </view>
         </view>
-        <view class="second">
-            <view class="second_info" wx:for="{{second_i}}" wx:for-item="item" wx:key="{{item.id}}"
-                  data-value="{{item}}" id="{{item.id}}" bindtap="toSecond">
-                <image class="img" src="{{item.url}}" background-size="cover" data-value="{{item}}"
-                       data-index="{{ index }}"/>
-                <text class="text">{{item.title}}</text>
+
+        <!--    banner图-->
+        <view class="banner_box">
+            <swiper class="banner" indicator-dots="true" indicator-color="#e0e0e0" indicator-active-color="#fff"
+                    autoplay="true" interval="3000" duration="1000">
+                <swiper-item wx:for="{{banner}}" wx:for-item="iitem" wx:key="{{iitem.id}}">
+                    <image src="{{iitem.url}}" background-size="cover" mode="widthFix" data-value="{{iitem}}"
+                           bindtap="handleClick"></image>
+                </swiper-item>
+            </swiper>
+        </view>
+
+        <!--    团购开始-->
+        <view class="groupBay">
+            <view class="groupBay_left">
+                <text class="text">今日团购</text>
+                <text class="text_a">距结束</text>
+                <thor-count-down class="count_down" time="{{targetTime}}" color="#fff" bcolor="#e41f19"
+                                 bgcolor="#e41f19"
+                                 colonColor="#e41f19"
+                                 bind:end="countDown"></thor-count-down>
+
+            </view>
+            <view class="groupBayRight">复制拼团</view>
+        </view>
+
+        <!--    二级图标栏-->
+        <view class="second_box">
+            <view class="first">
+                <view class="first_info" wx:for="{{first_i}}" wx:for-item="item" wx:key="{{item.id}}"
+                      data-value="{{item}}"
+                      id="{{item.id}}" bindtap="toSecond">
+                    <image class="img" src="{{item.url}}" background-size="cover" data-value="{{item}}" mode="widthFix"
+                           data-index="{{ index }}"/>
+                    <text class="text">{{item.title}}</text>
+                </view>
+            </view>
+            <view class="second">
+                <view class="second_info" wx:for="{{second_i}}" wx:for-item="item" wx:key="{{item.id}}"
+                      data-value="{{item}}" id="{{item.id}}" bindtap="toSecond">
+                    <image class="img" src="{{item.url}}" background-size="cover" data-value="{{item}}"
+                           data-index="{{ index }}"/>
+                    <text class="text">{{item.title}}</text>
+                </view>
             </view>
         </view>
-    </view>
 
-    <!--    推荐商品-->
-    <view class="third_box">
-        <view class="list" wx:for="{{order_list}}" wx:for-item="item" wx:key="{{item.id}}"
-              data-value="{{item}}" id="{{item.id}}" bindtap="toOrder">
-            <view class="top">
-                <image class="img" src="{{item.url}}"></image>
-                <view class="top_info">
-                    <view class="title">{{item.title}}</view>
-                    <view class="description">{{item.description}}</view>
-                    <view class="description">{{item.place}}</view>
-                    <van-tag round color="#DD3C4A">{{item.label}}</van-tag>
-                    <view class="top_down">
-                        <view class="money_f">¥
-                            <view class="place">{{item.price}}</view>
-                            <view class="money_s">¥
-                                <view class="original">{{item.originalPrice}}</view>
+
+        <!--    推荐商品-->
+        <view class="third_box">
+
+            <view wx:if="{{loading}}" class="loading-center">
+                <van-loading type="spinner"/>
+            </view>
+
+            <view class="no-order" wx:if="{{order_list.length == 0&&!loading}}">
+                <image class="img" src="/assets/index/noOrder.png"></image>
+                <view class="txt">当前团长没有开团，尽请期待⁽⁽٩(๑˃̶͈̀▽ ˂̶͈́)۶⁾⁾！</view>
+            </view>
+
+            <view class="third" wx:if="{{order_list.length > 0&&!loading}}">
+
+                <van-tabs color="#0BE7C5" active="{{shippingStatus}}" tab-class="tab" swipeable animated
+                          bind:change="changeTab" class="nav">
+                    <van-tab title="热卖"></van-tab>
+                    <van-tab title="爆款"></van-tab>
+                    <van-tab title="秒杀"></van-tab>
+                    <van-tab title="团长推荐"></van-tab>
+                </van-tabs>
+                <view class="list" wx:for="{{order_list}}" wx:for-item="item" wx:key="{{item.id}}"
+                      data-value="{{item}}" id="{{item.id}}" bindtap="toOrder">
+                    <view class="top">
+                        <image class="img" src="{{item.url}}"></image>
+                        <view class="top_info">
+                            <view class="title">{{item.title}}</view>
+                            <view class="description">{{item.description}}</view>
+                            <view class="description">{{item.place}}</view>
+                            <van-tag round color="#DD3C4A">{{item.label}}</van-tag>
+                            <view class="top_down">
+                                <view class="money_f">¥
+                                    <view class="place">{{item.price}}</view>
+                                    <view class="money_s">¥
+                                        <view class="original">{{item.originalPrice}}</view>
+                                    </view>
+                                </view>
+                                <image class="icon" src="/assets/addCart.png"></image>
                             </view>
                         </view>
-                        <image class="icon" src="/assets/addCart.png"></image>
                     </view>
-                </view>
-            </view>
-            <view class="down">
-                <view class="down_left">
-                    <text class="down_text">累计销量{{item.sale}}</text>
-                </view>
+                    <view class="down">
+                        <view class="down_left">
+                            <text class="down_text">累计销量{{item.sale}}</text>
+                        </view>
 
-                <view class="down_right">
-                    <view class="imglist  imglist-{{index}}" wx:for="{{down_avater}}" wx:for-item="item" wx:key="{{item.id}}"
-                          data-value="{{item}}" id="{{item.id}}">
-                    <image class="img" src="{{item.url}}"></image>
+                        <view class="down_right">
+                            <view class="imglist  imglist-{{index}}" wx:for="{{down_avater}}" wx:for-item="item"
+                                  wx:key="{{item.id}}"
+                                  data-value="{{item}}" id="{{item.id}}">
+                                <image class="img" src="{{item.url}}"></image>
+                            </view>
+                            <text class="down_text">已团{{item.group}}/剩余{{item.remaining}}</text>
+                        </view>
                     </view>
-                    <text class="down_text">已团{{item.group}}/剩余{{item.remaining}}</text>
                 </view>
             </view>
         </view>
-    </view>
-
+    </scroll-view>
 </view>
