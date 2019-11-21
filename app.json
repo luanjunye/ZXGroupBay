@@ -1,16 +1,21 @@
 {
   "pages": [
-    "pages/mine/mine",
+    "pages/userCenter/mine/mine",
+    "pages/userCenter/feedback/feedback",
+    "pages/userCenter/about/about",
+    "pages/userCenter/commission/commission",
+    "pages/userCenter/memberManage/memberManage",
+    "pages/userCenter/invitation/invitation",
+    "pages/userCenter/poster/poster",
+    "pages/userCenter/apply/apply",
     "pages/map/map",
     "pages/order/orderCenter/orderCenter",
-    "pages/group/apply/apply",
     "pages/sort/sort",
     "pages/product/product",
     "pages/index/index",
     "pages/index/secondIndex/secondIndex",
     "pages/shopCart/shopCart",
-    "pages/test/test",
-    "pages/mine/mine"
+    "pages/test/test"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -45,7 +50,7 @@
         "selectedIconPath": "assets/clickShopCart.png"
       },
       {
-        "pagePath": "pages/mine/mine",
+        "pagePath": "pages/userCenter/mine/mine",
         "text": "个人中心",
         "iconPath": "assets/mine.png",
         "selectedIconPath": "assets/clickMine.png"
