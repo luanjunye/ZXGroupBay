@@ -1,0 +1,382 @@
+@import "../../../utils/mixin";
+
+$tabbar-height: 50px;
+$menu-list-height: 50px;
+$menu-list-padding: 10px;
+$menu-list-lineheight: $menu-list-height - $menu-list-padding * 2;
+$menu-icon-height: $menu-list-lineheight - 10;
+
+
+page{
+  background-color: $bg-main;
+}
+
+
+// 用户信息
+
+.mine-head{
+  padding: 10px;
+  position: relative;
+  background-color: transparent;
+}
+
+.badge{
+  text-align: center;
+  min-width: 20px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  color: white;
+  background-color: $text-price;
+  font-size: $font-size-comment;
+  padding: 2px 5px;
+  @include border-radius(10px);
+}
+
+.mine-bg{
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  display: block;
+}
+
+.user-info-container{
+  width: 100%;
+}
+
+.user-info{
+  display: flex;
+  justify-content: space-between;
+
+  .user-head{
+    width: 20%;
+    margin-right: 3%;
+    border: 5px solid saturate($bg-active, 10%);
+    @include border-radius(60px);
+    overflow: hidden;
+    flex-shrink: 0;
+    image{
+      background-color: transparent;
+      width: 100%;
+      display: block;
+    }
+  }
+  .user-detail{
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    justify-content: center;
+    color: white;
+    font-size: $font-size-title;
+    .name{
+      font-weight: bold;
+    }
+    .id{
+
+    }
+  }
+  .message-wrapper{
+    display: flex;
+    align-items: center;
+    .message{
+      padding: 10px;
+      @include border-radius(40px);
+      background-color: rgba(255,255,255,0.5);
+      overflow: hidden;
+      image{
+        display: block;
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+}
+
+
+// 团长相关
+.amount{
+  width: 100%;
+  margin: 10px auto 0;
+  display: flex;
+  justify-content: space-between;
+  &-card{
+    width: 48%;
+    background-color: white;
+    @include border-radius();
+    padding: 10px;
+    text-align: center;
+    .number{
+      line-height: 1.8;
+      font-size: $font-size-title * 1.3;
+      color: $bg-active;
+    }
+    .label{
+      line-height: 1.5;
+      font-size: $font-size-subtitle;
+      color: $text-main;
+    }
+  }
+}
+
+.section{
+  margin-bottom: 10px;
+  background-color: white;
+  @include border-radius();
+  padding: 10px;
+  &-title{
+    line-height: 2;
+    font-size: $font-size-subtitle;
+  }
+  .score-content{
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    &-item{
+      padding: 10px 0;
+      text-align: center;
+      .number{
+        line-height: 2;
+        color: $bg-active;
+        font-size: $font-size-title;
+      }
+      .label{
+        line-height: 1.5;
+        font-size: $font-size-comment;
+      }
+    }
+  }
+
+  .section-icons{
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    &-item{
+      margin-bottom: 10px;
+      position: relative;
+      width: 33%;
+      flex-shrink: 0;
+      &:active{
+        background-color: $bg-main;
+      }
+
+      .icon{
+        margin: 0 auto;
+        width: 35px;
+        position: relative;
+        image{
+          width: 100%;
+          display: block;
+        }
+      }
+      text{
+        line-height: 2;
+        display: block;
+        text-align: center;
+        font-size: $font-size-subtitle;
+        color: $text-subtitle;
+      }
+    }
+  }
+}
+
+//团长进程
+.group-progress{
+  background-color: white;
+  padding: 15px 10px;
+  .grade-title{
+    line-height: 2;
+    font-size: $font-size-title;
+    text-align: center;
+  }
+  .grade-description{
+    border: 1px solid $color-border;
+    margin: 10px 0;
+    text-align: center;
+    font-size: $font-size-comment;
+    padding: 5px;
+    @include border-radius(20px);
+    background-color: white;
+  }
+
+  .grade-progress-content{
+    .prog{
+      display: flex;
+      padding: 15px 30px;
+      align-items: stretch;
+      .prog-icon {
+        margin-right: 10px;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        image{
+          width: 45px;
+          height: 45px;
+          display: block;
+        }
+      }
+      .prog-content{
+        font-size: $font-size-comment;
+
+        flex-grow: 1;
+        .prog-title{
+          line-height: 2;
+
+        }
+        .prog-progress{
+
+        }
+        .prog-detail{
+          line-height: 2;
+          display: flex;
+          justify-content: space-between;
+          .detail{
+            .now{
+              color: $bg-active
+            }
+
+          }
+          .time-left{
+
+          }
+        }
+      }
+    }
+    .note{
+      text-align: center;
+      font-size: $font-size-subtitle;
+    }
+  }
+}
+
+
+
+
+
+// 用户操作
+.mine-container{
+  z-index: $z-menu;
+  padding: 10px
+}
+
+.group-progress{
+
+}
+
+
+//用户相关
+.operate{
+  @include border-radius();
+  overflow: hidden;
+  margin-bottom: 10px;
+  .operate-header{
+    background-color: white;
+    margin-bottom: 1px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    .title{
+      line-height: 1;
+      font-size: $font-size-subtitle;
+      color: $text-main;
+    }
+    .more{
+      line-height: 1;
+      font-size: $font-size-subtitle;
+      color: $text-comment;
+    }
+  }
+
+  .operate-body{
+    background-color: white;
+    padding: 15px 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    &-item{
+      position: relative;
+      &:active{
+        background-color: $bg-main;
+      }
+      width: 20%;
+      .icon{
+        margin: 0 auto;
+        width: 35px;
+        image{
+          width: 100%;
+          display: block;
+        }
+      }
+      text{
+        line-height: 2;
+        display: block;
+        text-align: center;
+        font-size: $font-size-subtitle;
+        color: $text-subtitle;
+      }
+    }
+  }
+}
+
+
+.menu-list{
+  background-color: $bg-main;
+  @include border-radius();
+  overflow: hidden;
+}
+
+.menu-list-item{
+  margin-bottom: 1px;
+  background-color: white;
+  color: $text-subtitle;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: $menu-list-padding 5px $menu-list-padding $menu-list-padding + 5;
+  &:active{
+    background-color: transparent;;
+  }
+
+  text{
+    font-size: $font-size-title;
+    flex-grow: 1;
+    display: block;
+    line-height: $menu-list-lineheight;
+  }
+  .menu-icon{
+    margin-right: 10px;
+    flex-shrink: 0;
+    display: block;
+    height: $menu-icon-height;
+    width: $menu-icon-height;
+  }
+  .assets{
+    display: flex;
+    align-items: center;
+    .comment{
+      color: $text-price;
+      font-size: $font-size-subtitle;
+    }
+    .menu-more{
+      width: 30px;
+      flex-shrink: 0;
+      display: block;
+      height: $menu-icon-height - 4;
+    }
+  }
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+

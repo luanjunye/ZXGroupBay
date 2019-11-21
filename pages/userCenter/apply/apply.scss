@@ -18,6 +18,7 @@ $item-height: 46px;
   display: flex;
   text{
     width: 30%;
+    flex-shrink: 0;
     line-height: $item-height - 10 * 2;
     display: block;
     color: $text-main;
@@ -30,6 +31,7 @@ $item-height: 46px;
   .add-on{
     margin-left: 1rem;
     .btn-verify{
+      min-width: 4rem;
       text-align: center;
       white-space: nowrap;
       font-size: $font-size-comment;

@@ -1,14 +1,34 @@
 var api = require('../config/url.js');
 
+
+const REGEX = {
+  mobile: /\d{11}/i
+}
+
+
+// TOAST
+function toast(msg){
+  wx.showToast({
+    icon: 'none',
+    title: msg
+  })
+}
+
+function toastSuccess(msg){
+  wx.showToast({
+    title: msg
+  })
+}
+
+
+
 function formatTime(date) {
   var year = date.getFullYear()
   var month = date.getMonth() + 1
   var day = date.getDate()
-
   var hour = date.getHours()
   var minute = date.getMinutes()
   var second = date.getSeconds()
-
 
   return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
@@ -17,6 +37,7 @@ function formatNumber(n) {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
+
 
 /**
  * 封封微信的的request
@@ -156,4 +177,7 @@ module.exports = {
   checkSession,
   login,
   formateDate,
+  REGEX,
+  toast,
+  toastSuccess,
 }

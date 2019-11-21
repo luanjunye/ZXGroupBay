@@ -1,0 +1,19 @@
+.tools {
+  z-index: 600;
+  position: fixed;
+  top: 30px;
+  right: 20px;
+}
+.tools view {
+  text-align: center;
+  background-color: white;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 10px;
+}
+
+page {
+  position: relative;
+}
