@@ -79,8 +79,8 @@ Page({
             },
             {
                 id: 2,
-                url: "/assets/list2.jpg",
-                title: "厄瓜多尔白虾(100/200板冻)1箱，约2.8斤",
+                url: "/assets/list1.jpg",
+                title: "厄瓜多尔白虾(100/200板冻)1箱，约2.8斤sadsadsadsadasdqwdqwdqwdwqdwqdwqdwqd",
                 description: "味道鲜美 营养丰富",
                 place: "进口",
                 label: "次日达",
@@ -93,7 +93,7 @@ Page({
             },
             {
                 id: 3,
-                url: "/assets/list3.jpg",
+                url: "/assets/list1.jpg",
                 title: "紫米面包6袋，110g/袋",
                 description: "奶油，紫米，层层相扣",
                 place: "中国",
@@ -107,7 +107,7 @@ Page({
             },
             {
                 id: 4,
-                url: "/assets/list4.jpg",
+                url: "/assets/list1.jpg",
                 title: "紫米面包6袋，110g/袋",
                 description: "奶油，紫米，层层相扣",
                 place: "中国",
@@ -135,7 +135,8 @@ Page({
             }
         ],
         targetTime: 12000,
-        clearTimer: false
+        clearTimer: false,
+        loading:false
     },
     onload() {
         // this.setData({

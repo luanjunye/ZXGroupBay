@@ -1,10 +1,11 @@
 {
   "pages": [
-    "pages/product/product",
     "pages/index/index",
+    "pages/shopCart/shopCart",
+   
     "pages/index/secondIndex/secondIndex",
     "pages/sort/sort",
-    "pages/shopCart/shopCart",
+    "pages/product/product",
     "pages/test/test",
     "pages/mine/mine"
   ],
@@ -49,8 +50,15 @@
   },
   "usingComponents": {
     "thor-count-down": "lib/thor-ui/countdown/countdown",
-    "van-tag": "miniprogram_npm/vant-weapp/tag/index",
-    "tui-nomore": "lib/thor-ui/nomore/nomore"
+    "van-tag": "lib/vant-weapp/tag/index",
+    "tui-nomore": "lib/thor-ui/nomore/nomore",
+    "i-swipeout": "lib/iview-weapp/swipeout/index",
+    "van-checkbox": "lib/vant-weapp/checkbox/index",
+    "van-icon": "lib/vant-weapp/icon/index",
+    "i-input-number": "lib/iview-weapp/input-number/index",
+    "van-tab": "lib/vant-weapp/tab/index",
+    "van-tabs": "lib/vant-weapp/tabs/index",
+    "van-loading": "lib/vant-weapp/loading/index"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
