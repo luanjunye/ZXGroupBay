@@ -1,26 +1,25 @@
-<view class="navbar">
-    <view
-            wx:for="{{navbarTabs}}"
-            wx:key="{{item.id}}"
-            data-index="{{item.id}}"
-            bindtap="navbarTaped"
-            class="navbar-item {{item.active? 'active': ''}}">
-        {{item.title}}
+<view class="feedback-apply">
+    <view class="input-group">
+        <view class="label">选择类型:</view>
+        <input type="text" class="input"></input>
+    </view>
+    <view class="input-group">
+        <view class="label">商品编号:</view>
+        <input type="text" class="input"></input>
+    </view>
+    <view class="input-group">
+        <view class="label">订单号:</view>
+        <input type="text" class="input"></input>
+    </view>
+    <view class="input-group">
+        <view class="label">客户昵称:</view>
+        <input type="text" class="input"></input>
+    </view>
+    <view class="input-group">
+        <view class="label">申请数量:</view>
+        <input type="text" class="input"></input>
     </view>
 </view>
+<!--TODO: 放置，未确定-->
 
-<view class="list-group">
-    <view class="list-group-item"
-          wx:for="{{feedbackList}}"
-          wx:key="{{item.id}}">
-        <view class="list-content">
-            <view class="title">{{item.title}}</view>
-            <view class="date">{{item.date}}</view>
-        </view>
-        <view wx:if="{{item.state === 1}}" class="state">待审核 ></view>
-        <view wx:if="{{item.state === 2}}" class="state">待解决 ></view>
-        <view wx:if="{{item.state === 3}}" class="state">已完成 ></view>
-    </view>
-</view>
-
-<view class="btn btn-feedback">创建工单</view>
+<view class="btn btn-feedback">提交</view>
