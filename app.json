@@ -1,7 +1,6 @@
 {
   "pages": [
-<<<<<<< HEAD
-=======
+    "pages/index/index",
     "pages/userCenter/mine/mine",
     "pages/userCenter/feedback/feedback",
     "pages/userCenter/about/about",
@@ -14,20 +13,9 @@
     "pages/order/orderCenter/orderCenter",
     "pages/sort/sort",
     "pages/product/product",
->>>>>>> refs/remotes/origin/master
-    "pages/index/index",
     "pages/shopCart/shopCart",
-   
     "pages/index/secondIndex/secondIndex",
-<<<<<<< HEAD
-    "pages/sort/sort",
-    "pages/product/product",
-    "pages/test/test",
-    "pages/mine/mine"
-=======
-    "pages/shopCart/shopCart",
     "pages/test/test"
->>>>>>> refs/remotes/origin/master
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -71,7 +59,6 @@
   },
   "usingComponents": {
     "thor-count-down": "lib/thor-ui/countdown/countdown",
-<<<<<<< HEAD
     "van-tag": "lib/vant-weapp/tag/index",
     "tui-nomore": "lib/thor-ui/nomore/nomore",
     "i-swipeout": "lib/iview-weapp/swipeout/index",
@@ -81,9 +68,6 @@
     "van-tab": "lib/vant-weapp/tab/index",
     "van-tabs": "lib/vant-weapp/tabs/index",
     "van-loading": "lib/vant-weapp/loading/index"
-=======
-    "van-tag": "miniprogram_npm/vant-weapp/tag/index"
->>>>>>> refs/remotes/origin/master
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
