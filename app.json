@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/userCenter/mine/mine",
     "pages/userCenter/about/about",
     "pages/userCenter/aboutUs/aboutUs",
     "pages/userCenter/agreement/agreement",
     "pages/userCenter/questions/questions",
-    "pages/userCenter/mine/mine",
     "pages/userCenter/poster/poster",
     "pages/userCenter/feedbackApply/feedbackApply",
     "pages/userCenter/feedback/feedback",
