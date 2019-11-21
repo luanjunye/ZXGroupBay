@@ -8,6 +8,21 @@ page {
   background-color: transparent;
 }
 
+.badge {
+  text-align: center;
+  min-width: 20px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  color: white;
+  background-color: #FF3948;
+  font-size: 11.2px;
+  padding: 2px 5px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
 .mine-bg {
   z-index: -1;
   position: absolute;
@@ -98,6 +113,7 @@ page {
 }
 
 .section {
+  margin-bottom: 10px;
   background-color: white;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -109,18 +125,54 @@ page {
   font-size: 12.8px;
 }
 .section .score-content {
+  padding: 0 10px;
   display: flex;
   justify-content: space-between;
 }
 .section .score-content-item {
+  padding: 10px 0;
   text-align: center;
 }
 .section .score-content-item .number {
+  line-height: 2;
   color: #0BE7C5;
-  font-size: 12.8px;
+  font-size: 16px;
 }
 .section .score-content-item .label {
+  line-height: 1.5;
   font-size: 11.2px;
+}
+.section .section-icons {
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.section .section-icons-item {
+  margin-bottom: 10px;
+  position: relative;
+  width: 33%;
+  flex-shrink: 0;
+}
+.section .section-icons-item:active {
+  background-color: #F6F6F6;
+}
+.section .section-icons-item .icon {
+  margin: 0 auto;
+  width: 35px;
+  position: relative;
+}
+.section .section-icons-item .icon image {
+  width: 100%;
+  display: block;
+}
+.section .section-icons-item text {
+  line-height: 2;
+  display: block;
+  text-align: center;
+  font-size: 12.8px;
+  color: #666666;
 }
 
 .group-progress {
@@ -172,6 +224,9 @@ page {
   display: flex;
   justify-content: space-between;
 }
+.group-progress .grade-progress-content .prog .prog-content .prog-detail .detail .now {
+  color: #0BE7C5;
+}
 .group-progress .grade-progress-content .note {
   text-align: center;
   font-size: 12.8px;
@@ -187,7 +242,7 @@ page {
   -moz-border-radius: 5px;
   border-radius: 5px;
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .operate .operate-header {
   background-color: white;
@@ -198,8 +253,8 @@ page {
 }
 .operate .operate-header .title {
   line-height: 1;
-  font-size: 16px;
-  color: #666666;
+  font-size: 12.8px;
+  color: #333333;
 }
 .operate .operate-header .more {
   line-height: 1;
@@ -208,7 +263,7 @@ page {
 }
 .operate .operate-body {
   background-color: white;
-  padding: 10px 10px 15px 10px;
+  padding: 15px 10px;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
@@ -220,27 +275,16 @@ page {
 .operate .operate-body-item:active {
   background-color: #F6F6F6;
 }
-.operate .operate-body-item .badge {
-  text-align: center;
-  min-width: 20px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: white;
-  background-color: #FF3948;
-  font-size: 11.2px;
-  padding: 3px 5px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+.operate .operate-body-item .icon {
+  margin: 0 auto;
+  width: 35px;
 }
 .operate .operate-body-item .icon image {
-  width: 50%;
-  height: 50px;
-  margin: 0 auto;
+  width: 100%;
   display: block;
 }
 .operate .operate-body-item text {
+  line-height: 2;
   display: block;
   text-align: center;
   font-size: 12.8px;

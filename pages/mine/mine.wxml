@@ -1,4 +1,4 @@
-<view class="mine-head">
+<view class="mine-head" style="{{groupMaster? '' : 'min-height: 120px'}}">
     <image class="mine-bg" src="/assets/mine/mine-bg.png" mode="widthFix"></image>
    <view class="user-info-container">
        <view class="user-info">
@@ -10,13 +10,13 @@
                <view class="id">用户ID: <text>29734659826</text></view>
            </view>
            <view class="message-wrapper">
-               <view class="message">
+               <view class="message" bindtap="switchUserState">
                    <image src="/assets/mine/message.png" mode="aspectFit"></image>
                </view>
            </view>
        </view>
        <!--    团长总计-->
-       <view class="amount">
+       <view wx:if="{{groupMaster}}" class="amount">
            <view class="amount-card light-shadow">
                <view class="number">{{7134.34}}</view>
                <view class="label">累计收益(元)</view>
@@ -30,7 +30,7 @@
 </view>
 
 <!--    团长任务情况-->
-<view class="group-progress">
+<view wx:if="{{groupMaster}}" class="group-progress">
     <view class="grade-title">─── 团长进阶之路 ───</view>
     <view class="grade-description light-shadow">您当月还有任务待完成，若未完成任务，将会关闭团长身份</view>
     <view class="grade-progress-content">
@@ -51,7 +51,8 @@
 
 
 <view class="mine-container">
-    <view class="section">
+
+    <view wx:if="{{groupMaster}}" class="section light-shadow">
         <view class="section-title">业绩中心</view>
         <view class="score-content">
             <view class="score-content-item">
@@ -69,10 +70,45 @@
         </view>
     </view>
 
-</view>
+<!--    团购菜单-->
+    <view wx:if="{{groupMaster}}" class="section operate light-shadow">
+        <view class="section-title">我的团购</view>
+        <view class="section-icons">
+            <view wx:for="{{menuListGroup}}"
+                  wx:key="{{item.id}}"
+                  data-index="{{item.id}}"
+                  data-url="{{item.url}}"
+                  class="section-icons-item"
+                  bindtap="switchMenu" >
+                <view class="icon">
+                    <image src="{{item.iconUrl}}" mode="widthFix"></image>
+                    <view wx:if="{{item.badge > 0}}" class="badge">{{item.badge}}</view>
+                </view>
+                <text>{{item.title}}</text>
+            </view>
+        </view>
+    </view>
+
+    <!--    工具菜单-->
+    <view wx:if="{{groupMaster}}" class="section operate light-shadow">
+        <view class="section-title">我的团购</view>
+        <view class="section-icons">
+            <view wx:for="{{menuListSell}}"
+                  wx:key="{{item.id}}"
+                  data-index="{{item.id}}"
+                  data-url="{{item.url}}"
+                  class="section-icons-item"
+                  bindtap="switchMenu" >
+                <view class="icon">
+                    <image src="{{item.iconUrl}}" mode="widthFix"></image>
+                    <view wx:if="{{item.badge > 0}}" class="badge">{{item.badge}}</view>
+                </view>
+                <text>{{item.title}}</text>
+            </view>
+        </view>
+    </view>
 
 
-<view class="mine-container">
 <!--    操作菜单 -->
     <view class="operate light-shadow">
         <view class="operate-header">
@@ -87,17 +123,17 @@
                   class="operate-body-item"
                   bindtap="switchMenu" >
                     <view class="icon">
-                        <image src="{{item.iconUrl}}" mode="aspectFit"></image>
+                        <image src="{{item.iconUrl}}" mode="widthFix"></image>
+                        <view wx:if="{{item.badge > 0}}" class="badge">{{item.badge}}</view>
                     </view>
                     <text>{{item.title}}</text>
-                    <view wx:if="{{item.badge > 0}}" class="badge">{{item.badge}}</view>
             </view>
         </view>
     </view>
 
 <!--普通用户功能列表-->
     <view class="menu-list light-shadow">
-        <view class="menu-list-item" bindtap="applyGroupMaster">
+        <view wx:if="{{!groupMaster}}" class="menu-list-item" bindtap="applyGroupMaster">
             <image mode="aspectFit" class="menu-icon" src="/assets/mine/icon-submit.png"></image>
             <text>申请团长</text>
             <view class="assets">
@@ -113,7 +149,7 @@
                 <image mode="aspectFit" class="menu-more" src="/assets/mine/more.png"></image>
             </view>
         </view>
-        <view class="menu-list-item">
+        <view wx:if="{{!groupMaster}}" class="menu-list-item">
             <image mode="aspectFit" class="menu-icon" src="/assets/mine/icon-switch.png"></image>
             <text>切换团长</text>
                         <view class="assets">
@@ -123,8 +159,16 @@
         </view>
         <view class="menu-list-item">
             <image mode="aspectFit" class="menu-icon" src="/assets/mine/icon-about.png"></image>
-            <text>关于泽轩团</text>
+            <text>关于泽轩优选</text>
                         <view class="assets">
+                <view class="comment"></view>
+                <image mode="aspectFit" class="menu-more" src="/assets/mine/more.png"></image>
+            </view>
+        </view>
+        <view wx:if="{{groupMaster}}" class="menu-list-item">
+            <image mode="aspectFit" class="menu-icon" src="/assets/mine/icon-invitation.png"></image>
+            <text>邀请好友注册团长</text>
+            <view class="assets">
                 <view class="comment"></view>
                 <image mode="aspectFit" class="menu-more" src="/assets/mine/more.png"></image>
             </view>

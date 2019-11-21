@@ -20,6 +20,19 @@ page{
   background-color: transparent;
 }
 
+.badge{
+  text-align: center;
+  min-width: 20px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  color: white;
+  background-color: $text-price;
+  font-size: $font-size-comment;
+  padding: 2px 5px;
+  @include border-radius(10px);
+}
+
 .mine-bg{
   z-index: -1;
   position: absolute;
@@ -110,6 +123,7 @@ page{
 }
 
 .section{
+  margin-bottom: 10px;
   background-color: white;
   @include border-radius();
   padding: 10px;
@@ -118,16 +132,55 @@ page{
     font-size: $font-size-subtitle;
   }
   .score-content{
+    padding: 0 10px;
     display: flex;
     justify-content: space-between;
     &-item{
+      padding: 10px 0;
       text-align: center;
       .number{
+        line-height: 2;
         color: $bg-active;
-        font-size: $font-size-subtitle;
+        font-size: $font-size-title;
       }
       .label{
+        line-height: 1.5;
         font-size: $font-size-comment;
+      }
+    }
+  }
+
+  .section-icons{
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    &-item{
+      margin-bottom: 10px;
+      position: relative;
+      width: 33%;
+      flex-shrink: 0;
+      &:active{
+        background-color: $bg-main;
+      }
+
+      .icon{
+        margin: 0 auto;
+        width: 35px;
+        position: relative;
+        image{
+          width: 100%;
+          display: block;
+        }
+      }
+      text{
+        line-height: 2;
+        display: block;
+        text-align: center;
+        font-size: $font-size-subtitle;
+        color: $text-subtitle;
       }
     }
   }
@@ -186,6 +239,9 @@ page{
           display: flex;
           justify-content: space-between;
           .detail{
+            .now{
+              color: $bg-active
+            }
 
           }
           .time-left{
@@ -220,7 +276,7 @@ page{
 .operate{
   @include border-radius();
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   .operate-header{
     background-color: white;
     margin-bottom: 1px;
@@ -229,8 +285,8 @@ page{
     justify-content: space-between;
     .title{
       line-height: 1;
-      font-size: $font-size-title;
-      color: $text-subtitle;
+      font-size: $font-size-subtitle;
+      color: $text-main;
     }
     .more{
       line-height: 1;
@@ -241,7 +297,7 @@ page{
 
   .operate-body{
     background-color: white;
-    padding: 10px 10px 15px 10px;
+    padding: 15px 10px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -252,27 +308,16 @@ page{
         background-color: $bg-main;
       }
       width: 20%;
-      .badge{
-        text-align: center;
-        min-width: 20px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        color: white;
-        background-color: $text-price;
-        font-size: $font-size-comment;
-        padding: 3px 5px;
-        @include border-radius(10px);
-      }
       .icon{
+        margin: 0 auto;
+        width: 35px;
         image{
-          width: 50%;
-          height: 50px;
-          margin: 0 auto;
+          width: 100%;
           display: block;
         }
       }
       text{
+        line-height: 2;
         display: block;
         text-align: center;
         font-size: $font-size-subtitle;
