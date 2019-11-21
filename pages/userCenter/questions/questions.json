@@ -1,4 +1,6 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "常见问题"
+  "navigationBarTitleText": "常见问题",
+  "navigationBarBackgroundColor": "#DD8083",
+  "navigationBarTextStyle": "white"
 }

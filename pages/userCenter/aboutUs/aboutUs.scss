@@ -1,11 +1,10 @@
 @import '../../../utils/mixin';
 
-$red: #DD8083;
 $font-size: $font-size-title * 0.9;
 
 
 .article-bg{
-  background-color: $red;
+  background-color: $bg-about;
   padding: 8px 8px 18px 8px;
 }
 .article-container {
@@ -16,18 +15,18 @@ $font-size: $font-size-title * 0.9;
 .article-content{
   font-family:'宋体',sans-serif;
   @include border-radius(18px);
-  border: 1rpx solid $red;
+  border: 1rpx solid $bg-about;
   padding: 10px;
 }
 
 .title{
   margin-bottom: 20px;
-  border-bottom: 1rpx solid $red;
+  border-bottom: 1rpx solid $text-price;
   line-height: 1;
   padding: 15px 0;
   text-align: center;
   font-size: 1.2rem;
-  color: #EA3732;
+  color: $text-price;
 }
 
 .p{
@@ -56,7 +55,7 @@ $font-size: $font-size-title * 0.9;
 }
 
 .section-title{
-  color: #EA3732;
+  color: $text-price;
   font-weight: bold;
   font-size: 1.2rem;
   margin-bottom: 15px;

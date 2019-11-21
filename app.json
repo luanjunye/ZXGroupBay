@@ -1,8 +1,11 @@
 {
   "pages": [
     "pages/userCenter/about/about",
-    "pages/userCenter/poster/poster",
+    "pages/userCenter/aboutUs/aboutUs",
+    "pages/userCenter/agreement/agreement",
+    "pages/userCenter/questions/questions",
     "pages/userCenter/mine/mine",
+    "pages/userCenter/poster/poster",
     "pages/userCenter/feedbackApply/feedbackApply",
     "pages/userCenter/feedback/feedback",
     "pages/userCenter/feedbackDetail/feedbackDetail",

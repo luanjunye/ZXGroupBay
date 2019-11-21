@@ -23,12 +23,12 @@
 
 .title {
   margin-bottom: 20px;
-  border-bottom: 1rpx solid #DD8083;
+  border-bottom: 1rpx solid #FF3948;
   line-height: 1;
   padding: 15px 0;
   text-align: center;
   font-size: 1.2rem;
-  color: #EA3732;
+  color: #FF3948;
 }
 
 .p {
@@ -57,7 +57,7 @@
 }
 
 .section-title {
-  color: #EA3732;
+  color: #FF3948;
   font-weight: bold;
   font-size: 1.2rem;
   margin-bottom: 15px;
