@@ -11,8 +11,10 @@
 
 <view class="list-group">
     <view class="list-group-item"
+          bindtap="toTicketDetail"
           wx:for="{{feedbackList}}"
-          wx:key="{{item.id}}">
+          wx:key="{{item.id}}"
+          data-id="{{item.id}}" >
         <view class="list-content">
             <view class="title">{{item.title}}</view>
             <view class="date">{{item.date}}</view>

@@ -11,7 +11,7 @@
     </view>
     <view class="detail-list-item">
         <view class="label">工单编号:</view>
-        <view class="content">{{detailData.no}}</view>
+        <view class="content">{{detailData.ticketNo}}</view>
     </view>
     <view class="detail-list-item">
         <view class="label">商品编号:</view>

@@ -26,6 +26,14 @@ Page({
 
   },
 
+  // 查看工单详情
+  toTicketDetail(e){
+    let ticketNo = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/userCenter/feedbackDetail/feedbackDetail?ticketno=' + ticketNo
+    })
+  },
+
   // 订单状态点击
   navbarTaped(e){
     let index = e.currentTarget.dataset.index;

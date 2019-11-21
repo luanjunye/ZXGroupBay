@@ -14,7 +14,7 @@ Page({
       stateId: 1,
       state:'已解决',
       type: '质量问题',
-      no: '56283481614',
+      ticketNo: 56283481614,
       productId: 1536,
       orderId: 7123568476,
       nickName: '飞鱼',
@@ -31,6 +31,8 @@ Page({
   },
 
   onLoad: function (options) {
+    let ticketNo = options.ticketno; // 获取工单id
+    // TODO：获取工单详情网络数据
 
   },
 
