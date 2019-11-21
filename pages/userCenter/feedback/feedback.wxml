@@ -25,4 +25,6 @@
     </view>
 </view>
 
-<view class="btn btn-feedback">创建工单</view>
+<navigator url="/pages/userCenter/feedbackApply/feedbackApply">
+    <view class="btn btn-feedback">创建工单</view>
+</navigator>

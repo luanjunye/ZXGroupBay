@@ -2,8 +2,8 @@
   "pages": [
     "pages/userCenter/feedback/feedback",
     "pages/userCenter/feedbackApply/feedbackApply",
-    "pages/userCenter/feedbackDetail/feedbackDetail",
     "pages/userCenter/mine/mine",
+    "pages/userCenter/feedbackDetail/feedbackDetail",
     "pages/userCenter/about/about",
     "pages/userCenter/commission/commission",
     "pages/userCenter/memberManage/memberManage",
