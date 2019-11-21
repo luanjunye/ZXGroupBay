@@ -7,7 +7,6 @@
             class="navbar-item {{item.active? 'active': ''}}">
         {{item.title}}
     </view>
-
 </view>
 
 <view class="order-list">
