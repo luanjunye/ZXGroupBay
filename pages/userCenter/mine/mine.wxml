@@ -91,7 +91,7 @@
 
     <!--    工具菜单-->
     <view wx:if="{{groupMaster}}" class="section operate light-shadow">
-        <view class="section-title">我的团购</view>
+        <view class="section-title">营销工具</view>
         <view class="section-icons">
             <view wx:for="{{menuListSell}}"
                   wx:key="{{item.id}}"
