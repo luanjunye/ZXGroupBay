@@ -121,5 +121,11 @@ Page({
     wx.navigateTo({
       url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer
     });
-  }
+  },
+
+    toBuy:function () {
+        wx.switchTab({
+            url: '/pages/index/index'
+        })
+    }
 })

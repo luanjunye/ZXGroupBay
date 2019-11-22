@@ -185,5 +185,10 @@ Page({
     onReachBottom: function () {
     },
     onShareAppMessage: function () {
+    },
+    changeCommander:function () {
+        wx.navigateTo({
+            url:'/pages/regimentalCommander/changeCommander'
+        })
     }
 });

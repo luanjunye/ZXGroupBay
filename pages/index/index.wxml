@@ -29,7 +29,7 @@
                     <image class="img" src="/assets/index/partake.png"></image>
                     <text class="address">分享</text>
                 </view>
-                <view class="box_a">
+                <view class="box_a" bindtap="changeCommander">
                     <image class="img" src="/assets/index/personal.png"></image>
                     <text class="address">附近团长</text>
                 </view>

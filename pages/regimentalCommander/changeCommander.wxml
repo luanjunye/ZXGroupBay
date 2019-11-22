@@ -30,8 +30,8 @@
                 </view>
 
                 <view class="address">{{item.address}}</view>
-                <view class="cheak" wx:if="{{item.tdefault}}">进入团购</view>
-                <view class="cheak" wx:else>选择团长</view>
+                <view class="cheak" bindtap="toBuy" wx:if="{{item.tdefault}}">进入团购</view>
+                <view class="cheak" bindtap="checkAndToBuy" wx:else>选择团长</view>
             </view>
         </view>
     </scroll-view>
