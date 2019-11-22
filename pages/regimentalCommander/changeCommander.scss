@@ -1,0 +1,108 @@
+@import "../../utils/mixin";
+
+.ucenter {
+  background: $bg-main;
+  width: 750rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: -2;
+}
+
+.top{
+  padding: 20px 0;
+  margin-top: 5px;
+  background: $bg-info;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .img{
+    width: 40px;
+    height: 40px;
+  }
+
+  .address_box{
+   width: 300px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    .icon{
+      width: 14px;
+      height: 14px;
+      margin-right: 5px;
+    }
+  }
+
+  .change{
+    font-size: 12px;
+    margin-top: 5px;
+    padding: 4px 8px;
+    @include border-radius(20px);
+    color: $bg-active;
+    border: 1px solid $bg-active;
+  }
+
+}
+
+.scroll{
+  height: 100%;
+
+  .commanderList{
+    padding: 10px 20px;
+    margin: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    background: $bg-info;
+
+    .first{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .add_box{
+        padding-top: 10px;
+        align-items: center;
+        font-size: 14px;
+        color:$text-price;
+        .icon{
+          width: 14px;
+          height: 14px;
+          margin-right: 5px;
+        }
+      }
+
+    }
+
+    .second{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .group_info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .img{
+          width: 40px;
+          height: 40px;
+        }
+        .name{
+          margin-top: 5px;
+          display: flex;
+        }
+      }
+
+
+    }
+  .cheak{
+    font-size: 12px;
+    margin-top: 5px;
+    padding: 4px 8px;
+    @include border-radius(20px);
+    color: $bg-info;
+   background: $bg-active;
+  }
+  }
+}

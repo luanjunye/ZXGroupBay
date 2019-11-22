@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="ucenter">
-    <scroll-view class="scroll" scroll-y>
+<view class="index_top">
         <!-- 搜索框 -->
         <view class="search-bar">
             <view class="search" bindtap="toSearch">
@@ -9,12 +9,20 @@
             </view>
         </view>
 
+        <view class="buyer">
+            <swiper class="buy" vertical="true" circular="true" autoplay="true" interval="3000" duration="1000">
+                <swiper-item wx:for="{{buyerList}}" wx:for-item="item" wx:key="{{item.id}}">
+                    <view class="text">{{item.text}}</view>
+                </swiper-item>
+            </swiper>
+        </view>
+
         <!--    团长信息-->
         <view class="head">
             <view class="head_info">
                 <image class="head-avater" src="/assets/avater.png"></image>
                 <view class="box">
-                    <text class="name">我的名字</text>
+                    <text class="name">你叫啥子</text>
                     <text class="address">泽轩团购-高新区康虹路766号盛世花园</text>
                 </view>
                 <view class="box_a">
@@ -27,11 +35,12 @@
                 </view>
             </view>
         </view>
-
+</view>
+<!--    <scroll-view class="scroll" scroll-y>-->
         <!--    banner图-->
         <view class="banner_box">
             <swiper class="banner" indicator-dots="true" indicator-color="#e0e0e0" indicator-active-color="#fff"
-                    autoplay="true" interval="3000" duration="1000">
+                    circular="true" autoplay="true" interval="3000" duration="1000">
                 <swiper-item wx:for="{{banner}}" wx:for-item="iitem" wx:key="{{iitem.id}}">
                     <image src="{{iitem.url}}" background-size="cover" mode="widthFix" data-value="{{iitem}}"
                            bindtap="handleClick"></image>
@@ -133,5 +142,5 @@
                 </view>
             </view>
         </view>
-    </scroll-view>
+<!--    </scroll-view>-->
 </view>

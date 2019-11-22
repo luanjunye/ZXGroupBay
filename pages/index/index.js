@@ -136,7 +136,29 @@ Page({
         ],
         targetTime: 12000,
         clearTimer: false,
-        loading:false
+        loading:false,
+        buyerList:[
+            {
+                id:1,
+                text:"Charon与11:30购买了西红柿新鲜番茄水果沙瓤1箱，约5斤"
+            },
+            {
+                id:2,
+                text:"Charon与12:30购买了紫米面包6袋，110g/袋"
+            },
+            {
+                id:3,
+                text:"Charon与13:30购买了速冻大对虾（100/200板冻）1箱，约2.8斤"
+            },
+            {
+                id:4,
+                text:"Charon与14:30购买了西红柿新鲜番茄水果沙瓤1箱，约5斤"
+            },
+            {
+                id:5,
+                text:"Charon与15:30购买了速冻大对虾（100/200板冻）1箱，约2.8斤"
+            }
+        ]
     },
     onload() {
         // this.setData({

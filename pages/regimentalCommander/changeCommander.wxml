@@ -1,0 +1,39 @@
+<!--pages/regimentalCommander/changeCommander/changeCommander.wxml-->
+<view class="ucenter">
+    <scroll-view class="scroll" scroll-y>
+        <view class="top">
+            <image class="img" src="{{addressInfo.avater}}"></image>
+
+            <view class="address_box">
+                <image class="icon" src="/assets/regimentalCommander/address.png"/>
+                <text>{{addressInfo.address}}</text>
+            </view>
+
+            <view class="change" bindtap="changeAddress">修改地址</view>
+
+        </view>
+
+
+        <view class="commanderList" wx:for="{{commanderList}}" wx:for-item="item" wx:key="{{itme.id}}">
+            <view class="first">
+                <van-tag color="#b4282d" plain wx:if="{{item.tdefault}}">默认</van-tag>
+                <text color="#b4282d" plain wx:else/>
+                <view class="add_box">
+                    <image class="icon" src="/assets/regimentalCommander/grayAddress.png"/>
+                    <text>{{item.distance}}</text>
+                </view>
+            </view>
+            <view class="second">
+                <view class="group_info">
+                    <image class="img" src="{{item.avater}}"></image>
+                    <view class="name">{{item.name}}</view>
+                </view>
+
+                <view class="address">{{item.address}}</view>
+                <view class="cheak" wx:if="{{item.tdefault}}">进入团购</view>
+                <view class="cheak" wx:else>选择团长</view>
+            </view>
+        </view>
+    </scroll-view>
+
+</view>
