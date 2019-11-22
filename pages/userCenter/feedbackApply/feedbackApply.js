@@ -91,9 +91,9 @@ Page({
 
   // 提交验证
   onSubmit(){
-    if(!this.data.product.refundType){
+    if(typeof(this.data.product.refundType) !== 'number' ){
       util.toast('请选择处理方式')
-    } else if(!this.data.product.ticketType){
+    } else if(typeof(this.data.product.ticketType) !== 'number' ){
       util.toast('请选择工单类型')
     } else {
       // TODO: 执行提交操作
