@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/userCenter/memberDetail/memberDetail",
     "pages/order/orderCenter/orderCenter",
+    "pages/userCenter/memberDetail/memberDetail",
     "pages/userCenter/memberManage/memberManage",
     "pages/userCenter/feedbackDetail/feedbackDetail",
     "pages/userCenter/feedbackApply/feedbackApply",
