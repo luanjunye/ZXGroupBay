@@ -31,7 +31,8 @@ Page({
   },
 
   onLoad: function (options) {
-
+    let memberId = options.memberId;
+    util.toast('当前用户id： ' + memberId)
   },
 
 

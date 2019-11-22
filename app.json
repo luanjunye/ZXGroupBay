@@ -1,12 +1,12 @@
 {
   "pages": [
+    "pages/userCenter/mine/mine",
     "pages/order/orderCenter/orderCenter",
     "pages/userCenter/memberDetail/memberDetail",
     "pages/userCenter/memberManage/memberManage",
     "pages/userCenter/feedbackDetail/feedbackDetail",
     "pages/userCenter/feedbackApply/feedbackApply",
     "pages/index/index",
-    "pages/userCenter/mine/mine",
     "pages/userCenter/about/about",
     "pages/userCenter/aboutUs/aboutUs",
     "pages/userCenter/agreement/agreement",

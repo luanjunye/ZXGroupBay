@@ -1,5 +1,6 @@
 <view class="members">
     <view class="member"
+          bindtap="memberTaped"
           data-id="{{item.id}}"
           wx:for="{{members}}"
           wx:key="{{item.id}}">
