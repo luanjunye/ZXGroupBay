@@ -1,1 +1,53 @@
+page {
+  background-color: #F6F6F6;
+}
 
+.members {
+  margin-top: 10px;
+}
+
+.member {
+  background-color: white;
+  padding: 10px 15px 10px 10px;
+  margin-bottom: 1px;
+  display: flex;
+  align-items: center;
+}
+.member:active {
+  background-color: transparent;
+}
+.member .index {
+  text-align: center;
+  width: 3rem;
+  color: #666666;
+  flex-shrink: 0;
+}
+.member .head-pic {
+  margin-right: 10px;
+  width: 45px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  border: 1px solid #F0F0EC;
+  overflow: hidden;
+}
+.member .head-pic image {
+  display: block;
+  width: 100%;
+}
+.member .member-info {
+  flex-grow: 1;
+}
+.member .member-info .name {
+  font-size: 16px;
+  color: #333333;
+}
+.member .member-info .wx-id {
+  font-size: 12.8px;
+  color: #666666;
+}
+.member .amount {
+  flex-shrink: 0;
+  font-size: 16px;
+  color: #0BE7C5;
+}

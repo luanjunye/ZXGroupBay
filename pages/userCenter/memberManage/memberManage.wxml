@@ -1,1 +1,16 @@
-<text>template.wxml</text>
+<view class="members">
+    <view class="member"
+          data-id="{{item.id}}"
+          wx:for="{{members}}"
+          wx:key="{{item.id}}">
+        <view class="index">{{index + 1}}</view>
+        <view class="head-pic">
+            <image src="{{item.headPic}}" mode="widthFix"></image>
+        </view>
+        <view class="member-info">
+            <view class="name">{{item.name}}</view>
+            <view class="wx-id">{{item.wxId}}</view>
+        </view>
+        <view class="amount">{{item.amount}} ></view>
+    </view>
+</view>
