@@ -57,11 +57,11 @@ Page({
   showCurrentPic(e) {
     let index = e.currentTarget.dataset.index;
     let that = this;
-    if (that.data.detailData.evidences.length < 1) {
+    if (that.data.product.evidences.length < 1) {
       return
     } else {
       wx.previewImage({
-        urls: [that.data.detailData.evidences[index]],
+        urls: [that.data.product.evidences[index]],
       })
     }
   },
