@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/userCenter/memberDetail/memberDetail",
+    "pages/order/orderCenter/orderCenter",
     "pages/userCenter/memberManage/memberManage",
     "pages/userCenter/feedbackDetail/feedbackDetail",
     "pages/userCenter/feedbackApply/feedbackApply",
@@ -15,7 +17,6 @@
     "pages/userCenter/invitation/invitation",
     "pages/userCenter/apply/apply",
     "pages/map/map",
-    "pages/order/orderCenter/orderCenter",
     "pages/sort/sort",
     "pages/product/product",
     "pages/shopCart/shopCart",

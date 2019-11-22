@@ -1,0 +1,81 @@
+<view class="mine-head" style="{{groupMaster? '' : 'min-height: 120px'}}">
+    <image class="mine-bg" src="/assets/mine/mine-bg.png" mode="widthFix"></image>
+    <view class="user-info-container">
+        <view class="user-info">
+            <view class="user-head">
+                <image src="/assets/avater.png" mode="widthFix"></image>
+            </view>
+            <view class="user-detail">
+                <view class="name">昵称872345y</view>
+                <view class="id">用户ID: <text>29734659826</text></view>
+            </view>
+<!--            <view class="message-wrapper">
+                <view class="message" bindtap="switchUserState">
+                    <image src="/assets/mine/message.png" mode="aspectFit"></image>
+                </view>
+            </view>-->
+        </view>
+        <!--    团长总计-->
+        <view class="amount">
+            <view class="amount-card light-shadow">
+                <view class="number">{{134.34}}</view>
+                <view class="label">累计消费(元)</view>
+            </view>
+            <view class="amount-card light-shadow">
+                <view class="number">{{43}}</view>
+                <view class="label">账户订单</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="member-order-list">
+    <view class="navbar light-shadow">
+        <view
+                wx:for="{{orderStates}}"
+                wx:key="{{item.id}}"
+                data-index="{{item.id}}"
+                bindtap="navbarTaped"
+                class="navbar-item {{item.active? 'active': ''}}">
+            {{item.title}}
+        </view>
+    </view>
+
+
+    <view class="order-list">
+        <view class="order-list-item light-shadow" wx:for="{{10}}" wx:key="{{index}}">
+            <!--        head-->
+            <view class="head">
+                <view class="user-info">
+
+                    <view class="user-detail">
+                        <view class="name">[{{order.name}}]</view>
+                        <view class="date">{{order.date}}</view>
+                    </view>
+                </view>
+                <view class="state-wrapper">
+                    <view class="state">{{order.state}}</view>
+<!--                    <view class="time-left">剩余时间 <text>00:05:23</text></view>-->
+                </view>
+            </view>
+
+            <!--        body-->
+            <view class="body">
+                <view class="goods-list">
+                    <image src="{{imageUrl}}"
+                           wx:for="{{order.imgs}}"
+                           wx:for-item="imageUrl"
+                           mode="aspectFit">
+                    </image>
+                </view>
+                <view class="amount">共{{order.count}}件商品 总价: ￥{{order.amount}}</view>
+            </view>
+
+            <!--        footer-->
+<!--            <view class="footer">
+                <view class="btn-outline">自提</view>
+                <view class="btn btn-fill">去付款</view>
+            </view>-->
+        </view>
+    </view>
+</view>
