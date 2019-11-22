@@ -1,1 +1,38 @@
 @import "../../../utils/mixin";
+
+$height-btn-feedback: 50px;
+
+
+page{
+  background-color: $bg-main;
+}
+
+.poster-container{
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.poster{
+  background-color: white;
+  padding: 10px;
+  @include border-radius();
+  image{
+    display: block;
+    width: 100%;
+  }
+}
+
+.download-btn{
+  margin-top: 30px;
+  @include border-radius(10px);
+  width: 100%;
+  display: block;
+  font-size: $font-size-title;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  line-height: $height-btn-feedback - 20px;
+  background-color: $bg-active;
+}

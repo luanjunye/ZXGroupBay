@@ -1,1 +1,30 @@
-<text>template.wxml</text>
+<view class="navbar">
+    <view
+            wx:for="{{navbarTabs}}"
+            wx:key="{{item.id}}"
+            data-index="{{item.id}}"
+            bindtap="navbarTaped"
+            class="navbar-item {{item.active? 'active': ''}}">
+        {{item.title}}
+    </view>
+</view>
+
+<view class="list-group">
+    <view class="list-group-item"
+          bindtap="toTicketDetail"
+          wx:for="{{feedbackList}}"
+          wx:key="{{item.id}}"
+          data-id="{{item.id}}" >
+        <view class="list-content">
+            <view class="title">{{item.title}}</view>
+            <view class="date">{{item.date}}</view>
+        </view>
+        <view wx:if="{{item.state === 1}}" class="state">待审核 ></view>
+        <view wx:if="{{item.state === 2}}" class="state">待解决 ></view>
+        <view wx:if="{{item.state === 3}}" class="state">已完成 ></view>
+    </view>
+</view>
+
+<navigator url="/pages/userCenter/feedbackApply/feedbackApply">
+    <view class="btn btn-feedback">创建工单</view>
+</navigator>

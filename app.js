@@ -12,7 +12,6 @@ App({
         this.globalData.screenWidth = res.screenWidth;
         this.globalData.windowHeight = res.windowHeight; // 除去顶部 navbar 和 底部 tabbar 的内容高度
         this.globalData.windowWidth = res.windowWidth;
-        console.log(res);
       },
     })
 

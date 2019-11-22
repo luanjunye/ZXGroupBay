@@ -1,0 +1,104 @@
+@import "../../../utils/mixin";
+
+$height-product-pic: 80px;
+
+page{
+  background-color: $bg-main;
+}
+
+.product-info{
+  background-color: white;
+  margin-bottom: 5px;
+  padding: 15px;
+  display: flex;
+  .product-pic{
+    flex-shrink: 0;
+    margin-right: 10px;
+    image{
+      height: $height-product-pic;
+      width: $height-product-pic;
+      display: block;
+    }
+  }
+  .product-meta{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    flex-grow: 1;
+    .name{
+      font-size: $font-size-subtitle;
+      font-weight: bold;
+      color: $text-main;
+    }
+    .meta{
+      font-size: $font-size-subtitle;
+      color: $text-subtitle;
+    }
+  }
+  .product-price{
+    color: $text-price;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+.state{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: white;
+  padding: 15px 30px;
+  &-text{
+    display: flex;
+    justify-content: flex-start;
+    image{
+      margin-right: 10px;
+      flex-shrink: 0;
+      height: 20px;
+      width: 20px;
+      display: block;
+      font-size: $font-size-title;
+    }
+  }
+  &-return{
+    line-height: 2;
+    font-size: $font-size-subtitle;
+  }
+}
+
+.detail-list{
+  padding: 15px 30px;
+  background-color: white;
+  &-item{
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: $font-size-subtitle;
+    .label{
+      color: $text-subtitle;
+      flex-shrink: 0;
+    }
+    .content{
+      text-align: right;
+      flex-grow: 1;
+    }
+  }
+}
+
+.evidences{
+  margin-top: 10px;
+  image{
+    border: 1px solid $color-border;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 22%;
+    height: 3%;
+  }
+}
+
+.detail-title{
+  padding: 10px 0;
+  font-size: $font-size-title;
+  color: $text-main;
+}

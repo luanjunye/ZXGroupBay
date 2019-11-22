@@ -1,1 +1,7 @@
-<text>template.wxml</text>
+<view class="poster-container" style="height: {{screenHeight - 5}}px"> <!--去掉上面的 margin-top 高度-->
+    <view class="poster light-shadow">
+        <image src="/assets/list1.jpg" mode="widthFix"></image>
+    </view>
+
+    <view class="download-btn" bindtap="downloadPoster">下载图片</view>
+</view>

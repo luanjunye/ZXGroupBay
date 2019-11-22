@@ -1,1 +1,9 @@
-<text>template.wxml</text>
+<view class="list-group">
+    <view class="list-group-item"
+          bindtap="menuListTaped"
+          wx:for="{{list}}"
+          wx:key="{{item.id}}"
+          data-id="{{item.id}}">
+            <view class="title">{{item.title}}</view><image class="more" src="/assets/mine/more.png" mode="widthFix"></image>
+    </view>
+</view>

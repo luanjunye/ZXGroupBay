@@ -91,7 +91,7 @@
 
     <!--    工具菜单-->
     <view wx:if="{{groupMaster}}" class="section operate light-shadow">
-        <view class="section-title">我的团购</view>
+        <view class="section-title">营销工具</view>
         <view class="section-icons">
             <view wx:for="{{menuListSell}}"
                   wx:key="{{item.id}}"
@@ -133,45 +133,18 @@
 
 <!--普通用户功能列表-->
     <view class="menu-list light-shadow">
-        <view wx:if="{{!groupMaster}}" class="menu-list-item" bindtap="applyGroupMaster">
-            <image mode="aspectFit" class="menu-icon" src="/assets/mine/icon-submit.png"></image>
-            <text>申请团长</text>
+        <view wx:for="{{groupMaster? menuMaster: menuNormal}}"
+              wx:key="{{item.id}}"
+              data-url="{{item.url}}"
+              class="menu-list-item"
+              bindtap="switchMenu">
+            <image mode="aspectFit" class="menu-icon" src="{{item.iconUrl}}"></image>
+            <text>{{item.title}}</text>
             <view class="assets">
                 <view class="comment"></view>
                 <image mode="aspectFit" class="menu-more" src="/assets/mine/more.png"></image>
             </view>
         </view>
-        <view class="menu-list-item">
-            <image mode="aspectFit" class="menu-icon" src="/assets/mine/icon-coupon.png"></image>
-            <text>优惠券</text>
-                        <view class="assets">
-                <view class="comment">4张</view>
-                <image mode="aspectFit" class="menu-more" src="/assets/mine/more.png"></image>
-            </view>
-        </view>
-        <view wx:if="{{!groupMaster}}" class="menu-list-item">
-            <image mode="aspectFit" class="menu-icon" src="/assets/mine/icon-switch.png"></image>
-            <text>切换团长</text>
-                        <view class="assets">
-                <view class="comment"></view>
-                <image mode="aspectFit" class="menu-more" src="/assets/mine/more.png"></image>
-            </view>
-        </view>
-        <view class="menu-list-item">
-            <image mode="aspectFit" class="menu-icon" src="/assets/mine/icon-about.png"></image>
-            <text>关于泽轩优选</text>
-                        <view class="assets">
-                <view class="comment"></view>
-                <image mode="aspectFit" class="menu-more" src="/assets/mine/more.png"></image>
-            </view>
-        </view>
-        <view wx:if="{{groupMaster}}" class="menu-list-item">
-            <image mode="aspectFit" class="menu-icon" src="/assets/mine/icon-invitation.png"></image>
-            <text>邀请好友注册团长</text>
-            <view class="assets">
-                <view class="comment"></view>
-                <image mode="aspectFit" class="menu-more" src="/assets/mine/more.png"></image>
-            </view>
-        </view>
+
     </view>
 </view>

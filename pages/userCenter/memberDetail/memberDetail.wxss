@@ -1,0 +1,250 @@
+page {
+  background-color: #F6F6F6;
+}
+
+.mine-head {
+  padding: 10px;
+  position: relative;
+  background-color: transparent;
+}
+
+.badge {
+  text-align: center;
+  min-width: 20px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  color: white;
+  background-color: #FF3948;
+  font-size: 11.2px;
+  padding: 2px 5px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.mine-bg {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  display: block;
+}
+
+.user-info-container {
+  width: 100%;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+}
+.user-info .user-head {
+  width: 20%;
+  margin-right: 3%;
+  border: 5px solid #00f2cd;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.user-info .user-head image {
+  background-color: transparent;
+  width: 100%;
+  display: block;
+}
+.user-info .user-detail {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+}
+.user-info .user-detail .name {
+  font-weight: bold;
+}
+.user-info .message-wrapper {
+  display: flex;
+  align-items: center;
+}
+.user-info .message-wrapper .message {
+  padding: 10px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  border-radius: 40px;
+  background-color: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+}
+.user-info .message-wrapper .message image {
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+
+.amount {
+  width: 100%;
+  margin: 10px auto 0;
+  display: flex;
+  justify-content: space-between;
+}
+.amount-card {
+  width: 48%;
+  background-color: white;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+.amount-card .number {
+  line-height: 1.8;
+  font-size: 20.8px;
+  color: #0BE7C5;
+}
+.amount-card .label {
+  line-height: 1.5;
+  font-size: 12.8px;
+  color: #333333;
+}
+
+.member-order-list {
+  padding: 10px;
+}
+
+.navbar {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1px;
+}
+.navbar-item {
+  font-size: 12.8px;
+  color: #666666;
+  padding: 5px;
+  line-height: 20px;
+}
+.navbar-item.active {
+  font-weight: bold;
+  border-bottom: 2px solid #0BE7C5;
+  color: #0BE7C5;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.order-list {
+  margin-bottom: 10px;
+}
+.order-list-item {
+  background-color: white;
+  margin-bottom: 1px;
+  padding: 15px 10px;
+}
+.order-list-item .head {
+  display: flex;
+  justify-content: space-between;
+}
+.order-list-item .head .user-info {
+  display: flex;
+  justify-content: space-between;
+}
+.order-list-item .head .user-info .user-head {
+  width: 40px;
+  margin-right: 10px;
+  border: 1px solid #F0F0EC;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.order-list-item .head .user-info .user-head image {
+  background-color: transparent;
+  width: 100%;
+  display: block;
+}
+.order-list-item .head .user-info .user-detail {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  flex-grow: 1;
+  color: #333333;
+  font-size: 12.8px;
+}
+.order-list-item .head .user-info .user-detail .name {
+  color: #333333;
+}
+.order-list-item .head .user-info .user-detail .date {
+  color: #666666;
+}
+.order-list-item .head .state-wrapper {
+  text-align: right;
+}
+.order-list-item .head .state-wrapper .state {
+  line-height: 25px;
+  font-size: 12.8px;
+  color: #333333;
+}
+.order-list-item .head .state-wrapper .time-left {
+  line-height: 15px;
+  font-size: 11.2px;
+  color: #666666;
+}
+.order-list-item .body {
+  padding: 15px 0 0;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.order-list-item .body .goods-list {
+  margin-bottom: 15px;
+  display: flex;
+  flex-flow: row nowrap;
+  overflow-x: auto;
+  justify-content: flex-start;
+}
+.order-list-item .body .goods-list image {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  display: block;
+  margin-right: 10px;
+}
+.order-list-item .body .amount {
+  text-align: right;
+  font-size: 12.8px;
+  color: #333333;
+}
+.order-list-item .footer {
+  display: flex;
+  justify-content: space-between;
+}
+.order-list-item .footer .btn-fill {
+  font-size: 12.8px;
+  background-color: #0BE7C5;
+  color: white;
+  padding: 2px 8px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+.order-list-item .footer .btn-outline {
+  font-size: 12.8px;
+  color: #0BE7C5;
+  font-weight: bold;
+  border: 1px solid #0BE7C5;
+  padding: 2px 8px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-align: center;
+}

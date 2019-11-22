@@ -1,1 +1,87 @@
 @import "../../../utils/mixin";
+
+$height-navbar: 30px;
+$height-btn-feedback: 50px;
+
+//navbar
+.navbar{
+  border-bottom: 1px solid $color-border;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  &-item{
+    font-size: $font-size-subtitle;
+    color: $text-subtitle;
+    padding: 5px;
+    line-height: $height-navbar - 5 * 2;
+    &.active{
+      font-weight: bold;
+      border-bottom: 2px solid $bg-active;
+      color: $bg-active;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+  }
+}
+
+
+//内容
+.list-group{
+  margin-top: $height-navbar;
+  margin-bottom: $height-btn-feedback + $safe-bottom;
+}
+
+.list-group-item{
+  border-bottom: 1rpx solid $color-border;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  &:active{
+    background-color: $bg-main;
+  }
+  .list-content{
+    flex-grow: 1;
+    .title{
+      line-height: 1.8;
+      white-space: nowrap;
+      -ms-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+      font-size: $font-size-title;
+      color: $text-main;
+    }
+    .date {
+      line-height: 1.3;
+      font-size: $font-size-comment;
+      color: $text-subtitle;
+    }
+  }
+  .state{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
+    font-size: $font-size-subtitle;
+    color: $text-main;
+  }
+}
+
+//footer btn
+.btn-feedback{
+  @include border-radius(10px);
+  margin-bottom: $safe-bottom;
+  width: 90%;
+  bottom: 0;
+  left: 5%;
+  display: block;
+  position: fixed;
+  font-size: $font-size-title;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  line-height: $height-btn-feedback - 20px;
+  background-color: $bg-active;
+}

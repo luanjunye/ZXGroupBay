@@ -1,1 +1,54 @@
 @import "../../../utils/mixin";
+
+page{
+  background-color: $bg-main;
+}
+
+.members{
+  margin-top: 10px;
+}
+
+.member{
+  background-color: white;
+  padding: 10px 15px 10px 10px;
+  margin-bottom: 1px;
+  display: flex;
+  align-items: center;
+  &:active{
+    background-color: transparent;
+  }
+  .index{
+    text-align: center;
+    width: 3rem;
+    color: $text-subtitle;
+    flex-shrink: 0;
+  }
+  .head-pic{
+    margin-right: 10px;
+    width: 45px;
+    @include border-radius(100px);
+    border: 1px solid $color-border;
+    overflow: hidden;
+    image{
+      display: block;
+      width: 100%;
+    }
+  }
+  .member-info{
+    flex-grow: 1;
+    .name{
+      font-size: $font-size-title;
+      color: $text-main;
+    }
+    .wx-id{
+      font-size: $font-size-subtitle;
+      color: $text-subtitle;
+    }
+  }
+  .amount{
+    flex-shrink: 0;
+    font-size: $font-size-title;
+    color: $bg-active;
+
+  }
+}

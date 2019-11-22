@@ -7,7 +7,6 @@
             class="navbar-item {{item.active? 'active': ''}}">
         {{item.title}}
     </view>
-
 </view>
 
 <view class="order-list">
@@ -19,28 +18,26 @@
                     <image src="/assets/avater.png" mode="widthFix"></image>
                 </view>
                 <view class="user-detail">
-                    <view class="name">昵称872345y[ID:124141]</view>
-                    <view class="date">2019-11-13</view>
+                    <view class="name">{{order.name}}</view>
+                    <view class="date">{{order.date}}</view>
                 </view>
             </view>
             <view class="state-wrapper">
-                <view class="state">待付款</view>
-                <view class="time-left">剩余时间 <text>00:05:23</text></view>
+                <view class="state">{{order.state}}</view>
+                <view class="time-left"><text>{{countdown}}</text></view>
             </view>
         </view>
 
 <!--        body-->
         <view class="body">
             <view class="goods-list">
-                <image src="/assets/list1.jpg" mode="aspectFit"></image>
-                <image src="/assets/list1.jpg" mode="aspectFit"></image>
-                <image src="/assets/list1.jpg" mode="aspectFit"></image>
-                <image src="/assets/list1.jpg" mode="aspectFit"></image>
-                <image src="/assets/list1.jpg" mode="aspectFit"></image>
-                <image src="/assets/list1.jpg" mode="aspectFit"></image>
-                <image src="/assets/list1.jpg" mode="aspectFit"></image>
+                <image src="{{imgUrl}}"
+                       wx:for="{{order.imgs}}"
+                       wx:for-item="imgUrl"
+                       mode="aspectFit">
+                </image>
             </view>
-            <view class="amount">共{{5}}件商品 总价: ￥{{234.3}}</view>
+            <view class="amount">共{{order.count}}件商品 总价: ￥{{order.amount}}</view>
         </view>
 
 <!--        footer-->
