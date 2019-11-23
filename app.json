@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/userCenter/commissionWithdraw/commissionWithdraw",
     "pages/userCenter/commission/commission",
     "pages/index/index",
     "pages/userCenter/mine/mine",
