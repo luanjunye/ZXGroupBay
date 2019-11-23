@@ -1,11 +1,12 @@
 {
   "pages": [
+    "pages/userCenter/wallet/wallet",
+    "pages/userCenter/mine/mine",
     "pages/userCenter/invitation/invitation",
     "pages/userCenter/poster/poster",
     "pages/userCenter/commissionWithdraw/commissionWithdraw",
     "pages/userCenter/commission/commission",
     "pages/index/index",
-    "pages/userCenter/mine/mine",
     "pages/order/orderCenter/orderCenter",
     "pages/userCenter/memberDetail/memberDetail",
     "pages/userCenter/memberManage/memberManage",
