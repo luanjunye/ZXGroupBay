@@ -1,1 +1,41 @@
-<text>template.wxml</text>
+
+<time-picker pickerShow="{{isPickerShow}}"
+             id="picker"
+             wx:if="{{isPickerRender}}"
+             bind:hidePicker="pickerHide"
+             bind:setPickerTime="setPickerTime"
+             config="{{pickerConfig}}">
+</time-picker>
+
+<view class="commission">
+    <view class="commission-filter">
+        <view mode="date" bindtap="pickerShow" data-model="startTime" class="time-picker">{{startTime}}</view>
+        至
+        <view mode="date" bindtap="pickerShow" data-model="endTime" class="time-picker">{{endTime}}</view>
+        <view class="btn btn-search" bindtap="searchConfirm">查询</view>
+    </view>
+    <view class="commission-list">
+        <view class="commission-list-item" wx:for="10" wx:key="{{index}}">
+            <view class="product-info">
+                <view class="product-pic">
+                    <image src="{{product.pic}}" mode="aspectFit"></image>
+                </view>
+                <view class="product-meta">
+                    <view class="name">{{product.name}}</view>
+                    <view class="meta">x {{product.count}}</view>
+<!--                    <view class="meta">购买规格：{{product.specs}}</view>-->
+                </view>
+                <view class="product-price">
+                    <view class="label">已参团</view>
+                    <view class="price">￥{{product.price}}</view>
+                </view>
+            </view>
+            <view class="footer">
+                <view class="date">{{product.date}}</view>
+                <view class="commission-price">佣金: <text class="price">￥{{product.commission}}</text></view>
+            </view>
+        </view>
+
+
+    </view>
+</view>

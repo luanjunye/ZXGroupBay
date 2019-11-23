@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/userCenter/commission/commission",
     "pages/index/index",
     "pages/userCenter/mine/mine",
     "pages/order/orderCenter/orderCenter",
@@ -13,7 +14,6 @@
     "pages/userCenter/questions/questions",
     "pages/userCenter/poster/poster",
     "pages/userCenter/feedback/feedback",
-    "pages/userCenter/commission/commission",
     "pages/userCenter/invitation/invitation",
     "pages/userCenter/apply/apply",
     "pages/map/map",

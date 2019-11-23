@@ -1,4 +1,6 @@
 {
-  "navigationBarTitleText": "未修改标题哦",
-  "usingComponents": {}
+  "navigationBarTitleText": "佣金记录",
+  "usingComponents": {
+    "time-picker": "/components/timePicker/timePicker"
+  }
 }

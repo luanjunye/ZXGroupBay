@@ -150,7 +150,8 @@ page {
   justify-content: space-between;
 }
 .section .section-icons-item {
-  margin-bottom: 10px;
+  padding: 5px 0;
+  margin-bottom: 5px;
   position: relative;
   width: 33%;
   flex-shrink: 0;

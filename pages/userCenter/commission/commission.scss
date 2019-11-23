@@ -1,1 +1,106 @@
 @import "../../../utils/mixin";
+
+$height-product-pic: 80px;
+
+page{
+  background-color: $bg-main;
+}
+
+.commission{
+  margin-top: 5px;
+  background-color: white;
+}
+
+.commission-filter{
+  border-bottom: 1px solid $color-border;
+  align-items: center;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  font-size: $font-size-subtitle;
+  .time-picker{
+    border: 1px solid $color-border-dark;
+    padding: 3px 5px;
+    @include border-radius(20px);
+    background-color: $bg-main;
+    text-align: center;
+  }
+  .btn-search{
+    padding: 5px 8px;
+    text-align: center;
+  }
+}
+
+.commission-list{
+  padding: 10px;
+  margin-bottom: 10px;
+
+  &-item{
+    border-bottom: 1px solid $color-border;
+    padding: 15px;
+    &:last-child{
+      border-bottom: none;
+    }
+    .product-info{
+      display: flex;
+      .product-pic{
+        flex-shrink: 0;
+        margin-right: 10px;
+        image{
+          height: $height-product-pic;
+          width: $height-product-pic;
+          display: block;
+        }
+      }
+      .product-meta{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        flex-grow: 1;
+        .name{
+          margin-bottom: 10px;
+          font-size: $font-size-subtitle;
+          font-weight: bold;
+          color: $text-main;
+        }
+        .meta{
+          font-size: $font-size-subtitle;
+          color: $text-subtitle;
+        }
+      }
+      .product-price{
+        color: $text-main;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        flex-flow: column nowrap;
+        text-align: center;
+        .label{
+          font-size: $font-size-subtitle;
+        }
+        .price{
+          font-weight: bold;
+          font-size: $font-size-title;
+        }
+      }
+    }
+    .footer{
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .date{
+        font-size: $font-size-subtitle;
+        color: $text-subtitle
+      }
+      .commission-price{
+        font-size: $font-size-subtitle;
+        color: $text-subtitle;
+        .price{
+          font-size: $font-size-title;
+          color: $text-price;
+        }
+      }
+    }
+  }
+}

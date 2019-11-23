@@ -65,6 +65,7 @@
                     <image src="{{imageUrl}}"
                            wx:for="{{order.imgs}}"
                            wx:for-item="imageUrl"
+                           wx:key="{{index}}"
                            mode="aspectFit">
                     </image>
                 </view>
