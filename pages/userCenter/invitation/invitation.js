@@ -9,7 +9,7 @@ Page({
 
   },
 
-  // 保存海报到相册
+  // 保存二维码到相册
   downloadPoster(){
     wx.saveImageToPhotosAlbum({
       filePath: '/assets/list1.jpg',
