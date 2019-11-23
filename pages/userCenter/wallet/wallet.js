@@ -33,10 +33,10 @@ Page({
     wx.stopPullDownRefresh()
   },
 
-  memberTaped(e){
-    let memberId = e.currentTarget.dataset.id;
+  logTaped(e){
+    let logId = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/userCenter/memberDetail/memberDetail?memberId=' + memberId
+      url: '/pages/userCenter/commissionWithdraw/commissionWithdraw?logid=' + logId
     })
   },
 

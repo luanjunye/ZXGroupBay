@@ -22,8 +22,10 @@
                <view class="label">累计收益(元)</view>
            </view>
            <view class="amount-card light-shadow">
-               <view class="number">{{4351.34}}</view>
-               <view class="label">账户余额(元)</view>
+               <navigator url="/pages/userCenter/wallet/wallet">
+                   <view class="number">{{4351.34}}</view>
+                   <view class="label">账户余额(元)</view>
+               </navigator>
            </view>
        </view>
    </view>

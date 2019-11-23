@@ -33,8 +33,8 @@ Page({
   },
 
   onLoad: function (options) {
-    let ticketNo = options.ticketno; // 获取工单id
-    // TODO：获取工单详情网络数据
+    let logId = options.logId; // 获取记录 id
+    // TODO：获取记录详情网络数据
 
   },
 

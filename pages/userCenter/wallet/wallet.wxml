@@ -7,7 +7,7 @@
 
 <view class="withdraw-log">
     <view class="log-item"
-          bindtap="memberTaped"
+          bindtap="logTaped"
           data-id="{{item.id}}"
           wx:for="{{lists}}"
           wx:key="{{item.id}}">
