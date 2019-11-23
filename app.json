@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/userCenter/invitation/invitation",
+    "pages/userCenter/poster/poster",
     "pages/userCenter/commissionWithdraw/commissionWithdraw",
     "pages/userCenter/commission/commission",
     "pages/index/index",
@@ -13,9 +15,7 @@
     "pages/userCenter/aboutUs/aboutUs",
     "pages/userCenter/agreement/agreement",
     "pages/userCenter/questions/questions",
-    "pages/userCenter/poster/poster",
     "pages/userCenter/feedback/feedback",
-    "pages/userCenter/invitation/invitation",
     "pages/userCenter/apply/apply",
     "pages/map/map",
     "pages/sort/sort",

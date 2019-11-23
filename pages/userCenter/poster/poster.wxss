@@ -32,6 +32,6 @@ page {
   font-weight: bold;
   text-align: center;
   padding: 10px;
-  line-height: 30px;
+  line-height: 20px;
   background-color: #0BE7C5;
 }

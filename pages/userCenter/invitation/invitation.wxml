@@ -1,1 +1,12 @@
-<text>template.wxml</text>
+<view class="poster-container">
+    <view class="comment">
+        <view>好友扫一扫二维码</view>
+        <view>即可注册成为团长</view>
+    </view>
+
+    <view class="poster light-shadow">
+        <image src="/assets/list1.jpg" mode="widthFix"></image>
+    </view>
+
+    <view class="download-btn" bindtap="downloadPoster">下载图片</view>
+</view>

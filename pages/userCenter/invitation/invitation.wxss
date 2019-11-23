@@ -1,1 +1,44 @@
+page {
+  background-color: #F6F6F6;
+}
 
+.comment {
+  text-align: center;
+  font-size: 16px;
+  color: #666666;
+  margin-bottom: 20px;
+}
+
+.poster-container {
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.poster {
+  background-color: white;
+  padding: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.poster image {
+  display: block;
+  width: 100%;
+}
+
+.download-btn {
+  margin-top: 30px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  width: 100%;
+  display: block;
+  font-size: 16px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  line-height: 20px;
+  background-color: #0BE7C5;
+}
