@@ -56,8 +56,9 @@ page {
   flex-shrink: 0;
 }
 .order-list-item .head .user-info .user-head image {
+  width: 40px;
+  height: 40px;
   background-color: transparent;
-  width: 100%;
   display: block;
 }
 .order-list-item .head .user-info .user-detail {

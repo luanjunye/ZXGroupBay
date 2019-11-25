@@ -42,8 +42,7 @@ page {
   justify-content: space-between;
 }
 .user-info .user-head {
-  width: 20%;
-  margin-right: 3%;
+  margin-right: 10px;
   border: 5px solid #00f2cd;
   -webkit-border-radius: 60px;
   -moz-border-radius: 60px;
@@ -52,8 +51,9 @@ page {
   flex-shrink: 0;
 }
 .user-info .user-head image {
+  width: 60px;
+  height: 60px;
   background-color: transparent;
-  width: 100%;
   display: block;
 }
 .user-info .user-detail {
@@ -150,6 +150,10 @@ page {
   justify-content: space-between;
 }
 .section .section-icons-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
   padding: 5px 0;
   margin-bottom: 5px;
   position: relative;
@@ -160,12 +164,13 @@ page {
   background-color: #F6F6F6;
 }
 .section .section-icons-item .icon {
-  margin: 0 auto;
-  width: 35px;
   position: relative;
+  width: 35px;
 }
 .section .section-icons-item .icon image {
-  width: 100%;
+  margin: 0 auto;
+  width: 35px;
+  height: 35px;
   display: block;
 }
 .section .section-icons-item text {
@@ -276,12 +281,10 @@ page {
 .operate .operate-body-item:active {
   background-color: #F6F6F6;
 }
-.operate .operate-body-item .icon {
+.operate .operate-body-item .icon image {
   margin: 0 auto;
   width: 35px;
-}
-.operate .operate-body-item .icon image {
-  width: 100%;
+  height: 35px;
   display: block;
 }
 .operate .operate-body-item text {

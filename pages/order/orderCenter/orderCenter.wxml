@@ -15,7 +15,7 @@
         <view class="head">
             <view class="user-info">
                 <view class="user-head">
-                    <image src="/assets/avater.png" mode="widthFix"></image>
+                    <image src="/assets/avater.png" mode="aspectFit"></image>
                 </view>
                 <view class="user-detail">
                     <view class="name">{{order.name}}</view>

@@ -52,15 +52,15 @@ page{
   justify-content: space-between;
 
   .user-head{
-    width: 20%;
-    margin-right: 3%;
+    margin-right: 10px;
     border: 5px solid saturate($bg-active, 10%);
     @include border-radius(60px);
     overflow: hidden;
     flex-shrink: 0;
     image{
+      width: 60px;
+      height: 60px;
       background-color: transparent;
-      width: 100%;
       display: block;
     }
   }
@@ -158,6 +158,10 @@ page{
     justify-content: space-between;
 
     &-item{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-flow: column nowrap;
       padding: 5px 0;
       margin-bottom: 5px;
       position: relative;
@@ -166,13 +170,14 @@ page{
       &:active{
         background-color: $bg-main;
       }
-
       .icon{
-        margin: 0 auto;
-        width: 35px;
         position: relative;
+        width: 35px;
+
         image{
-          width: 100%;
+          margin: 0 auto;
+          width: 35px;
+          height: 35px;
           display: block;
         }
       }
@@ -310,10 +315,10 @@ page{
       }
       width: 20%;
       .icon{
-        margin: 0 auto;
-        width: 35px;
         image{
-          width: 100%;
+          margin: 0 auto;
+          width: 35px;
+          height: 35px;
           display: block;
         }
       }

@@ -31,11 +31,11 @@ Page({
     ],
 
     // 普通会员菜单
+    // 申请团长菜单项，单独在列出来
     menuNormal: [
-      {id: 0, title: '申请团长', url: '/pages/userCenter/poster/poster' ,iconUrl: '/assets/mine/icon-submit.png', badge: 0},
-      {id: 1, title: '优惠券', url: '/pages/userCenter/coupon/coupon' ,iconUrl: '/assets/mine/icon-coupon.png', badge: 4},
-      {id: 2, title: '切换团长', url: '/pages/userCenter/user/user' ,iconUrl: '/assets/mine/icon-switch.png', badge: 0},
-      {id: 3, title: '关于泽轩优选', url: '/pages/userCenter/about/about' ,iconUrl: '/assets/mine/icon-about.png', badge: 0},
+      {id: 0, title: '优惠券', url: '/pages/userCenter/coupon/coupon' ,iconUrl: '/assets/mine/icon-coupon.png', badge: 4},
+      {id: 1, title: '切换团长', url: '/pages/userCenter/user/user' ,iconUrl: '/assets/mine/icon-switch.png', badge: 0},
+      {id: 2, title: '关于泽轩优选', url: '/pages/userCenter/about/about' ,iconUrl: '/assets/mine/icon-about.png', badge: 0},
     ],
 
     // 团长菜单
@@ -55,7 +55,7 @@ Page({
       })
     } else {
       wx.navigateTo({
-        url: '/pages/group/apply/apply',
+        url: '/pages/userCenter/apply/apply',
       })
     }
 

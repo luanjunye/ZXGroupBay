@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/userCenter/mine/mine",
+    "pages/userCenter/memberDetail/memberDetail",
     "pages/userCenter/wallet/wallet",
     "pages/userCenter/invitation/invitation",
     "pages/userCenter/poster/poster",
@@ -8,7 +9,6 @@
     "pages/userCenter/commission/commission",
     "pages/index/index",
     "pages/order/orderCenter/orderCenter",
-    "pages/userCenter/memberDetail/memberDetail",
     "pages/userCenter/memberManage/memberManage",
     "pages/userCenter/feedbackDetail/feedbackDetail",
     "pages/userCenter/feedbackApply/feedbackApply",
