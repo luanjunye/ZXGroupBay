@@ -81,6 +81,7 @@
             <view wx:for="{{menuListGroup}}"
                   wx:key="{{item.id}}"
                   data-index="{{item.id}}"
+                  data-type="{{item.type}}"
                   data-url="{{item.url}}"
                   class="section-icons-item"
                   bindtap="switchMenu" >
@@ -100,6 +101,7 @@
             <view wx:for="{{menuListSell}}"
                   wx:key="{{item.id}}"
                   data-index="{{item.id}}"
+                  data-type="{{item.type}}"
                   data-url="{{item.url}}"
                   class="section-icons-item"
                   bindtap="switchMenu" >
@@ -123,6 +125,7 @@
             <view wx:for="{{menuListNormal}}"
                   wx:key="{{item.id}}"
                   data-index="{{item.id}}"
+                  data-type="{{item.type}}"
                   data-url="{{item.url}}"
                   class="operate-body-item"
                   bindtap="switchMenu" >
@@ -137,20 +140,10 @@
 
 <!--普通用户功能列表-->
     <view class="menu-list light-shadow">
-<!--申请团长不同于其它菜单，单独列出来-->
-        <view wx:if="{{!groupMaster}}"
-              class="menu-list-item"
-              bindtap="applyGroupMaster">
-            <image mode="aspectFit" class="menu-icon" src="/assets/mine/icon-submit.png"></image>
-            <text>我要成为团长</text>
-            <view class="assets">
-                <view class="comment"></view>
-                <image mode="aspectFit" class="menu-more" src="/assets/mine/more.png"></image>
-            </view>
-        </view>
         <view wx:for="{{groupMaster? menuMaster: menuNormal}}"
               wx:key="{{item.id}}"
               data-url="{{item.url}}"
+              data-type="{{item.type}}"
               class="menu-list-item"
               bindtap="switchMenu">
             <image mode="aspectFit" class="menu-icon" src="{{item.iconUrl}}"></image>
@@ -160,6 +153,5 @@
                 <image mode="aspectFit" class="menu-more" src="/assets/mine/more.png"></image>
             </view>
         </view>
-
     </view>
 </view>
