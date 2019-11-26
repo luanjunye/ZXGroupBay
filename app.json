@@ -1,12 +1,21 @@
 {
   "pages": [
+<<<<<<< HEAD
     "pages/order/orderDetails/orderDetails",
     "pages/index/index",
     "pages/product/product",
     "pages/search/search",
+=======
+>>>>>>> refs/remotes/origin/master
     "pages/userCenter/mine/mine",
-    "pages/order/orderCenter/orderCenter",
     "pages/userCenter/memberDetail/memberDetail",
+    "pages/userCenter/wallet/wallet",
+    "pages/userCenter/invitation/invitation",
+    "pages/userCenter/poster/poster",
+    "pages/userCenter/commissionWithdraw/commissionWithdraw",
+    "pages/userCenter/commission/commission",
+    "pages/index/index",
+    "pages/order/orderCenter/orderCenter",
     "pages/userCenter/memberManage/memberManage",
     "pages/userCenter/feedbackDetail/feedbackDetail",
     "pages/userCenter/feedbackApply/feedbackApply",
@@ -14,10 +23,7 @@
     "pages/userCenter/aboutUs/aboutUs",
     "pages/userCenter/agreement/agreement",
     "pages/userCenter/questions/questions",
-    "pages/userCenter/poster/poster",
     "pages/userCenter/feedback/feedback",
-    "pages/userCenter/commission/commission",
-    "pages/userCenter/invitation/invitation",
     "pages/userCenter/apply/apply",
     "pages/map/map",
     "pages/sort/sort",

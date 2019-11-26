@@ -3,7 +3,7 @@
     <view class="user-info-container">
         <view class="user-info">
             <view class="user-head">
-                <image src="/assets/avater.png" mode="widthFix"></image>
+                <image src="/assets/avater.png" mode="aspectFit"></image>
             </view>
             <view class="user-detail">
                 <view class="name">昵称872345y</view>
@@ -65,6 +65,7 @@
                     <image src="{{imageUrl}}"
                            wx:for="{{order.imgs}}"
                            wx:for-item="imageUrl"
+                           wx:key="{{index}}"
                            mode="aspectFit">
                     </image>
                 </view>

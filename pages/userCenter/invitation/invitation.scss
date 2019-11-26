@@ -1,1 +1,44 @@
 @import "../../../utils/mixin";
+
+$height-btn-feedback: 40px;
+
+page{
+  background-color: $bg-main;
+}
+
+.comment{
+  text-align: center;
+  font-size: $font-size-title;
+  color: $text-subtitle;
+  margin-bottom: 20px;
+}
+
+.poster-container{
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.poster{
+  background-color: white;
+  padding: 10px;
+  @include border-radius();
+  image{
+    display: block;
+    width: 100%;
+  }
+}
+
+.download-btn{
+  margin-top: 30px;
+  @include border-radius(10px);
+  width: 100%;
+  display: block;
+  font-size: $font-size-title;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  line-height: $height-btn-feedback - 20px;
+  background-color: $bg-active;
+}

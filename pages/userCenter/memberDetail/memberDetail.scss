@@ -44,15 +44,15 @@ page{
   justify-content: space-between;
 
   .user-head{
-    width: 20%;
-    margin-right: 3%;
+    margin-right: 10px;
     border: 5px solid saturate($bg-active, 10%);
     @include border-radius(60px);
     overflow: hidden;
     flex-shrink: 0;
     image{
+      width: 60px;
+      height: 60px;
       background-color: transparent;
-      width: 100%;
       display: block;
     }
   }

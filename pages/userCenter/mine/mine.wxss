@@ -42,8 +42,7 @@ page {
   justify-content: space-between;
 }
 .user-info .user-head {
-  width: 20%;
-  margin-right: 3%;
+  margin-right: 10px;
   border: 5px solid #00f2cd;
   -webkit-border-radius: 60px;
   -moz-border-radius: 60px;
@@ -52,8 +51,9 @@ page {
   flex-shrink: 0;
 }
 .user-info .user-head image {
+  width: 60px;
+  height: 60px;
   background-color: transparent;
-  width: 100%;
   display: block;
 }
 .user-info .user-detail {
@@ -71,19 +71,43 @@ page {
 .user-info .message-wrapper {
   display: flex;
   align-items: center;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+.user-info .message-wrapper:active {
+  -webkit-transform: translateY(3px);
+  -moz-transform: translateY(3px);
+  -ms-transform: translateY(3px);
+  -o-transform: translateY(3px);
+  transform: translateY(3px);
 }
 .user-info .message-wrapper .message {
-  padding: 10px;
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  border-radius: 40px;
-  background-color: rgba(255, 255, 255, 0.5);
-  overflow: hidden;
+  position: relative;
+  padding: 5px 10px;
 }
 .user-info .message-wrapper .message image {
   display: block;
   height: 20px;
   width: 20px;
+}
+.user-info .message-wrapper .message .badge {
+  text-align: center;
+  min-width: 15px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  color: white;
+  background-color: #FF3948;
+  font-size: 8.96px;
+  padding: 2px 5px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.user-info .message-wrapper .title {
+  text-align: center;
+  font-size: 11.2px;
+  color: #666666;
 }
 
 .amount {
@@ -150,7 +174,12 @@ page {
   justify-content: space-between;
 }
 .section .section-icons-item {
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  padding: 5px 0;
+  margin-bottom: 5px;
   position: relative;
   width: 33%;
   flex-shrink: 0;
@@ -159,12 +188,13 @@ page {
   background-color: #F6F6F6;
 }
 .section .section-icons-item .icon {
-  margin: 0 auto;
-  width: 35px;
   position: relative;
+  width: 35px;
 }
 .section .section-icons-item .icon image {
-  width: 100%;
+  margin: 0 auto;
+  width: 35px;
+  height: 35px;
   display: block;
 }
 .section .section-icons-item text {
@@ -275,12 +305,10 @@ page {
 .operate .operate-body-item:active {
   background-color: #F6F6F6;
 }
-.operate .operate-body-item .icon {
+.operate .operate-body-item .icon image {
   margin: 0 auto;
   width: 35px;
-}
-.operate .operate-body-item .icon image {
-  width: 100%;
+  height: 35px;
   display: block;
 }
 .operate .operate-body-item text {

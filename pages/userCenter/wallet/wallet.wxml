@@ -1,0 +1,23 @@
+
+<view class="wallet">
+    <view class="label">账户余额</view>
+    <view class="amount">￥{{amount}}</view>
+    <view class="btn btn-withdraw" bindtap="onWidthDraw">申请提现</view>
+</view>
+
+<view class="withdraw-log">
+    <view class="log-item"
+          bindtap="logTaped"
+          data-id="{{item.id}}"
+          wx:for="{{lists}}"
+          wx:key="{{item.id}}">
+        <view class="head-pic">
+            <image src="/assets/avater.png" mode="aspectFit"></image>
+        </view>
+        <view class="log-info">
+            <view class="title">{{item.title}}</view>
+            <view class="date">{{item.date}}</view>
+        </view>
+        <view class="amount">￥{{item.amount}} ></view>
+    </view>
+</view>

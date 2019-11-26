@@ -7,12 +7,14 @@
            </view>
            <view class="user-detail">
                <view class="name">昵称872345y</view>
-               <view class="id">用户ID: <text>29734659826</text></view>
+               <view class="id">userID: <text>29734659826</text></view>
            </view>
-           <view class="message-wrapper">
-               <view class="message" bindtap="switchUserState">
+           <view class="message-wrapper" bindtap="switchUserState">
+               <view class="message">
                    <image src="/assets/mine/message.png" mode="aspectFit"></image>
+                   <view wx:if="{{messageCount > 0}}" class="badge">{{messageCount}}</view>
                </view>
+               <view class="title">我的消息</view>
            </view>
        </view>
        <!--    团长总计-->
@@ -22,8 +24,10 @@
                <view class="label">累计收益(元)</view>
            </view>
            <view class="amount-card light-shadow">
-               <view class="number">{{4351.34}}</view>
-               <view class="label">账户余额(元)</view>
+               <navigator url="/pages/userCenter/wallet/wallet">
+                   <view class="number">{{4351.34}}</view>
+                   <view class="label">账户余额(元)</view>
+               </navigator>
            </view>
        </view>
    </view>
@@ -53,7 +57,7 @@
 <view class="mine-container">
 
     <view wx:if="{{groupMaster}}" class="section light-shadow">
-        <view class="section-title">业绩中心</view>
+        <view class="section-title">账务中心</view>
         <view class="score-content">
             <view class="score-content-item">
                 <view class="number">2500.00</view>
@@ -77,11 +81,12 @@
             <view wx:for="{{menuListGroup}}"
                   wx:key="{{item.id}}"
                   data-index="{{item.id}}"
+                  data-type="{{item.type}}"
                   data-url="{{item.url}}"
                   class="section-icons-item"
                   bindtap="switchMenu" >
                 <view class="icon">
-                    <image src="{{item.iconUrl}}" mode="widthFix"></image>
+                    <image src="{{item.iconUrl}}" mode="aspectFit"></image>
                     <view wx:if="{{item.badge > 0}}" class="badge">{{item.badge}}</view>
                 </view>
                 <text>{{item.title}}</text>
@@ -96,11 +101,12 @@
             <view wx:for="{{menuListSell}}"
                   wx:key="{{item.id}}"
                   data-index="{{item.id}}"
+                  data-type="{{item.type}}"
                   data-url="{{item.url}}"
                   class="section-icons-item"
                   bindtap="switchMenu" >
                 <view class="icon">
-                    <image src="{{item.iconUrl}}" mode="widthFix"></image>
+                    <image src="{{item.iconUrl}}" mode="aspectFit"></image>
                     <view wx:if="{{item.badge > 0}}" class="badge">{{item.badge}}</view>
                 </view>
                 <text>{{item.title}}</text>
@@ -112,18 +118,19 @@
 <!--    操作菜单 -->
     <view class="operate light-shadow">
         <view class="operate-header">
-            <view class="title">我的订单</view>
+            <view class="title">我的个人订单</view>
             <view class="more" data-url="/pages/order/orderCenter/orderCenter?tab=0" bindtap="switchMenu">查看全部订单 ></view>
         </view>
         <view class="operate-body">
             <view wx:for="{{menuListNormal}}"
                   wx:key="{{item.id}}"
                   data-index="{{item.id}}"
+                  data-type="{{item.type}}"
                   data-url="{{item.url}}"
                   class="operate-body-item"
                   bindtap="switchMenu" >
                     <view class="icon">
-                        <image src="{{item.iconUrl}}" mode="widthFix"></image>
+                        <image src="{{item.iconUrl}}" mode="aspectFit"></image>
                         <view wx:if="{{item.badge > 0}}" class="badge">{{item.badge}}</view>
                     </view>
                     <text>{{item.title}}</text>
@@ -136,6 +143,7 @@
         <view wx:for="{{groupMaster? menuMaster: menuNormal}}"
               wx:key="{{item.id}}"
               data-url="{{item.url}}"
+              data-type="{{item.type}}"
               class="menu-list-item"
               bindtap="switchMenu">
             <image mode="aspectFit" class="menu-icon" src="{{item.iconUrl}}"></image>
@@ -145,6 +153,5 @@
                 <image mode="aspectFit" class="menu-more" src="/assets/mine/more.png"></image>
             </view>
         </view>
-
     </view>
 </view>
