@@ -1,12 +1,9 @@
 {
   "pages": [
-<<<<<<< HEAD
-    "pages/order/orderDetails/orderDetails",
     "pages/index/index",
+    "pages/order/orderDetails/orderDetails",
     "pages/product/product",
     "pages/search/search",
-=======
->>>>>>> refs/remotes/origin/master
     "pages/userCenter/mine/mine",
     "pages/userCenter/memberDetail/memberDetail",
     "pages/userCenter/wallet/wallet",
@@ -14,7 +11,6 @@
     "pages/userCenter/poster/poster",
     "pages/userCenter/commissionWithdraw/commissionWithdraw",
     "pages/userCenter/commission/commission",
-    "pages/index/index",
     "pages/order/orderCenter/orderCenter",
     "pages/userCenter/memberManage/memberManage",
     "pages/userCenter/feedbackDetail/feedbackDetail",
