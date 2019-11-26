@@ -7,12 +7,14 @@
            </view>
            <view class="user-detail">
                <view class="name">昵称872345y</view>
-               <view class="id">用户ID: <text>29734659826</text></view>
+               <view class="id">userID: <text>29734659826</text></view>
            </view>
-           <view class="message-wrapper">
-               <view class="message" bindtap="switchUserState">
+           <view class="message-wrapper" bindtap="switchUserState">
+               <view class="message">
                    <image src="/assets/mine/message.png" mode="aspectFit"></image>
+                   <view wx:if="{{messageCount > 0}}" class="badge">{{messageCount}}</view>
                </view>
+               <view class="title">我的消息</view>
            </view>
        </view>
        <!--    团长总计-->
@@ -55,7 +57,7 @@
 <view class="mine-container">
 
     <view wx:if="{{groupMaster}}" class="section light-shadow">
-        <view class="section-title">业绩中心</view>
+        <view class="section-title">账务中心</view>
         <view class="score-content">
             <view class="score-content-item">
                 <view class="number">2500.00</view>
@@ -114,7 +116,7 @@
 <!--    操作菜单 -->
     <view class="operate light-shadow">
         <view class="operate-header">
-            <view class="title">我的订单</view>
+            <view class="title">我的个人订单</view>
             <view class="more" data-url="/pages/order/orderCenter/orderCenter?tab=0" bindtap="switchMenu">查看全部订单 ></view>
         </view>
         <view class="operate-body">
@@ -140,7 +142,7 @@
               class="menu-list-item"
               bindtap="applyGroupMaster">
             <image mode="aspectFit" class="menu-icon" src="/assets/mine/icon-submit.png"></image>
-            <text>申请团长</text>
+            <text>我要成为团长</text>
             <view class="assets">
                 <view class="comment"></view>
                 <image mode="aspectFit" class="menu-more" src="/assets/mine/more.png"></image>

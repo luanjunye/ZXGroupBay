@@ -2,15 +2,6 @@ const util = require('../../../utils/util');
 
 Page({
   data: {
-    refundType:[
-      '部分赔付',
-      '退货退款'
-    ],
-
-    ticketType:[
-      '质量问题',
-      '其它'
-    ],
     stateIcon: {
       1: '/assets/mine/ticket-processing.png',
       2: '/assets/mine/ticket-solved.png',
@@ -18,13 +9,9 @@ Page({
     },
 
     commission: {
-      tuanId: 56723,
-      tuanPeopleCount: 63,
-      amount: 12,
-      commission: 12.6,
-      timeTuanStart: '2019-11-21 14:23:12',
-      timeTuanEnd: '2019-11-22 14:23.12',
-      timeReceive: '2019-11-22 10:23.12',
+
+      commissionApply: 12,
+      commissionActual: 11.6,
       timeCommissionApply: '2019-11-23 14:23.12',
       timeCommissionReceive: '2019-11-24 14:23.12',
       state: '已提现到微信零钱',

@@ -22,7 +22,7 @@ page {
 }
 .state-return {
   line-height: 2;
-  font-size: 12.8px;
+  font-size: 16px;
 }
 
 .detail-list {

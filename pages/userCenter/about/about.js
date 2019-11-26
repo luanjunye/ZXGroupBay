@@ -6,6 +6,7 @@ Page({
       {id: 0, title: '关于泽轩', url: '/pages/userCenter/aboutUs/aboutUs'},
       {id: 1, title: '用户协议', url: '/pages/userCenter/agreement/agreement'},
       {id: 2, title: '常见问题', url: '/pages/userCenter/questions/questions'},
+      {id: 3, title: '名词解释', url: ''},
     ]
   },
 
