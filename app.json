@@ -1,8 +1,10 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/order/orderDetails/orderDetails",
+    "pages/login/login",
     "pages/product/product",
+    "pages/index/index",
+    "pages/regimentalCommander/changeCommander",
+    "pages/order/orderDetails/orderDetails",
     "pages/search/search",
     "pages/userCenter/mine/mine",
     "pages/userCenter/memberDetail/memberDetail",
@@ -25,11 +27,8 @@
     "pages/sort/sort",
     "pages/shopCart/shopCart",
     "pages/index/secondIndex/secondIndex",
-    "pages/regimentalCommander/changeCommander",
-    "pages/login/login",
     "pages/test/test",
     "pages/order/confirmOrder/confirmOrder"
-
   ],
   "window": {
     "backgroundTextStyle": "light",

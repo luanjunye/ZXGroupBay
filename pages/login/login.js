@@ -5,80 +5,80 @@ const util = require('../../utils/util.js');
 var app = getApp();
 
 Page({
-// 登陆页面
+  // 登陆页面
   /**
    * 页面的初始数据
    */
   data: {
     code: '',
-    userInfo:[]
+    userInfo: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
 
-  toAgreement: function(){
+  toAgreement: function() {
     wx.navigateTo({
       url: '/pages/ucenter/agreement/agreement',
     })
   },
 
-  getUserInfo: function () {
+  getUserInfo: function() {
     wx.getUserInfo({
-      success: function (res) {
+      success: function(res) {
         let userInfo = res.userInfo
         app.globalData.userInfo = res.userInfo;
         wx.setStorageSync('userInfo', res.userInfo);
@@ -86,7 +86,7 @@ Page({
       }
     })
   },
-  wxlogin: function (e) {
+  wxlogin: function(e) {
     let that = this;
     // 判断是否授权
     wx.getSetting({
@@ -104,22 +104,21 @@ Page({
 
           // });
           wx.login({
-            success:res =>{
+            success: res => {
 
-              if (res.code){
-                util.request(api.MineUrlLogin,{
+              if (res.code) {
+                util.request(api.Login, {
                   code: res.code,
                   userInfo: e.detail
-                },'POST','application/json').then(res =>{
-                  if(res.code === 0){
+                }, 'POST', 'application/json').then(res => {
+                  if (res.code === 0) {
                     console.log(res.map)
                     wx.setStorageSync('userInfo', res.map.userInfo);
-                    wx.setStorageSync('token', res.map.token);
                     wx.setStorageSync('userId', res.map.userId);
                     wx.setStorageSync('openId', res.map.openid);
                     wx.setStorageSync('isLogin', true);
-                    wx.navigateBack({
-                      delta: 1
+                    wx.switchTab({
+                      url: '/pages/index/index',
                     })
                   } else {
                     // util.showErrorToast(res.errmsg)

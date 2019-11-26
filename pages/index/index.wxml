@@ -59,7 +59,7 @@
                              bind:end="countDown"></thor-count-down>
 
         </view>
-        <view class="groupBayRight">复制拼团</view>
+        <view class="groupBayRight">复制拼团公告</view>
     </view>
 
     <!--    二级图标栏-->
