@@ -1,8 +1,7 @@
 @charset "UTF-8";
 .ucenter {
   background: #F6F6F6;
-  width: 750rpx;
-  height: 100%;
+  width: 100%;
   z-index: -1;
   position: absolute;
   display: flex;

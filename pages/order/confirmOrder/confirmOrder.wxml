@@ -1,0 +1,58 @@
+<!--pages/order/confirmOrder/confirmOrder.wxml-->
+<view class="ucenter">
+
+    <view class="prompt">截团五小时后，不支持退款!</view>
+
+    <view class="commanderInfo">
+        <view class="top">
+            <image class="img" src="/assets/avater.png"></image>
+            <view class="name">团长昵称</view>
+        </view>
+        <view class="body">
+            <view class="delivery">配送地址</view>
+            <view class="address">济南泽轩优选团购-高新区康虹路766号盛世花城</view>
+        </view>
+        <view class="input_info">
+            <i-input class="input_text" title="姓名" type="textarea" placeholder="输入你的姓名" bind:change="remark_input"/>
+            <i-input class="input_text" title="手机号" type="textarea" placeholder="输入你的手机号" bind:change="remark_input"/>
+            <i-input class="input_text" title="备注" type="textarea" placeholder="输入备注" bind:change="remark_input"/>
+        </view>
+    </view>
+
+    <view class="order">
+        <view class="top">
+            <image class="img" src="/assets/avater.png"></image>
+            <view class="name">团长昵称</view>
+        </view>
+        <view class="orderInfo" wx:for="{{orderList}}" wx:for-item="item" wx:key="item.id">
+            <image class="img" mode="widthFix" src="{{item.url}}"></image>
+            <view class="info">
+                <view class="title">{{item.title}}</view>
+                <view class="description">{{item.description}}</view>
+                <van-tag round color="#DD3C4A">{{item.label}}</van-tag>
+                <view class="top_down">
+                    <view class="money">¥
+                        <view class="number">{{item.price}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="down">
+        <view class="down_info">
+            <view class="title">本单合计</view>
+            <view class="text">¥{{amount}}</view>
+        </view>
+        <view class="down_info">
+            <view class="title">满减优惠</view>
+            <view class="text">-¥{{preferential}}</view>
+        </view>
+        <view class="down_info">
+            <view class="title">实付款</view>
+            <view class="text_a">¥{{total}}</view>
+        </view>
+    </view>
+
+    <view class="cart-bottom">去支付</view>
+</view>

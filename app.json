@@ -1,6 +1,9 @@
 {
   "pages": [
+    "pages/order/orderDetails/orderDetails",
     "pages/index/index",
+    "pages/product/product",
+    "pages/search/search",
     "pages/userCenter/mine/mine",
     "pages/order/orderCenter/orderCenter",
     "pages/userCenter/memberDetail/memberDetail",
@@ -18,11 +21,13 @@
     "pages/userCenter/apply/apply",
     "pages/map/map",
     "pages/sort/sort",
-    "pages/product/product",
     "pages/shopCart/shopCart",
     "pages/index/secondIndex/secondIndex",
     "pages/regimentalCommander/changeCommander",
-    "pages/test/test"
+    "pages/login/login",
+    "pages/test/test",
+    "pages/order/confirmOrder/confirmOrder"
+
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -74,7 +79,10 @@
     "i-input-number": "lib/iview-weapp/input-number/index",
     "van-tab": "lib/vant-weapp/tab/index",
     "van-tabs": "lib/vant-weapp/tabs/index",
-    "van-loading": "lib/vant-weapp/loading/index"
+    "van-loading": "lib/vant-weapp/loading/index",
+    "van-button": "lib/vant-weapp/button/index",
+    "van-dialog": "lib/vant-weapp/dialog/index",
+    "i-input": "lib/iview-weapp/input/index"
   },
   "plugins": {
     "chooseLocation": {

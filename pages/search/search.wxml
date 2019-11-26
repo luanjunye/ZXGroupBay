@@ -1,0 +1,63 @@
+<!--pages/search/search.wxml-->
+<view class="ucenter">
+    <view class="search_box">
+        <view class="search-bar">
+            <view class="search" bindtap="toSearch">
+                <image class="search-logo" src="/assets/find.png" mode="aspectFit"></image>
+                <text>搜索你要的商品</text>
+            </view>
+        </view>
+        <view class="text" bindtap="searchClick">搜索</view>
+    </view>
+
+    <view class="product">
+
+        <view wx:if="{{loading}}" class="loading-center">
+            <van-loading type="spinner"/>
+        </view>
+
+        <view class="no-order" wx:if="{{order_list.length == 0&&!loading}}">
+            <image class="img" src="/assets/index/noOrder.png"></image>
+            <view class="txt">当前商品正在采购中，尽请期待⁽⁽٩(๑˃̶͈̀▽ ˂̶͈́)۶⁾⁾！</view>
+        </view>
+        <view class="third" wx:if="{{order_list.length > 0&&!loading}}">
+            <view class="list" wx:for="{{order_list}}" wx:for-item="item" wx:key="{{item.id}}"
+                  data-value="{{item}}" id="{{item.id}}" bindtap="toOrder">
+                <view class="top">
+                    <image class="img" src="{{item.url}}"></image>
+                    <view class="top_info">
+                        <view class="title">{{item.title}}</view>
+                        <view class="description">{{item.description}}</view>
+                        <view class="description">{{item.place}}</view>
+                        <van-tag round color="#DD3C4A">{{item.label}}</van-tag>
+                        <view class="top_down">
+                            <view class="money_f">¥
+                                <view class="place">{{item.price}}</view>
+                                <view class="money_s">¥
+                                    <view class="original">{{item.originalPrice}}</view>
+                                </view>
+                            </view>
+                            <image class="icon" src="/assets/addCart.png"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="down">
+                    <view class="down_left">
+                        <text class="down_text">累计销量{{item.sale}}</text>
+                    </view>
+
+                    <view class="down_right">
+                        <view class="imglist  imglist-{{index}}" wx:for="{{down_avater}}" wx:for-item="item"
+                              wx:key="{{item.id}}"
+                              data-value="{{item}}" id="{{item.id}}">
+                            <image class="img" src="{{item.url}}"></image>
+                        </view>
+                        <text class="down_text">已团{{item.group}}/剩余{{item.remaining}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+
+</view>

@@ -1,0 +1,89 @@
+<!--pages/order/orderDetails/orderDetails.wxml-->
+
+<view class="ucenter">
+
+    <view class="prompt">截团五小时后，不支持退款!</view>
+
+    <view class="orderStatus">
+        <view class="status" wx:if="{{product.statusCode}}">
+            <image class="img" mode="widthFix" src="/assets/order/orderDetails/time.png"></image>
+            <text>{{product.statusText}}</text>
+        </view>
+        <view class="count" wx:if="{{product.statusCode == 1}}">剩
+            <thor-count-down time="{{product.time}}" bcolor="transparent" color="#70C5A8" isColon="{{false}}" hours="{{false}}" scale="{{true}}"></thor-count-down>
+            订单自动关闭
+        </view>
+    </view>
+
+    <view class="commanderInfo">
+        <view class="top">
+            <image class="img" src="/assets/avater.png"></image>
+            <view class="name">团长昵称</view>
+        </view>
+        <view class="body">
+            <view class="delivery">配送地址</view>
+            <view class="address">济南泽轩优选团购-高新区康虹路766号盛世花城</view>
+        </view>
+        <view class="body">
+            <view class="delivery">姓名</view>
+            <view class="address">{{product.name}}</view>
+        </view>
+        <view class="body">
+            <view class="delivery">手机号</view>
+            <view class="address">{{product.phone}}</view>
+        </view>
+        <view class="body">
+            <view class="delivery">备注</view>
+            <view class="address">{{product.remark}}</view>
+        </view>
+
+    </view>
+
+    <view class="order">
+        <view class="top">
+            <image class="img" src="/assets/avater.png"></image>
+            <view class="name">团长昵称</view>
+        </view>
+        <view class="orderInfo" wx:for="{{product.orderList}}" wx:for-item="item" wx:key="item.id">
+            <image class="img" mode="widthFix" src="{{item.url}}"></image>
+            <view class="info">
+                <view class="title">{{item.title}}</view>
+                <view class="description">{{item.description}}</view>
+                <van-tag round color="#DD3C4A">{{item.label}}</van-tag>
+                <view class="top_down">
+                    <view class="money">¥
+                        <view class="number">{{item.price}}</view>
+                    </view>
+                    <view class="refund" wx:if="{{product.statusCode == 3}}" bintap="toRefund">申请退款</view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="down">
+        <view class="down_info">
+            <view class="title">本单合计</view>
+            <view class="text">¥{{product.amount}}</view>
+        </view>
+        <view class="down_info">
+            <view class="title">满减优惠</view>
+            <view class="text">-¥{{product.preferential}}</view>
+        </view>
+        <view class="down_info">
+            <view class="title">实付款</view>
+            <view class="text_a">¥{{product.total}}</view>
+        </view>
+    </view>
+
+    <view class="orderRemark">
+        <view class="top">
+            <view class="number">订单编号:{{product.number}}</view>
+            <view class="copy" bindtap="copy">复制</view>
+        </view>
+        <view class="time">下单时间:{{product.subscribeTime}}</view>
+        <view class="time" wx:if="{{product.statusCode == 3}}">完成时间:{{product.EndTime}}</view>
+    </view>
+
+    <view class="cart-bottom" wx:if="{{product.statusCode == 1}}" bindtap="toPay">去支付</view>
+</view>
+

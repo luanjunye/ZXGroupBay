@@ -1,36 +1,33 @@
 .ucenter {
   background: #F6F6F6;
-  width: 750rpx;
-  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   position: absolute;
   z-index: -2;
 }
 
-.banner_box .banner {
+.banner_box {
   width: 750rpx;
   height: 750rpx;
 }
-.banner_box .banner image {
+.banner_box .banner {
+  width: 100%;
+  height: 100%;
+}
+.banner_box .banner .image {
   display: block;
   height: 100%;
   width: 100%;
 }
 
 .groupDown {
-  height: 60px;
   width: 100%;
   background: #E3E4E4;
   display: flex;
-  justify-content: space-between;
 }
 .groupDown .groupDown_left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 0 20px;
+  padding: 5px 20px;
   color: #FFF;
   flex-grow: 2;
   background: #0BE7C5;
@@ -60,8 +57,8 @@
   font-size: 14px;
 }
 .groupDown .groupDown_right {
-  display: flex;
   flex-grow: 1;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -166,7 +163,7 @@
   height: 100rpx;
   display: flex;
   background: #fff;
-  padding: 5px 40px;
+  padding: 5px 20px;
   justify-content: space-between;
   align-items: center;
   border-top: 1rpx solid #EBEBEB;

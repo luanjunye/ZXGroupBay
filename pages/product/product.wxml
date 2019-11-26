@@ -5,7 +5,7 @@
         <swiper class="banner" indicator-dots="true" indicator-color="#e0e0e0" indicator-active-color="#fff"
                 autoplay="true" interval="3000" duration="1000">
             <swiper-item wx:for="{{product.banner}}" wx:for-item="iitem" wx:key="{{iitem.id}}">
-                <image src="{{iitem.url}}" background-size="cover" mode="widthFix" data-value="{{iitem}}"
+                <image src="{{iitem.url}}" background-size="cover" mode="widthFix" data-value="{{iitem}}" class="image"
                        bindtap="handleClick"></image>
             </swiper-item>
         </swiper>

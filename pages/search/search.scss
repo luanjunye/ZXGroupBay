@@ -1,0 +1,210 @@
+@import "../../utils/mixin";
+
+.ucenter {
+  background: $bg-main;
+  width: 750rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: -2;
+}
+
+.search_box{
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background: $bg-main;
+}
+
+.search-bar {
+  //top: 0rpx;
+  height: 50px;
+  width: 80%;
+  background: $bg-main;
+
+
+  .search {
+    margin: 20rpx 0;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
+    @include border-radius(35rpx);
+    background: $bg-search;
+    height: 60rpx;
+    padding: 0 50px;
+    line-height: 60rpx;
+    text-align: center;
+    //margin-top: 20rpx;
+    //margin-bottom: 10rpx;
+    font-size: 24rpx;
+    color: #666;
+  }
+
+  .search-logo {
+    width: 27rpx;
+    height: 27rpx;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5rpx;
+  }
+}
+
+.text{
+  margin: 20rpx 0;
+  font-size: 16px;
+  text-align: center;
+}
+
+.product{
+  margin: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 100rpx;
+
+  .loading-center {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .no-order {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .img {
+      width: 200rpx;
+      height: 200rpx;
+      margin-bottom: 30rpx;
+      overflow: hidden;
+
+    }
+
+    .txt {
+      font-size: 26rpx;
+      color: $text-comment;
+    }
+  }
+
+  .third{
+    .list{
+      margin-bottom: 5px;
+      background: $bg-info;
+      padding: 10px 5px;
+      display: flex;
+      flex-direction: column;
+
+      .top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .img{
+          width: 120px;
+          height: 120px;
+          flex-shrink: 0;
+        }
+
+        .top_info{
+          width: 200px;
+          height: 120px;
+          padding-left: 10px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          font-size: 14px;
+          flex-grow: 1;
+
+          .title{
+            overflow:hidden;//一定要写
+            text-overflow: ellipsis;//超出省略号
+            display:-webkit-box;//一定要写
+            -webkit-line-clamp: 2;//控制行数
+            -webkit-box-orient: vertical;//一定要写
+          }
+
+          .description{
+            font-size: 12px;
+            color: $text-comment;
+          }
+
+          .top_down{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            .money_f{
+              font-size: 10px;
+              color: #DD3C4A;
+              display: flex;
+              align-items: center;
+              .place{
+                font-size: 14px;
+              }
+              .money_s{
+                padding-left: 10px;
+                color: $text-comment;
+                display: flex;
+                align-items: center;
+                text-decoration: line-through;
+                .original{
+                  font-size: 14px;
+
+                }
+              }
+            }
+
+            .icon{
+              height: 24px;
+              width: 24px;
+            }
+          }
+        }
+      }
+
+      .down{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+        font-size: 14px;
+
+        color:$text-comment;
+
+        .down_right{
+          display: flex;
+          align-items: center;
+
+
+          .imglist{
+            height: 20px;
+            //margin-right: 5px;
+            .img{
+              @include border-radius(50%);
+              border: 1rpx solid $color-border;
+              margin-left: -10px;
+              height: 20px;
+              width: 20px;
+            }
+          }
+          .imglist-0{z-index: 3;}
+          .imglist-1{z-index: 2;}
+          .imglist-2{z-index: 1;}
+          .down_text{
+            margin-left: 5px;
+          }
+        }
+
+      }
+    }
+  }
+}

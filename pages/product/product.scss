@@ -2,8 +2,7 @@
 
 .ucenter {
   background: $bg-main;
-  width: 750rpx;
-  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -12,10 +11,12 @@
 
 
 .banner_box{
+  width: 750rpx;
+  height: 750rpx;
   .banner{
-    width: 750rpx;
-    height: 750rpx;
-    image{
+    width: 100%;
+    height: 100%;
+    .image{
       display: block;
       height: 100%;
       width: 100%;
@@ -24,18 +25,13 @@
 }
 
 .groupDown {
-  height: 60px;
   width: 100%;
   background: $bg-count-down;
   display: flex;
-  justify-content: space-between;
 
   .groupDown_left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0 20px;
+
+    padding: 5px 20px;
     color: $bg-info;
     flex-grow: 2;
     background: $bg-active;
@@ -79,8 +75,8 @@
   }
 
   .groupDown_right{
-    display: flex;
     flex-grow: 1;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -197,7 +193,7 @@
   height: 100rpx;
   display: flex;
   background: #fff;
-  padding: 5px 40px;
+  padding: 5px 20px;
   justify-content: space-between;
   align-items: center;
   border-top: 1rpx solid $bg-bottom-line;
