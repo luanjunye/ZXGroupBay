@@ -34,5 +34,9 @@
                 </view>
             </view>
         </view>
+
+        <view wx:if="{{!hasMore}}" class="hasNoMore">
+           —— 到底了 ——
+        </view>
     </scroll-view>
 </view>

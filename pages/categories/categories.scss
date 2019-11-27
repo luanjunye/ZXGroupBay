@@ -194,3 +194,10 @@ $height-icon: ($height-good - 20) * .5;
     }
   }
 }
+
+.hasNoMore{
+  text-align: center;
+  padding: 20px 20px 30px;
+  font-size: $font-size-comment;
+  color: $text-comment;
+}
