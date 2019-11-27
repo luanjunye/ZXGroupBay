@@ -54,14 +54,14 @@
 .goods .goods-item .goods-pic {
   position: relative;
   margin-right: 10px;
-  width: 80px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   overflow: hidden;
 }
 .goods .goods-item .goods-pic image.good {
-  width: 100%;
+  width: 80px;
+  height: 80px;
   display: block;
 }
 .goods .goods-item .goods-pic image.sell-out {

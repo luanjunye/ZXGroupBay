@@ -13,25 +13,24 @@
 
 <!--    content-->
     <scroll-view class="goods">
-        <view class="goods-item" wx:for="{{10}}" wx:key="{{index}}">
+        <view class="goods-item" wx:for="{{goods}}" wx:key="{{index}}">
             <view class="goods-pic">
-                <image wx:if="{{goods[0].state === 'sellOut'}}" class="sell-out" src="/assets/sellout.png"></image>
+                <image wx:if="{{item.leftCount === 0}}" class="sell-out" src="/assets/sellout.png"></image>
 <!--                <image class="play"></image>-->
-                <image class="good" mode="widthFix" src="{{goods[0].pic}}"></image>
+                <image class="good" mode="aspectFit" src="{{item.pictureUrl}}"></image>
             </view>
             <view class="goods-info">
-                <view class="name">{{goods[0].name}}</view>
-                <view class="type">{{goods[0].type}}</view>
+                <view class="name">{{item.name}}</view>
+                <view class="type">{{item.placeOfOrigin + ' 1' + item.goodsUnit}}</view>
                 <view class="bottom">
                     <view class="price-content">
                         <text class="sub">￥</text>
-                        <text class="price">{{goods[0].price}}</text>
+                        <text class="price">{{item.price}}</text>
                     </view>
 
-                    <text class="price-origin">￥{{goods[0].priceOrigin}}</text>
-<!--                    <image wx:if="{{goods[0].state !== 'sellOut'}}" class="cart-add" src="/assets/addCart.png" mode="aspectFit"></image>-->
-                    <view wx:if="{{goods[0].state !== 'sellOut'}}" bindtap="increaseIconBadge" class="cart-add"></view>
-                    <view wx:if="{{goods[0].state === 'sellOut'}}" class="sell-out">已售罄</view>
+                    <text class="price-origin">￥{{item.originalPrice}}</text>
+                    <view wx:if="{{item.leftCount > 0}}" bindtap="increaseIconBadge" class="cart-add"></view>
+                    <view wx:if="{{item.leftCount === 0}}" class="sell-out">已售罄</view>
                 </view>
             </view>
         </view>

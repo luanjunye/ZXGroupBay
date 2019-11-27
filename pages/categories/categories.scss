@@ -69,12 +69,11 @@ $height-icon: ($height-good - 20) * .5;
     .goods-pic {
       position: relative;
       margin-right: 10px;
-      width: $height-good - 10px * 2;
       @include border-radius(5px);
       overflow: hidden;
-
       image.good {
-        width: 100%;
+        width: $height-good - 10px * 2;
+        height: $height-good - 10px * 2;
         display: block;
       }
       image.sell-out{
