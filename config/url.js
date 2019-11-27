@@ -3,12 +3,20 @@
 
 
 module.exports = {
+  
   //首页
   IndexUrlBanner: API_BASE_URL + 'index/bannerlist', //首页banner图
+  //登陆
   Login: API_BASE_URL + 'login/login', //个人中心登陆
+  //更换/选择团长
+  UpdateUserPostion: API_BASE_URL + 'user/updateTeamUserId',//修改存在数据库的位置
+  SelectUserPostion: API_BASE_URL + 'user/listTeamUser',//查询个人地址及团长列表
+  SelectCommander: API_BASE_URL + 'user/getListTeamUser',//修改地址后查询团长列表
+  //商品
   Categories: API_BASE_URL + 'category/categorylist', // 商品分类列表
   GoodsList: API_BASE_URL + 'goods/goodslist',  // 商品列表
   // 购物车
   CartAdd: API_BASE_URL + 'cart/add',  // 添加
   CartList: API_BASE_URL + 'cart/list',  // 列表
 };
+

@@ -10,13 +10,15 @@
 }
 
 
-.banner_box{
+.banner_box {
   width: 750rpx;
   height: 750rpx;
-  .banner{
+
+  .banner {
     width: 100%;
     height: 100%;
-    .image{
+
+    .image {
       display: block;
       height: 100%;
       width: 100%;
@@ -59,7 +61,8 @@
 
           }
         }
-        .remain{
+
+        .remain {
           padding-left: 10px;
           font-size: 14px;
         }
@@ -67,14 +70,14 @@
 
     }
 
-    .bay{
+    .bay {
       font-size: 14px;
     }
 
 
   }
 
-  .groupDown_right{
+  .groupDown_right {
     flex-grow: 1;
     display: flex;
     justify-content: center;
@@ -85,7 +88,7 @@
   }
 }
 
-.info{
+.info {
   width: 100%;
   height: 120px;
   background: $bg-info;
@@ -93,38 +96,40 @@
   display: flex;
   flex-direction: column;
 
-  .info_top{
+  .info_top {
     padding-bottom: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid $bg-line;
 
-    .it_left{
+    .it_left {
       display: flex;
       flex-direction: column;
 
-      .title{
-          font-size: 16px;
+      .title {
+        font-size: 16px;
         color: $text-subtitle;
-        }
+      }
 
-      .description{
+      .description {
         margin-top: 3px;
         font-size: 14px;
         color: $text-comment;
       }
     }
-    .it_right{
+
+    .it_right {
       display: flex;
       flex-direction: column;
       align-items: center;
 
-      .img{
+      .img {
         width: 14px;
         height: 14px;
       }
-      .img_text{
+
+      .img_text {
         margin-top: 3px;
         color: $text-comment;
         font-size: 12px;
@@ -132,31 +137,31 @@
     }
   }
 
-  .info_down{
+  .info_down {
     display: flex;
     justify-content: flex-start;
     padding: 10px;
     font-size: 13px;
 
-    .id_item{
+    .id_item {
       display: flex;
       flex-direction: column;
       align-items: center;
       padding-right: 50px;
 
-      .ii_title{
+      .ii_title {
         color: $text-comment;
       }
 
-      .ii_text{
-        color:$text-subtitle;
+      .ii_text {
+        color: $text-subtitle;
         font-size: 11px;
       }
     }
   }
 }
 
-.parameter{
+.parameter {
   margin-top: 5px;
   background: $bg-info;
   padding: 10px 15px;
@@ -164,7 +169,16 @@
   font-size: 13px;
 }
 
-.product-attr{
+.activity {
+  margin-top: 5px;
+  background: $bg-info;
+  padding: 10px 15px;
+  color: $text-specification;
+  font-size: 13px;
+
+}
+
+.product-attr {
   background: $bg-main;
   width: 750rpx;
 
@@ -176,12 +190,135 @@
 .detail {
   background: #fff;
   width: 750rpx;
-  padding-bottom: 100rpx;
+
 
   .img {
     display: block !important;
     height: auto;
     width: 100%;
+  }
+}
+
+.like_text{
+  padding: 20px 20px 0 20px;
+}
+
+.like {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 18px;
+  padding: 10px 20px 100rpx 20px;
+
+
+  .likeList {
+    width: 48%;
+    flex-shrink: 0;
+    margin-bottom: 10px;
+    .img {
+      width: 100%;
+    }
+
+    .likeInfo {
+      padding: 0 5px;
+
+      .likeTitle {
+        font-size: 14px;
+        overflow: hidden; //一定要写
+        text-overflow: ellipsis; //超出省略号
+        display: -webkit-box; //一定要写
+        -webkit-line-clamp: 2; //控制行数
+        -webkit-box-orient: vertical; //一定要写
+      }
+
+      .likeDescription {
+        font-size: 12px;
+        color: $text-comment;
+      }
+
+      .body {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        .money_f {
+          font-size: 10px;
+          color: #DD3C4A;
+          display: flex;
+          align-items: center;
+
+          .place {
+            font-size: 14px;
+          }
+
+          .money_s {
+            padding-left: 10px;
+            color: $text-comment;
+            display: flex;
+            align-items: center;
+            text-decoration: line-through;
+
+            .original {
+              font-size: 14px;
+
+            }
+          }
+        }
+
+        .icon {
+          height: 24px;
+          width: 24px;
+        }
+      }
+
+      .end {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .end_left {
+          display: flex;
+          align-items: center;
+          margin-left: 10px;
+          .imglist {
+            height: 20px;
+            //margin-right: 5px;
+            .img {
+              @include border-radius(50%);
+              border: 1rpx solid $color-border;
+              margin-left: -10px;
+              height: 20px;
+              width: 20px;
+            }
+          }
+
+          .imglist-0 {
+            z-index: 3;
+          }
+
+          .imglist-1 {
+            z-index: 2;
+          }
+
+          .imglist-2 {
+            z-index: 1;
+          }
+
+          .down_text {
+            margin-left: 5px;
+          }
+        }
+
+        .end_right {
+          font-size: 10px;
+        }
+      }
+      .like_down_text{
+        font-size: 10px;
+        text-align: end;
+      }
+    }
   }
 }
 
@@ -198,21 +335,22 @@
   align-items: center;
   border-top: 1rpx solid $bg-bottom-line;
 
-  .bottom_left{
+  .bottom_left {
     display: flex;
     justify-content: center;
 
-    .bl_item{
+    .bl_item {
       display: flex;
       flex-direction: column;
       align-items: center;
       margin-right: 30px;
-      .icon{
+
+      .icon {
         width: 14px;
         height: 14px;
       }
 
-      .text{
+      .text {
         margin-top: 5px;
         color: $text-subtitle;
         font-size: 12px;
@@ -220,13 +358,13 @@
     }
   }
 
-  .bottom_right{
+  .bottom_right {
     display: flex;
     justify-content: center;
     align-items: center;
-    color:$bg-info;
+    color: $bg-info;
 
-    .br_left{
+    .br_left {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -236,7 +374,7 @@
       border-radius: 50px 0 0 50px;
     }
 
-    .br_right{
+    .br_right {
       display: flex;
       justify-content: center;
       align-items: center;
