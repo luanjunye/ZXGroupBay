@@ -1,12 +1,13 @@
 {
   "pages": [
+    "pages/categories/categories",
+    "pages/userCenter/mine/mine",
     "pages/login/login",
     "pages/product/product",
     "pages/index/index",
     "pages/regimentalCommander/changeCommander",
     "pages/order/orderDetails/orderDetails",
     "pages/search/search",
-    "pages/userCenter/mine/mine",
     "pages/userCenter/memberDetail/memberDetail",
     "pages/userCenter/wallet/wallet",
     "pages/userCenter/invitation/invitation",
@@ -24,7 +25,6 @@
     "pages/userCenter/feedback/feedback",
     "pages/userCenter/apply/apply",
     "pages/map/map",
-    "pages/sort/sort",
     "pages/shopCart/shopCart",
     "pages/index/secondIndex/secondIndex",
     "pages/test/test",
@@ -51,10 +51,10 @@
         "selectedIconPath": "assets/clickIndex.png"
       },
       {
-        "pagePath": "pages/sort/sort",
+        "pagePath": "pages/categories/categories",
         "text": "分类",
-        "iconPath": "assets/sort.png",
-        "selectedIconPath": "assets/clickSort.png"
+        "iconPath": "assets/categories.png",
+        "selectedIconPath": "assets/clickCategories.png"
       },
       {
         "pagePath": "pages/shopCart/shopCart",

@@ -57,14 +57,18 @@ function request(url, data = {}, method, header = "application/json") {
       },
       success: function (res) {
         wx.hideLoading();
-        if (res.statusCode == 200) {
-
-          if (res.data.errno == 401) {
+        console.log(res);
+        if (res.statusCode === 200) {
+          if (res.data.errno === 401) {
             wx.navigateTo({
               url: '/pages/auth/btnAuth/btnAuth',
             })
           } else {
-            resolve(res.data);
+            if (res.data.code !== 0){
+              console.log('错误提示：', res.data.msg)
+            } else {
+              resolve(res.data.data);
+            }
           }
         } else {
           reject(res.errMsg);
