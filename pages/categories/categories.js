@@ -11,26 +11,7 @@ Page({
 
     count: 0,
     cartTabIndex: 2,
-    categories: [
-      {id: 0, name: '猜您喜欢', active: true},
-      {id: 1, name: '家妆精选', active: false},
-      {id: 2, name: '爆款生鲜', active: false},
-      {id: 3, name: '新鲜蔬果', active: false},
-      {id: 4, name: '酒水乳品', active: false},
-      {id: 5, name: '时令水果', active: false},
-      {id: 6, name: '休闲食品', active: false},
-      {id: 7, name: '水产冻品', active: false},
-      {id: 8, name: '生活美妆', active: false},
-      {id: 9, name: '肉禽蛋品', active: false},
-      {id: 10, name: '生活服务', active: false},
-      {id: 11, name: '粮油调味', active: false},
-      {id: 12, name: '居家百货', active: false},
-      {id: 12, name: '居家百货', active: false},
-      {id: 12, name: '居家百货', active: false},
-      {id: 12, name: '居家百货', active: false},
-      {id: 12, name: '居家百货', active: false},
-      {id: 12, name: '居家百货', active: false},
-    ],
+    categories: [],
     goods: [
       {
         id: 1,
@@ -46,11 +27,44 @@ Page({
   },
 
   onLoad: function (options) {
-    util.request(api.Categories, {
+    let that = this;
 
-    }, 'GET').then(res => {
-      console.log(res);
+    // 载入类别列表
+    util.request(api.Categories, {}, 'GET').then(res => {
+      let initMenuItem = {id: 0, name: '猜您喜欢', active: true};
+      let tempArray = [initMenuItem];
+      res.forEach(item => {
+        tempArray.push({
+          id: item.id,
+          name: item.name,
+          active: false
+        })
+      })
+      that.setData({
+        categories: tempArray
+      })
     })
+
+    // 载入当前类别的商品列表
+    util.request(api.GoodsList, {
+      "categoryId": 1,
+      "isLike": 1,
+      "keyWord": "string"
+    }, 'GET').then(res => {
+      let initMenuItem = {id: 0, name: '猜您喜欢', active: true};
+      let tempArray = [initMenuItem];
+      res.forEach(item => {
+        tempArray.push({
+          id: item.id,
+          name: item.name,
+          active: false
+        })
+      })
+      that.setData({
+        categories: tempArray
+      })
+    })
+
 
 
     // INIT screenHeight
