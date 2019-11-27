@@ -61,10 +61,17 @@ function request(url, data = {}, method, header = "application/json") {
               url: '/pages/auth/btnAuth/btnAuth',
             })
           } else {
-            if (res.data.code !== 0){
-              console.log('错误提示：', res.data.msg)
-            } else {
-              resolve(res.data.data);
+            switch (res.data.code) {
+              case 0:
+                resolve(res.data.data);
+                break;
+              case 300:
+                wx.navigateTo({
+                  url: '/pages/login/login'
+                });
+                break;
+              default:
+                console.log('错误提示：', res.data.msg)
             }
           }
         } else {
