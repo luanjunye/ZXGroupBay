@@ -5,7 +5,6 @@ const REGEX = {
   mobile: /\d{11}/i
 }
 
-
 // TOAST
 function toast(msg){
   wx.showToast({
@@ -21,7 +20,6 @@ function toastSuccess(msg){
 }
 
 
-
 function formatTime(date) {
   var year = date.getFullYear()
   var month = date.getMonth() + 1
@@ -29,7 +27,6 @@ function formatTime(date) {
   var hour = date.getHours()
   var minute = date.getMinutes()
   var second = date.getSeconds()
-
   return [year, month, day].map(formatNumber).join('-') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
 
@@ -57,7 +54,7 @@ function request(url, data = {}, method, header = "application/json") {
       },
       success: function (res) {
         wx.hideLoading();
-        console.log(res);
+        // console.log(res);
         if (res.statusCode === 200) {
           if (res.data.errno === 401) {
             wx.navigateTo({
@@ -119,7 +116,6 @@ function login() {
 }
 
 function redirect(url) {
-
   //判断页面是否需要登录
   if (false) {
     wx.redirectTo({
@@ -170,9 +166,33 @@ function formateDate(date, formatString) {
   return formatString;
 };
 
+// 获取用户信息
+function getUserInfo() {
+  return {
+    userInfo: wx.getStorageSync('userInfo'),
+    userId: wx.getStorageSync('userId'),
+    openId: wx.getStorageSync('openId'),
+    isLogined: wx.getStorageSync('isLogin')
+  }
+}
+
+// 更新购物车数量
+function updateCartCount(){
+  this.request(api.CartList, {
+    "userId": this.getUserInfo().userId
+  }, 'GET').then(res => {
+    // wx.setStorageSync('cartCount', res.totalCount);
+    wx.setTabBarBadge({
+      index: 2, // 购物车图标 index 从左往右，从0开始
+      text: res.totalCount.toString(),
+      success: () => {}
+    })
+  })
+}
 
 
 module.exports = {
+  REGEX,
   formatTime,
   request,
   redirect,
@@ -181,7 +201,8 @@ module.exports = {
   checkSession,
   login,
   formateDate,
-  REGEX,
   toast,
   toastSuccess,
+  getUserInfo,
+  updateCartCount
 }

@@ -8,4 +8,7 @@ module.exports = {
   Login: API_BASE_URL + 'login/login', //个人中心登陆
   Categories: API_BASE_URL + 'category/categorylist', // 商品分类列表
   GoodsList: API_BASE_URL + 'goods/goodslist',  // 商品列表
+  // 购物车
+  CartAdd: API_BASE_URL + 'cart/add',  // 添加
+  CartList: API_BASE_URL + 'cart/list',  // 列表
 };

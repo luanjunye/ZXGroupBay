@@ -1,4 +1,7 @@
 //app.js
+const api = require('/config/url.js');
+const util = require('/utils/util.js');
+
 App({
   onLaunch: function () {
 
@@ -14,6 +17,10 @@ App({
         this.globalData.windowWidth = res.windowWidth;
       },
     })
+
+    util.updateCartCount();
+
+
 
     // // 展示本地存储能力
     // var logs = wx.getStorageSync('logs') || []
