@@ -2,11 +2,11 @@
 <view class="ucenter">
     <scroll-view class="scroll" scroll-y>
         <view class="top">
-            <image class="img" src="{{addressInfo.avater}}"></image>
+            <image class="img" src="{{avatar}}"></image>
 
             <view class="address_box">
                 <image class="icon" src="/assets/regimentalCommander/address.png"/>
-                <text>{{addressInfo.address}}</text>
+                <text>{{address}}</text>
             </view>
 
             <view class="change" bindtap="changeAddress">修改地址</view>
@@ -14,7 +14,7 @@
         </view>
 
 
-        <view class="commanderList" wx:for="{{commanderList}}" wx:for-item="item" wx:key="{{itme.id}}">
+        <view class="commanderList" wx:for="{{teamUsers}}" wx:for-item="item" wx:key="{{item.teamUserId}}">
             <view class="first">
                 <van-tag color="#b4282d" plain wx:if="{{item.tdefault}}">默认</van-tag>
                 <text color="#b4282d" plain wx:else/>
@@ -25,13 +25,12 @@
             </view>
             <view class="second">
                 <view class="group_info">
-                    <image class="img" src="{{item.avater}}"></image>
-                    <view class="name">{{item.name}}</view>
+                    <image class="img" src="{{item.avatar}}"></image>
+                    <view class="name">{{item.nickname}}</view>
                 </view>
 
                 <view class="address">{{item.address}}</view>
-                <view class="cheak" bindtap="toBuy" wx:if="{{item.tdefault}}">进入团购</view>
-                <view class="cheak" bindtap="checkAndToBuy" wx:else>选择团长</view>
+                <view class="cheak" bindtap="checkAndToBuy" data-id="{{item.teamUserId}}">选择团长</view>
             </view>
         </view>
     </scroll-view>

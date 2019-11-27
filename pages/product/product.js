@@ -39,7 +39,8 @@ Page({
                 place: "新疆",
                 num: "1袋",
                 specification: "110g",
-                activity: "满30元送奶茶，满60元减10元",
+                activity1: "满即送：满30元送泽轩基金奶茶一杯；",
+                activity2: "满立减：满60元立减10元；",
                 goodsDetailsList: [
                     {
                         goodsId: 32,
@@ -69,9 +70,97 @@ Page({
                         goodsId: 32,
                         url: "https://zexuanshipin.oss-cn-beijing.aliyuncs.com/20191108/c087d94c4f2242ebaeb966ed48dbab87.jpg"
                     }
-                ]
+                ],
             }
         ,
+        likeList: [
+            {
+                id: 1,
+                url: "/assets/list1.jpg",
+                title: "农家种无公害辣椒新鲜5斤应季蔬菜",
+                description: "蓝海专供",
+                label: "次日达",
+                price: "9.9",
+                originalPrice: "19.9",
+                group: "556",
+                remaining: "236",
+                sale: "5112"
+            },
+            {
+                id: 2,
+                url: "/assets/list1.jpg",
+                title: "农家种无公害辣椒新鲜5斤应季蔬菜",
+                description: "蓝海专供",
+                label: "次日达",
+                price: "9.9",
+                originalPrice: "19.9",
+                group: "556",
+                remaining: "236",
+                sale: "5112"
+            },
+            {
+                id: 3,
+                url: "/assets/list1.jpg",
+                title: "农家种无公害辣椒新鲜5斤应季蔬菜",
+                description: "蓝海专供",
+                label: "次日达",
+                price: "9.9",
+                originalPrice: "19.9",
+                group: "556",
+                remaining: "236",
+                sale: "5112"
+            },
+            {
+                id: 4,
+                url: "/assets/list1.jpg",
+                title: "农家种无公害辣椒新鲜5斤应季蔬菜",
+                description: "蓝海专供",
+                label: "次日达",
+                price: "9.9",
+                originalPrice: "19.9",
+                group: "556",
+                remaining: "236",
+                sale: "5112"
+            },
+            {
+                id: 5,
+                url: "/assets/list1.jpg",
+                title: "农家种无公害辣椒新鲜5斤应季蔬菜",
+                description: "蓝海专供",
+                label: "次日达",
+                price: "9.9",
+                originalPrice: "19.9",
+                group: "556",
+                remaining: "236",
+                sale: "5112"
+            },
+            {
+                id: 6,
+                url: "/assets/list1.jpg",
+                title: "农家种无公害辣椒新鲜5斤应季蔬菜",
+                description: "蓝海专供",
+                label: "次日达",
+                price: "9.9",
+                originalPrice: "19.9",
+                group: "556",
+                remaining: "236",
+                sale: "5112"
+            }
+        ],
+        down_avater: [
+            {
+                id: 1,
+                url: "/assets/avater.png"
+            },
+            {
+                id: 2,
+                url: "/assets/avater.png"
+            },
+            {
+                id: 3,
+                url: "/assets/avater.png"
+            }
+        ]
 
     },
 
