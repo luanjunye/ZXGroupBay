@@ -1,9 +1,10 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/regimentalCommander/changeCommander",
+   
     "pages/product/product",
     "pages/index/index",
-    "pages/regimentalCommander/changeCommander",
     "pages/order/orderDetails/orderDetails",
     "pages/search/search",
     "pages/userCenter/mine/mine",
