@@ -117,23 +117,14 @@ Page({
                                     code: res.code,
                                     userInfo: e.detail
                                 }, 'POST', 'application/json').then(res => {
-                                    if (res.code === 0) {
-                                        console.log(res.map)
-                                        wx.setStorageSync('userInfo', res.map.userInfo);
-                                        wx.setStorageSync('userId', res.map.userId);
-                                        wx.setStorageSync('openId', res.map.openid);
-                                        wx.setStorageSync('isLogin', true);
-                                        wx.navigateTo({
-                                            url: '/pages/regimentalCommander/changeCommander',
-                                        })
-                                    } else {
-                                        // util.showErrorToast(res.errmsg)
-                                        wx.showModal({
-                                            title: '提示',
-                                            content: res.msg,
-                                            showCancel: false
-                                        });
-                                    }
+                                    console.log(res.map)
+                                    wx.setStorageSync('userInfo', res.userInfo);
+                                    wx.setStorageSync('userId', res.userId);
+                                    wx.setStorageSync('openId', res.openid);
+                                    wx.setStorageSync('isLogin', true);
+                                    wx.navigateTo({
+                                        url: '/pages/regimentalCommander/changeCommander',
+                                    })
                                 });
                             }
                         }

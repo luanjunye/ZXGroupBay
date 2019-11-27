@@ -36,17 +36,15 @@ Page({
             util.request(api.SelectUserPostion, {
                 userId: userId
             }, "GET").then(function (res) {
-                if (res.code === 0) {
-                    data.teamUsers = res.data.teamUsers
-                    data.address = res.data.address
-                    console.log(data.address)
-                    if (!data.address) {
-                        wx.navigateTo({
-                            url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer
-                        });
-                    }
-                    that.setData(data);
+                data.teamUsers = res.teamUsers
+                data.address = res.address
+                console.log(data.address)
+                if (!data.address) {
+                    wx.navigateTo({
+                        url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer
+                    });
                 }
+                that.setData(data);
             });
         }
     },
@@ -79,11 +77,9 @@ Page({
                 longitude: location.longitude,
                 name: location.name
             }, "GET").then(function (res) {
-                if (res.code === 0) {
-                    data.teamUsers = res.data.teamUsers
-                    console.log(data.teamUsers)
-                    that.setData(data);
-                }
+                data.teamUsers = res.teamUsers
+                console.log(data.teamUsers)
+                that.setData(data);
             });
         }
     },
@@ -142,11 +138,9 @@ Page({
                 userId: this.data.userId,
                 teamUserId: id,
             }, "POST").then(function (res) {
-                if (res.code === 0) {
-                    wx.switchTab({
-                        url: '/pages/index/index'
-                    })
-                }
+                wx.switchTab({
+                    url: '/pages/index/index'
+                })
             });
         }
 
