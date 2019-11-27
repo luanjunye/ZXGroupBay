@@ -1,5 +1,6 @@
 // pages/sort/sort.js
-
+const api = require('../../config/url.js');
+const util = require('../../utils/util.js');
 const app = getApp();
 
 Page({
@@ -45,6 +46,12 @@ Page({
   },
 
   onLoad: function (options) {
+    util.request(api.Categories, {
+
+    }, 'GET').then(res => {
+      console.log(res);
+    })
+
 
     // INIT screenHeight
     this.setData({

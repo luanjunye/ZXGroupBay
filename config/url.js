@@ -12,4 +12,8 @@ module.exports = {
   UpdateUserPostion: API_BASE_URL + 'user/updateTeamUserId',//修改存在数据库的位置
   SelectUserPostion: API_BASE_URL + 'user/listTeamUser',//查询个人地址及团长列表
   SelectCommander: API_BASE_URL + 'user/getListTeamUser',//修改地址后查询团长列表
+  //商品
+  Categories: API_BASE_URL + 'category/categorylist', // 商品分类列表
+  GoodsList: API_BASE_URL + 'goods/goodslist',  // 商品列表
 };
+
