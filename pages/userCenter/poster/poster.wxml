@@ -1,7 +1,7 @@
 <view class="poster-container">
     <view class="poster light-shadow">
-        <image src="/assets/list1.jpg" mode="widthFix"></image>
+        <image src="{{postUrl}}" mode="widthFix"></image>
     </view>
 
-    <view class="download-btn" bindtap="downloadPoster">下载图片</view>
+    <view class="download-btn btn" bindtap="downloadPoster">下载图片</view>
 </view>

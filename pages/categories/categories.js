@@ -21,6 +21,8 @@ Page({
   onLoad: function (options) {
     let that = this;
 
+    util.updateCartCount(); // 刷新购物车数量
+
     // 载入类别列表
     util.request(api.Categories, {}, 'GET').then(res => {
       let initMenuItem = {id: 0, name: '猜您喜欢', active: true};

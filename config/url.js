@@ -6,6 +6,7 @@ module.exports = {
   
   //首页
   IndexUrlBanner: API_BASE_URL + 'index/bannerlist', //首页banner图
+  TuanPoster: API_BASE_URL + 'index/indexPoste', // 开团海报
   //登陆
   Login: API_BASE_URL + 'login/login', //个人中心登陆
   //更换/选择团长

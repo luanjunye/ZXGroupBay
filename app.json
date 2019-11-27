@@ -1,8 +1,7 @@
 {
   "pages": [
-        "pages/login/login",
     "pages/categories/categories",
-
+    "pages/login/login",
     "pages/regimentalCommander/changeCommander",
     "pages/userCenter/mine/mine",
     "pages/product/product",

@@ -38,11 +38,14 @@ function formatNumber(n) {
 
 /**
  * 封封微信的的request
+ * showLoading: true | false 请求数据时是否显示'正在加载中'的提示
  */
-function request(url, data = {}, method, header = "application/json") {
-  wx.showLoading({
-    title: '加载中...',
-  });
+function request(url, data = {}, method, showLoading,  header = "application/json") {
+  if (showLoading){
+    wx.showLoading({
+      title: '加载中...',
+    });
+  }
   return new Promise(function (resolve, reject) {
     wx.request({
       url: url,
@@ -53,7 +56,10 @@ function request(url, data = {}, method, header = "application/json") {
         'X-Nideshop-Token': wx.getStorageSync('token')
       },
       success: function (res) {
-        wx.hideLoading();
+        wx.stopPullDownRefresh();
+        if (showLoading){
+          wx.hideLoading();
+        }
         // console.log(res);
         if (res.statusCode === 200) {
           if (res.data.errno === 401) {
@@ -187,7 +193,7 @@ function getUserInfo() {
 function updateCartCount(){
   this.request(api.CartList, {
     "userId": this.getUserInfo().userId
-  }, 'GET').then(res => {
+  }, 'GET', false).then(res => {
     // wx.setStorageSync('cartCount', res.totalCount);
     wx.setTabBarBadge({
       index: 2, // 购物车图标 index 从左往右，从0开始
