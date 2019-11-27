@@ -1,3 +1,7 @@
+page {
+  background-color: #F6F6F6;
+}
+
 .sort {
   width: 100%;
   position: relative;
@@ -13,6 +17,10 @@
   background-color: #F6F6F6;
   width: 25%;
   flex-shrink: 0;
+  z-index: 400;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 .side-menu .side-menu-item {
   border-bottom: 1rpx solid #F0F0EC;

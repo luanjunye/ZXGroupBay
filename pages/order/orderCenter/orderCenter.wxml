@@ -33,6 +33,7 @@
             <view class="goods-list">
                 <image src="{{imgUrl}}"
                        wx:for="{{order.imgs}}"
+                       wx:key="{{index}}"
                        wx:for-item="imgUrl"
                        mode="aspectFit">
                 </image>

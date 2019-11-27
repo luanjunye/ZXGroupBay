@@ -32,6 +32,7 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
+    "backgroundColor": "#F6F6F6",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "泽轩优选",
     "navigationBarTextStyle": "black",

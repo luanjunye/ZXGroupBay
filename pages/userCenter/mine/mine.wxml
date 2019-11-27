@@ -119,7 +119,7 @@
     <view class="operate light-shadow">
         <view class="operate-header">
             <view class="title">我的个人订单</view>
-            <view class="more" data-url="/pages/order/orderCenter/orderCenter?tab=0" bindtap="switchMenu">查看全部订单 ></view>
+            <view class="more" data-type="page" data-url="/pages/order/orderCenter/orderCenter?tab=0" bindtap="switchMenu">查看全部订单 ></view>
         </view>
         <view class="operate-body">
             <view wx:for="{{menuListNormal}}"

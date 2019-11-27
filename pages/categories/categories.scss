@@ -4,6 +4,10 @@ $height-sidemenu-item: 46px;
 $height-sidemenu-text: 30px;
 $height-sidemenu-sign: 20px;
 
+page{
+  background-color: $bg-main;
+}
+
 .sort {
   width: 100%;
   position: relative;
@@ -19,6 +23,8 @@ $height-sidemenu-sign: 20px;
   background-color: $bg-main;
   width: 25%;
   flex-shrink: 0;
+  z-index: $z-menu;
+  @include box-shadow(1px 1px 2px rgba(0,0,0,0.1));
 
   .side-menu-item {
     border-bottom: 1rpx solid $color-border;

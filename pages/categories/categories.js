@@ -9,7 +9,6 @@ Page({
     // page meta
     windowHeight: Number,
 
-    count: 0, // 购物车数量
     categories: [],
     goods: [],
     currentCategoryId: 0,
@@ -77,6 +76,7 @@ Page({
       "page": pageNo,
       "limit": that.data.perPageCount
     }, 'GET').then(res => {
+      wx.stopPullDownRefresh();
       let currentGoodsArray = that.data.goods.concat(res.list);
       if (pageNo === res.totalPage){ // 如果当前返回页面跟总页面数相同，说明没有更多内容了
         that.setData({
@@ -105,6 +105,7 @@ Page({
     util.updateCartCount();
   },
 
+/*
   // 购物车 -1
   decreaseIconBadge(){
     let that = this;
@@ -130,11 +131,20 @@ Page({
       })
     }
   },
+*/
 
 
 // ========================
   onPullDownRefresh: function () {
-    wx.stopPullDownRefresh()
+    this.setData({
+      categories: [],
+      goods: [],
+      currentCategoryId: 0,
+      pageNo: 1,
+      perPageCount: 8,
+      hasMore: true,
+    })
+    this.onLoad();
   },
 
   onReady: function () { },
