@@ -127,7 +127,7 @@ Page({
         tempOrderArray.push(item)
 
       })
-      if (pageNo === res.totalPage){ // 如果当前返回页面跟总页面数相同，说明没有更多内容了
+      if (tempOrderArray.length === res.totalCount){ // 如果当前返回页面跟总页面数相同，说明没有更多内容了
         that.setData({
           hasMore: false
         })

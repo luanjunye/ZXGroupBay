@@ -37,7 +37,7 @@ Page({
       limit: that.data.perPageCount
     }, 'GET').then(res => {
       let currentMemberList = that.data.members.concat(res.list);
-      if (pageNo === res.totalPage){ // 如果当前返回页面跟总页面数相同，说明没有更多内容了
+      if (currentMemberList.length === res.totalCount){ // 如果当前返回页面跟总页面数相同，说明没有更多内容了
         that.setData({
           hasMore: false
         })

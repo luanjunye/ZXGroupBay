@@ -103,6 +103,7 @@ page {
   justify-content: flex-start;
 }
 .order-list-item .body .goods-list image {
+  border: 1rpx solid #F0F0EC;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
