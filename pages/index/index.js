@@ -1,23 +1,12 @@
 //index.js
 //获取应用实例
+const api = require('../../config/url.js');
+const util = require('../../utils/util.js');
 const app = getApp()
 //主页面
 Page({
     data: {
-        banner: [
-            {
-                id: 1,
-                url: "/assets/first.jpg"
-            },
-            {
-                id: 2,
-                url: "/assets/second.jpg"
-            },
-            {
-                id: 3,
-                url: "/assets/third.jpg"
-            }
-        ],
+        banner: [],
         first_i: [
             {
                 id: 1,
@@ -137,23 +126,12 @@ Page({
         targetTime: 12000,
         clearTimer: false,
         loading: false,
-        buyerList: [
-            {
-                text: "Charon于11:30购买了西红柿新鲜番茄水果沙瓤1箱，约5斤"
-            },
-            {
-                text: "Charon于12:30购买了紫米面包6袋，110g/袋"
-            },
-            {
-                text: "Charon于13:30购买了速冻大对虾（100/200板冻）1箱，约2.8斤"
-            },
-            {
-                text: "Charon于14:30购买了西红柿新鲜番茄水果沙瓤1箱，约5斤"
-            },
-            {
-                text: "Charon于15:30购买了速冻大对虾（100/200板冻）1箱，约2.8斤"
-            }
-        ]
+        buyerList: [],
+        regimental:{
+            address:"",
+            nickname:"",
+            avatar:""
+        },
     },
     onload() {
         // this.setData({
@@ -169,6 +147,29 @@ Page({
     onReady: function () {
     },
     onShow: function () {
+        let that = this;
+        var userId = wx.getStorageSync("userId")
+
+        util.request(api.IndexRoll,{},"POST").then(function (res) {
+            that.setData({
+                buyerList : res
+            });
+        });
+
+        util.request(api.IndexRegimental,{userId:userId},"POST").then(function (res) {
+            that.setData({
+                ["regimental.address"]:res.address,
+                ["regimental.nickname"]:res.nickname,
+                ["regimental.avatar"]:res.avatar,
+            });
+        });
+
+        util.request(api.IndexUrlBanner,{},"GET").then(function (res) {
+            that.setData({
+                banner : res
+            });
+        });
+
     },
     onHide: function () {
     },

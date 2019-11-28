@@ -5,7 +5,9 @@
 module.exports = {
   
   //首页
-  IndexUrlBanner: API_BASE_URL + 'index/bannerlist', //首页banner图
+  IndexUrlBanner: API_BASE_URL + 'index/indexBanner', //首页banner图
+  IndexRoll: API_BASE_URL+ 'index/indexroll', //首页滚动条
+  IndexRegimental: API_BASE_URL+ '/index/indexRegimental', //首页团长信息
   //登陆
   Login: API_BASE_URL + 'login/login', //个人中心登陆
   //更换/选择团长

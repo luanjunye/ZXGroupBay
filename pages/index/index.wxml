@@ -12,7 +12,7 @@
         <view class="buyer">
             <swiper class="buy" vertical="true" circular="true" autoplay="true" interval="3000" duration="1000">
                 <swiper-item wx:for="{{buyerList}}" wx:key="{{item.index}}">
-                    <view class="text">{{item.text}}</view>
+                    <view class="text">{{item}}</view>
                 </swiper-item>
             </swiper>
         </view>
@@ -20,11 +20,14 @@
         <!--    团长信息-->
         <view class="head">
             <view class="head_info">
-                <image class="head-avater" src="/assets/avater.png"></image>
+                <view class="head_info_left">
+                <image class="head-avater" src="{{regimental.avatar}}"></image>
                 <view class="box">
-                    <text class="name">你叫啥子</text>
-                    <text class="address">泽轩团购-高新区康虹路766号盛世花园</text>
+                    <text class="name">{{regimental.nickname}}</text>
+                    <text class="address">{{regimental.address}}</text>
                 </view>
+                </view>
+                <view class="head_info_right">
                 <view class="box_a">
                     <image class="img" src="/assets/index/partake.png"></image>
                     <text class="address">分享</text>
@@ -32,6 +35,7 @@
                 <view class="box_a" bindtap="changeCommander">
                     <image class="img" src="/assets/index/personal.png"></image>
                     <text class="address">附近团长</text>
+                </view>
                 </view>
             </view>
         </view>

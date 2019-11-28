@@ -117,7 +117,7 @@ Page({
                                     code: res.code,
                                     userInfo: e.detail
                                 }, 'POST', 'application/json').then(res => {
-                                    console.log(res.map)
+                                    console.log(res)
                                     wx.setStorageSync('userInfo', res.userInfo);
                                     wx.setStorageSync('userId', res.userId);
                                     wx.setStorageSync('openId', res.openid);
