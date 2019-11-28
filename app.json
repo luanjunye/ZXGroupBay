@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/userCenter/memberManage/memberManage",
     "pages/userCenter/mine/mine",
+    "pages/userCenter/memberManage/memberManage",
     "pages/categories/categories",
     "pages/login/login",
     "pages/regimentalCommander/changeCommander",
