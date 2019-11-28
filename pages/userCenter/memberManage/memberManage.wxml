@@ -14,4 +14,8 @@
         </view>
         <view class="amount">{{item.money}} ></view>
     </view>
+
+    <view wx:if="{{!hasMore}}" class="hasNoMore">
+        -- 到底了 --
+    </view>
 </view>

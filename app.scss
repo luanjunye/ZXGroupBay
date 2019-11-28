@@ -12,3 +12,10 @@
     @include transform(translateY(2px));
   }
 }
+
+.hasNoMore{
+  text-align: center;
+  padding: 20px 20px 30px;
+  font-size: $font-size-comment;
+  color: $color-border-dark;
+}
