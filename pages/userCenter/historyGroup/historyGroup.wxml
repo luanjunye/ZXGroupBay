@@ -1,0 +1,25 @@
+<!--pages/userCenter/historyGroup/historyGroup.wxml-->
+<view class="historyGroup" wx:for="{{historyGroupList}}" wx:for-item="item" wx:key="{{item.id}}"
+      data-value="{{item}}" id="{{item.id}}">
+    <view class="info">
+        <view class="top">
+            <view class="top_left">团购ID:{{item.groupId}}</view>
+            <view class="top_right" wx:if="{{item.status === 1}}">距离结束
+                <thor-count-down class="count_down" time="{{item.targetTime}}" bcolor="#fff"
+                                 bind:end="countDown"></thor-count-down>
+            </view>
+            <view class="top_right" wx:else>已截团</view>
+        </view>
+        <view class="time">{{item.time}}</view>
+        <scroll-view scroll-x class="scroll">
+            <view class="urlList" wx:for="{{item.urls}}" wx:for-item="iitem" wx:key="{{iitem.id}}"
+                  data-value="{{iitem}}" id="{{iiyem.id}}">
+                <image class="img" src="{{iitem.url}}" mode="widthFix"></image>
+            </view>
+        </scroll-view>
+        <view class="bottom">
+            <view class="bottom_left">参团人数:{{item.people}}</view>
+            <view class="bottom_right" bindtap="toInfo">查看订单</view>
+        </view>
+    </view>
+</view>

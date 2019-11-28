@@ -1,0 +1,48 @@
+<!--pages/userCenter/groupOrder/groupOrder.wxml-->
+<view class="tui-searchbox">
+    <van-dropdown-menu>
+        <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}"/>
+    </van-dropdown-menu>
+    <view class="tui-search-input">
+        <icon type="search" size='13' color='#333'></icon>
+        <input confirm-type="search" placeholder="根据手机号/微信昵称/姓名搜索" auto-focus="{{true}}"
+               placeholder-class="tui-input-plholder" class="tui-input" value="{{key}}" bindinput="input"/>
+        <icon type="clear" size='13' color='#bcbcbc' bindtap="cleanKey" hidden="{{!key}}"></icon>
+    </view>
+    <view class="tui-cancle" bindtap="back">取消</view>
+</view>
+
+<view class="body">
+    <view class="groupList" wx:for="{{group_list}}" wx:for-item="item" wx:key="{{item.id}}"
+          data-value="{{item}}" id="{{item.id}}">
+        <view class="top">
+            <image src="{{item.avatar}}" class="avatar"></image>
+            <view class="remark">
+                <view class="title">{{item.nickName}}</view>
+                <view class="text">姓名:{{item.name}}
+                    <view class="phone">手机:{{item.mobile}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="orderList" wx:for="{{item.orderList}}" wx:for-item="iitem" wx:key="{{iitem.id}}"
+              data-value="{{iitem}}" id="{{iitem.id}}">
+            <image class="img" src="{{iitem.url}}" mode="widthFix"></image>
+            <view class="info">
+                <view class="info_top">{{iitem.title}}</view>
+                <view class="info_center">
+                    <view class="description">{{iitem.description}}</view>
+                    <view class="number">x{{iitem.number}}</view>
+                </view>
+                <view class="time">发货日期:{{iitem.time}}</view>
+            </view>
+        </view>
+        <view class="orderTime">下单时间:{{item.orderTime}}</view>
+        <view class="orderNumber">下单时间:{{item.orderNumber}}</view>
+    </view>
+    <view class="last">
+        <view class="submit" bindtap="submitOrder" wx:if="{{status == 1}}">确认订单</view>
+    </view>
+</view>
+
+
+

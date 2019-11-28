@@ -1,13 +1,12 @@
 <!--pages/search/search.wxml-->
 <view class="ucenter">
-    <view class="search_box">
-        <view class="search-bar">
-            <view class="search" bindtap="toSearch">
-                <image class="search-logo" src="/assets/find.png" mode="aspectFit"></image>
-                <text>搜索你要的商品</text>
-            </view>
+    <view class="tui-searchbox">
+        <view class="tui-search-input">
+            <icon type="search" size='13' color='#333'></icon>
+            <input confirm-type="search" placeholder="搜索你要的商品" auto-focus="{{true}}" placeholder-class="tui-input-plholder" class="tui-input" value="{{key}}" bindinput="input"/>
+            <icon type="clear" size='13' color='#bcbcbc' bindtap="cleanKey" hidden="{{!key}}"></icon>
         </view>
-        <view class="text" bindtap="searchClick">搜索</view>
+        <view class="tui-cancle" bindtap="back">取消</view>
     </view>
 
     <view class="product">
