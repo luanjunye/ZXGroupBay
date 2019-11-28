@@ -24,7 +24,6 @@ page {
 }
 .member .head-pic {
   margin-right: 10px;
-  width: 45px;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
   border-radius: 100px;
@@ -32,8 +31,9 @@ page {
   overflow: hidden;
 }
 .member .head-pic image {
+  width: 45px;
+  height: 45px;
   display: block;
-  width: 100%;
 }
 .member .member-info {
   flex-grow: 1;

@@ -1,17 +1,17 @@
 <view class="members">
     <view class="member"
           bindtap="memberTaped"
-          data-id="{{item.id}}"
+          data-id="{{item.userId}}"
           wx:for="{{members}}"
           wx:key="{{item.id}}">
         <view class="index">{{index + 1}}</view>
         <view class="head-pic">
-            <image src="{{item.headPic}}" mode="widthFix"></image>
+            <image src="{{item.avatar}}" mode="aspectFit"></image>
         </view>
         <view class="member-info">
-            <view class="name">{{item.name}}</view>
-            <view class="wx-id">{{item.wxId}}</view>
+            <view class="name">{{item.nickname}}</view>
+            <view class="wx-id">{{item.code}}</view>
         </view>
-        <view class="amount">{{item.amount}} ></view>
+        <view class="amount">{{item.money}} ></view>
     </view>
 </view>

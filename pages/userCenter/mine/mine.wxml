@@ -2,14 +2,14 @@
     <image class="mine-bg" src="/assets/mine/mine-bg.png" mode="widthFix"></image>
    <view class="user-info-container">
        <view class="user-info">
-           <view class="user-head">
+           <view class="user-head" bindtap="switchUserState">
                <image src="/assets/avater.png" mode="widthFix"></image>
            </view>
            <view class="user-detail">
                <view class="name">昵称872345y</view>
                <view class="id">userID: <text>29734659826</text></view>
            </view>
-           <view class="message-wrapper" bindtap="switchUserState">
+           <view class="message-wrapper">
                <view class="message">
                    <image src="/assets/mine/message.png" mode="aspectFit"></image>
                    <view wx:if="{{messageCount > 0}}" class="badge">{{messageCount}}</view>

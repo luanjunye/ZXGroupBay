@@ -2,7 +2,7 @@ const util = require('../../../utils/util');
 
 Page({
   data: {
-    groupMaster: false,  // 是否为团长
+    groupMaster: true,  // 是否为团长
     applyState: 'none',  // none | pending
     messageCount: 123,
 

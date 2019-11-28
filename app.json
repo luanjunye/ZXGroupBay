@@ -1,9 +1,10 @@
 {
   "pages": [
+    "pages/userCenter/memberManage/memberManage",
+    "pages/userCenter/mine/mine",
     "pages/categories/categories",
     "pages/login/login",
     "pages/regimentalCommander/changeCommander",
-    "pages/userCenter/mine/mine",
     "pages/product/product",
     "pages/index/index",
     "pages/order/orderDetails/orderDetails",
@@ -15,7 +16,6 @@
     "pages/userCenter/commissionWithdraw/commissionWithdraw",
     "pages/userCenter/commission/commission",
     "pages/order/orderCenter/orderCenter",
-    "pages/userCenter/memberManage/memberManage",
     "pages/userCenter/feedbackDetail/feedbackDetail",
     "pages/userCenter/feedbackApply/feedbackApply",
     "pages/userCenter/about/about",

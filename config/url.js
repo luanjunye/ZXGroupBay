@@ -19,5 +19,8 @@ module.exports = {
   // 购物车
   CartAdd: API_BASE_URL + 'cart/add',  // 添加
   CartList: API_BASE_URL + 'cart/list',  // 列表
+
+  // 团员相关
+  MemberList: API_BASE_URL + 'teamuser/list',  // 团员列表
 };
 
