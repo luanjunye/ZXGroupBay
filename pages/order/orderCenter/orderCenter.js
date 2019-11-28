@@ -61,7 +61,7 @@ Page({
           })
         } else { // 倒计时结束后
           this.setData({
-            [`orders[${index}].countdownString`]: '已取消',
+            [`orders[${index}].countdownString`]: item.failPayTime? '已取消': '', // 如果 failPayTime 存在，就设置成取消，不然就说明不存在倒计时
             [`orders[${index}].countdown`]: 0
           })
         }
