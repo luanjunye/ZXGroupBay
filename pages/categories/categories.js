@@ -106,7 +106,6 @@ Page({
       page: pageNo,
       limit: that.data.perPageCount
     }, 'GET').then(res => {
-      wx.stopPullDownRefresh();
       let currentGoodsArray = that.data.goods.concat(res.list);
       if (pageNo === res.totalPage){ // 如果当前返回页面跟总页面数相同，说明没有更多内容了
         that.setData({
@@ -135,33 +134,7 @@ Page({
     util.updateCartCount();
   },
 
-/*
-  // 购物车 -1
-  decreaseIconBadge(){
-    let that = this;
-    let currentCount = that.data.count - 1;
-    if (currentCount < 1){
-      wx.removeTabBarBadge({
-        index: that.data.cartTabIndex,
-        success: res => {
-          that.setData({
-            count: 0
-          })
-        }
-      });
-    } else {
-      wx.setTabBarBadge({
-        index: that.data.cartTabIndex,
-        text: currentCount.toString(),
-        success: () => {
-          that.setData({
-            count: currentCount
-          })
-        }
-      })
-    }
-  },
-*/
+
 
 
 // ========================

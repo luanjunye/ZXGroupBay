@@ -23,5 +23,9 @@ module.exports = {
   // 团员相关
   MemberList: API_BASE_URL + 'teamuser/list',  // 团员列表
   MemberInfo: API_BASE_URL + 'teamuser/myteamuserinfo',  // 团员信息
+
+
+  // 订单相关
+  OrderList: API_BASE_URL + 'order/page',  // 订单列表 GET: userId, status
 };
 
