@@ -9,17 +9,47 @@ Page({
     // page meta
     windowHeight: Number,
 
-    categories: [],
-    goods: [],
+    categories: [
+/*      {
+        "id": 1,
+        "name": "水果",
+        "isShow": 1,
+        "icn": "https://zexuanshipin.oss-cn-beijing.aliyuncs.com/20191127/1c49b2bda6c34c3d98c6db8ceff7db1f.jpg",
+        "isIndex": 1
+      }*/
+    ],
+    goods: [
+/*      {
+        "id": 32,
+        "name": "海南香蕉1",
+        "price": 30,
+        "originalPrice": 50,
+        "pictureUrl": "https://zexuanshipin.oss-cn-beijing.aliyuncs.com/20191127/029968985d7e4086b6b4d8f041625202.jpg",
+        "sellCount": 30,
+        "leftCount": 60,
+        "categoryName": "水果",
+        "goodsUnit": "把",
+        "placeOfOrigin": "海南",
+        "info": "杀神风",
+        "url": [
+          "https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83epE3GOg7oUGDFuR7PGN0oIFJicmZzwtuk3Op3NfJiaGV8w3TpR1IAfWNACtGBN77jcPG2AHuAW8jTgw/132",
+          "https://wx.qlogo.cn/mmopen/vi_32/AIdAmibzdhn40DjpvD3Tce9ZCbZkO3VLrRFfItR8uquB7PAJDH1yuMCNicJJtsbkVJUuKVmFLZ7v3oVaicDmeJlXw/132",
+          "https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eqfib57cloOFYPV2y8UZn6saf6uACic9oEEhXneiciczPSV5ibuwEkgVE56zQZiaSqR1nkQpP5zob4SbyEQ/132"
+        ]
+      },*/
+    ],
     currentCategoryId: 0,
 
+    // 分页相关
     pageNo: 1,
-    perPageCount: 8,
+    perPageCount: 15, // 每次请求的数量条数
     hasMore: true, // 标记是否还有更多
   },
 
   onLoad: function (options) {
     let that = this;
+
+    util.updateCartCount(); // 刷新购物车数量
 
     // 载入类别列表
     util.request(api.Categories, {}, 'GET').then(res => {
@@ -70,15 +100,14 @@ Page({
   getGoodsListOf(categoryId, pageNo){
     let that = this;
     util.request(api.GoodsList, {
-      "categoryId": categoryId,
-      "isLike": categoryId === 0? 1: 0, // category 为 0 时，是【猜你喜欢】类别
-      "keyWord": "",
-      "page": pageNo,
-      "limit": that.data.perPageCount
+      categoryId: categoryId,
+      isLike: categoryId === 0? 1: 0, // category 为 0 时，是【猜你喜欢】类别
+      keyWord: '',
+      page: pageNo,
+      limit: that.data.perPageCount
     }, 'GET').then(res => {
-      wx.stopPullDownRefresh();
       let currentGoodsArray = that.data.goods.concat(res.list);
-      if (pageNo === res.totalPage){ // 如果当前返回页面跟总页面数相同，说明没有更多内容了
+      if (currentGoodsArray.length === res.totalCount){ // 如果当前返回页面跟总页面数相同，说明没有更多内容了
         that.setData({
           hasMore: false
         })
@@ -105,33 +134,7 @@ Page({
     util.updateCartCount();
   },
 
-/*
-  // 购物车 -1
-  decreaseIconBadge(){
-    let that = this;
-    let currentCount = that.data.count - 1;
-    if (currentCount < 1){
-      wx.removeTabBarBadge({
-        index: that.data.cartTabIndex,
-        success: res => {
-          that.setData({
-            count: 0
-          })
-        }
-      });
-    } else {
-      wx.setTabBarBadge({
-        index: that.data.cartTabIndex,
-        text: currentCount.toString(),
-        success: () => {
-          that.setData({
-            count: currentCount
-          })
-        }
-      })
-    }
-  },
-*/
+
 
 
 // ========================
@@ -141,7 +144,7 @@ Page({
       goods: [],
       currentCategoryId: 0,
       pageNo: 1,
-      perPageCount: 8,
+      perPageCount: this.data.perPageCount,
       hasMore: true,
     })
     this.onLoad();

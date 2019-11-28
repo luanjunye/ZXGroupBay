@@ -3,11 +3,11 @@
     <view class="user-info-container">
         <view class="user-info">
             <view class="user-head">
-                <image src="/assets/avater.png" mode="aspectFit"></image>
+                <image src="{{member.avatar}}" mode="aspectFit"></image>
             </view>
             <view class="user-detail">
-                <view class="name">昵称872345y</view>
-                <view class="id">用户ID: <text>29734659826</text></view>
+                <view class="name">{{member.name}}</view>
+                <view class="id">用户ID: <text>{{member.code}}</text></view>
             </view>
 <!--            <view class="message-wrapper">
                 <view class="message" bindtap="switchUserState">
@@ -18,11 +18,11 @@
         <!--    团长总计-->
         <view class="amount">
             <view class="amount-card light-shadow">
-                <view class="number">{{134.34}}</view>
+                <view class="number">{{member.money}}</view>
                 <view class="label">累计消费(元)</view>
             </view>
             <view class="amount-card light-shadow">
-                <view class="number">{{43}}</view>
+                <view class="number">{{member.num}}</view>
                 <view class="label">账户订单</view>
             </view>
         </view>

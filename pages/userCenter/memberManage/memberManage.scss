@@ -25,13 +25,13 @@ page{
   }
   .head-pic{
     margin-right: 10px;
-    width: 45px;
     @include border-radius(100px);
     border: 1px solid $color-border;
     overflow: hidden;
     image{
+      width: 45px;
+      height: 45px;
       display: block;
-      width: 100%;
     }
   }
   .member-info{

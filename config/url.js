@@ -8,6 +8,7 @@ module.exports = {
   IndexUrlBanner: API_BASE_URL + 'index/indexBanner', //首页banner图
   IndexRoll: API_BASE_URL+ 'index/indexroll', //首页滚动条
   IndexRegimental: API_BASE_URL+ '/index/indexRegimental', //首页团长信息
+  TuanPoster: API_BASE_URL + 'index/indexPoste', // 开团海报
   //登陆
   Login: API_BASE_URL + 'login/login', //个人中心登陆
   //更换/选择团长
@@ -20,5 +21,13 @@ module.exports = {
   // 购物车
   CartAdd: API_BASE_URL + 'cart/add',  // 添加
   CartList: API_BASE_URL + 'cart/list',  // 列表
+
+  // 团员相关
+  MemberList: API_BASE_URL + 'teamuser/list',  // 团员列表
+  MemberInfo: API_BASE_URL + 'teamuser/myteamuserinfo',  // 团员信息
+
+
+  // 订单相关
+  OrderList: API_BASE_URL + 'order/page',  // 订单列表 GET: userId, status
 };
 

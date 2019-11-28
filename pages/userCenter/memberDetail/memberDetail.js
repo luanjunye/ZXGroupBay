@@ -1,10 +1,18 @@
-const util = require('../../../utils/util');
+const api = require('../../../config/url.js');
+const util = require('../../../utils/util.js');
 
 Page({
   data: {
     member: {
-
+/*
+      name: "十月",
+      avatar: "https://wx.qlogo.cn/mmopen/vi_32/AIdAmibzdhn40DjpvD3Tce9ZCbZkO3VLrRFfItR8uquB7PAJDH1yuMCNicJJtsbkVJUuKVmFLZ7v3oVaicDmeJlXw/132",
+      code: "778697298",
+      money: 0,
+      num: 0
+      */
     },
+    memberId: Number,
 
     orderStates: [
       { id:0, title: '全部', active: true},
@@ -32,8 +40,25 @@ Page({
 
   onLoad: function (options) {
     let memberId = options.memberId;
-    util.toast('当前用户id： ' + memberId)
+    this.setData({
+      memberId: Number(memberId)
+    });
+    this.getMemberInfo();
   },
+
+  // 获取团员信息
+  getMemberInfo(){
+    let that = this;
+    util.request(api.MemberInfo, {
+      userId: that.data.memberId
+    },'POST').then(res => {
+      that.setData({
+        member: res
+      })
+    })
+  },
+
+
 
 
   // 订单状态点击
@@ -62,7 +87,6 @@ Page({
 
 // ========================
   onPullDownRefresh: function () {
-    wx.stopPullDownRefresh()
   },
 
   memberTaped(e){

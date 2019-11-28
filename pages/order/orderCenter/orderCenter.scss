@@ -98,6 +98,7 @@ $height-navbar: 30px;
         overflow-x: auto;
         justify-content: flex-start;
         image{
+          border: 1rpx solid $color-border;
           @include border-radius(3px);
           flex-shrink: 0;
           width: 70px;
