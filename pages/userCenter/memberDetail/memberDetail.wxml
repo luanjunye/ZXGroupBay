@@ -43,19 +43,22 @@
 
 
     <view class="order-list">
-        <view class="order-list-item light-shadow" wx:for="{{10}}" wx:key="{{index}}">
+        <view class="order-list-item light-shadow"
+              bindtap="toOrderDetail"
+              data-id="{{item.id}}"
+              wx:for="{{orders}}"
+              wx:key="{{index}}">
             <!--        head-->
             <view class="head">
                 <view class="user-info">
 
                     <view class="user-detail">
-                        <view class="name">[{{order.name}}]</view>
-                        <view class="date">{{order.date}}</view>
+                        <view class="name">[{{item.code}}]</view>
+                        <view class="date">{{item.date}}</view>
                     </view>
                 </view>
                 <view class="state-wrapper">
-                    <view class="state">{{order.state}}</view>
-<!--                    <view class="time-left">剩余时间 <text>00:05:23</text></view>-->
+                    <view class="state">{{item.statusName}}</view>
                 </view>
             </view>
 
@@ -63,20 +66,24 @@
             <view class="body">
                 <view class="goods-list">
                     <image src="{{imageUrl}}"
-                           wx:for="{{order.imgs}}"
+                           wx:for="{{item.url}}"
                            wx:for-item="imageUrl"
                            wx:key="{{index}}"
                            mode="aspectFit">
                     </image>
                 </view>
-                <view class="amount">共{{order.count}}件商品 总价: ￥{{order.amount}}</view>
+                <view class="amount">共{{item.num}}件商品 总价: ￥{{item.money}}</view>
             </view>
+
 
             <!--        footer-->
 <!--            <view class="footer">
                 <view class="btn-outline">自提</view>
                 <view class="btn btn-fill">去付款</view>
             </view>-->
+        </view>
+        <view wx:if="{{!hasMore}}" class="hasNoMore">
+            -- 到底了 --
         </view>
     </view>
 </view>

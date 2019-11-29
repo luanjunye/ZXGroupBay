@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/userCenter/feedback/feedback",
     "pages/index/index",
     "pages/userCenter/mine/mine",
     "pages/order/orderCenter/orderCenter",
@@ -23,7 +24,6 @@
     "pages/userCenter/aboutUs/aboutUs",
     "pages/userCenter/agreement/agreement",
     "pages/userCenter/questions/questions",
-    "pages/userCenter/feedback/feedback",
     "pages/userCenter/apply/apply",
     "pages/map/map",
     "pages/shopCart/shopCart",
