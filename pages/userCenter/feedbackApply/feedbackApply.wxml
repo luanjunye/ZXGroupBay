@@ -6,7 +6,7 @@
         </view>
         <view class="product-meta">
             <view class="name">{{product.name}}</view>
-            <view class="meta">购买数量：{{product.orderNum}}</view>
+            <view class="meta">购买数量：{{product.goodsCount}}</view>
             <view class="meta">购买规格：{{product.specs}}</view>
             <view class="meta">购买人：{{product.buyer}}</view>
         </view>

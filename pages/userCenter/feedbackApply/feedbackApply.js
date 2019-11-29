@@ -8,6 +8,7 @@ Page({
   data: {
     product: {
       price: 15.3,
+      goodsCount:6, // 商品数量
       specs: '6x100g/袋',
       goodsId: 31,
       orderId: 33,
@@ -36,7 +37,7 @@ Page({
   // radio 选项修改
 
   radioChanged(e){
-    console.log(e.detail);
+    // console.log(e.detail);
     let name = e.currentTarget.dataset.model;
     let value = Number(e.detail.value);
     this.setData({
@@ -55,7 +56,7 @@ Page({
   },
 
   increaseCount(){
-    if (this.data.product.number < this.data.product.orderNum){
+    if (this.data.product.number < this.data.product.goodsCount){
       this.setData({
         [`product.number`]: this.data.product.number + 1
       })
@@ -64,7 +65,7 @@ Page({
 
   // 描述变化时
   descriptionChange(e){
-    console.log(e);
+    // console.log(e);
     this.setData({
       [`product.description`]: e.detail.value
     })
@@ -114,8 +115,11 @@ Page({
         url: that.data.evidenceUrls,
         userId: that.data.memberUserId
       }, 'POST').then(res=>{
-        console.log(res);
-      // TODO: next step
+        // console.log(res);
+        util.toastSuccess('提交成功');
+        setTimeout(()=>{
+          wx.navigateBack();
+        },1500)
       })
     }
   },
