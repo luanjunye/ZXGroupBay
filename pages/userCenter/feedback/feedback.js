@@ -12,7 +12,19 @@ Page({
     ],
 
     feedbackList: [
-      // {id: 1, title: '果冻橙申请售后', date: '2019-11-21 13:24:23', state: 1},
+/*      {
+        id: 1,
+        teamUserId: 2,
+        userId: 2,
+        type: 1,
+        status: 1,
+        goodsId: 31,
+        orderNum: "T20191128154509788614920",
+        number: 1,
+        describe: "",
+        createTime: "2019-11-29 14:54:52",
+        state: 1
+      }*/
     ],
 
     currentStateId: 0,
@@ -72,12 +84,13 @@ Page({
   getFeedbackList(currentStateId, pageNo){
     let that = this;
     util.request(api.FeedbackList, {
-      userId: that.data.memberUserId,
+      userId: util.getUserInfo().userId,
       status: currentStateId,
       page: pageNo,
       limit: that.data.perPageCount
     }, 'GET').then(res => {
-      let tempOrderArray = that.data.orders.concat(res.list);
+      // TODO: 返回数据有问题
+      let tempOrderArray = that.data.feedbackList.concat(res.list);
       if (tempOrderArray.length === res.totalCount){ // 如果当前返回页面跟总页面数相同，说明没有更多内容了
         that.setData({
           hasMore: false

@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/userCenter/feedbackApply/feedbackApply",
-    "pages/userCenter/feedback/feedback",
-    "pages/index/index",
     "pages/userCenter/mine/mine",
+    "pages/userCenter/feedback/feedback",
+    "pages/userCenter/feedbackApply/feedbackApply",
+    "pages/index/index",
     "pages/order/orderCenter/orderCenter",
     "pages/userCenter/groupOrder/groupOrder",
     "pages/userCenter/memberManage/memberManage",
