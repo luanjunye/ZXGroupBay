@@ -1,20 +1,20 @@
 
 <view class="state">
-    <view class="state-text"><image mode="aspectFit" src="{{stateIcon[product.stateId]}}"></image>{{product.state}}</view>
-    <view class="state-return">应退款金额: {{product.productPrice}}元 <text wx:if="{{product.stateId === 3}}">，实际退款金额: {{product.returnPrice}}元</text></view>
+    <view class="state-text"><image mode="aspectFit" src="{{ticketState[ticket.status-1].icon}}"></image>{{ticket.statusName}}</view>
+    <view class="state-return">应退款金额: {{ticket.money}}元 <text wx:if="{{ticket.realMoney}}">，实际退款金额: {{ticket.realMoney}}元</text></view>
 </view>
 
 <view class="product-info">
     <view class="product-pic">
-        <image src="{{product.picUrl}}" mode="aspectFit"></image>
+        <image src="{{ticket.goodsUrl}}" mode="aspectFit"></image>
     </view>
     <view class="product-meta">
-        <view class="name">{{product.name}}</view>
-        <view class="meta">购买数量：{{product.buyCount}}</view>
-        <view class="meta">购买规格：{{product.specs}}</view>
+        <view class="name">{{ticket.name}}</view>
+        <view class="meta">购买数量：{{ticket.num}}</view>
+        <view class="meta">购买规格：{{ticket.specs}}</view>
     </view>
     <view class="product-price">
-        <view>￥{{product.price}}</view>
+        <view>￥{{ticket.price}}</view>
     </view>
 </view>
 
@@ -23,42 +23,38 @@
     <view class="detail-title">工单详情:</view>
     <view class="detail-list-item">
         <view class="label">客户昵称:</view>
-        <view class="content">{{product.nickName}}</view>
+        <view class="content">{{ticket.nickName}}</view>
     </view>
     <view class="detail-list-item">
         <view class="label">工单编号:</view>
-        <view class="content">{{product.orderId}}</view>
+        <view class="content">{{ticket.workOrderNum}}</view>
     </view>
     <view class="detail-list-item">
         <view class="label">关联订单:</view>
-        <view class="content">{{product.orderId}}</view>
+        <view class="content">{{ticket.orderNum}}</view>
     </view>
 
     <view class="detail-list-item">
         <view class="label">工单类型:</view>
-        <view class="content">{{ticketType[product.ticketType]}}</view>
+        <view class="content">{{ticket.typeName}}</view>
     </view>
 
     <view class="detail-list-item">
         <view class="label">处理方式:</view>
-        <view class="content">{{refundType[product.refundType]}}</view>
+        <view class="content">{{ticket.stateName}}</view>
     </view>
 
     <view class="detail-list-item">
         <view class="label">申请时间:</view>
-        <view class="content">{{product.applyDateTime}}</view>
+        <view class="content">{{ticket.crateTime}}</view>
     </view>
-    <view wx:if="{{product.stateId === 2}}" class="detail-list-item">
+    <view class="detail-list-item" wx:if="{{ticket.updateTime}}">
         <view class="label">完成时间:</view>
-        <view class="content">{{product.solveDateTime}}</view>
-    </view>
-    <view class="detail-list-item">
-        <view class="label">工单标题:</view>
-        <view class="content">{{product.title}}</view>
+        <view class="content">{{ticket.updateTime}}</view>
     </view>
     <view class="detail-list-item">
         <view class="label">工单描述:</view>
-        <view class="content">{{product.description}}</view>
+        <view class="content">{{ticket.info}}</view>
     </view>
 
     <view class="detail-list-item">
@@ -69,7 +65,7 @@
         <image mode="widthFix"
                bindtap='showCurrentPic'
                data-index="{{index}}"
-               wx:for="{{product.evidences}}"
+               wx:for="{{ticket.url}}"
                wx:key="{{index}}"
                src="{{item}}"></image>
     </view>
