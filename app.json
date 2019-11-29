@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/userCenter/mine/mine",
+    "pages/userCenter/feedback/feedback",
+    "pages/userCenter/feedbackApply/feedbackApply",
+    "pages/index/index",
     "pages/order/orderCenter/orderCenter",
     "pages/userCenter/groupOrder/groupOrder",
     "pages/userCenter/memberManage/memberManage",
@@ -18,12 +20,10 @@
     "pages/userCenter/commissionWithdraw/commissionWithdraw",
     "pages/userCenter/commission/commission",
     "pages/userCenter/feedbackDetail/feedbackDetail",
-    "pages/userCenter/feedbackApply/feedbackApply",
     "pages/userCenter/about/about",
     "pages/userCenter/aboutUs/aboutUs",
     "pages/userCenter/agreement/agreement",
     "pages/userCenter/questions/questions",
-    "pages/userCenter/feedback/feedback",
     "pages/userCenter/apply/apply",
     "pages/map/map",
     "pages/shopCart/shopCart",

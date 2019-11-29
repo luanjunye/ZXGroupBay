@@ -51,9 +51,9 @@ Page({
 
   // 成员跳转
   memberTaped(e){
-    let memberId = e.currentTarget.dataset.id;
+    let memberUserId = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/userCenter/memberDetail/memberDetail?memberId=' + memberId
+      url: '/pages/userCenter/memberDetail/memberDetail?memberUserId=' + memberUserId
     })
   },
 

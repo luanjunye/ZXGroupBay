@@ -28,9 +28,23 @@ module.exports = {
   // 团员相关
   MemberList: API_BASE_URL + 'teamuser/list',  // 团员列表
   MemberInfo: API_BASE_URL + 'teamuser/myteamuserinfo',  // 团员信息
+  MemberOrderList: API_BASE_URL + 'teamuser/myteamuserorderlist',  // 团员订单列表信息
 
 
   // 订单相关
   OrderList: API_BASE_URL + 'order/page',  // 订单列表 GET: userId, status
-};
+
+  // 售后反馈
+ FeedbackList: API_BASE_URL + 'aftersales/page',  // 反馈列表
+ FeedbackInfo: API_BASE_URL + 'aftersales/info',  // 反馈详情
+ FeedbackApply: API_BASE_URL + 'aftersales/save/json',  // 反馈提交
+
+  // 佣金相关
+  CommissionWithdraw: API_BASE_URL + 'commissions/save/json',  // 佣金提现
+  CommissionList: API_BASE_URL + 'commissions/page',  // 佣金列表
+  CommissionInfo: API_BASE_URL + 'commissions/info',  // 佣金详情
+
+
+
+ };
 

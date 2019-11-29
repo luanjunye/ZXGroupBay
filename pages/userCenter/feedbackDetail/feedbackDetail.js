@@ -1,67 +1,77 @@
-const util = require('../../../utils/util');
+const api = require('../../../config/url.js');
+const util = require('../../../utils/util.js');
 
 Page({
-  data: {
-    refundType:[
-      '部分赔付',
-      '退货退款'
-    ],
-
-    ticketType:[
-      '质量问题',
-      '其它'
+    data: {
+      ticketState: [
+        {id: 1, name: '待审核', icon: '/assets/mine/ticket-processing.png'},
+        {id: 2, name: '处理中', icon: '/assets/mine/ticket-processing.png'},
+        {id: 3, name: '已关闭', icon: '/assets/mine/ticket-reject.png'},
+        {id: 4, name: '已完成', icon: '/assets/mine/ticket-solved.png'},
+        {id: 5, name: '已完成', icon: '/assets/mine/ticket-reject.png'},
     ],
     stateIcon: {
       1: '/assets/mine/ticket-processing.png',
       2: '/assets/mine/ticket-solved.png',
       3: '/assets/mine/ticket-reject.png',
     },
-
-    product: {
-      productPrice: 15.3,
-      returnPrice: 15.3,
-      stateId: 2,
-      state:'已解决',
-      ticketType: 1,
-      refundType: 1,
-      ticketNo: 56283481614,
-      productId: 1536,
-      orderId: 7123568476,
-      nickName: '飞鱼',
-      applyDateTime: '2019-11-21 11:23:12',
-      solveDateTime: '2019-11-21 11:23:12',
-      applyCount: 1,
-      title: '果冻橙果申请退款',
-      description: '物品损坏，物品已退回公司，申请退款',
-      evidences: [
-        '/assets/list1.jpg',
-        '/assets/list1.jpg',
-        '/assets/list1.jpg',
-      ],
-      price: 15.3,
-      specs: '6x100g/袋',
-      buyCount: 6,
-      name: '紫米面包6袋，110g/袋',
-      picUrl: '/assets/list1.jpg',
-      buyer: '飞鱼',
+    ticketNo: 0,
+    ticket: {
+      /*      statusName: "待审核",
+            name: "烟台苹果 5个约2斤",
+            goodsUrl: "https://zexuanshipin.oss-cn-beijing.aliyuncs.com/20191127/32bb9c799aad45038048c0f4c78672f7.jpg",
+            price: 20,
+            money: 64
+            realMoney: null
+            status: 1,
+            num: 1,
+            orderNum: "T20191128154509788614920",
+            workOrderNum: "20191128154509788614920",
+            typeName: "质量问题",
+            stateName: "部分赔付",
+            info: "",
+            crateTime: "2019-11-29 14:54:52",
+            updateTime: "2019-11-29 15:32:42",
+            url: [
+              "https://zexuanxiaochengxu.oss-cn-hangzhou.aliyuncs.com/images/2019-11-29/157501023788126.png",
+              "https://zexuanxiaochengxu.oss-cn-hangzhou.aliyuncs.com/images/2019-11-29/157501023793719.png",
+              "https://zexuanxiaochengxu.oss-cn-hangzhou.aliyuncs.com/images/2019-11-29/157501023797574.png",
+              "https://zexuanxiaochengxu.oss-cn-hangzhou.aliyuncs.com/images/2019-11-29/1575010238032103.png"
+            ]*/
     }
   },
 
   onLoad: function (options) {
-    let ticketNo = options.ticketno; // 获取工单id
-    // TODO：获取工单详情网络数据
-
+    let ticketNo = Number(options.ticketno); // 获取工单id
+    this.setData({
+      ticketNo: ticketNo
+    })
+    // 获取工单详情
+    this.getTicketInfo(ticketNo);
   },
+
+
+  getTicketInfo(ticketNo){
+    let that = this;
+    util.request(api.FeedbackInfo, {
+      id: ticketNo
+    }, 'POST').then(res => {
+      that.setData({
+        ticket: res
+      })
+    })
+  },
+
 
   // 预览图片
   showCurrentPic(e) {
     let index = e.currentTarget.dataset.index;
     let that = this;
-    if (that.data.product.evidences.length < 1) {
+    if (that.data.ticket.url.length < 1) {
       return
     } else {
       wx.previewImage({
-        urls: [that.data.product.evidences[index]],
+        urls: [that.data.ticket.url[index]],
       })
     }
   },
@@ -70,7 +80,7 @@ Page({
 
 // ========================
   onPullDownRefresh: function () {
-    wx.stopPullDownRefresh()
+    this.getTicketInfo(this.data.ticketNo)
   },
 
   onReady: function () { },

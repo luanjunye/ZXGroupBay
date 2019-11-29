@@ -14,11 +14,13 @@ Page({
     currentStateId: 0,
     orders: [
 /*      {
+        id: 33,
         name: "十月",
         avatar: "https://wx.qlogo.cn/mmopen/vi_32/AIdAmibzdhn40DjpvD3Tce9ZCbZkO3VLrRFfItR8uquB7PAJDH1yuMCNicJJtsbkVJUuKVmFLZ7v3oVaicDmeJlXw/132",
         time: "2019-11-28 11:03:18",
         money: 64,
         failPayTime: "2019-11-28 11:08:18",
+        shippingStatus: 1,
         num: 1,
         url: [
           "https://zexuanshipin.oss-cn-beijing.aliyuncs.com/20191127/32bb9c799aad45038048c0f4c78672f7.jpg"
@@ -148,6 +150,13 @@ Page({
     let timeEnd = new Date(endTimeString).getTime();
     let timeLeft = (timeEnd - timeNow)/1000;
     return  Number(timeLeft.toFixed())
+  },
+
+  // 支付
+
+  pay(e){
+    let orderId = e.currentTarget.dataset.id;
+    // TODO: 去支付
   },
 
 
