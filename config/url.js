@@ -30,5 +30,12 @@ module.exports = {
 
   // 订单相关
   OrderList: API_BASE_URL + 'order/page',  // 订单列表 GET: userId, status
-};
+
+
+  // 售后反馈
+ FeedbackList: API_BASE_URL + 'aftersales/page',  // 反馈列表
+ FeedbackInfo: API_BASE_URL + 'aftersales/info',  // 反馈详情
+ FeedbackApply: API_BASE_URL + 'aftersales/save/json',  // 反馈提交
+
+ };
 

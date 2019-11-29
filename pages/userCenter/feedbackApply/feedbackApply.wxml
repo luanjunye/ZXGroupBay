@@ -6,7 +6,7 @@
         </view>
         <view class="product-meta">
             <view class="name">{{product.name}}</view>
-            <view class="meta">购买数量：{{product.buyCount}}</view>
+            <view class="meta">购买数量：{{product.orderNum}}</view>
             <view class="meta">购买规格：{{product.specs}}</view>
             <view class="meta">购买人：{{product.buyer}}</view>
         </view>
@@ -21,8 +21,8 @@
             <view class="label">处理方式:</view>
             <view class="input">
                 <radio-group bindchange="radioChanged" data-model="refundType">
-                    <radio value="0">部分赔付</radio>
-                    <radio value="1">退货退款</radio>
+                    <radio value="1">部分赔付</radio>
+                    <radio value="2">退货退款</radio>
                 </radio-group>
             </view>
         </view>
@@ -31,7 +31,7 @@
             <view class="input">
                 <view class="count-changer">
                     <view class="decrease btn" bindtap="decreaseCount"></view>
-                    <view class="counter">{{product.applyCount}}</view>
+                    <view class="counter">{{product.number}}</view>
                     <view class="increase btn" bindtap="increaseCount"></view>
                 </view>
             </view>
@@ -40,8 +40,8 @@
             <view class="label">工单类型:</view>
             <view class="input">
                 <radio-group bindchange="radioChanged" data-model="ticketType">
-                    <radio value="0">质量问题</radio>
-                    <radio value="1">其它</radio>
+                    <radio value="1">质量问题</radio>
+                    <radio value="2">其它</radio>
                 </radio-group>
             </view>
 

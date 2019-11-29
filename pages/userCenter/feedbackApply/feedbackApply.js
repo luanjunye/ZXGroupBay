@@ -1,32 +1,28 @@
-const util = require('../../../utils/util');
+const api = require('../../../config/url.js');
+const util = require('../../../utils/util.js');
+const uploadImage = require('./../../../utils/fileUpload.js');
+
+const maxCountPics = 5;
 
 Page({
   data: {
-    refundType:[
-      '部分赔付',
-      '退货退款'
-    ],
-
-    ticketType:[
-      '质量问题',
-      '其它'
-    ],
-
     product: {
       price: 15.3,
       specs: '6x100g/袋',
-      productId: 1536,
-      orderId: 7123568476,
+      goodsId: 31,
+      orderId: 33,
       nickName: '飞鱼',
       applyDateTime: '2019-11-21 11:23:12',
-      buyCount: 6,
-      applyCount: 1,
+      orderNum: 'T20191128154509788614920',
+      number: 1,
+      refundType: 0, // 处理方式  1 | 2
+      ticketType: 0, // 工单类型  1 | 2
       name: '紫米面包6袋，110g/袋',
       picUrl: '/assets/list1.jpg',
       buyer: '飞鱼',
       description: ''
-
     },
+    memberUserId: 2,
     evidenceUrls: []
   },
 
@@ -51,17 +47,17 @@ Page({
 
   // counter + -
   decreaseCount(){
-    if (this.data.product.applyCount > 1){
+    if (this.data.product.number > 1){
       this.setData({
-        [`product.applyCount`]: this.data.product.applyCount - 1
+        [`product.number`]: this.data.product.number - 1
       })
     }
   },
 
   increaseCount(){
-    if (this.data.product.applyCount < this.data.product.buyCount){
+    if (this.data.product.number < this.data.product.orderNum){
       this.setData({
-        [`product.applyCount`]: this.data.product.applyCount + 1
+        [`product.number`]: this.data.product.number + 1
       })
     }
   },
@@ -75,32 +71,54 @@ Page({
   },
 
 
+  // 删除当前图片
+  removeCurrentPic(e) {
+    let index = e.currentTarget.dataset.index;
+    let tmpPicArray = this.data.evidenceUrls;
+    tmpPicArray.splice(index, 1);
+    this.setData({
+      evidenceUrls: tmpPicArray
+    })
+  },
+
+
 
   // 预览图片
   showCurrentPic(e) {
     let index = e.currentTarget.dataset.index;
     let that = this;
-    if (that.data.detailData.evidences.length < 1) {
+    if (that.data.evidenceUrls.length < 1) {
       return
     } else {
       wx.previewImage({
-        urls: [that.data.detailData.evidences[index]],
+        urls: [that.data.evidenceUrls[index]],
       })
     }
   },
 
   // 提交验证
   onSubmit(){
-    if(typeof(this.data.product.refundType) !== 'number' ){
+    let that = this;
+    if(this.data.product.refundType === 0 ){
       util.toast('请选择处理方式')
-    } else if(typeof(this.data.product.ticketType) !== 'number' ){
+    } else if(this.data.product.ticketType === 0 ){
       util.toast('请选择工单类型')
     } else {
-      // TODO: 执行提交操作
+      util.request(api.FeedbackApply, {
+        goodsId: that.data.product.goodsId,
+        info: that.data.product.description,
+        number: that.data.product.number,
+        orderNum: that.data.product.orderNum,
+        state: that.data.product.refundType,
+        type: that.data.product.ticketType,
+        url: that.data.evidenceUrls,
+        userId: that.data.memberUserId
+      }, 'POST').then(res=>{
+        console.log(res);
+      // TODO: next step
+      })
     }
   },
-
-
 
 
   // 图片选择
@@ -115,14 +133,14 @@ Page({
         // 新旧图片数量
         let oldPicCount = that.data.evidenceUrls.length;
         let newPicCount = res.tempFilePaths.length;
-        console.log(oldPicCount, newPicCount);
+        // console.log(oldPicCount, newPicCount);
 
         if (oldPicCount + newPicCount > maxCountPics) {
           hasReachMaxCountOfUploadPic = true
           res.tempFilePaths.splice(maxCountPics - oldPicCount, oldPicCount + newPicCount - maxCountPics); // 去掉第二次选择多于5张的图片
         }
 
-        console.log(hasReachMaxCountOfUploadPic)
+        // console.log(hasReachMaxCountOfUploadPic)
 
         // 路径参数
         let tempFilePaths = that.data.evidenceUrls;
@@ -143,9 +161,9 @@ Page({
               that.setData({
                 evidenceUrls: tempLastPicArray
               })
-              console.log("======上传成功图片地址为：", result);
+              // console.log("======上传成功图片地址为：", result);
               wx.hideLoading();
-              console.log(index);
+              // console.log(index);
 
               // 每次上传完成后，查看是否为最后一张要上传的图，如果是，就显示达到最大上传数量的提示，不能写到结尾，因为异步
               if (hasReachMaxCountOfUploadPic) {

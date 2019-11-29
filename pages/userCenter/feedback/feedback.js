@@ -1,4 +1,5 @@
-const util = require('../../../utils/util');
+const api = require('../../../config/url.js');
+const util = require('../../../utils/util.js');
 
 Page({
   data: {
@@ -11,19 +12,20 @@ Page({
     ],
 
     feedbackList: [
-      {id: 1, title: '果冻橙申请售后', date: '2019-11-21 13:24:23', state: 1},
-      {id: 2, title: '蓝莓申请退款', date: '2019-11-21 13:24:23', state: 2},
-      {id: 3, title: '玉米理赔', date: '2019-11-21 13:24:23', state: 3},
-      {id: 4, title: '蓝莓申请退款', date: '2019-11-21 13:24:23', state: 2},
-      {id: 5, title: '蓝莓申请退款', date: '2019-11-21 13:24:23', state: 2},
-      {id: 6, title: '果冻橙申请售后', date: '2019-11-21 13:24:23', state: 1},
-      {id: 7, title: '果冻橙申请售后', date: '2019-11-21 13:24:23', state: 1},
-    ]
+      // {id: 1, title: '果冻橙申请售后', date: '2019-11-21 13:24:23', state: 1},
+    ],
+
+    currentStateId: 0,
+
+    // 分页相关
+    pageNo: 1,
+    perPageCount: 15, // 每次请求的数量条数
+    hasMore: true, // 标记是否还有更多
 
   },
 
   onLoad: function (options) {
-
+    this.switchState(0);
   },
 
   // 查看工单详情
@@ -52,16 +54,63 @@ Page({
       })
     })
     this.setData({
-      navbarTabs: tempArray
+      currentStateID: index,
+      navbarTabs: tempArray,
+      feedbackList: [],
+      currentStateId: 0,
+      pageNo: 1,
+      perPageCount: this.data.perPageCount,
+      hasMore: true,
     })
 
-    // TODO: 加载对应页面的数据
+    // 加载对应状态的订单数据
+    this.getFeedbackList(index, this.data.pageNo)
+
   },
+
+  // 加载订单数据
+  getFeedbackList(currentStateId, pageNo){
+    let that = this;
+    util.request(api.FeedbackList, {
+      userId: that.data.memberUserId,
+      status: currentStateId,
+      page: pageNo,
+      limit: that.data.perPageCount
+    }, 'GET').then(res => {
+      let tempOrderArray = that.data.orders.concat(res.list);
+      if (tempOrderArray.length === res.totalCount){ // 如果当前返回页面跟总页面数相同，说明没有更多内容了
+        that.setData({
+          hasMore: false
+        })
+      }
+      that.setData({
+        pageNo: pageNo,
+        feedbackList: tempOrderArray
+      })
+    })
+  },
+
 
 
 // ========================
   onPullDownRefresh: function () {
-    wx.stopPullDownRefresh()
+    this.setData({
+      feedbackList: [],
+      currentStateId: 0,
+      pageNo: 1,
+      perPageCount: this.data.perPageCount,
+      hasMore: true,
+    })
+    this.onLoad();
+  },
+
+  // 加载分页数据
+  onReachBottom: function () {
+    // util.toast('Has Reached Bottom');
+    let currentPageNo = this.data.pageNo + 1;
+    if (this.data.hasMore){
+      this.getFeedbackList(this.data.currentStateId, currentPageNo);
+    }
   },
 
   onReady: function () { },

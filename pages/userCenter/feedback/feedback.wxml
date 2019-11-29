@@ -23,8 +23,12 @@
         <view wx:if="{{item.state === 2}}" class="state">待解决 ></view>
         <view wx:if="{{item.state === 3}}" class="state">已完成 ></view>
     </view>
+    <view wx:if="{{!hasMore}}" class="hasNoMore">
+        -- 到底了 --
+    </view>
 </view>
 
-<navigator url="/pages/userCenter/memberManage/memberManage">
+<navigator url="/pages/userCenter/feedbackApply/feedbackApply">
+<!--<navigator url="/pages/userCenter/memberManage/memberManage">-->
     <view class="btn btn-feedback">创建工单</view>
 </navigator>

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/userCenter/feedbackApply/feedbackApply",
     "pages/userCenter/feedback/feedback",
     "pages/index/index",
     "pages/userCenter/mine/mine",
@@ -19,7 +20,6 @@
     "pages/userCenter/commissionWithdraw/commissionWithdraw",
     "pages/userCenter/commission/commission",
     "pages/userCenter/feedbackDetail/feedbackDetail",
-    "pages/userCenter/feedbackApply/feedbackApply",
     "pages/userCenter/about/about",
     "pages/userCenter/aboutUs/aboutUs",
     "pages/userCenter/agreement/agreement",
