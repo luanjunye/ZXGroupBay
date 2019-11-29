@@ -54,7 +54,7 @@
 
                     <view class="user-detail">
                         <view class="name">[{{item.code}}]</view>
-                        <view class="date">{{item.date}}</view>
+                        <view class="date">{{item.time}}</view>
                     </view>
                 </view>
                 <view class="state-wrapper">
