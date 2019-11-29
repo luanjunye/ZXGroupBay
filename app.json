@@ -89,7 +89,8 @@
     "van-dialog": "lib/vant-weapp/dialog/index",
     "i-input": "lib/iview-weapp/input/index",
     "van-dropdown-menu": "lib/vant-weapp/dropdown-menu/index",
-    "van-dropdown-item": "lib/vant-weapp/dropdown-item/index"
+    "van-dropdown-item": "lib/vant-weapp/dropdown-item/index",
+    "van-toast": "lib/vant-weapp/toast/index"
   },
   "plugins": {
     "chooseLocation": {

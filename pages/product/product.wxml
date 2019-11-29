@@ -4,8 +4,8 @@
     <view class="banner_box">
         <swiper class="banner" indicator-dots="true" indicator-color="#e0e0e0" indicator-active-color="#fff"
                 autoplay="true" interval="3000" duration="1000">
-            <swiper-item wx:for="{{product.banner}}" wx:for-item="iitem" wx:key="{{iitem.id}}">
-                <image src="{{iitem.url}}" background-size="cover" mode="widthFix" data-value="{{iitem}}" class="image"
+            <swiper-item wx:for="{{product.goodsViewList}}" wx:for-item="iitem" wx:key="{{iitem.id}}">
+                <image src="{{iitem}}" background-size="cover" mode="widthFix" data-value="{{iitem}}" class="image"
                        bindtap="handleClick"></image>
             </swiper-item>
         </swiper>
@@ -20,11 +20,11 @@
                     <view class="money_s">¥
                         <view class="original">{{product.originalPrice}}</view>
                     </view>
-                    <view class="remain">仅剩{{product.remain}}件</view>
+                    <view class="remain">仅剩{{product.sellVolume}}件</view>
                 </view>
 
             </view>
-            <view class="bay">本次已团{{product.groupBay}}件</view>
+            <view class="bay">本次已团{{product.sell}}件</view>
 
         </view>
         <view class="groupDown_right">
@@ -39,8 +39,8 @@
     <view class="info">
         <view class="info_top">
             <view class="it_left">
-                <view class="title">{{product.title}}</view>
-                <view class="description">{{product.description}}</view>
+                <view class="title">{{product.name}}</view>
+                <view class="description">{{product.info}}</view>
             </view>
             <view class="it_right">
                 <image class="img" src="/assets/test/share.png"></image>
@@ -54,7 +54,7 @@
             </view>
             <view class="id_item">
                 <view class="ii_title">商品产地</view>
-                <view class="ii_text">{{product.place}}</view>
+                <view class="ii_text">{{product.placeOfOrigin}}</view>
             </view>
             <view class="id_item">
                 <view class="ii_title">商品类型</view>
@@ -67,8 +67,8 @@
     <!--    商品规格及活动-->
     <view class="parameter">已选{{product.num}}，{{product.specification}}</view>
     <view class="activity">
-        <view>{{product.activity1}}</view>
-        <view>{{product.activity2}}</view>
+        <view>{{activity1}}</view>
+        <view>{{activity2}}</view>
     </view>
 
 
@@ -81,7 +81,7 @@
 
     <!-- 详情大拉页 -->
     <view class="detail">
-        <image class="img" mode="widthFix" wx:for="{{product.goodsDetailsList}}" wx:key="{{index}}" src="{{item.url}}"/>
+        <image class="img" mode="widthFix" wx:for="{{product.goodsDetailsList}}" wx:key="{{index}}" src="{{item}}"/>
     </view>
 
     <view class="like_text">猜你喜欢</view>
@@ -124,18 +124,22 @@
     <!--    底部按钮-->
     <view class="bottom">
         <view class="bottom_left">
-            <view class="bl_item" bindtap="Click">
-                <image class="icon" src="/assets/test/index.png"></image>
+            <view class="bl_item" bindtap="toIndex">
+                <van-icon name="wap-home-o" color="#777" size="20px" />
+<!--                <image class="icon" src="/assets/test/index.png"></image>-->
                 <text class="text">首页</text>
             </view>
-            <view class="bl_item" bindtap="Click">
-                <image class="icon" src="/assets/test/cart.png"></image>
+            <view class="bl_item" bindtap="toShopCart">
+                <van-icon custom-class="icon-info" name="shopping-cart-o" info="{{count>0 ? count:''}}" color="#777" size="20px" />
+<!--                <image class="icon" src="/assets/test/cart.png"></image>-->
                 <text class="text">购物车</text>
             </view>
         </view>
         <view class="bottom_right">
-            <view class="br_left">加入购物车</view>
-            <view class="br_right">立即购买</view>
+            <view class="br_left" bindtap="addCart">加入购物车</view>
+            <view class="br_right" bindtap="toBuy">立即购买</view>
         </view>
     </view>
+
+    <van-toast id="van-toast" />
 </view>

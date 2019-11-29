@@ -1,4 +1,5 @@
 //index.js
+import Toast from '../../lib/vant-weapp/toast/toast';
 //获取应用实例
 const api = require('../../config/url.js');
 const util = require('../../utils/util.js');
@@ -7,108 +8,15 @@ const app = getApp()
 Page({
     data: {
         banner: [],
-        first_i: [
-            {
-                id: 1,
-                url: "/assets/one.png",
-                title: "新鲜蔬果"
-            },
-            {
-                id: 2,
-                url: "/assets/two.png",
-                title: "水产冻品"
-            },
-            {
-                id: 3,
-                url: "/assets/three.png",
-                title: "肉禽蛋品"
-            },
-            {
-                id: 4,
-                url: "/assets/four.png",
-                title: "粮油调味"
-            }
-        ],
-        second_i: [
-            {
-                id: 5,
-                url: "/assets/five.png",
-                title: "酒水乳品"
-            },
-            {
-                id: 6,
-                url: "/assets/six.png",
-                title: "休闲食品"
-            },
-            {
-                id: 7,
-                url: "/assets/seven.png",
-                title: "生活美妆"
-            },
-            {
-                id: 8,
-                url: "/assets/eight.png",
-                title: "居家百货"
-            }
-        ],
-        order_list: [
-            {
-                id: 1,
-                url: "/assets/list1.jpg",
-                title: "紫米面包6袋，110g/袋",
-                description: "奶油，紫米，层层相扣",
-                place: "中国",
-                label: "次日达",
-                price: "9.9",
-                originalPrice: "16",
-                sale: "5112",
-                group: "2759",
-                remaining: "1395",
-                avaterList: []
-            },
-            {
-                id: 2,
-                url: "/assets/list1.jpg",
-                title: "厄瓜多尔白虾(100/200板冻)1箱，约2.8斤sadsadsadsadasdqwdqwdqwdwqdwqdwqdwqd",
-                description: "味道鲜美 营养丰富",
-                place: "进口",
-                label: "次日达",
-                price: "69.9",
-                originalPrice: "89.9",
-                sale: "5112",
-                group: "2759",
-                remaining: "1395",
-                avaterList: []
-            },
-            {
-                id: 3,
-                url: "/assets/list1.jpg",
-                title: "紫米面包6袋，110g/袋",
-                description: "奶油，紫米，层层相扣",
-                place: "中国",
-                label: "次日达",
-                price: "9.9",
-                originalPrice: "16",
-                sale: "5112",
-                group: "2759",
-                remaining: "1395",
-                avaterList: []
-            },
-            {
-                id: 4,
-                url: "/assets/list1.jpg",
-                title: "紫米面包6袋，110g/袋",
-                description: "奶油，紫米，层层相扣",
-                place: "中国",
-                label: "次日达",
-                price: "9.9",
-                originalPrice: "16",
-                sale: "5112",
-                group: "2759",
-                remaining: "1395",
-                avaterList: []
-            },
-        ],
+        classification: [],
+        groupInfo: [],
+        shippingStatus: 0,   //shippingStatus 1 热卖   2 爆款    3 秒杀 4  团长推荐
+        orderList: [],
+        isLogin: false,
+        userId: "",
+        pageNo: 1,// 分页相关
+        perPageCount: 15, // 每次请求的数量条数
+        hasMore: true, // 标记是否还有更多
         down_avater: [
             {
                 id: 1,
@@ -127,16 +35,25 @@ Page({
         clearTimer: false,
         loading: false,
         buyerList: [],
-        regimental:{
-            address:"",
-            nickname:"",
-            avatar:""
+        regimental: {
+            address: "",
+            nickname: "",
+            avatar: ""
         },
     },
     onload() {
         // this.setData({
         //     targetTime: new Date().getTime() + 6430000
         // });
+        let userId = wx.getStorageSync("userId");
+        let isLogin = wx.getStorageSync("isLogin");
+        if (isLogin && userId) {
+            this.setData({
+                isLogin: isLogin,
+                userId: userId
+            })
+        }
+        getApp().globalData.type = 0;
     },
 
     countDown(e) {
@@ -150,25 +67,45 @@ Page({
         let that = this;
         var userId = wx.getStorageSync("userId")
 
-        util.request(api.IndexRoll,{},"POST").then(function (res) {
+        //首页购买信息
+        util.request(api.IndexRoll, {}, "POST").then(function (res) {
             that.setData({
-                buyerList : res
+                buyerList: res
             });
         });
 
-        util.request(api.IndexRegimental,{userId:userId},"POST").then(function (res) {
+        //首页团长信息
+        util.request(api.IndexRegimental, {userId: userId}, "POST").then(function (res) {
             that.setData({
-                ["regimental.address"]:res.address,
-                ["regimental.nickname"]:res.nickname,
-                ["regimental.avatar"]:res.avatar,
+                ["regimental.address"]: res.address,
+                ["regimental.nickname"]: res.nickname,
+                ["regimental.avatar"]: res.avatar,
             });
         });
 
-        util.request(api.IndexUrlBanner,{},"GET").then(function (res) {
+        //首页banner
+        util.request(api.IndexUrlBanner, {}, "GET").then(function (res) {
             that.setData({
-                banner : res
+                banner: res
             });
         });
+
+        //首页拼团信息
+        util.request(api.IndexCopyGroup, {userId: userId}, "POST").then(function (res) {
+            that.setData({
+                groupInfo: res
+            });
+        });
+
+        //首页分类Icon
+        util.request(api.IndexClassification, {}, "GET").then(function (res) {
+            that.setData({
+                classification: res
+            });
+        });
+
+        //首页商品列表
+        this.changeOrderList(0, 1)
 
     },
     onHide: function () {
@@ -176,9 +113,19 @@ Page({
     onUnload: function () {
     },
     onPullDownRefresh: function () {
-        wx.stopPullDownRefresh()
+        this.setData({
+            shippingStatus: 0,
+            orderList: [],
+            pageNo: 1,// 分页相关
+            hasMore: true, // 标记是否还有更多
+        });
+        this.onShow()
     },
     onReachBottom: function () {
+        let currentPageNo = this.data.pageNo + 1;
+        if (this.data.hasMore) {
+            this.changeOrderList(this.data.shippingStatus, currentPageNo);
+        }
     },
     onShareAppMessage: function () {
     },
@@ -186,5 +133,94 @@ Page({
         wx.navigateTo({
             url: '/pages/regimentalCommander/changeCommander'
         })
+    },
+    copyAnnouncement: function () {
+        var that = this;
+        var content = "";
+
+        that.data.groupInfo.content.forEach(item => {
+            let itema = `${item}\n`
+            content += itema
+        })
+        wx.setClipboardData({
+            data: "团购名称:" + that.data.groupInfo.name + "\n" + "团购介绍：" + (that.data.groupInfo.info = null ? that.data.groupInfo.info : "暂无") + "\n" + "截团时间:" + that.data.groupInfo.time + "\n" + "\n" + "今日特惠：\n" + content,
+            success: function (res) {
+                wx.showToast({
+                    title: '复制成功',
+                })
+            }
+        })
+
+    },
+
+    //切换标签
+    changeTab(e) {
+        let shippingStatus = e.detail.index;
+        getApp().globalData.type = shippingStatus;
+        this.setData({
+            shippingStatus: shippingStatus,
+            orderList: [],
+            pageNo: 1,// 分页相关
+            hasMore: true, // 标记是否还有更多
+        });
+        this.changeOrderList(shippingStatus, 1)
+    },
+
+    //展示商品
+    changeOrderList(shippingStatus, pageNo) {
+        var that = this
+        this.setData({
+            loading: true
+        });
+        //首页商品列表
+        util.request(api.GoodsList, {
+            page: pageNo,
+            type: shippingStatus + 1,
+            limit: that.data.perPageCount
+        }, "GET").then(function (res) {
+            let currentGoodsArray = that.data.orderList.concat(res.list);
+            if (currentGoodsArray.length === res.totalCount) { // 如果当前返回页面跟总页面数相同，说明没有更多内容了
+                that.setData({
+                    hasMore: false
+                })
+            }
+            that.setData({
+                orderList: currentGoodsArray,
+                loading: false
+            });
+        });
+    },
+
+    //去商品详情页
+    toOrder: function (e) {
+        let data = e.currentTarget.dataset.value;
+        if (data.id) {
+            wx.navigateTo({
+                url: '/pages/product/product?id=' + data.id,
+            })
+        }
+    },
+
+    //去二级分类页
+    toSecond: function (e) {
+        let data = e.currentTarget.dataset.value;
+        if (data.id){
+            wx.navigateTo({
+                url:"/pages/index/secondIndex/secondIndex?id=" + data.id,
+            })
+        }
+    },
+
+    //添加到购物车
+    addCart: function () {
+        util.request(api.CartAdd, {
+            goodsId: this.data.orderList.id,
+            userId: this.data.userId,
+        }, "POST").then(function (res) {
+            console.log(res)
+            //that.selectCart()
+            Toast("加入购物车成功")
+        });
     }
+
 });

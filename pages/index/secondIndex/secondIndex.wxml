@@ -1,15 +1,23 @@
 <!--pages/index/secondIndex/secondIndex.wxml-->
 <view class="ucenter">
-    <view class="order">
-        <view class="list" wx:for="{{order_list}}" wx:for-item="item" wx:key="{{item.id}}"
+    <view wx:if="{{loading}}" class="loading-center">
+        <van-loading type="spinner" />
+    </view>
+
+    <view class="no-order" wx:if="{{orderList.length == 0&&!loading}}">
+        <image class="img" src="/assets/index/noOrder.png"></image>
+        <view class="txt">当前商品正在采购，尽请期待⁽⁽٩(๑˃̶͈̀▽ ˂̶͈́)۶⁾⁾！</view>
+    </view>
+    <view class="order" wx:if="{{orderList.length > 0&&!loading}}">
+        <view class="list" wx:for="{{orderList}}" wx:for-item="item" wx:key="{{item.id}}"
               data-value="{{item}}" id="{{item.id}}" bindtap="toOrder">
             <view class="top">
-                <image class="img" src="{{item.url}}"></image>
+                <image class="img" src="{{item.pictureUrl}}" mode="widthFix"></image>
                 <view class="top_info">
-                    <view class="title">{{item.title}}</view>
-                    <view class="description">{{item.description}}</view>
-                    <view class="description">{{item.place}}</view>
-                    <van-tag round color="#DD3C4A">{{item.label}}</van-tag>
+                    <view class="title">{{item.name}}</view>
+                    <view class="description">{{item.info}}</view>
+                    <view class="description">{{item.placeOfOrigin}}</view>
+                    <van-tag round color="#DD3C4A">次日达</van-tag>
                     <view class="top_down">
                         <view class="money_f">¥
                             <view class="place">{{item.price}}</view>
@@ -23,15 +31,16 @@
             </view>
             <view class="down">
                 <view class="down_left">
-                    <text class="down_text">累计销量{{item.sale}}</text>
+                    <text class="down_text">累计销量{{item.sellCount}}</text>
                 </view>
 
                 <view class="down_right">
-                    <view class="imglist  imglist-{{index}}" wx:for="{{down_avater}}" wx:for-item="item" wx:key="{{item.id}}"
+                    <view class="imglist  imglist-{{index}}" wx:for="{{url}}" wx:for-item="item" wx:key="{{item.id}}"
                           data-value="{{item}}" id="{{item.id}}">
-                        <image class="img" src="{{item.url}}"></image>
+                        <image class="img" src="{{item}}"></image>
                     </view>
-                    <text class="down_text">已团{{item.group}}/剩余{{item.remaining}}</text>
+<!--                    已团{{item.group}}/-->
+                    <text class="down_text">剩余{{item.leftCount}}</text>
                 </view>
             </view>
         </view>

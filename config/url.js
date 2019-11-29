@@ -9,6 +9,8 @@ module.exports = {
   IndexRoll: API_BASE_URL+ 'index/indexroll', //首页滚动条
   IndexRegimental: API_BASE_URL+ '/index/indexRegimental', //首页团长信息
   TuanPoster: API_BASE_URL + 'index/indexPoste', // 开团海报
+  IndexCopyGroup: API_BASE_URL + 'index/copygroup', // 拼团信息
+  IndexClassification: API_BASE_URL + 'index/indexCategory', // 首页分类
   //登陆
   Login: API_BASE_URL + 'login/login', //个人中心登陆
   //更换/选择团长
@@ -18,6 +20,7 @@ module.exports = {
   //商品
   Categories: API_BASE_URL + 'category/categorylist', // 商品分类列表
   GoodsList: API_BASE_URL + 'goods/goodslist',  // 商品列表
+  GoodsInfo: API_BASE_URL + '/goods/info',  // 商品详情
   // 购物车
   CartAdd: API_BASE_URL + 'cart/add',  // 添加
   CartList: API_BASE_URL + 'cart/list',  // 列表
