@@ -3,7 +3,7 @@
 <!--    sidemenu-->
     <scroll-view class="side-menu" scroll-x="false" scroll-y="true" style="height: {{windowHeight}}px">
         <view   wx:for="{{categories}}"
-                bindtap="switchCategory"
+                bindtap="categoriesTaped"
                 data-index="{{index}}"
                 data-id="{{item.id}}"
                 wx:key="{{index}}"

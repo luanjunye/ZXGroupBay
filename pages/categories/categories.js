@@ -47,10 +47,18 @@ Page({
   },
 
   onLoad: function (options) {
-    let that = this;
-
     util.updateCartCount(); // 刷新购物车数量
+    this.getGoodsListOf(this.data.currentCategoryId, 1); // 载入【猜你喜欢】类别的商品列表
+    this.getCategoriesList();
+    // INIT screenHeight
+    this.setData({
+      windowHeight: app.globalData.windowHeight
+    })
+  },
 
+  // 获取类别列表
+  getCategoriesList(){
+    let that = this;
     // 载入类别列表
     util.request(api.Categories, {}, 'GET').then(res => {
       let initMenuItem = {id: 0, name: '猜您喜欢', active: true};
@@ -66,34 +74,30 @@ Page({
         categories: tempArray
       })
     })
-
-    this.getGoodsListOf(this.data.currentCategoryId, 1); // 载入【猜你喜欢】类别的商品列表
-
-    // INIT screenHeight
-    this.setData({
-      windowHeight: app.globalData.windowHeight
-    })
   },
 
+  categoriesTaped(e){
+    let categoryId = e.target.dataset.id;
+    this.switchToCategory(categoryId);
+  },
 
   // 切换分类
-  switchCategory(e){
-    let clickedCategoryId = e.target.dataset.id;
+  switchToCategory(categoryId){
     let tempArray = [];
     this.data.categories.forEach(item => {
       tempArray.push({
         id: item.id,
         name: item.name,
-        active: clickedCategoryId === item.id
+        active: categoryId === item.id
       })
     })
     this.setData({
       hasMore: true, // 切换类别时初始化为 ture
       goods: [],
       categories: tempArray,
-      currentCategoryId: clickedCategoryId
+      currentCategoryId: categoryId
     })
-    this.getGoodsListOf(clickedCategoryId, 1);
+    this.getGoodsListOf(categoryId, 1);
   },
 
   // 载入对应类别的商品列表
@@ -135,19 +139,17 @@ Page({
   },
 
 
-
-
 // ========================
   onPullDownRefresh: function () {
     this.setData({
       categories: [],
       goods: [],
-      currentCategoryId: 0,
       pageNo: 1,
       perPageCount: this.data.perPageCount,
       hasMore: true,
     })
-    this.onLoad();
+    this.getCategoriesList(); // 刷新类别列表
+    // this.switchToCategory(this.data.currentCategoryId) // 类别切换到对应id标签
   },
   onReachBottom: function () {
     // util.toast('Has Reached Bottom');
