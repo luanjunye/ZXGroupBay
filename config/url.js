@@ -40,6 +40,7 @@ module.exports = {
   CommissionWithdraw: API_BASE_URL + 'commissions/save/json',  // 佣金提现
   CommissionList: API_BASE_URL + 'commissions/page',  // 佣金列表
   CommissionInfo: API_BASE_URL + 'commissions/info',  // 佣金详情
+  CommissionAmount: API_BASE_URL + 'commissions/awaitmoney',  // 获取可提现余额
 
 
 

@@ -3,7 +3,7 @@ const util = require('../../../utils/util.js');
 
 Page({
   data: {
-    amount: 20.8,
+    amount: 0,
     lists: [
 /*      {
           id: 5,
@@ -23,8 +23,22 @@ Page({
 
   onLoad: function (options) {
     this.getWithdrawList(1);
+    this.getMoneyAmount();
   },
 
+  // 获取可提现余额
+  getMoneyAmount(){
+    let that = this;
+    util.request(api.CommissionAmount,{
+      userId: util.getUserInfo().userId
+    }, 'POST').then(res => {
+      that.setData({
+        amount: res
+      })
+    })
+  },
+
+  // 获取提现记录列表
   getWithdrawList(pageNo){
     let that = this;
     util.request(api.CommissionList,{
@@ -48,15 +62,26 @@ Page({
 
   // 提现操作
   onWidthDraw(){
-    wx.showModal({
-      title: '是否确认提现到微信零钱',
-      content: '余额将全部提现到微信零钱',
-      success: res => {
-        if (res.confirm){
-          // TODO: 提现操作
-        }
-      },
-    })
+    if(this.data.amount === 0){
+      util.toast('可提现余额不足')
+    } else {
+      wx.showModal({
+        title: '是否确认提现到微信零钱',
+        content: '余额将全部提现到微信零钱',
+        success: res => {
+          if (res.confirm){
+            util.request(api.CommissionWithdraw,{
+              userId: util.getUserInfo().userId
+            }, 'POST').then(res => {
+              util.toastSuccess('提现申请已提交')
+              setTimeout(()=>{
+                that.onload();
+              },1500)
+            })
+          }
+        },
+      })
+    }
   },
 
   // item 点击跳转详情
