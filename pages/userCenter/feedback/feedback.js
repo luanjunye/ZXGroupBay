@@ -69,7 +69,7 @@ Page({
       currentStateID: index,
       navbarTabs: tempArray,
       feedbackList: [],
-      currentStateId: 0,
+      currentStateId: index,
       pageNo: 1,
       perPageCount: this.data.perPageCount,
       hasMore: true,
@@ -109,12 +109,11 @@ Page({
   onPullDownRefresh: function () {
     this.setData({
       feedbackList: [],
-      currentStateId: 0,
       pageNo: 1,
       perPageCount: this.data.perPageCount,
       hasMore: true,
     })
-    this.onLoad();
+    this.switchState(this.data.currentStateId);
   },
 
   // 加载分页数据

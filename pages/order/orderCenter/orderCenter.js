@@ -40,7 +40,6 @@ Page({
       currentStateId: options && options.tab? Number(options.tab): 0 // option 定义时说明参数 tab 有值
     })
     this.switchState(this.data.currentStateId);
-
     this.startCountDown() // 开始倒计时
   },
 
@@ -101,7 +100,7 @@ Page({
       currentStateID: index,
       orderStates: tempArray,
       orders: [],
-      currentStateId: 0,
+      currentStateId: index,
       pageNo: 1,
       perPageCount: this.data.perPageCount,
       hasMore: true,
@@ -165,12 +164,12 @@ Page({
   onPullDownRefresh: function () {
     this.setData({
       orders: [],
-      currentStateId: 0,
       pageNo: 1,
       perPageCount: this.data.perPageCount,
       hasMore: true,
     })
-    this.onLoad();
+    this.switchState(this.data.currentStateId);
+    this.startCountDown() // 开始倒计时
   },
 
   // 加载分页数据
