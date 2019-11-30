@@ -149,12 +149,6 @@ Page({
     })
     this.onLoad();
   },
-
-  onReady: function () { },
-  onShow: function () { },
-
-  // onHide: function () { },
-  // onUnload: function () { },
   onReachBottom: function () {
     // util.toast('Has Reached Bottom');
     let currentPageNo = this.data.pageNo + 1;
@@ -162,5 +156,11 @@ Page({
       this.getGoodsListOf(this.data.currentCategoryId, currentPageNo);
     }
   },
+
+  onReady: function () { },
+  onShow: function () { },
+
+  // onHide: function () { },
+  // onUnload: function () { },
   // onShareAppMessage: function () { }
 });

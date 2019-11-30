@@ -8,16 +8,21 @@
 <view class="withdraw-log">
     <view class="log-item"
           bindtap="logTaped"
+          data-value="{{item}}"
           data-id="{{item.id}}"
           wx:for="{{lists}}"
           wx:key="{{item.id}}">
         <view class="head-pic">
-            <image src="/assets/avater.png" mode="aspectFit"></image>
+            <image src="/assets/weixin.png" mode="aspectFit"></image>
         </view>
         <view class="log-info">
-            <view class="title">{{item.title}}</view>
-            <view class="date">{{item.date}}</view>
+            <view class="title">{{item.content}}</view>
+            <view class="date" wx:if="{{item.endTime}}">{{item.endTime}}</view>
+            <view class="date" wx:else>{{item.time}}</view>
         </view>
-        <view class="amount">￥{{item.amount}} ></view>
+        <view class="amount">￥{{item.money}} ></view>
     </view>
+
+    <view wx:if="{{!hasMore}}" class="hasNoMore">-- 到底了 --</view>
+
 </view>

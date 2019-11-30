@@ -3,13 +3,13 @@ const util = require('../../../utils/util');
 Page({
   data: {
     stateIcon: {
-      1: '/assets/mine/ticket-processing.png',
-      2: '/assets/mine/ticket-solved.png',
-      3: '/assets/mine/ticket-reject.png',
+      1: '/assets/mine/ticket-processing.png', // 申请中
+      2: '/assets/mine/ticket-processing.png', // 审核中
+      3: '/assets/mine/ticket-solved.png', // 已完成
+      4: '/assets/mine/ticket-reject.png', // 拒绝
     },
 
     commission: {
-
       commissionApply: 12,
       commissionActual: 11.6,
       timeCommissionApply: '2019-11-23 14:23.12',
@@ -22,6 +22,11 @@ Page({
   onLoad: function (options) {
     let logId = options.logId; // 获取记录 id
     // TODO：获取记录详情网络数据
+
+    let currentItem = wx.getStorageSync('currentWithdrawItem');
+    this.setData({
+
+    })
 
   },
 
