@@ -3,11 +3,11 @@
    <view class="user-info-container">
        <view class="user-info">
            <view class="user-head" bindtap="switchUserState">
-               <image src="/assets/avater.png" mode="widthFix"></image>
+               <image src="{{userInfo.avatar}}" mode="widthFix"></image>
            </view>
            <view class="user-detail">
-               <view class="name">昵称872345y</view>
-               <view class="id">userID: <text>29734659826</text></view>
+               <view class="name">{{userInfo.nickname}}</view>
+               <view class="id">userID: <text>{{userInfo.code}}</text></view>
            </view>
            <view class="message-wrapper">
                <view class="message">
@@ -20,12 +20,12 @@
        <!--    团长总计-->
        <view wx:if="{{groupMaster}}" class="amount">
            <view class="amount-card light-shadow">
-               <view class="number">{{7134.34}}</view>
+               <view class="number">{{userInfo.amountMoney}}</view>
                <view class="label">累计收益(元)</view>
            </view>
            <view class="amount-card light-shadow">
                <navigator url="/pages/userCenter/wallet/wallet">
-                   <view class="number">{{4351.34}}</view>
+                   <view class="number">{{userInfo.awaitMoney}}</view>
                    <view class="label">账户余额(元)</view>
                </navigator>
            </view>
@@ -60,15 +60,15 @@
         <view class="section-title">账务中心</view>
         <view class="score-content">
             <view class="score-content-item">
-                <view class="number">2500.00</view>
+                <view class="number">{{userInfo.allOrderMoney}}</view>
                 <view class="label">当前团销售额(元)</view>
             </view>
             <view class="score-content-item">
-                <view class="number">50</view>
+                <view class="number">{{userInfo.orderCount}}</view>
                 <view class="label">主订单数量(元)</view>
             </view>
             <view class="score-content-item">
-                <view class="number">150.00</view>
+                <view class="number">{{userInfo.predictMoney}}</view>
                 <view class="label">当前团赚(元)</view>
             </view>
         </view>

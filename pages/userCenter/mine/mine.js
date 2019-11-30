@@ -1,10 +1,21 @@
 const util = require('../../../utils/util');
+const api = require('../../../config/url.js');
 
 Page({
   data: {
     groupMaster: true,  // 是否为团长
     applyState: 'none',  // none | pending
     messageCount: 123,
+    userInfo: {
+/*      avatar: "https://wx.qlogo.cn/mmopen/vi_32/AIdAmibzdhn40DjpvD3Tce9ZCbZkO3VLrRFfItR8uquB7PAJDH1yuMCNicJJtsbkVJUuKVmFLZ7v3oVaicDmeJlXw/132",
+      nickname: "十月",
+      code: "778697298",
+      amountMoney: 100,
+      awaitMoney: 0,
+      predictMoney: 168.96,
+      orderCount: 33,
+      allOrderMoney: 2112*/
+    },
 
     // 普通用户菜单组
     menuListNormal: [
@@ -49,6 +60,15 @@ Page({
   },
 
 
+  onLoad: function (options) {
+    this.setData({
+      groupMaster: util.getUserInfo().isMaster
+    });
+
+    this.getUserInformation();
+  },
+
+  // 申请团长点击时
   applyGroupMaster(){
     if (this.data.applyState === 'pending'){
       wx.showToast({
@@ -63,17 +83,19 @@ Page({
   },
 
 
-  onLoad: function (options) {
 
-  },
-
-  // 切换用户状态  普通 | 团长
-  switchUserState(){ // Test
-    this.setData({
-      groupMaster: !this.data.groupMaster
+  // 获取用户信息
+  getUserInformation(){
+    let that = this;
+    util.request(api.UserInfo, {
+      userId: util.getUserInfo().userId
+    }, "POST").then(res => {
+      that.setData({
+        userInfo: res
+      })
     })
-
   },
+
 
   // 菜单点击
   switchMenu(e){
@@ -96,7 +118,7 @@ Page({
   showDiscountActivity(){
     wx.showModal({
       title: '优惠活动',
-      content: `满即送：\n满30元送泽轩基金奶茶一杯；\n满立减：\n满60元立减10元”`,
+      content: `满即送：\n满30元送泽轩基金奶茶一杯；\n满立减：\n满60元立减10元`,
     })
   },
 

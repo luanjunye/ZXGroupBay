@@ -122,6 +122,7 @@ Page({
                                     wx.setStorageSync('userId', res.userId);
                                     wx.setStorageSync('openId', res.openid);
                                     wx.setStorageSync('isLogin', true);
+                                    wx.setStorageSync('isMaster', Boolean(res.isRegimental));
                                     wx.navigateTo({
                                         url: '/pages/regimentalCommander/changeCommander',
                                     })

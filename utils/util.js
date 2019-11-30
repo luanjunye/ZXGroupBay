@@ -185,7 +185,8 @@ function getUserInfo() {
     userInfo: wx.getStorageSync('userInfo'),
     userId: wx.getStorageSync('userId'),
     openId: wx.getStorageSync('openId'),
-    isLogined: wx.getStorageSync('isLogin')
+    isLogined: wx.getStorageSync('isLogin'),
+    isMaster: wx.getStorageSync('isMaster')
   }
 }
 

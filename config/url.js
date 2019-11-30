@@ -43,6 +43,9 @@ module.exports = {
   CommissionAmount: API_BASE_URL + 'commissions/awaitmoney',  // 获取可提现余额
 
 
+  // 用户信息
+  UserInfo: API_BASE_URL + 'teamuser/userInfo',  // 获取用户信息
+
 
  };
 
