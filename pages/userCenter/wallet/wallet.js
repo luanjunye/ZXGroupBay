@@ -6,11 +6,12 @@ Page({
     amount: 20.8,
     lists: [
 /*      {
-          id: 5
+          id: 5,
+          state:1,
           money: 100
-          content: "申请提现到微信零钱"
-          time: "2019-11-30 10:00:39"
-          endTime: null
+          content: "申请提现到微信零钱",
+          time: "2019-11-30 10:00:39",
+          endTime: null,
       },*/
     ],
 

@@ -3,19 +3,18 @@ const util = require('../../../utils/util');
 Page({
   data: {
     stateIcon: {
-      1: '/assets/mine/ticket-processing.png', // 申请中
-      2: '/assets/mine/ticket-processing.png', // 审核中
-      3: '/assets/mine/ticket-solved.png', // 已完成
-      4: '/assets/mine/ticket-reject.png', // 拒绝
+      1: '/assets/mine/ticket-processing.png', // 审核中
+      2: '/assets/mine/ticket-solved.png', // 已完成
+      3: '/assets/mine/ticket-reject.png', // 拒绝
     },
 
     commission: {
-      commissionApply: 12,
-      commissionActual: 11.6,
-      timeCommissionApply: '2019-11-23 14:23.12',
-      timeCommissionReceive: '2019-11-24 14:23.12',
-      state: '已提现到微信零钱',
-      icon: 2
+/*      state:1,
+      id: 5,
+      money: 100,
+      content: "申请提现到微信零钱",
+      time: "2019-11-30 10:00:39",
+      endTime: null*/
     }
   },
 
@@ -25,7 +24,7 @@ Page({
 
     let currentItem = wx.getStorageSync('currentWithdrawItem');
     this.setData({
-
+      commission: currentItem
     })
 
   },
