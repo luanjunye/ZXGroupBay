@@ -1,10 +1,20 @@
 // pages/product/product.js
+import Toast from '../../lib/vant-weapp/toast/toast';
+
+const api = require('../../config/url.js');
+const util = require('../../utils/util.js');
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
+        id: "",
+        activity1: "满即送：满30元送泽轩基金奶茶一杯；",
+        activity2: "满立减：满60元立减10元；",
+        isLogin: false,
+        userId: "",
+        cartList: [],
         product:
             {
                 banner: [
@@ -39,8 +49,7 @@ Page({
                 place: "新疆",
                 num: "1袋",
                 specification: "110g",
-                activity1: "满即送：满30元送泽轩基金奶茶一杯；",
-                activity2: "满立减：满60元立减10元；",
+
                 goodsDetailsList: [
                     {
                         goodsId: 32,
@@ -168,7 +177,25 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        let that = this
+        wx.setNavigationBarTitle({
+            title: '商品详情',
+        })
+        let id = options.id
+        if (id) {
+            this.setData({
+                id: id
+            })
+        }
 
+        util.request(api.GoodsInfo, {
+            id: this.data.id
+        }, "POST").then(function (res) {
+            that.setData({
+                product: res
+            })
+            console.log(that.data.product)
+        });
     },
 
     /**
@@ -182,7 +209,15 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        let isLogin = wx.getStorageSync('isLogin')
+        let userId = wx.getStorageSync('userId')
+        console.log(userId)
+        if (isLogin && userId) {
+            this.setData({
+                isLogin: isLogin,
+                userId: userId
+            })
+        }
     },
 
     /**
@@ -218,5 +253,80 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+    toIndex: function () {
+        wx.switchTab({
+            url: '/pages/index/index',
+        })
+    },
+    toShopCart: function () {
+        wx.switchTab({
+            url: '/pages/shopCart/shopCart',
+        })
+
+    },
+    addCart: function () {
+        let that = this
+        if (this.checkLogin()) {
+            let cartList = this.data.cartList;
+            cartList.push({
+                id: this.data.product.id,
+                label: "次日达",
+                checked: true,
+                picUrl: this.data.product.goodsViewList[0].url,
+                title: this.data.product.name,
+                spec: this.data.product.info,
+                originPrice: this.data.product.originalPrice,
+                count: 1,
+                maxNum: 99,
+                price: this.data.product.price
+            });
+            util.request(api.CartAdd, {
+                goodsId: this.data.id,
+                userId: this.data.userId,
+            }, "POST").then(function (res) {
+                    console.log(res)
+                    //that.selectCart()
+
+            });
+            wx.setStorageSync("cartList", cartList)
+            this.setData({
+                cartList: cartList
+            });
+
+            Toast("加入购物车成功")
+        }
+
+    },
+    toBuy: function () {
+        if (this.checkLogin()) {
+            // 跳转checkout页面
+            wx.setStorageSync("checkoutProduct", this.data.product);
+            wx.setStorageSync("count", 1);
+            wx.navigateTo({
+                url: '/pages/order/confirmOrder/confirmOrder?from=product',
+            })
+        }
+    },
+    checkLogin: function () {
+        if (!this.data.isLogin) {
+            wx.navigateTo({
+                url: '/pages/login/login',
+            })
+        } else {
+            return true
+        }
+    },
+    selectCart: function () {
+        let that = this
+        var data = new Object();
+        // util.request(api.ProductInCart, {
+        //     userId: this.data.userId,
+        // }, "POST").then(function(res) {
+        //     if (res.code === 0) {
+        //         data.count = res.count
+        //         that.setData(data)
+        //     }
+        // });
     }
 })

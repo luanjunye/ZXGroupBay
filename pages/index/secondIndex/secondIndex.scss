@@ -9,6 +9,34 @@
   z-index: -2;
 }
 
+.loading-center {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-order {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .img {
+    width: 200rpx;
+    height: 200rpx;
+    margin-bottom: 30rpx;
+    overflow: hidden;
+
+  }
+
+  .txt {
+    font-size: 26rpx;
+    color: $text-comment;
+  }
+}
+
 .order{
   margin: 5px 10px;
   display: flex;

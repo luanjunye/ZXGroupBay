@@ -181,16 +181,19 @@
   background: #FFF;
   display: flex;
   flex-direction: column;
-  padding: 10px 20px;
+  padding: 10px 20px 0 20px;
 }
 .second_box .first {
   display: flex;
   justify-content: space-between;
+  flex-flow: row wrap;
 }
 .second_box .first .first_info {
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 22%;
 }
 .second_box .first .first_info .img {
   height: 50px;
@@ -252,7 +255,7 @@
 .third_box .third .list {
   margin-bottom: 5px;
   background: #FFF;
-  padding: 10px 5px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
 }

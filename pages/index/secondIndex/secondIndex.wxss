@@ -8,6 +8,31 @@
   z-index: -2;
 }
 
+.loading-center {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-order {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.no-order .img {
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 30rpx;
+  overflow: hidden;
+}
+.no-order .txt {
+  font-size: 26rpx;
+  color: #999999;
+}
+
 .order {
   margin: 5px 10px;
   display: flex;
