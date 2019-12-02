@@ -6,7 +6,7 @@
             <input confirm-type="search" placeholder="搜索你要的商品" auto-focus="{{true}}" placeholder-class="tui-input-plholder" class="tui-input" value="{{key}}" bindinput="input"/>
             <icon type="clear" size='13' color='#bcbcbc' bindtap="cleanKey" hidden="{{!key}}"></icon>
         </view>
-        <view class="tui-cancle" bindtap="back">取消</view>
+        <view class="tui-cancle" bindtap="submit">搜索</view>
     </view>
 
     <view class="product">
@@ -15,20 +15,20 @@
             <van-loading type="spinner"/>
         </view>
 
-        <view class="no-order" wx:if="{{order_list.length == 0&&!loading}}">
+        <view class="no-order" wx:if="{{orderList.length == 0&&!loading}}">
             <image class="img" src="/assets/index/noOrder.png"></image>
             <view class="txt">当前商品正在采购中，尽请期待⁽⁽٩(๑˃̶͈̀▽ ˂̶͈́)۶⁾⁾！</view>
         </view>
-        <view class="third" wx:if="{{order_list.length > 0&&!loading}}">
-            <view class="list" wx:for="{{order_list}}" wx:for-item="item" wx:key="{{item.id}}"
+        <view class="third" wx:if="{{orderList.length > 0&&!loading}}">
+            <view class="list" wx:for="{{orderList}}" wx:for-item="item" wx:key="{{item.id}}"
                   data-value="{{item}}" id="{{item.id}}" bindtap="toOrder">
                 <view class="top">
-                    <image class="img" src="{{item.url}}"></image>
+                    <image class="img" src="{{item.pictureUrl}}"></image>
                     <view class="top_info">
-                        <view class="title">{{item.title}}</view>
-                        <view class="description">{{item.description}}</view>
-                        <view class="description">{{item.place}}</view>
-                        <van-tag round color="#DD3C4A">{{item.label}}</van-tag>
+                        <view class="title">{{item.name}}</view>
+                        <view class="description">{{item.info}}</view>
+                        <view class="description">{{item.placeOfOrigin}}</view>
+                        <van-tag round color="#DD3C4A">"次日达"</van-tag>
                         <view class="top_down">
                             <view class="money_f">¥
                                 <view class="place">{{item.price}}</view>
@@ -36,27 +36,31 @@
                                     <view class="original">{{item.originalPrice}}</view>
                                 </view>
                             </view>
-                            <image class="icon" src="/assets/addCart.png"></image>
+                            <image class="icon" src="/assets/addCart.png" data-value="{{item}}" capture-catch:tap="addCart"></image>
                         </view>
                     </view>
                 </view>
                 <view class="down">
                     <view class="down_left">
-                        <text class="down_text">累计销量{{item.sale}}</text>
+                        <text class="down_text">累计销量{{item.sellCount}}</text>
                     </view>
 
                     <view class="down_right">
-                        <view class="imglist  imglist-{{index}}" wx:for="{{down_avater}}" wx:for-item="item"
+                        <view class="imglist  imglist-{{index}}" wx:for="{{item.url}}" wx:for-item="item"
                               wx:key="{{item.id}}"
                               data-value="{{item}}" id="{{item.id}}">
-                            <image class="img" src="{{item.url}}"></image>
+                            <image class="img" src="{{item}}"></image>
                         </view>
-                        <text class="down_text">已团{{item.group}}/剩余{{item.remaining}}</text>
+                         <!--                        已团{{item.group}}/-->
+                     <text class="down_text">剩余{{item.leftCount}}</text>
                     </view>
                 </view>
             </view>
         </view>
+        <view wx:if="{{!hasMore}}" class="hasNoMore">
+            -- 到底了 --
+        </view>
     </view>
-
+    <van-toast id="van-toast" />
 
 </view>

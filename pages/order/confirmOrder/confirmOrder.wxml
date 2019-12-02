@@ -29,10 +29,10 @@
     </view>
 
     <view class="order">
-        <view class="top">
-            <image class="img" src="{{ConfirmOrder.myAvatar}}"></image>
-            <view class="name">{{ConfirmOrder.myNickname}}</view>
-        </view>
+<!--        <view class="top">-->
+<!--            <image class="img" src="{{ConfirmOrder.myAvatar}}"></image>-->
+<!--            <view class="name">{{ConfirmOrder.myNickname}}</view>-->
+<!--        </view>-->
         <view class="orderInfo" wx:for="{{ConfirmOrder.orderInfoGoodsListVOList}}" wx:for-item="item" wx:key="item.id">
             <image class="img" mode="widthFix" src="{{item.url}}"></image>
             <view class="info">

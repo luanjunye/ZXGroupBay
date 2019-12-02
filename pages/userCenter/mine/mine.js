@@ -32,7 +32,7 @@ Page({
       {id: 2, title: '售后反馈', type: 'page', url: '/pages/userCenter/feedback/feedback' ,iconUrl: '/assets/mine/feedback.png', badge: 6},
       {id: 3, title: '佣金记录', type: 'page', url: '/pages/userCenter/commission/commission' ,iconUrl: '/assets/mine/commission.png', badge: 0},
       {id: 4, title: '团员管理', type: 'page', url: '/pages/userCenter/memberManage/memberManage' ,iconUrl: '/assets/mine/member-manage.png', badge: 324},
-      {id: 5, title: '历史开团', type: 'page', url: '/pages/userCenter/history/history' ,iconUrl: '/assets/mine/tuan-history.png', badge: 12},
+      {id: 5, title: '历史开团', type: 'page', url: '/pages/userCenter/historyGroup/historyGroup' ,iconUrl: '/assets/mine/tuan-history.png', badge: 12},
     ],
 
     // 营销工具菜单组

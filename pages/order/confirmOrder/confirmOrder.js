@@ -112,19 +112,17 @@ Page({
                             signType: entity.signType,
                             paySign: entity.sign,
                             success(res) {
-                                console.log(res)
                                 wx.showToast({
                                     title: '支付成功',
                                 });
                                 setTimeout(function () {
-                                    wx.switchTab({
+                                    wx.navigateTo({
                                         url: '/pages/order/orderCenter/orderCenter',
                                     })
                                 }, 1500);
                             },
                             fail(res) {
-                                console.log(res)
-                                wx.switchTab({
+                                wx.navigateTo({
                                     url: '/pages/order/orderCenter/orderCenter',
                                 })
                             }

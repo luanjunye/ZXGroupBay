@@ -10,7 +10,7 @@
 </view>
 
 <view class="order-list">
-    <view class="order-list-item light-shadow" wx:for="{{orders}}" wx:key="{{index}}">
+    <view class="order-list-item light-shadow" wx:for="{{orders}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="toDetails">
 <!--        head-->
         <view class="head">
             <view class="user-info">
