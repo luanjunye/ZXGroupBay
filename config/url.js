@@ -52,6 +52,7 @@ module.exports = {
 
   // 申请团长
   MasterApply: API_BASE_URL + 'regimental/add',  // 申请团长
+  MasterStateCheck: API_BASE_URL + 'regimental/check',  // 是否提交过申请
 
  };
 

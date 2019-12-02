@@ -4,13 +4,13 @@ const api = require('../../../config/url.js');
 Page({
   data: {
     groupMaster: true,  // 是否为团长
-    applyState: 'none',  // none | pending
     messageCount: 123,
     userInfo: {
 /*      avatar: "https://wx.qlogo.cn/mmopen/vi_32/AIdAmibzdhn40DjpvD3Tce9ZCbZkO3VLrRFfItR8uquB7PAJDH1yuMCNicJJtsbkVJUuKVmFLZ7v3oVaicDmeJlXw/132",
       nickname: "十月",
       code: "778697298",
       amountMoney: 100,
+      isRegimental: 0,  // 1=是团长 0=团员
       awaitMoney: 0,
       predictMoney: 168.96,
       orderCount: 33,
@@ -61,25 +61,27 @@ Page({
 
 
   onLoad: function (options) {
-    this.setData({
-      groupMaster: util.getUserInfo().isMaster
-    });
-
     this.getUserInformation();
   },
 
   // 申请团长点击时
   applyGroupMaster(){
-    if (this.data.applyState === 'pending'){
-      wx.showToast({
-        icon: 'none',
-        title: '您已提交过申请了,请耐心等待审核'
-      })
-    } else {
-      wx.navigateTo({
-        url: '/pages/userCenter/apply/apply',
-      })
-    }
+
+    util.request(api.MasterStateCheck, {
+      userId: util.getUserInfo().userId
+    }, "POST").then(res => {
+      if (res === 1){ // 已申请过
+        wx.showToast({
+          icon: 'none',
+          title: '您已提交过申请了,请耐心等待审核',
+          duration: 3000
+        })
+      } else {
+        wx.navigateTo({
+          url: '/pages/userCenter/apply/apply',
+        })
+      }
+    })
   },
 
 
@@ -90,8 +92,10 @@ Page({
     util.request(api.UserInfo, {
       userId: util.getUserInfo().userId
     }, "POST").then(res => {
+      wx.setStorageSync('isMaster', Boolean(res.isRegimental)); // 更新 storage 用户状态：是否为团长
       that.setData({
-        userInfo: res
+        userInfo: res,
+        groupMaster: Boolean(res.isRegimental) // 更新状态：是否为团长
       })
     })
   },
@@ -133,7 +137,7 @@ Page({
 
 // ========================
   onPullDownRefresh: function () {
-    wx.stopPullDownRefresh()
+    this.getUserInformation();
   },
 
   onReady: function () { },
