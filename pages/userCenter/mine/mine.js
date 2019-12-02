@@ -122,6 +122,14 @@ Page({
     })
   },
 
+  // 测试 切换团长与否
+
+  switchUserState(){
+    this.setData({
+      groupMaster: !this.data.groupMaster
+    })
+  },
+
 
 // ========================
   onPullDownRefresh: function () {

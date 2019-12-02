@@ -50,5 +50,8 @@ module.exports = {
   UserInfo: API_BASE_URL + 'teamuser/userInfo',  // 获取用户信息
 
 
+  // 申请团长
+  MasterApply: API_BASE_URL + 'regimental/add',  // 申请团长
+
  };
 
