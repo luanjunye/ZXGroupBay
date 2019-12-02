@@ -47,7 +47,7 @@
             <view class="top">
               <view class="main">
                 <!--                                <van-tag wx:if="{{item.label}}" round color="#FFA42F" text-color="FFA42F" class="tlabel">{{item.label}}</van-tag>-->
-                <text class="title" data-value="{{item}}" bindtap="toProduct">{{item.title}}</text>
+                <text class="title" data-value="{{item}}" bindtap="toProduct">{{item.name}}</text>
               </view>
               <view class="spec">{{item.spec}}
                 <van-icon class="arrow" color="#F7F7F7" name="arrow-down" />
@@ -77,7 +77,7 @@
     <view class="right">
       <view class="cost">
         <view class="total"> 合计:¥{{totalPrice}}</view>
-        <view class="thrift">为您节省{{thrift}}元</view>
+        <view class="thrift">为您节省{{difference}}元</view>
       </view>
       <view class="checkout {{noChecked ? 'disabled' : ''}}" hover-class="{{noChecked ? '' : 'active'}}" bindtap="checkout">结算</view>
     </view>

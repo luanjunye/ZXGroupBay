@@ -1,14 +1,17 @@
 {
   "pages": [
+
+    "pages/login/login",
+    "pages/index/index",
     "pages/userCenter/mine/mine",
     "pages/userCenter/feedback/feedback",
     "pages/userCenter/feedbackApply/feedbackApply",
-    "pages/index/index",
+   
     "pages/order/orderCenter/orderCenter",
     "pages/userCenter/groupOrder/groupOrder",
     "pages/userCenter/memberManage/memberManage",
     "pages/categories/categories",
-    "pages/login/login",
+    "pages/userCenter/apply/apply",
     "pages/regimentalCommander/changeCommander",
     "pages/product/product",
     "pages/order/orderDetails/orderDetails",
@@ -24,7 +27,7 @@
     "pages/userCenter/aboutUs/aboutUs",
     "pages/userCenter/agreement/agreement",
     "pages/userCenter/questions/questions",
-    "pages/userCenter/apply/apply",
+
     "pages/map/map",
     "pages/shopCart/shopCart",
     "pages/index/secondIndex/secondIndex",
@@ -90,7 +93,9 @@
     "i-input": "lib/iview-weapp/input/index",
     "van-dropdown-menu": "lib/vant-weapp/dropdown-menu/index",
     "van-dropdown-item": "lib/vant-weapp/dropdown-item/index",
-    "van-toast": "lib/vant-weapp/toast/index"
+    "van-toast": "lib/vant-weapp/toast/index",
+    "van-cell-group": "lib/vant-weapp/cell-group/index",
+    "van-field": "lib/vant-weapp/field/index"
   },
   "plugins": {
     "chooseLocation": {

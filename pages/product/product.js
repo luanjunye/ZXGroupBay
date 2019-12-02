@@ -15,162 +15,10 @@ Page({
         isLogin: false,
         userId: "",
         cartList: [],
-        product:
-            {
-                banner: [
-                    {
-                        id: 1,
-                        url: "https://zexuanshipin.oss-cn-beijing.aliyuncs.com/20191108/5e53561ab3f54195b9d2000f6cad6f89.jpg"
-                    },
-                    {
-                        id: 2,
-                        url: "https://zexuanshipin.oss-cn-beijing.aliyuncs.com/20191108/b2ccee96aaef47f8916283c7e206363c.jpg"
-                    },
-                    {
-                        id: 3,
-                        url: "https://zexuanshipin.oss-cn-beijing.aliyuncs.com/20191108/31916f2423ba4e4ea852036dc80a23ca.jpg"
-                    },
-                    {
-                        id: 4,
-                        url: "https://zexuanshipin.oss-cn-beijing.aliyuncs.com/20191108/4bb036ab95f340978b2736014cfc254a.jpg"
-                    },
-                    {
-                        id: 5,
-                        url: "https://zexuanshipin.oss-cn-beijing.aliyuncs.com/20191108/7376c6e1b3f749388cc012f62449b316.jpg"
-                    }
-                ],
-                price: 9.9,
-                originalPrice: 19.9,
-                remain: 237,
-                groupBay: 7268,
-                targetTime: 10000,
-                title: "紫米面包6袋，110g/袋",
-                description: "奶油，紫米，层层相扣，绝妙口感，特别好吃",
-                place: "新疆",
-                num: "1袋",
-                specification: "110g",
-
-                goodsDetailsList: [
-                    {
-                        goodsId: 32,
-                        url: "https://zexuanshipin.oss-cn-beijing.aliyuncs.com/20191108/b88e0afac9814fe8bd479623a7aab391.jpg"
-                    },
-                    {
-                        goodsId: 32,
-                        url: "https://zexuanshipin.oss-cn-beijing.aliyuncs.com/20191108/fc050e0ef27a4214ab0ee9628fec0b39.jpg"
-                    },
-                    {
-                        goodsId: 32,
-                        url: "https://zexuanshipin.oss-cn-beijing.aliyuncs.com/20191108/e6f9db285b4e428b9cd9e0e952c25963.jpg"
-                    },
-                    {
-                        goodsId: 32,
-                        url: "https://zexuanshipin.oss-cn-beijing.aliyuncs.com/20191108/0cd98ca8d6914a8f8fde6c2b33068e12.jpg"
-                    },
-                    {
-                        goodsId: 32,
-                        url: "https://zexuanshipin.oss-cn-beijing.aliyuncs.com/20191108/34c198bcf3254138b3eb09095eb0ef60.jpg"
-                    },
-                    {
-                        goodsId: 32,
-                        url: "https://zexuanshipin.oss-cn-beijing.aliyuncs.com/20191108/7fe48e431d694166a2647d5a0706a855.jpg"
-                    },
-                    {
-                        goodsId: 32,
-                        url: "https://zexuanshipin.oss-cn-beijing.aliyuncs.com/20191108/c087d94c4f2242ebaeb966ed48dbab87.jpg"
-                    }
-                ],
-            }
-        ,
-        likeList: [
-            {
-                id: 1,
-                url: "/assets/list1.jpg",
-                title: "农家种无公害辣椒新鲜5斤应季蔬菜",
-                description: "蓝海专供",
-                label: "次日达",
-                price: "9.9",
-                originalPrice: "19.9",
-                group: "556",
-                remaining: "236",
-                sale: "5112"
-            },
-            {
-                id: 2,
-                url: "/assets/list1.jpg",
-                title: "农家种无公害辣椒新鲜5斤应季蔬菜",
-                description: "蓝海专供",
-                label: "次日达",
-                price: "9.9",
-                originalPrice: "19.9",
-                group: "556",
-                remaining: "236",
-                sale: "5112"
-            },
-            {
-                id: 3,
-                url: "/assets/list1.jpg",
-                title: "农家种无公害辣椒新鲜5斤应季蔬菜",
-                description: "蓝海专供",
-                label: "次日达",
-                price: "9.9",
-                originalPrice: "19.9",
-                group: "556",
-                remaining: "236",
-                sale: "5112"
-            },
-            {
-                id: 4,
-                url: "/assets/list1.jpg",
-                title: "农家种无公害辣椒新鲜5斤应季蔬菜",
-                description: "蓝海专供",
-                label: "次日达",
-                price: "9.9",
-                originalPrice: "19.9",
-                group: "556",
-                remaining: "236",
-                sale: "5112"
-            },
-            {
-                id: 5,
-                url: "/assets/list1.jpg",
-                title: "农家种无公害辣椒新鲜5斤应季蔬菜",
-                description: "蓝海专供",
-                label: "次日达",
-                price: "9.9",
-                originalPrice: "19.9",
-                group: "556",
-                remaining: "236",
-                sale: "5112"
-            },
-            {
-                id: 6,
-                url: "/assets/list1.jpg",
-                title: "农家种无公害辣椒新鲜5斤应季蔬菜",
-                description: "蓝海专供",
-                label: "次日达",
-                price: "9.9",
-                originalPrice: "19.9",
-                group: "556",
-                remaining: "236",
-                sale: "5112"
-            }
-        ],
-        down_avater: [
-            {
-                id: 1,
-                url: "/assets/avater.png"
-            },
-            {
-                id: 2,
-                url: "/assets/avater.png"
-            },
-            {
-                id: 3,
-                url: "/assets/avater.png"
-            }
-        ]
-
+        difference: 0,
+        product: {},
+        likeList: [],
+        count: 0
     },
 
     /**
@@ -191,11 +39,23 @@ Page({
         util.request(api.GoodsInfo, {
             id: this.data.id
         }, "POST").then(function (res) {
+            var timeStamp = util.getTimeStamp()
+            var difference = res.endTime - timeStamp
             that.setData({
-                product: res
+                product: res,
+                difference: difference
             })
-            console.log(that.data.product)
         });
+
+        util.request(api.GoodsList, {
+            page: 1,
+            isLike: 1
+        }, "GET").then(function (res) {
+            that.setData({
+                likeList: res.list
+            })
+        });
+
     },
 
     /**
@@ -211,13 +71,14 @@ Page({
     onShow: function () {
         let isLogin = wx.getStorageSync('isLogin')
         let userId = wx.getStorageSync('userId')
-        console.log(userId)
         if (isLogin && userId) {
             this.setData({
                 isLogin: isLogin,
                 userId: userId
             })
         }
+
+        this.selectCart()
     },
 
     /**
@@ -273,7 +134,7 @@ Page({
                 id: this.data.product.id,
                 label: "次日达",
                 checked: true,
-                picUrl: this.data.product.goodsViewList[0].url,
+                picUrl: this.data.product.goodsViewList[0],
                 title: this.data.product.name,
                 spec: this.data.product.info,
                 originPrice: this.data.product.originalPrice,
@@ -285,8 +146,8 @@ Page({
                 goodsId: this.data.id,
                 userId: this.data.userId,
             }, "POST").then(function (res) {
-                    console.log(res)
-                    //that.selectCart()
+                console.log(res)
+                that.selectCart()
 
             });
             wx.setStorageSync("cartList", cartList)
@@ -298,6 +159,23 @@ Page({
         }
 
     },
+
+    //添加到购物车
+    likeAddCart: function (e) {
+        let that = this
+        var data = e.currentTarget.dataset.value;
+        if (data.id) {
+            util.request(api.CartAdd, {
+                goodsId: data.id,
+                userId: this.data.userId,
+            }, "POST").then(function (res) {
+                //that.selectCart()
+                Toast("加入购物车成功")
+            });
+        }
+
+    },
+
     toBuy: function () {
         if (this.checkLogin()) {
             // 跳转checkout页面
@@ -320,13 +198,19 @@ Page({
     selectCart: function () {
         let that = this
         var data = new Object();
-        // util.request(api.ProductInCart, {
-        //     userId: this.data.userId,
-        // }, "POST").then(function(res) {
-        //     if (res.code === 0) {
-        //         data.count = res.count
-        //         that.setData(data)
-        //     }
-        // });
+        util.request(api.ProductInCart, {
+            userId: this.data.userId,
+        }, "POST").then(function (res) {
+            data.count = res
+            that.setData(data)
+        });
+    },
+    toOrder: function (e) {
+        let data = e.currentTarget.dataset.value;
+        if (data.id) {
+            wx.navigateTo({
+                url: '/pages/product/product?id=' + data.id,
+            })
+        }
     }
 })

@@ -29,7 +29,7 @@
         </view>
         <view class="groupDown_right">
             <text>距本次开团结束</text>
-            <thor-count-down time="{{product.targetTime}}" color="#fff" bcolor="#666666" bgcolor="#666666"
+            <thor-count-down time="{{difference}}" color="#fff" bcolor="#666666" bgcolor="#666666"
                              colonColor="#666666"
                              bind:end="countDown"></thor-count-down>
         </view>
@@ -65,7 +65,7 @@
     </view>
 
     <!--    商品规格及活动-->
-    <view class="parameter">已选{{product.num}}，{{product.specification}}</view>
+    <view class="parameter">已选{{product.specification}}</view>
     <view class="activity">
         <view>{{activity1}}</view>
         <view>{{activity2}}</view>
@@ -89,11 +89,11 @@
         <view class="likeList" wx:for="{{likeList}}" wx:for-item="item" wx:key="{{item.id}}"
               data-value="{{item}}" id="{{item.id}}" bindtap="toOrder">
             <!--            <view class="info">-->
-            <image class="img" src="{{item.url}}" mode="widthFix"></image>
+            <image class="img" src="{{item.pictureUrl}}" mode="widthFix"></image>
             <view class="likeInfo">
-                <view class="likeTitle">{{item.title}}</view>
-                <view class="likeDescription">{{item.description}}</view>
-                <van-tag round color="#DD3C4A">{{item.label}}</van-tag>
+                <view class="likeTitle">{{item.name}}</view>
+                <view class="likeDescription">{{item.info}}</view>
+                <van-tag round color="#DD3C4A">次日达</van-tag>
                 <view class="body">
                     <view class="money_f">¥
                         <view class="place">{{item.price}}</view>
@@ -101,21 +101,22 @@
                             <view class="original">{{item.originalPrice}}</view>
                         </view>
                     </view>
-                    <image class="icon" src="/assets/addCart.png"></image>
+                    <image class="icon" src="/assets/addCart.png" data-value="{{item}}" capture-catch:tap="likeAddCart"></image>
                 </view>
                 <view class="end">
                     <view class="end_left">
-                        <view class="imglist  imglist-{{index}}" wx:for="{{down_avater}}" wx:for-item="iitem"
+                        <view class="imglist  imglist-{{index}}" wx:for="{{item.url}}" wx:for-item="iitem"
                               wx:key="{{iitem.id}}"
                               data-value="{{iitem}}" id="{{iitem.id}}">
-                            <image class="img" src="{{iitem.url}}"></image>
+                            <image class="img" src="{{iitem}}"></image>
                         </view>
                     </view>
                     <view class="end_right">
-                        <text class="down_text">已团{{item.group}}/剩余{{item.remaining}}</text>
+<!--                        已团{{item.group}}/-->
+                        <text class="down_text">剩余{{item.leftCount}}</text>
                     </view>
                 </view>
-                <view class="like_down_text">累计销量{{item.sale}}</view>
+                <view class="like_down_text">累计销量{{item.sellCount}}</view>
             </view>
             <!--            </view>-->
         </view>

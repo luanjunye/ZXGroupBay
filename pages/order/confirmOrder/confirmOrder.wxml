@@ -5,31 +5,43 @@
 
     <view class="commanderInfo">
         <view class="top">
-            <image class="img" src="/assets/avater.png"></image>
-            <view class="name">团长昵称</view>
+            <image class="img" src="{{ConfirmOrder.avatar}}"></image>
+            <view class="name">{{ConfirmOrder.nickname}}</view>
         </view>
         <view class="body">
             <view class="delivery">配送地址</view>
-            <view class="address">济南泽轩优选团购-高新区康虹路766号盛世花城</view>
+            <view class="address">济南泽轩优选团购-{{ConfirmOrder.street}}{{ConfirmOrder.adress}}</view>
         </view>
         <view class="input_info">
-            <i-input class="input_text" title="姓名" type="textarea" placeholder="输入你的姓名" bind:change="remark_input"/>
-            <i-input class="input_text" title="手机号" type="textarea" placeholder="输入你的手机号" bind:change="remark_input"/>
-            <i-input class="input_text" title="备注" type="textarea" placeholder="输入备注" bind:change="remark_input"/>
+            <view class="input_class">
+            <text>姓名</text>
+            <input bindchange="handleInputChange" data-model="name" class="input" type="text" placeholder="你的姓名"></input>
+            </view>
+            <view class="input_class">
+                <text>手机</text>
+                <input bindchange="handleInputChange" data-model="mobile" class="input" type="number" maxlength="11" placeholder="你的手机号码"></input>
+            </view>
+            <view class="input_class">
+                <text>备注</text>
+                <input bindchange="handleInputChange" data-model="remark" class="input" type="text" placeholder="选填"></input>
+            </view>
         </view>
     </view>
 
     <view class="order">
         <view class="top">
-            <image class="img" src="/assets/avater.png"></image>
-            <view class="name">团长昵称</view>
+            <image class="img" src="{{ConfirmOrder.myAvatar}}"></image>
+            <view class="name">{{ConfirmOrder.myNickname}}</view>
         </view>
-        <view class="orderInfo" wx:for="{{orderList}}" wx:for-item="item" wx:key="item.id">
+        <view class="orderInfo" wx:for="{{ConfirmOrder.orderInfoGoodsListVOList}}" wx:for-item="item" wx:key="item.id">
             <image class="img" mode="widthFix" src="{{item.url}}"></image>
             <view class="info">
-                <view class="title">{{item.title}}</view>
-                <view class="description">{{item.description}}</view>
-                <van-tag round color="#DD3C4A">{{item.label}}</van-tag>
+                <view class="title">{{item.name}}</view>
+                <view class="second">
+                    <view class="description">{{item.specification}}</view>
+                    <view class="description">x{{item.num}}</view>
+                </view>
+                <van-tag round color="#DD3C4A">次日达</van-tag>
                 <view class="top_down">
                     <view class="money">¥
                         <view class="number">{{item.price}}</view>
@@ -42,17 +54,17 @@
     <view class="down">
         <view class="down_info">
             <view class="title">本单合计</view>
-            <view class="text">¥{{amount}}</view>
+            <view class="text">¥{{ConfirmOrder.goodsPrice}}</view>
         </view>
         <view class="down_info">
             <view class="title">满减优惠</view>
-            <view class="text">-¥{{preferential}}</view>
+            <view class="text">-¥{{ConfirmOrder.fullOutPrice}}</view>
         </view>
         <view class="down_info">
             <view class="title">实付款</view>
-            <view class="text_a">¥{{total}}</view>
+            <view class="text_a">¥{{ConfirmOrder.orderPrice}}</view>
         </view>
     </view>
 
-    <view class="cart-bottom">去支付</view>
+    <view class="cart-bottom" bindtap="toPay">去支付</view>
 </view>

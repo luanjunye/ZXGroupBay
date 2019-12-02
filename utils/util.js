@@ -2,7 +2,7 @@ var api = require('../config/url.js');
 
 
 const REGEX = {
-  mobile: /\d{11}/i
+  mobile: /^\d{11}$/i
 }
 
 // TOAST
@@ -203,6 +203,13 @@ function updateCartCount(){
   })
 }
 
+//获取当前时间戳
+function getTimeStamp(){
+  var timestamp = Date.parse(new Date());
+  timestamp = timestamp / 1000;
+  return timestamp
+}
+
 
 module.exports = {
   REGEX,
@@ -217,5 +224,6 @@ module.exports = {
   toast,
   toastSuccess,
   getUserInfo,
-  updateCartCount
+  updateCartCount,
+  getTimeStamp
 }

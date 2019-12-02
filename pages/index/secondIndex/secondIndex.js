@@ -1,4 +1,6 @@
 // pages/index/secondIndex/secondIndex.js
+import Toast from "../../../lib/vant-weapp/toast/toast";
+
 const api = require('../../../config/url.js');
 const util = require('../../../utils/util.js');
 Page({
@@ -12,7 +14,9 @@ Page({
         pageNo: 1,// 分页相关
         perPageCount: 15, // 每次请求的数量条数
         hasMore: true, // 标记是否还有更多
-        orderList: []
+        orderList: [],
+        userId: "",
+        isLogin: false
     },
 
     /**
@@ -37,6 +41,20 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
+        var userId = wx.getStorageSync("userId")
+        let isLogin = wx.getStorageSync("isLogin");
+        if (isLogin && userId) {
+            this.setData({
+                isLogin: isLogin,
+                userId: userId
+            })
+        }
+
+        this.setData({
+            orderList: [],
+            pageNo: 1,// 分页相关
+            hasMore: true, // 标记是否还有更多
+        });
         this.changeOrderList(this.data.typeId, this.data.pageNo)
     },
 
@@ -58,11 +76,7 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-        this.setData({
-            orderList: [],
-            pageNo: 1,// 分页相关
-            hasMore: true, // 标记是否还有更多
-        });
+
         this.onShow()
     },
 
@@ -107,12 +121,28 @@ Page({
         });
     },
 
-    toOrder:function (e) {
-      let data = e.currentTarget.dataset.value;
-      if (data.id) {
-        wx.navigateTo({
-          url: '/pages/product/product?id=' + data.id,
-        })
-      }
+    toOrder: function (e) {
+        let data = e.currentTarget.dataset.value;
+        if (data.id) {
+            wx.navigateTo({
+                url: '/pages/product/product?id=' + data.id,
+            })
+        }
+    },
+
+    //添加到购物车
+    addCart: function (e) {
+        let that = this
+        var data = e.currentTarget.dataset.value;
+        if (data.id) {
+            util.request(api.CartAdd, {
+                goodsId: data.id,
+                userId: this.data.userId,
+            }, "POST").then(function (res) {
+                //that.selectCart()
+                Toast("加入购物车成功")
+            });
+        }
+
     }
 })

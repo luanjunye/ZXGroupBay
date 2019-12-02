@@ -93,13 +93,13 @@
       <van-loading type="spinner" />
     </view>
 
-    <view class="no-order" wx:if="{{orderList.length == 0&&!loading}}">
+    <view class="no-order" wx:if="{{targetTime == 0 || orderList.length == 0&&!loading}}">
       <image class="img" src="/assets/index/noOrder.png"></image>
       <view class="txt">当前团长没有开团，尽请期待⁽⁽٩(๑˃̶͈̀▽ ˂̶͈́)۶⁾⁾！</view>
     </view>
 
 
-    <view class="third" wx:if="{{orderList.length > 0&&!loading}}">
+    <view class="third" wx:if="{{orderList.length > 0&&!loading && targetTime > 0}}">
       <view class="list" wx:for="{{orderList}}" wx:for-item="item" wx:key="{{item.id}}" data-value="{{item}}" id="{{item.id}}" bindtap="toOrder">
         <view class="top">
           <image class="img" src="{{item.pictureUrl}}"></image>
@@ -115,7 +115,7 @@
                   <view class="original">{{item.originalPrice}}</view>
                 </view>
               </view>
-              <image class="icon" src="/assets/addCart.png" bintap="addCart"></image>
+              <image class="icon" src="/assets/addCart.png" data-value="{{item}}" capture-catch:tap="addCart"></image>
             </view>
           </view>
         </view>
@@ -133,6 +133,9 @@
           </view>
         </view>
       </view>
+    </view>
+    <view wx:if="{{!hasMore}}" class="hasNoMore">
+      -- 到底了 --
     </view>
   </view>
   <van-toast id="van-toast" />

@@ -25,7 +25,7 @@
                                 <view class="original">{{item.originalPrice}}</view>
                             </view>
                         </view>
-                        <image class="icon" src="/assets/addCart.png"></image>
+                        <image class="icon" src="/assets/addCart.png" data-value="{{item}}" capture-catch:tap="addCart"></image>
                     </view>
                 </view>
             </view>
@@ -35,7 +35,7 @@
                 </view>
 
                 <view class="down_right">
-                    <view class="imglist  imglist-{{index}}" wx:for="{{url}}" wx:for-item="item" wx:key="{{item.id}}"
+                    <view class="imglist  imglist-{{index}}" wx:for="{{item.url}}" wx:for-item="item" wx:key="{{item.id}}"
                           data-value="{{item}}" id="{{item.id}}">
                         <image class="img" src="{{item}}"></image>
                     </view>
@@ -44,5 +44,10 @@
                 </view>
             </view>
         </view>
+
+        <view wx:if="{{!hasMore}}" class="hasNoMore">
+            -- 到底了 --
+        </view>
     </view>
+    <van-toast id="van-toast" />
 </view>

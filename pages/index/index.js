@@ -31,7 +31,7 @@ Page({
                 url: "/assets/avater.png"
             }
         ],
-        targetTime: 12000,
+        targetTime: 0,
         clearTimer: false,
         loading: false,
         buyerList: [],
@@ -45,19 +45,12 @@ Page({
         // this.setData({
         //     targetTime: new Date().getTime() + 6430000
         // });
-        let userId = wx.getStorageSync("userId");
-        let isLogin = wx.getStorageSync("isLogin");
-        if (isLogin && userId) {
-            this.setData({
-                isLogin: isLogin,
-                userId: userId
-            })
-        }
+
         getApp().globalData.type = 0;
     },
 
     countDown(e) {
-        wx.showToast("倒计时结束")
+        Toast("团购已结束")
     },
 
     // ========================
@@ -66,6 +59,20 @@ Page({
     onShow: function () {
         let that = this;
         var userId = wx.getStorageSync("userId")
+        let isLogin = wx.getStorageSync("isLogin");
+        if (isLogin && userId) {
+            this.setData({
+                isLogin: isLogin,
+                userId: userId
+            })
+        }
+
+        this.setData({
+            shippingStatus: 0,
+            orderList: [],
+            pageNo: 1,// 分页相关
+            hasMore: true, // 标记是否还有更多
+        });
 
         //首页购买信息
         util.request(api.IndexRoll, {}, "POST").then(function (res) {
@@ -90,6 +97,18 @@ Page({
             });
         });
 
+        //首页截团倒计时
+        util.request(api.IndexEndTime, {}, "POST").then(function (res) {
+
+            var timeStamp = util.getTimeStamp()
+            var difference = res - timeStamp
+            that.setData({
+                targetTime: difference
+            })
+
+        });
+
+
         //首页拼团信息
         util.request(api.IndexCopyGroup, {userId: userId}, "POST").then(function (res) {
             that.setData({
@@ -113,12 +132,6 @@ Page({
     onUnload: function () {
     },
     onPullDownRefresh: function () {
-        this.setData({
-            shippingStatus: 0,
-            orderList: [],
-            pageNo: 1,// 分页相关
-            hasMore: true, // 标记是否还有更多
-        });
         this.onShow()
     },
     onReachBottom: function () {
@@ -204,23 +217,27 @@ Page({
     //去二级分类页
     toSecond: function (e) {
         let data = e.currentTarget.dataset.value;
-        if (data.id){
+        if (data.id) {
             wx.navigateTo({
-                url:"/pages/index/secondIndex/secondIndex?id=" + data.id,
+                url: "/pages/index/secondIndex/secondIndex?id=" + data.id,
             })
         }
     },
 
     //添加到购物车
-    addCart: function () {
-        util.request(api.CartAdd, {
-            goodsId: this.data.orderList.id,
-            userId: this.data.userId,
-        }, "POST").then(function (res) {
-            console.log(res)
-            //that.selectCart()
-            Toast("加入购物车成功")
-        });
+    addCart: function (e) {
+        let that = this
+        var data = e.currentTarget.dataset.value;
+        if (data.id) {
+            util.request(api.CartAdd, {
+                goodsId: data.id,
+                userId: this.data.userId,
+            }, "POST").then(function (res) {
+                //that.selectCart()
+                Toast("加入购物车成功")
+            });
+        }
+
     }
 
 });
