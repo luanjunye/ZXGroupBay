@@ -120,9 +120,11 @@ Page({
   },
 
   showDiscountActivity(){
-    wx.showModal({
-      title: '优惠活动',
-      content: `满即送：\n满30元送泽轩基金奶茶一杯；\n满立减：\n满60元立减10元`,
+    util.request(api.ActivityDiscount, {}, 'GET').then(res => {
+      wx.showModal({
+        title: '优惠活动',
+        content: res,
+      })
     })
   },
 
