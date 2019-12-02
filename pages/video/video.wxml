@@ -1,0 +1,24 @@
+<view class="video-container">
+    <video id="video"
+           autoplay="false"
+           src="{{videoUrl}}">
+    </video>
+
+    <view class="control">
+        <view class="btn btn-video" bindtap="onPlay">Play</view>
+        <view class="btn btn-video" bindtap="onPause">Pause</view>
+        <view class="btn btn-video" bindtap="onStop">Stop</view>
+    </view>
+</view>
+
+
+<view class="video-list">
+    <view class="video-list-item"
+          data-index="{{index}}"
+          bindtap="changeVideoSource"
+          wx:for="{{videos}}"
+          wx:key="{{index}}">{{item.title}}</view>
+</view>
+
+
+

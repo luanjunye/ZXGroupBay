@@ -49,6 +49,7 @@ Page({
       {id: 1, title: '优惠券',      type: 'method',  url: 'showDeveloping' ,iconUrl: '/assets/mine/icon-coupon.png', badge: 4},
       {id: 2, title: '更换团长',    type: 'page',    url: '/pages/userCenter/user/user' ,iconUrl: '/assets/mine/icon-switch.png', badge: 0},
       {id: 3, title: '关于泽轩优选', type: 'page',    url: '/pages/userCenter/about/about' ,iconUrl: '/assets/mine/icon-about.png', badge: 0},
+      {id: 4, title: '视频播放', type: 'page',    url: '/pages/video/video' ,iconUrl: '/assets/mine/icon-about.png', badge: 0},
     ],
 
     // 团长菜单
