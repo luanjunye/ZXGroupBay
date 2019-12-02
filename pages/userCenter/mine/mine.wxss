@@ -264,7 +264,7 @@ page {
 
 .mine-container {
   z-index: 400;
-  padding: 10px;
+  padding: 10px 10px 60px 10px;
 }
 
 .operate {

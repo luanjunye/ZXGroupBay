@@ -1,0 +1,48 @@
+@import "../../utils/mixin";
+
+.video-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid $color-border;
+
+}
+
+video{
+  display: block;
+  margin-bottom: 0;
+  height: 300px;
+  width: 100%;
+}
+.control{
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  .btn-video{
+    font-weight: bold;
+    display: block;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 10px;
+    text-align: center;
+    min-height: none;
+    height: auto;
+    &:active{
+      background-color: $bg-main;
+    }
+  }
+}
+
+.video-list{
+  padding-top: 335px;
+  &-item{
+    border-bottom: 1px solid $color-border;
+    font-size: 12px;
+    line-height: 1;
+    padding: 8px 10px;
+    &:active{
+      background-color: $bg-main;
+    }
+  }
+}
