@@ -46,13 +46,24 @@ module.exports = {
     FeedbackApply: API_BASE_URL + 'aftersales/save/json',  // 反馈提交
 
     // 佣金相关
+    CommissionList: API_BASE_URL + 'teamuser/commissionlist',  // 佣金记录列表
     CommissionWithdraw: API_BASE_URL + 'commissions/save/json',  // 佣金提现
-    CommissionList: API_BASE_URL + 'commissions/page',  // 佣金列表
+    CommissionWithdrawList: API_BASE_URL + 'commissions/page',  // 佣金提现列表
     CommissionInfo: API_BASE_URL + 'commissions/info',  // 佣金详情
+    CommissionAmount: API_BASE_URL + 'commissions/awaitmoney',  // 获取可提现余额
 
     //支付
     Pay: API_BASE_URL + 'wx/wechatPay', // 微信支付请求接口  POST: orderId
 
+    // 用户信息
+    UserInfo: API_BASE_URL + 'teamuser/userInfo',  // 获取用户信息
 
+    // 申请团长
+    MasterApply: API_BASE_URL + 'regimental/add',  // 申请团长
+    MasterStateCheck: API_BASE_URL + 'regimental/check',  // 是否提交过申请
+
+    // 杂项
+    // 优惠活动
+    ActivityDiscount: API_BASE_URL + 'teamuser/preferential',  // 优惠活动内容
 };
 

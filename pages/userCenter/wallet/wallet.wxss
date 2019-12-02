@@ -53,6 +53,7 @@ page {
   overflow: hidden;
 }
 .log-item .head-pic image {
+  padding: 5px;
   width: 45px;
   height: 45px;
   display: block;

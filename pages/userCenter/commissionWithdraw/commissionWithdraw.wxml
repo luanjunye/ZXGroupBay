@@ -1,27 +1,30 @@
 
 <view class="state">
-    <view class="state-text"><image mode="aspectFit" src="{{stateIcon[commission.icon]}}"></image>{{commission.state}}</view>
-    <view class="state-return">{{commission.commissionActual}}元</view>
+    <view class="state-text"><image mode="aspectFit" src="{{stateIcon[commission.state]}}"></image>{{commission.content}}</view>
+    <view class="state-return">{{commission.money}}元</view>
 </view>
 
 
 <view class="detail-list">
 
     <view class="detail-list-item">
-        <view class="label">申请提现时间:</view>
-        <view class="content">{{commission.timeCommissionApply}}</view>
-    </view>
-    <view class="detail-list-item">
         <view class="label">申请提现金额:</view>
-        <view class="content">{{commission.commissionApply}}</view>
+        <view class="content">{{commission.money}}</view>
     </view>
     <view class="detail-list-item">
-        <view class="label">实际到账时间:</view>
-        <view class="content">{{commission.timeCommissionReceive}}</view>
+        <view class="label">申请提现时间:</view>
+        <view class="content">{{commission.time}}</view>
     </view>
-    <view class="detail-list-item">
-        <view class="label">实际到账金额:</view>
-        <view class="content">{{commission.commissionActual}}</view>
+    <view wx:if="{{commission.endTime}}">
+        <view class="detail-list-item">
+            <view class="label">实际到账金额:</view>
+            <view class="content">{{commission.money}}</view>
+        </view>
+        <view class="detail-list-item">
+            <view class="label">实际到账时间:</view>
+            <view class="content">{{commission.endTime}}</view>
+        </view>
     </view>
+
 
 </view>

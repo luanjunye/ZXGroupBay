@@ -8,14 +8,14 @@
         <text>手机</text>
         <input bindchange="handleInputChange" data-model="mobile" class="input" type="text" placeholder="你的手机号码"></input>
     </view>
-    <view class="input-group">
+<!--    <view class="input-group">
         <text>验证码</text>
         <input bindchange="handleInputChange" data-model="verifyCode" class="input" type="text" placeholder="输入验证码"></input>
         <view class="add-on">
             <view wx:if="{{verifyCodeReceiving}}" class="btn-verify btn">{{countdown}}秒</view>
             <view wx:else bindtap="getVerifyCode" class="btn-verify btn">获取验证码</view>
         </view>
-    </view>
+    </view>-->
     <view class="input-group">
         <text>地址</text>
         <picker wx:if="{{address.length > 0}}" class="input" mode="region" bindchange="locationChange">{{addressString}}</picker>

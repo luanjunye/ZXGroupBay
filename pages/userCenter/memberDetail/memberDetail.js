@@ -53,7 +53,6 @@ Page({
     });
     // 获取团员信息
     this.getMemberInfo();
-
     // 载入当前状态订单列表
     this.switchState(this.data.currentStateId);
   },
@@ -92,7 +91,7 @@ Page({
       currentStateID: index,
       orderStates: tempArray,
       orders: [],
-      currentStateId: 0,
+      currentStateId: index,
       pageNo: 1,
       perPageCount: this.data.perPageCount,
       hasMore: true,
@@ -136,12 +135,14 @@ Page({
   onPullDownRefresh: function () {
     this.setData({
       orders: [],
-      currentStateId: 0,
       pageNo: 1,
       perPageCount: this.data.perPageCount,
       hasMore: true,
     })
-    this.onLoad();
+    // 获取团员信息
+    this.getMemberInfo();
+    // 载入当前状态订单列表
+    this.switchState(this.data.currentStateId);
   },
 
   // 加载分页数据

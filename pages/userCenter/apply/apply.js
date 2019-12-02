@@ -1,4 +1,5 @@
 const util = require('../../../utils/util');
+const api = require('../../../config/url.js');
 
 Page({
   data: {
@@ -11,7 +12,8 @@ Page({
     invitation: '',
     countdown: 60, // 验证码倒计时
     verifyCodeReceiving: false,
-    intervalHandle: null
+    intervalHandle: null // 倒计时 handle
+
   },
 
   onLoad: function (options) {
@@ -25,14 +27,28 @@ Page({
       util.toast('请输入名字')
     } else if (!(util.REGEX.mobile.test(this.data.mobile))) {
       util.toast('请输入正确的手机号')
-    } else if (this.data.verifyCode.length < 1) {
+    } /*else if (this.data.verifyCode.length < 1) {
       util.toast('请填写验证码')
-    } else if (this.data.addressString.length < 1) {
+    } */else if (this.data.addressString.length < 1) {
       util.toast('请选择省市区')
     } else if (this.data.addressDetail.length < 1) {
       util.toast('请填写详细地址')
     } else {
-      // TODO: 提交申请接口
+      let requestData = {
+        address: this.data.address.join(''),
+        invitationCode: this.data.invitation,
+        mobile: this.data.mobile,
+        name: this.data.name,
+        street: this.data.addressDetail,
+        userId: util.getUserInfo().userId
+      }
+      util.request(api.MasterApply, requestData, 'POST').then(res => {
+        util.toastSuccess('申请已成功提交');
+        setTimeout(()=>{
+          wx.navigateBack()
+        },1500)
+      })
+
     }
   },
 
