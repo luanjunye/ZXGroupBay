@@ -41,7 +41,7 @@ Page({
   // 获取提现记录列表
   getWithdrawList(pageNo){
     let that = this;
-    util.request(api.CommissionList,{
+    util.request(api.CommissionWithdrawList,{
       userId: util.getUserInfo().userId
     }, 'GET').then(res => {
       let currentLists = that.data.lists.concat(res.list);
