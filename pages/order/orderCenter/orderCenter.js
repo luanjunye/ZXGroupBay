@@ -152,10 +152,31 @@ Page({
   },
 
   // 支付
-
   pay(e){
     let orderId = e.currentTarget.dataset.id;
-    // TODO: 去支付
+    util.request(api.Pay, {
+      id: orderId,
+    }, "POST").then(function (res) {
+      // console.log(res);
+      wx.requestPayment({
+        timeStamp: res.timeStamp,
+        nonceStr: res.nonceStr,
+        package: res.package,
+        signType: 'MD5',
+        paySign: res.sign,
+        success(res) {
+          wx.showToast({
+            title: '支付成功',
+          });
+          setTimeout(function(){
+            that.onPullDownRefresh();
+          }, 1500);
+        },
+        fail(res) {
+          console.log('fail: ',res)
+        }
+      })
+    })
   },
 
 

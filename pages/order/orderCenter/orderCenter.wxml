@@ -44,7 +44,7 @@
 <!--        footer-->
         <view class="footer">
             <view class="btn-outline">自提</view>
-            <view class="btn btn-fill" wx:if="{{item.shippingStatus === 1}}" data-id="{{item.id}}">去付款</view>
+            <view class="btn btn-fill" wx:if="{{item.shippingStatus === 1}}" data-id="{{item.id}}" bindtap="pay">去付款</view>
         </view>
     </view>
 
