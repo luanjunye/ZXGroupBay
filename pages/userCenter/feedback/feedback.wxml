@@ -16,8 +16,8 @@
           wx:key="{{item.id}}"
           data-id="{{item.id}}" >
         <view class="list-content">
-            <view class="title">{{item.orderNum}}</view>
-            <view class="date">{{item.createTime}}</view>
+            <view class="title">{{item.title}}</view>
+            <view class="date">{{item.time}}</view>
         </view>
         <view wx:if="{{item.state === 1}}" class="state">待审核 ></view>
         <view wx:if="{{item.state === 2}}" class="state">待解决 ></view>

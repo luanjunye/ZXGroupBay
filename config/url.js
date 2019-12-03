@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://192.168.0.176:8086/freeterapi/';
+const API_BASE_URL = 'http://192.168.0.176:7081/freeterapi/';
 // const API_BASE_URL = 'https://shop02.zexuanshipin.com/freeterapi/';
 
 

@@ -1,11 +1,11 @@
 {
   "pages": [
     "pages/userCenter/mine/mine",
-    "pages/video/video",
+    "pages/userCenter/feedbackApply/feedbackApply",
     "pages/login/login",
+    "pages/video/video",
     "pages/index/index",
     "pages/userCenter/feedback/feedback",
-    "pages/userCenter/feedbackApply/feedbackApply",
    
     "pages/order/orderCenter/orderCenter",
     "pages/userCenter/groupOrder/groupOrder",

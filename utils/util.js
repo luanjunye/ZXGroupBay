@@ -82,7 +82,7 @@ function request(url, data = {}, method, showLoading, header = "application/json
                                 });
                                 break;
                             default:
-                                console.log('错误提示：', res.data.msg)
+                                console.log('错误提示：', res.data.msg, ' URL: ',url)
                         }
                     }
                 } else {

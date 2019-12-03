@@ -1,9 +1,6 @@
 <!--pages/order/orderDetails/orderDetails.wxml-->
-
 <view class="ucenter">
-
     <view class="prompt">截团五小时后，不支持退款!</view>
-
     <view class="orderStatus">
         <view class="status" wx:if="{{product.shippingStatus}}">
             <image class="img" mode="widthFix" src="/assets/order/orderDetails/time.png"></image>
@@ -57,7 +54,9 @@
                     <view class="money">¥
                         <view class="number">{{item.price}}</view>
                     </view>
-                    <view class="refund" wx:if="{{product.shippingStatus == 3}}" bintap="toRefund">申请退款</view>
+                    <!--TODO： 测试用的数据，需要恢复-->
+<!--                    <view class="refund" data-value="{{item}}" bindtap="feedback" wx:if="{{product.shippingStatus == 3}}" bintap="toRefund">申请退款</view>-->
+                    <view class="refund" data-value="{{item}}" bindtap="feedback"  bintap="toRefund">申请退款</view>
                 </view>
             </view>
         </view>

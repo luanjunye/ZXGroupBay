@@ -20,8 +20,7 @@ Page({
 
   onLoad: function (options) {
     let logId = options.logId; // 获取记录 id
-    // TODO：获取记录详情网络数据
-    // 目前没有获取网络数据，数据是从上一页传过来的
+    // TODO：获取记录详情网络数据, 目前没有获取网络数据，数据是从上一页传过来的
 
     let currentItem = wx.getStorageSync('currentWithdrawItem');
     this.setData({

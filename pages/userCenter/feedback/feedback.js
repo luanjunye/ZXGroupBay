@@ -12,19 +12,10 @@ Page({
     ],
 
     feedbackList: [
-/*      {
-        id: 1,
-        teamUserId: 2,
-        userId: 2,
-        type: 1,
-        status: 1,
-        goodsId: 31,
-        orderNum: "T20191128154509788614920",
-        number: 1,
-        describe: "",
-        createTime: "2019-11-29 14:54:52",
-        state: 1
-      }*/
+/*      id: 4
+        state: 2
+        time: "2019-11-29 17:05:49"
+        title: "烟台苹果 5个约2斤申请售后"*/
     ],
 
     currentStateId: 0,
@@ -89,7 +80,6 @@ Page({
       page: pageNo,
       limit: that.data.perPageCount
     }, 'GET').then(res => {
-      // TODO: 返回数据有问题
       let tempOrderArray = that.data.feedbackList.concat(res.list);
       if (tempOrderArray.length === res.totalCount){ // 如果当前返回页面跟总页面数相同，说明没有更多内容了
         that.setData({

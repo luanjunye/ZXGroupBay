@@ -10,7 +10,21 @@ Page({
         orderId: "",
         product: {},
         failPayTime:0
+    },
 
+    // 申请退款
+    feedback(e){
+        // 在跳转到申请页面之前，保存当前订单的一些信息
+        let currentProduct = e.currentTarget.dataset.value;
+        let infoFeedback = {
+            product: currentProduct,
+            buyer: this.data.product.consignee,
+            orderNum: this.data.product.orderNum,
+        };
+        wx.setStorageSync('infoFeedback', infoFeedback);
+        wx.navigateTo({
+            url: '/pages/userCenter/feedbackApply/feedbackApply'
+        })
     },
 
     /**
