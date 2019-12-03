@@ -123,6 +123,7 @@ Page({
       currentOrderList.forEach(item => {
         if(item.failPayTime){
           let timeLeft = this.getTimeDifference(item.failPayTime);
+          console.log(timeLeft);
           item.countdown = timeLeft > 0? timeLeft: 0;
         }
         tempOrderArray.push(item)
