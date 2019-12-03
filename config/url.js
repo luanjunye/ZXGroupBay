@@ -39,6 +39,8 @@ module.exports = {
     OrderList: API_BASE_URL + 'order/page',  // 订单列表 GET: userId, status
     OrderBuyInfo: API_BASE_URL + 'order/orderBuyInfo',  // 确认订单
     OrderSave: API_BASE_URL + 'order/orderSave',  // 添加订单
+    buyInfo: API_BASE_URL + 'order/buyInfo',  // 直接购买
+    OrderInfo: API_BASE_URL + 'order/info',  // 订单详情
 
     // 售后反馈
     FeedbackList: API_BASE_URL + 'aftersales/page',  // 反馈列表

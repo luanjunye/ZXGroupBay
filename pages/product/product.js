@@ -18,7 +18,8 @@ Page({
         difference: 0,
         product: {},
         likeList: [],
-        count: 0
+        count: 0,
+        ConfirmOrder:[]
     },
 
     /**
@@ -179,11 +180,24 @@ Page({
     toBuy: function () {
         if (this.checkLogin()) {
             // 跳转checkout页面
-            wx.setStorageSync("checkoutProduct", this.data.product);
-            wx.setStorageSync("count", 1);
-            wx.navigateTo({
-                url: '/pages/order/confirmOrder/confirmOrder?from=product',
-            })
+            // wx.setStorageSync("checkoutProduct", this.data.product);
+            // wx.setStorageSync("count", 1);
+            let that = this
+            util.request(api.buyInfo, {
+                goodsId: this.data.product.id,
+                userId: this.data.userId,
+                num:1
+            }, "POST").then(function (res) {
+                //that.selectCart()
+                that.setData({
+                    ConfirmOrder : res
+                })
+                wx.setStorageSync("ConfirmOrder",that.data.ConfirmOrder)
+                wx.navigateTo({
+                    url: '/pages/order/confirmOrder/confirmOrder',
+                })
+            });
+
         }
     },
     checkLogin: function () {

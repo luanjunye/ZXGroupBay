@@ -17,20 +17,6 @@ Page({
         pageNo: 1,// 分页相关
         perPageCount: 15, // 每次请求的数量条数
         hasMore: true, // 标记是否还有更多
-        down_avater: [
-            {
-                id: 1,
-                url: "/assets/avater.png"
-            },
-            {
-                id: 2,
-                url: "/assets/avater.png"
-            },
-            {
-                id: 3,
-                url: "/assets/avater.png"
-            }
-        ],
         targetTime: 0,
         clearTimer: false,
         loading: false,
@@ -238,6 +224,13 @@ Page({
             });
         }
 
+    },
+
+    //前往搜索页面
+    toSearch: function () {
+        wx.navigateTo({
+            url: "/pages/search/search"
+        })
     }
 
 });

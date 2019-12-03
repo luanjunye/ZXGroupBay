@@ -5,24 +5,24 @@
     <view class="prompt">截团五小时后，不支持退款!</view>
 
     <view class="orderStatus">
-        <view class="status" wx:if="{{product.statusCode}}">
+        <view class="status" wx:if="{{product.shippingStatus}}">
             <image class="img" mode="widthFix" src="/assets/order/orderDetails/time.png"></image>
-            <text>{{product.statusText}}</text>
+            <text>{{product.shippingStatusName}}</text>
         </view>
-        <view class="count" wx:if="{{product.statusCode == 1}}">剩
-            <thor-count-down time="{{product.time}}" bcolor="transparent" color="#70C5A8" isColon="{{false}}" hours="{{false}}" scale="{{true}}"></thor-count-down>
+        <view class="count" wx:if="{{product.shippingStatus == 1}}">剩
+            <thor-count-down time="{{failPayTime}}" bcolor="transparent" color="#70C5A8" isColon="{{false}}" hours="{{false}}" scale="{{true}}"></thor-count-down>
             订单自动关闭
         </view>
     </view>
 
     <view class="commanderInfo">
         <view class="top">
-            <image class="img" src="/assets/avater.png"></image>
-            <view class="name">团长昵称</view>
+            <image class="img" src="{{product.avatar}}"></image>
+            <view class="name">{{product.name}}</view>
         </view>
         <view class="body">
             <view class="delivery">配送地址</view>
-            <view class="address">济南泽轩优选团购-高新区康虹路766号盛世花城</view>
+            <view class="address">济南泽轩优选团购-{{product.street}}{{product.address}}</view>
         </view>
         <view class="body">
             <view class="delivery">姓名</view>
@@ -30,31 +30,34 @@
         </view>
         <view class="body">
             <view class="delivery">手机号</view>
-            <view class="address">{{product.phone}}</view>
+            <view class="address">{{product.mobile}}</view>
         </view>
         <view class="body">
             <view class="delivery">备注</view>
-            <view class="address">{{product.remark}}</view>
+            <view class="address">{{product.postscript}}</view>
         </view>
 
     </view>
 
     <view class="order">
-        <view class="top">
-            <image class="img" src="/assets/avater.png"></image>
-            <view class="name">团长昵称</view>
-        </view>
-        <view class="orderInfo" wx:for="{{product.orderList}}" wx:for-item="item" wx:key="item.id">
+<!--        <view class="top">-->
+<!--            <image class="img" src="{{product.avatar}}"></image>-->
+<!--            <view class="name">{{product.nickname}}</view>-->
+<!--        </view>-->
+        <view class="orderInfo" wx:for="{{product.orderInfoGoodsListVOList}}" wx:for-item="item" wx:key="item.id">
             <image class="img" mode="widthFix" src="{{item.url}}"></image>
             <view class="info">
-                <view class="title">{{item.title}}</view>
-                <view class="description">{{item.description}}</view>
-                <van-tag round color="#DD3C4A">{{item.label}}</van-tag>
+                <view class="title">{{item.name}}</view>
+                <view class="second">
+                    <view class="description">{{item.specification}}</view>
+                    <view class="description">x{{item.num}}</view>
+                </view>
+                <van-tag round color="#DD3C4A">"次日达"</van-tag>
                 <view class="top_down">
                     <view class="money">¥
                         <view class="number">{{item.price}}</view>
                     </view>
-                    <view class="refund" wx:if="{{product.statusCode == 3}}" bintap="toRefund">申请退款</view>
+                    <view class="refund" wx:if="{{product.shippingStatus == 3}}" bintap="toRefund">申请退款</view>
                 </view>
             </view>
         </view>
@@ -63,27 +66,27 @@
     <view class="down">
         <view class="down_info">
             <view class="title">本单合计</view>
-            <view class="text">¥{{product.amount}}</view>
+            <view class="text">¥{{product.goodsPrice}}</view>
         </view>
         <view class="down_info">
             <view class="title">满减优惠</view>
-            <view class="text">-¥{{product.preferential}}</view>
+            <view class="text">-¥{{product.fullOutPrice}}</view>
         </view>
         <view class="down_info">
             <view class="title">实付款</view>
-            <view class="text_a">¥{{product.total}}</view>
+            <view class="text_a">¥{{product.orderPrice}}</view>
         </view>
     </view>
 
     <view class="orderRemark">
         <view class="top">
-            <view class="number">订单编号:{{product.number}}</view>
+            <view class="number">订单编号:{{product.orderNum}}</view>
             <view class="copy" bindtap="copy">复制</view>
         </view>
-        <view class="time">下单时间:{{product.subscribeTime}}</view>
-        <view class="time" wx:if="{{product.statusCode == 3}}">完成时间:{{product.EndTime}}</view>
+        <view class="time">下单时间:{{product.createTime}}</view>
+        <view class="time" wx:if="{{product.shippingStatus == 3}}">完成时间:{{product.payTime}}</view>
     </view>
 
-    <view class="cart-bottom" wx:if="{{product.statusCode == 1}}" bindtap="toPay">去支付</view>
+    <view class="cart-bottom" wx:if="{{product.shippingStatus == 1}}" bindtap="toPay">去支付</view>
 </view>
 

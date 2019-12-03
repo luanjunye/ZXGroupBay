@@ -117,9 +117,15 @@
         -webkit-box-orient: vertical; //一定要写
       }
 
-      .description {
-        font-size: 12px;
-        color: $text-comment;
+      .second{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .description {
+          font-size: 12px;
+          color: $text-comment;
+        }
       }
 
       .top_down {

@@ -180,6 +180,14 @@ Page({
     })
   },
 
+  toDetails(e){
+    let orderId = e.currentTarget.dataset.id;
+    console.log(orderId)
+    wx.navigateTo({
+      url:"/pages/order/orderDetails/orderDetails?orderId=" + orderId
+    })
+  },
+
 
 
 // ========================

@@ -1,46 +1,15 @@
 // pages/order/orderDetails/orderDetails.js
+const api = require('../../../config/url.js');
+const util = require('../../../utils/util.js');
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
-        product: {
-            amount: "119.8",
-            preferential: "10",
-            total: "109.8",
-            name: "李嘉琪",
-            phone: "13333333333333",
-            remark: "",
-            number: "30227805265255512",
-            // statusCode: 3,
-            // statusText: "订单已完成",
-            statusCode:1,
-            statusText:"待支付",
-            time: "300",
-            subscribeTime: "2019-11-14 12:11:52",
-            EndTime: "2019-11-15 16:11:34",
-            orderList: [
-                {
-                    id: 1,
-                    url: "/assets/list1.jpg",
-                    title: "紫米面包6袋，110g/袋",
-                    description: "6袋",
-                    label: "次日达",
-                    price: "59.9"
-                },
-                {
-                    id: 2,
-                    url: "/assets/list1.jpg",
-                    title: "紫米面包6袋，110g/袋",
-                    description: "6袋",
-                    label: "次日达",
-                    price: "59.9"
-                }
-            ],
-        },
-
+        orderId: "",
+        product: {},
+        failPayTime:0
 
     },
 
@@ -48,7 +17,13 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        let orderId = options.orderId
 
+        if (orderId) {
+            this.setData({
+                orderId: orderId
+            })
+        }
     },
 
     /**
@@ -62,7 +37,16 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        let that = this
+        //获取订单详情
+        util.request(api.OrderInfo, {id: this.data.orderId}, "POST").then(function (res) {
+            let timeStamp = util.getTimeStamp()
+            let failPayTime = res.failPayTime - timeStamp
+            that.setData({
+                product: res,
+                failPayTime : failPayTime
+            });
+        });
     },
 
     /**
@@ -98,5 +82,42 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+    
+    //去支付
+    toPay:function () {
+        let orderId = this.data.orderId
+        if(orderId){
+            util.request(api.Pay, {
+                id: orderId,
+            }, "POST").then(function (res) {
+                console.log(res);
+                if (res) {
+                    let entity = res;
+                    wx.requestPayment({
+                        timeStamp: entity.timeStamp,
+                        nonceStr: entity.nonceStr,
+                        package: entity.package,
+                        signType: entity.signType,
+                        paySign: entity.sign,
+                        success(res) {
+                            wx.showToast({
+                                title: '支付成功',
+                            });
+                            setTimeout(function () {
+                                wx.navigateTo({
+                                    url: '/pages/order/orderCenter/orderCenter',
+                                })
+                            }, 1500);
+                        },
+                        fail(res) {
+                            wx.navigateTo({
+                                url: '/pages/order/orderCenter/orderCenter',
+                            })
+                        }
+                    })
+                }
+            });
+        }
     }
 })
