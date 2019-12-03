@@ -30,6 +30,5 @@
 
 <!--<navigator url="/pages/userCenter/feedbackApply/feedbackApply">-->
 <navigator url="/pages/userCenter/memberManage/memberManage">
-    <!--TODO: 跳转方向-->
     <view class="btn btn-feedback">创建工单</view>
 </navigator>

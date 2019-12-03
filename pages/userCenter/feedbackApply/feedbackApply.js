@@ -37,10 +37,6 @@ Page({
       ['product.buyer']: infoFeedback.buyer,
       ['product.orderNum']: infoFeedback.orderNum,
     })
-
-    let ticketNo = options.ticketno; // 获取工单id
-    // TODO：获取工单详情网络数据
-
   },
 
 
