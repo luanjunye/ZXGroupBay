@@ -1,104 +1,32 @@
 // pages/userCenter/historyGroup/historyGroup.js
+const util = require('../../../utils/util');
+const api = require('../../../config/url.js');
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        historyGroupList: [
-            {
-                id: 1,
-                groupId: 38220,
-                status: 1,
-                targetTime: 10000,
-                time: "2019-11-13",
-                urls: [
-                    {
-                        id: 1,
-                        url: "/assets/list1.jpg"
-                    },
-                    {
-                        id: 2,
-                        url: "/assets/list1.jpg"
-                    },
-                    {
-                        id: 3,
-                        url: "/assets/list1.jpg"
-                    },
-                    {
-                        id: 4,
-                        url: "/assets/list1.jpg"
-                    },
-                    {
-                        id: 5,
-                        url: "/assets/list1.jpg"
-                    },
-                    {
-                        id: 6,
-                        url: "/assets/list1.jpg"
-                    },
-                    {
-                        id: 7,
-                        url: "/assets/list1.jpg"
-                    },
-                    {
-                        id: 8,
-                        url: "/assets/list1.jpg"
-                    },
-                    {
-                        id: 9,
-                        url: "/assets/list1.jpg"
-                    },
-                    {
-                        id: 10,
-                        url: "/assets/list1.jpg"
-                    },
-                    {
-                        id: 11,
-                        url: "/assets/list1.jpg"
-                    },
-                    {
-                        id: 12,
-                        url: "/assets/list1.jpg"
-                    },
-                    {
-                        id: 13,
-                        url: "/assets/list1.jpg"
-                    }
-                ],
-              people:62
-            },
-          {
-            id: 2,
-            groupId: 38219,
-            status: 0,
-            targetTime: 10000,
-            time: "2019-11-12",
-            urls: [
-              {
-                id: 1,
-                url: "/assets/list1.jpg"
-              },
-              {
-                id: 2,
-                url: "/assets/list1.jpg"
-              },
-              {
-                id: 3,
-                url: "/assets/list1.jpg"
-              },
-
-            ],
-            people:20
-          }
-        ]
+        isLogin: false,
+        userId: "",
+        pageNo: 1,// 分页相关
+        perPageCount: 15, // 每次请求的数量条数
+        hasMore: true, // 标记是否还有更多
+        historyGroupList: []
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        let isLogin = wx.getStorageSync('isLogin')
+        let userId = wx.getStorageSync('userId')
+        if (isLogin && userId) {
+            this.setData({
+                isLogin: isLogin,
+                userId: userId
+            })
+        }
     },
 
     /**
@@ -112,7 +40,13 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        this.setData({
+            historyGroupList: [],
+            pageNo: 1,// 分页相关
+            hasMore: true, // 标记是否还有更多
+        });
+        //获取历史开团列表
+        this.HistoryGroupList(this.data.userId, this.data.pageNo)
     },
 
     /**
@@ -133,14 +67,17 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-
+        this.onShow()
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-
+        let currentPageNo = this.data.pageNo + 1;
+        if (this.data.hasMore) {
+            this.HistoryGroupList(this.data.userId, currentPageNo);
+        }
     },
 
     /**
@@ -148,5 +85,51 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+
+    //展示商品
+    HistoryGroupList(userId, pageNo) {
+        var that = this
+        this.setData({
+            loading: true
+        });
+        //首页商品列表
+        util.request(api.HistoryGroup, {
+            page: pageNo,
+            userId: userId,
+            limit: that.data.perPageCount
+        }, "GET").then(function (res) {
+            let timeStamp = util.getTimeStamp()
+
+            let currentGoodsArray = that.data.historyGroupList.concat(res.list);
+            if (currentGoodsArray.length === res.totalCount) { // 如果当前返回页面跟总页面数相同，说明没有更多内容了
+                that.setData({
+                    hasMore: false
+                })
+            }
+
+            that.setData({
+                historyGroupList: currentGoodsArray,
+                loading: false,
+            });
+
+            for (let i = 0; i < that.data.historyGroupList.length; i++) {
+                let difference = that.data.historyGroupList[i].endTime - timeStamp
+                that.setData({
+                    [`historyGroupList[${i}].difference`] : difference
+                })
+            }
+        });
+    },
+
+    toInfo:function (e) {
+        let data = e.currentTarget.dataset.value;
+        console.log(data);
+        if (data.tuanTeamId) {
+            wx.navigateTo({
+                url: '/pages/userCenter/groupOrder/groupOrder?from=historyGroup&&groupId=' + data.tuanTeamId,
+            })
+        }
     }
+
 })

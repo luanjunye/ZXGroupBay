@@ -57,7 +57,9 @@
                     <view class="money">¥
                         <view class="number">{{item.price}}</view>
                     </view>
-                    <view class="refund" wx:if="{{product.shippingStatus == 3}}" bintap="toRefund">申请退款</view>
+                    <view class="refund" wx:if="{{product.shippingStatus == 2}}" >
+                        <view wx:if="{{product.isShow == 1}}" bindtap="toRefund">申请退款</view>
+                    </view>
                 </view>
             </view>
         </view>

@@ -119,5 +119,18 @@ Page({
                 }
             });
         }
+    },
+    
+    //退款
+    toRefund:function () {
+        let that = this
+        //获取订单详情
+        util.request(api.OrderRefund, {id: this.data.orderId}, "POST").then(function (res) {
+            console.log(res)
+            // that.setData({
+            //     product: res,
+            //     failPayTime : failPayTime
+            // });
+        });
     }
 })

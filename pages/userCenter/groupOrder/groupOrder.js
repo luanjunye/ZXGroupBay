@@ -1,144 +1,193 @@
 // pages/userCenter/groupOrder/groupOrder.js
+const util = require('../../../utils/util');
+const api = require('../../../config/url.js');
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-    option1: [
-      { text: '手机', value: 0 },
-      { text: '昵称', value: 1 },
-      { text: '姓名', value: 2 }
-    ],
-    value1:0,
-    status:1,
-    group_list:[
-      {
-        id:1,
-        avatar:"/assets/avater.png",
-        nickName:"王小鱼儿",
-        name:"王小鱼",
-        mobile:"13333333333",
-        orderList:[
-          {
-            id:1,
-            url:"/assets/list1.jpg",
-            title:"紫米面包6袋，110g/袋",
-            description:"6袋",
-            number:"1",
-            time:"2019-11-16"
-          },
-          {
-            id:2,
-            url:"/assets/list1.jpg",
-            title:"紫米面包6袋，110g/袋",
-            description:"6袋",
-            number:"1",
-            time:"2019-11-16"
-          },
-          {
-            id:3,
-            url:"/assets/list1.jpg",
-            title:"紫米面包6袋，110g/袋",
-            description:"6袋",
-            number:"1",
-            time:"2019-11-16"
-          }
+    /**
+     * 页面的初始数据
+     */
+    data: {
+        groupId: "",
+        from: "",
+        isLogin: false,
+        userId: "",
+        pageNo: 1,// 分页相关
+        perPageCount: 15, // 每次请求的数量条数
+        hasMore: true, // 标记是否还有更多
+        option1: [
+            {text: '手机', value: 1},
+            {text: '昵称', value: 2},
+            {text: '姓名', value: 3}
         ],
-        orderTime:"2019-11-14 12:11:52",
-        orderNumber:"30227805265255512"
-      },
-      {
-        id:2,
-        avatar:"/assets/avater.png",
-        nickName:"王小鱼儿",
-        name:"王小鱼",
-        mobile:"13333333333",
-        orderList:[
-          {
-            id:1,
-            url:"/assets/list1.jpg",
-            title:"紫米面包6袋，110g/袋",
-            description:"6袋",
-            number:"1",
-            time:"2019-11-16"
-          },
-          {
-            id:2,
-            url:"/assets/list1.jpg",
-            title:"紫米面包6袋，110g/袋",
-            description:"6袋",
-            number:"1",
-            time:"2019-11-16"
-          },
-          {
-            id:3,
-            url:"/assets/list1.jpg",
-            title:"紫米面包6袋，110g/袋",
-            description:"6袋",
-            number:"1",
-            time:"2019-11-16"
-          }
-        ],
-        orderTime:"2019-11-14 12:11:52",
-        orderNumber:"30227805265255512"
+        status: 1,
+        groupList: [],
+        key: "",
+        type: 1,
+    },
+
+    /**
+     * 生命周期函数--监听页面加载
+     */
+    onLoad: function (options) {
+        let from = options.from
+      console.log(from)
+        if (from) {
+            if (from == "mine") {
+                this.setData({
+                    from: "mine"
+                })
+            } else {
+                let groupId = options.groupId
+                if (groupId) {
+                    this.setData({
+                        groupId: groupId,
+                        from: "historyGroup"
+                    })
+                }
+            }
+        }
+
+        let isLogin = wx.getStorageSync('isLogin')
+        let userId = wx.getStorageSync('userId')
+        if (isLogin && userId) {
+            this.setData({
+                isLogin: isLogin,
+                userId: userId
+            })
+        }
+    },
+
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady: function () {
+
+    },
+
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    onShow: function () {
+      this.setData({
+        groupList: [],
+        pageNo: 1,// 分页相关
+        hasMore: true, // 标记是否还有更多
+        key:""
+      });
+      this.HistoryGroupInfo(this.data.userId, this.data.pageNo,this.data.groupId,"",this.data.key)
+
+    },
+
+    /**
+     * 生命周期函数--监听页面隐藏
+     */
+    onHide: function () {
+
+    },
+
+    /**
+     * 生命周期函数--监听页面卸载
+     */
+    onUnload: function () {
+
+    },
+
+    /**
+     * 页面相关事件处理函数--监听用户下拉动作
+     */
+    onPullDownRefresh: function () {
+        this.onShow()
+    },
+
+    /**
+     * 页面上拉触底事件的处理函数
+     */
+    onReachBottom: function () {
+      let currentPageNo = this.data.pageNo + 1;
+      if (this.data.hasMore) {
+        if(this.data.key){
+          this.HistoryGroupInfo(this.data.userId, currentPageNo,this.data.groupId, this.data.type, this.data.key);
+        }else {
+          this.HistoryGroupInfo(this.data.userId, currentPageNo,this.data.groupId, "", this.data.key);
+        }
       }
-    ]
-  },
+    },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+    /**
+     * 用户点击右上角分享
+     */
+    onShareAppMessage: function () {
 
-  },
+    },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+    //团购列表详情
+    HistoryGroupInfo(userId, pageNo, grpuoId, type, key) {
+        var that = this
+        this.setData({
+            loading: true
+        });
+        //团购列表详情
+        util.request(api.GroupInfo, {
+            page: pageNo,
+            userId: userId,
+            teamId: grpuoId,
+            type: type,
+            name: key,
+            limit: that.data.perPageCount
+        }, "GET").then(function (res) {
+            let timeStamp = util.getTimeStamp()
 
-  },
+            let currentGoodsArray = that.data.groupList.concat(res.list);
+            if (currentGoodsArray.length === res.totalCount) { // 如果当前返回页面跟总页面数相同，说明没有更多内容了
+                that.setData({
+                    hasMore: false
+                })
+            }
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+            that.setData({
+                groupList: currentGoodsArray,
+                loading: false,
+            });
 
-  },
+        });
+    },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+    //搜索页输入
+    input: function (e) {
+        let key = util.trim(e.detail.value);
+        console.log(key)
+        this.setData({
+            key: key
+        })
+    },
 
-  },
+    //清空搜索框
+    cleanKey: function () {
+        this.setData({
+            key: ''
+        });
+    },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
+    //设定下拉列表type值
+    onChange({detail}) {
+        console.log(detail)
+        this.setData({
+            type: detail
+        })
+    },
 
-  },
+    //搜索
+    submit: function () {
+        let key = this.data.key
+        this.setData({
+            groupList: []
+        })
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+        if (key) {
+          this.HistoryGroupInfo(this.data.userId, this.data.pageNo,this.data.groupId, this.data.type, key)
+        }else {
+          this.HistoryGroupInfo(this.data.userId, this.data.pageNo,this.data.groupId, "", key)
+        }
+    },
 })

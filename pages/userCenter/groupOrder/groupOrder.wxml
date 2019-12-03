@@ -1,7 +1,7 @@
 <!--pages/userCenter/groupOrder/groupOrder.wxml-->
 <view class="tui-searchbox">
     <van-dropdown-menu>
-        <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}"/>
+        <van-dropdown-item value="{{ type }}" options="{{ option1 }}" bind:change="onChange"/>
     </van-dropdown-menu>
     <view class="tui-search-input">
         <icon type="search" size='13' color='#333'></icon>
@@ -9,11 +9,11 @@
                placeholder-class="tui-input-plholder" class="tui-input" value="{{key}}" bindinput="input"/>
         <icon type="clear" size='13' color='#bcbcbc' bindtap="cleanKey" hidden="{{!key}}"></icon>
     </view>
-    <view class="tui-cancle" bindtap="back">取消</view>
+    <view class="tui-cancle" bindtap="submit">搜索</view>
 </view>
 
 <view class="body">
-    <view class="groupList" wx:for="{{group_list}}" wx:for-item="item" wx:key="{{item.id}}"
+    <view class="groupList" wx:for="{{groupList}}" wx:for-item="item" wx:key="{{item.id}}"
           data-value="{{item}}" id="{{item.id}}">
         <view class="top">
             <image src="{{item.avatar}}" class="avatar"></image>
@@ -24,23 +24,23 @@
                 </view>
             </view>
         </view>
-        <view class="orderList" wx:for="{{item.orderList}}" wx:for-item="iitem" wx:key="{{iitem.id}}"
+        <view class="orderList" wx:for="{{item.orderInfoGoodsListVOList}}" wx:for-item="iitem" wx:key="{{iitem.id}}"
               data-value="{{iitem}}" id="{{iitem.id}}">
             <image class="img" src="{{iitem.url}}" mode="widthFix"></image>
             <view class="info">
-                <view class="info_top">{{iitem.title}}</view>
+                <view class="info_top">{{iitem.name}}</view>
                 <view class="info_center">
-                    <view class="description">{{iitem.description}}</view>
-                    <view class="number">x{{iitem.number}}</view>
+                    <view class="description">{{iitem.specification}}</view>
+                    <view class="number">x{{iitem.num}}</view>
                 </view>
-                <view class="time">发货日期:{{iitem.time}}</view>
+<!--                <view class="time">发货日期:{{iitem.time}}</view>-->
             </view>
         </view>
-        <view class="orderTime">下单时间:{{item.orderTime}}</view>
-        <view class="orderNumber">下单时间:{{item.orderNumber}}</view>
+        <view class="orderTime">下单时间:{{item.time}}</view>
+        <view class="orderNumber">订单编号:{{item.orderNum}}</view>
     </view>
     <view class="last">
-        <view class="submit" bindtap="submitOrder" wx:if="{{status == 1}}">确认订单</view>
+        <view class="submit" bindtap="submitOrder" wx:if="{{groupList.shippingStatus == 2}}">确认订单</view>
     </view>
 </view>
 

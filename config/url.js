@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://192.168.0.176:8086/freeterapi/';
+const API_BASE_URL = 'http://192.168.0.176:7081/freeterapi/';
 //const API_BASE_URL = 'https://shop.zexuanshipin.com/freeterapi/';
 
 
@@ -41,6 +41,7 @@ module.exports = {
     OrderSave: API_BASE_URL + 'order/orderSave',  // 添加订单
     buyInfo: API_BASE_URL + 'order/buyInfo',  // 直接购买
     OrderInfo: API_BASE_URL + 'order/info',  // 订单详情
+    OrderRefund: API_BASE_URL + 'order/refund',  // 待收货下申请退款
 
     // 售后反馈
     FeedbackList: API_BASE_URL + 'aftersales/page',  // 反馈列表
@@ -67,5 +68,7 @@ module.exports = {
     // 杂项
     // 优惠活动
     ActivityDiscount: API_BASE_URL + 'teamuser/preferential',  // 优惠活动内容
+    HistoryGroup: API_BASE_URL + 'teamuser/myteams',  // 历史开团
+    GroupInfo: API_BASE_URL + 'teamuser/waitorder',  // 待提货/历史开团详情
 };
 

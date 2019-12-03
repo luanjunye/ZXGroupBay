@@ -247,6 +247,17 @@ Page({
 
     },
 
+    //登陆验证
+    checkLogin: function () {
+        if (!this.data.isLogin) {
+            wx.navigateTo({
+                url: '/pages/login/login',
+            })
+        } else {
+            return true
+        }
+    },
+
     judgeCheckedAll: function () {
         let noChecked = true;
         this.data.cartList.forEach(function (v) {
