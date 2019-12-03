@@ -4,7 +4,7 @@ const api = require('../../../config/url.js');
 Page({
   data: {
     groupMaster: true,  // 是否为团长
-    messageCount: 123,
+    messageCount: 0,
     userInfo: {
 /*      avatar: "https://wx.qlogo.cn/mmopen/vi_32/AIdAmibzdhn40DjpvD3Tce9ZCbZkO3VLrRFfItR8uquB7PAJDH1yuMCNicJJtsbkVJUuKVmFLZ7v3oVaicDmeJlXw/132",
       nickname: "十月",
@@ -129,8 +129,7 @@ Page({
     })
   },
 
-  // 测试 切换团长与否
-
+  // 测试 切换团长与否 TODO: 正式上线前删除该处
   switchUserState(){
     this.setData({
       groupMaster: !this.data.groupMaster
