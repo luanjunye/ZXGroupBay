@@ -28,7 +28,7 @@
           </view>
         </view>
         <view class="head_info_right">
-          <view class="box_a">
+          <view class="box_a" bindtap="openService">
             <image class="img" src="/assets/index/partake.png"></image>
             <text class="address">分享</text>
           </view>
@@ -138,6 +138,25 @@
       -- 到底了 --
     </view>
   </view>
+
   <van-toast id="van-toast" />
+
+  <van-popup show="{{isShow}}" position="bottom" bind:close="closeService">
+<!--    <view class="all">-->
+      <view class="popup_title">分享</view>
+      <view class="pt_center">
+        <button hover-class="none" class="pt_center_info" open-type="share">
+          <image class="pt_img" src="/assets/index/wechat.png"></image>
+          <view class="pt_text">微信好友</view>
+        </button>
+
+        <button hover-class="none" class="pt_center_info" bindtap="poster">
+          <image class="pt_img" src="/assets/index/image.png"></image>
+          <view class="pt_text">生成海报</view>
+        </button>
+    </view>
+      <view class="pt_bottom" bindtap="cancel">取消</view>
+<!--    </view>-->
+  </van-popup>
   <!--    </scroll-view>-->
 </view>

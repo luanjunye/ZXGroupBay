@@ -353,3 +353,43 @@
 .third_box .third .list .down .down_right .down_text {
   margin-left: 5px;
 }
+
+.popup_title {
+  font-size: 16px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.pt_center {
+  margin: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pt_center .pt_center_info {
+  background: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pt_center .pt_center_info .pt_img {
+  width: 72px;
+  height: 72px;
+}
+.pt_center .pt_center_info .pt_text {
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+.pt_bottom {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin: 20px auto;
+  font-size: 16px;
+  background: #0BE7C5;
+  color: #FFF;
+  padding: 3px 5px;
+  width: 80px;
+  text-align: center;
+}
