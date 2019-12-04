@@ -1,6 +1,11 @@
 const util = require('../../../utils/util');
 const api = require('../../../config/url.js');
 
+// 地图相关
+const chooseLocation = requirePlugin('chooseLocation');
+const key = 'HYZBZ-EX3CJ-CR2F6-KZDG3-AX3C2-CKFDF'; //使用在腾讯位置服务申请的key
+const referer = '泽轩优选'; //调用插件的app的名称
+
 Page({
   data: {
     name: '',
@@ -8,6 +13,9 @@ Page({
     verifyCode: '',
     address:[],
     addressString: '',
+    addressLatitude: 0,
+    addressLongitude: 0,
+    pointAddress: '',
     addressDetail: '',
     invitation: '',
     countdown: 60, // 验证码倒计时
@@ -16,10 +24,38 @@ Page({
 
   },
 
-  onLoad: function (options) {
-
+  onLoad: function (options) { },
+  onShow: function () {
+    // 页面显示时，获取地图选址返回的结果
+    let location = chooseLocation.getLocation();
+    if (location){
+      console.log(location);
+      this.setData({
+        addressLatitude: location.latitude,
+        addressLongitude: location.longitude,
+        pointAddress: location.address + location.name
+      })
+    }
   },
 
+  // 打开地图选择插件
+  openAddressPlugin() {
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.userLocation']) {
+          wx.navigateTo({
+            url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer
+          });
+        } else {
+          wx.openSetting({
+            success(res) {
+              console.log(res.authSetting)
+            }
+          })
+        }
+      }
+    })
+  },
 
   // 提交
   submit(){
@@ -33,6 +69,8 @@ Page({
       util.toast('请选择省市区')
     } else if (this.data.addressDetail.length < 1) {
       util.toast('请填写详细地址')
+    } else if (this.data.pointAddress.length < 1) {
+      util.toast('请选择定位地址')
     } else {
       let requestData = {
         address: this.data.address.join(''),
@@ -40,7 +78,10 @@ Page({
         mobile: this.data.mobile,
         name: this.data.name,
         street: this.data.addressDetail,
-        userId: util.getUserInfo().userId
+        userId: util.getUserInfo().userId,
+        latitude: this.data.latitude,
+        longitude: this.data.longitude,
+        pointAddress: this.data.pointAddress
       }
       util.request(api.MasterApply, requestData, 'POST').then(res => {
         util.toastSuccess('申请已成功提交');
@@ -75,7 +116,7 @@ Page({
   },
 
 
-  // 修改地址时
+  // 修改省市区地址时
   locationChange(e){
     let data = e.detail;
     this.setData({
@@ -103,7 +144,7 @@ Page({
   },
 
   onReady: function () { },
-  onShow: function () { },
+
 
   // onHide: function () { },
   // onUnload: function () { },

@@ -19,7 +19,7 @@
     <view class="input-group">
         <text>地址</text>
         <picker wx:if="{{address.length > 0}}" class="input" mode="region" bindchange="locationChange">{{addressString}}</picker>
-        <picker wx:else class="input" mode="region" bindchange="locationChange">选择地址</picker>
+        <picker wx:else class="input placeholder" mode="region" bindchange="locationChange">选择地址</picker>
     </view>
     <view class="input-group">
         <text>详细地址</text>
@@ -28,6 +28,12 @@
     <view class="input-group">
         <text>邀请人 ID</text>
         <input bindchange="handleInputChange" data-model="invitation" class="input" type="text" placeholder="你的邀请人 ID (选填)"></input>
+    </view>
+    <view class="input-group">
+        <text>定位地址</text>
+        <view wx:if="{{pointAddress}}" class="input" mode="region" bindtap="openAddressPlugin">{{pointAddress}}</view>
+        <view wx:else class="input placeholder" mode="region" bindtap="openAddressPlugin">点击选择地址</view>
+
     </view>
 </view>
 
