@@ -201,12 +201,14 @@ function updateCartCount() {
         "userId": this.getUserInfo().userId
     }, 'GET', false).then(res => {
         // wx.setStorageSync('cartCount', res.totalCount);
-        wx.setTabBarBadge({
-            index: 2, // 购物车图标 index 从左往右，从0开始
-            text: res.totalCount.toString(),
-            success: () => {
-            }
-        })
+        if (res.totalCount > 0){
+            wx.setTabBarBadge({
+                index: 2, // 购物车图标 index 从左往右，从0开始
+                text: res.totalCount.toString(),
+                success: () => {
+                }
+            })
+        }
     })
 }
 
