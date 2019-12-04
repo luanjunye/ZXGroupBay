@@ -82,12 +82,12 @@ function request(url, data = {}, method, showLoading, header = "application/json
                                 });
                                 break;
                             default:
-                                // TODO: 测试
+                                // TODO: 测试，显示服务器请求出错提示
                                 wx.showModal({
-                                    title: '请求出错',
+                                    title: `请求出错: ${res.data.code}`,
                                     content: url
                                 })
-                                console.log('错误提示：', res.data.msg, ' URL: ',url)
+                                console.log(`错误：${res.data.code} 错误提示： ${res.data.msg} URL: ${url}`)
                         }
                     }
                 } else {
