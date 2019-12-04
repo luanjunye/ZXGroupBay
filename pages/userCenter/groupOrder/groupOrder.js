@@ -1,4 +1,6 @@
 // pages/userCenter/groupOrder/groupOrder.js
+import Dialog from './../../../lib/vant-weapp/dialog/dialog';
+
 const util = require('../../../utils/util');
 const api = require('../../../config/url.js');
 
@@ -10,6 +12,7 @@ Page({
     data: {
         groupId: "",
         from: "",
+        isShow: 0,
         isLogin: false,
         userId: "",
         pageNo: 1,// 分页相关
@@ -31,11 +34,11 @@ Page({
      */
     onLoad: function (options) {
         let from = options.from
-      console.log(from)
+        console.log(from)
         if (from) {
             if (from == "mine") {
                 this.setData({
-                    from: "mine"
+                    from: "mine",
                 })
             } else {
                 let groupId = options.groupId
@@ -69,13 +72,22 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-      this.setData({
-        groupList: [],
-        pageNo: 1,// 分页相关
-        hasMore: true, // 标记是否还有更多
-        key:""
-      });
-      this.HistoryGroupInfo(this.data.userId, this.data.pageNo,this.data.groupId,"",this.data.key)
+        let that = this
+        this.setData({
+            groupList: [],
+            pageNo: 1,// 分页相关
+            hasMore: true, // 标记是否还有更多
+            key: ""
+        });
+        console.log(this.data.userId)
+        util.request(api.OrderSubmit, {
+            userId: this.data.userId,
+        }, "POST").then(function (res) {
+            that.setData({
+                isShow: res
+            })
+        });
+        this.HistoryGroupInfo(this.data.userId, this.data.pageNo, this.data.groupId, "", this.data.key)
 
     },
 
@@ -104,14 +116,14 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-      let currentPageNo = this.data.pageNo + 1;
-      if (this.data.hasMore) {
-        if(this.data.key){
-          this.HistoryGroupInfo(this.data.userId, currentPageNo,this.data.groupId, this.data.type, this.data.key);
-        }else {
-          this.HistoryGroupInfo(this.data.userId, currentPageNo,this.data.groupId, "", this.data.key);
+        let currentPageNo = this.data.pageNo + 1;
+        if (this.data.hasMore) {
+            if (this.data.key) {
+                this.HistoryGroupInfo(this.data.userId, currentPageNo, this.data.groupId, this.data.type, this.data.key);
+            } else {
+                this.HistoryGroupInfo(this.data.userId, currentPageNo, this.data.groupId, "", this.data.key);
+            }
         }
-      }
     },
 
     /**
@@ -185,9 +197,32 @@ Page({
         })
 
         if (key) {
-          this.HistoryGroupInfo(this.data.userId, this.data.pageNo,this.data.groupId, this.data.type, key)
-        }else {
-          this.HistoryGroupInfo(this.data.userId, this.data.pageNo,this.data.groupId, "", key)
+            this.HistoryGroupInfo(this.data.userId, this.data.pageNo, this.data.groupId, this.data.type, key)
+        } else {
+            this.HistoryGroupInfo(this.data.userId, this.data.pageNo, this.data.groupId, "", key)
         }
     },
+
+    //确认收货
+    submitOrder: function () {
+        let that = this;
+        Dialog.confirm({
+            message: '是否确认收货？'
+        }).then(() => {
+            // on confirm
+            let userId = this.data.userId
+
+            util.request(api.OrderConfirm, {
+                userId: userId,
+            }, "POST").then(function (res) {
+               wx.showToast({
+                 title:'确认收货成功',
+               })
+            });
+
+        }).catch(() => {
+            // on cancel
+        });
+
+    }
 })

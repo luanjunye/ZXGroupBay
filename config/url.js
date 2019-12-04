@@ -46,6 +46,8 @@ module.exports = {
     buyInfo: API_BASE_URL + 'order/buyInfo',  // 直接购买
     OrderInfo: API_BASE_URL + 'order/info',  // 订单详情
     OrderRefund: API_BASE_URL + 'order/refund',  // 待收货下申请退款
+    OrderConfirm: API_BASE_URL + '/teamuser/confirm',  // 确认收货
+    OrderSubmit: API_BASE_URL + '/teamuser/waitOrderCheck',  // 是否展示确认收货按钮
 
     // 售后反馈
     FeedbackList: API_BASE_URL + 'aftersales/page',  // 反馈列表
