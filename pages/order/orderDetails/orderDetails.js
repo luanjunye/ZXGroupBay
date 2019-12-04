@@ -7,6 +7,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        isMaster: false,  // 是否是团长
         orderId: "",
         product: {},
         failPayTime:0
@@ -38,6 +39,11 @@ Page({
                 orderId: orderId
             })
         }
+
+        // 更新是否是团长的标识
+        this.setData({
+            isMaster: util.getUserInfo().isMaster
+        })
     },
 
     /**
