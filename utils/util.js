@@ -82,6 +82,11 @@ function request(url, data = {}, method, showLoading, header = "application/json
                                 });
                                 break;
                             default:
+                                // TODO: 测试
+                                wx.showModal({
+                                    title: '请求出错',
+                                    content: url
+                                })
                                 console.log('错误提示：', res.data.msg, ' URL: ',url)
                         }
                     }
