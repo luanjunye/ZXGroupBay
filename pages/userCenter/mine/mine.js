@@ -129,12 +129,6 @@ Page({
     })
   },
 
-  // 测试 切换团长与否 TODO: 正式上线前删除该处
-  switchUserState(){
-    this.setData({
-      groupMaster: !this.data.groupMaster
-    })
-  },
 
 
 // ========================
