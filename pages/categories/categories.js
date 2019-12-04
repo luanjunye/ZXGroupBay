@@ -56,6 +56,15 @@ Page({
     })
   },
 
+  // 去往商品详情
+  toProductDetail(e){
+    let productId = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: `/pages/product/product?id=${productId}`
+    })
+  },
+
+
   // 获取类别列表
   getCategoriesList(callback){
     let that = this;

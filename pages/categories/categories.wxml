@@ -13,7 +13,7 @@
 
 <!--    content-->
     <scroll-view class="goods">
-        <view class="goods-item" wx:for="{{goods}}" wx:key="{{index}}">
+        <view class="goods-item" wx:for="{{goods}}" wx:key="{{index}}" bindtap="toProductDetail" data-id="{{item.id}}">
             <view class="goods-pic">
                 <image wx:if="{{item.leftCount === 0}}" class="sell-out" src="/assets/sellout.png"></image>
 <!--                <image class="play"></image>-->
