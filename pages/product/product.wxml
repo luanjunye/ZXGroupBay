@@ -3,9 +3,20 @@
     <!--    banner图-->
     <view class="banner_box">
         <swiper class="banner" indicator-dots="true" indicator-color="#e0e0e0" indicator-active-color="#fff"
-                autoplay="true" interval="3000" duration="1000">
+                autoplay="{{autoplay}}" interval="3000" duration="1000">
+            <swiper-item class="video-wrapper">
+                <video src="{{product.video}}"
+                       bindplay="stopAutoSwiper"
+                       bindpause="startAutoSwiper">
+                </video>
+            </swiper-item>
+
             <swiper-item wx:for="{{product.goodsViewList}}" wx:for-item="iitem" wx:key="{{iitem.id}}">
-                <image src="{{iitem}}" background-size="cover" mode="widthFix" data-value="{{iitem}}" class="image"
+                <image src="{{iitem}}"
+                       background-size="cover"
+                       mode="widthFix"
+                       data-value="{{iitem}}"
+                       class="image"
                        bindtap="handleClick"></image>
             </swiper-item>
         </swiper>

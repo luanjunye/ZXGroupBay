@@ -9,6 +9,8 @@ Page({
      * 页面的初始数据
      */
     data: {
+        autoplay: true,
+
         id: "",
         activity1: "满即送：满30元送泽轩基金奶茶一杯；",
         activity2: "满立减：满60元立减10元；",
@@ -46,6 +48,7 @@ Page({
                 product: res,
                 difference: difference
             })
+
         });
 
         util.request(api.GoodsList, {
@@ -56,12 +59,23 @@ Page({
                 likeList: res.list
             })
         });
-
     },
 
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
+    // 轮播自动滚动停止
+    stopAutoSwiper(){
+        this.setData({
+            autoplay: false
+        })
+    },
+
+    // 轮播自动滚动开始
+    startAutoSwiper(){
+        this.setData({
+            autoplay: true
+        })
+    },
+
+
     onReady: function () {
 
     },
