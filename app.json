@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/login/login",
-    "pages/userCenter/mine/mine",
     "pages/index/index",
     "pages/userCenter/feedbackApply/feedbackApply",
     "pages/video/video",
