@@ -8,19 +8,17 @@ Page({
   data: {
     product: {
       price: 15.3,
-      goodsCount:6, // 商品数量
-      specs: '6x100g/袋',
+      goodsCount: 6, // 商品数量
+      specs: '',
       goodsId: 31,
       orderId: 33,
-      nickName: '飞鱼',
-      applyDateTime: '2019-11-21 11:23:12',
-      orderNum: 'T20191128154509788614920',
-      number: 1,
+      orderNum: '',
+      number: 1, // 申请数量
       refundType: 0, // 处理方式  1 | 2
       ticketType: 0, // 工单类型  1 | 2
-      name: '紫米面包6袋，110g/袋',
-      picUrl: '/assets/list1.jpg',
-      buyer: '飞鱼',
+      name: '',
+      picUrl: '',
+      buyer: '',
       description: ''
     },
     memberUserId: 2,
@@ -28,9 +26,17 @@ Page({
   },
 
   onLoad: function (options) {
-    let ticketNo = options.ticketno; // 获取工单id
-    // TODO：获取工单详情网络数据
-
+    let infoFeedback = wx.getStorageSync('infoFeedback');
+    this.setData({
+      ['product.name']: infoFeedback.product.name,
+      ['product.price']: infoFeedback.product.price,
+      ['product.goodsCount']: infoFeedback.product.num,
+      ['product.specs']: infoFeedback.product.specification? infoFeedback.product.specification: '',
+      ['product.picUrl']: infoFeedback.product.url,
+      ['product.goodsId']: infoFeedback.product.id,
+      ['product.buyer']: infoFeedback.buyer,
+      ['product.orderNum']: infoFeedback.orderNum,
+    })
   },
 
 
@@ -107,9 +113,9 @@ Page({
     } else {
       util.request(api.FeedbackApply, {
         goodsId: that.data.product.goodsId,
+        orderNum: that.data.product.orderNum,
         info: that.data.product.description,
         number: that.data.product.number,
-        orderNum: that.data.product.orderNum,
         state: that.data.product.refundType,
         type: that.data.product.ticketType,
         url: that.data.evidenceUrls,

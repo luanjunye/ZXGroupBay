@@ -50,7 +50,7 @@ Page({
     // 开始倒计时之前，清除之前的 countdown handle
     let handle = wx.getStorageSync('countdown');
     clearInterval(handle);
-    wx.removeStorage('countdown')
+    wx.removeStorageSync('countdown')
 
     let countdownHandle = setInterval(()=>{
       this.data.orders.forEach((item,index) => {
@@ -123,6 +123,7 @@ Page({
       currentOrderList.forEach(item => {
         if(item.failPayTime){
           let timeLeft = this.getTimeDifference(item.failPayTime);
+          console.log(timeLeft);
           item.countdown = timeLeft > 0? timeLeft: 0;
         }
         tempOrderArray.push(item)
