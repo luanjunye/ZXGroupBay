@@ -33,22 +33,22 @@ Page({
             })
 
         if (userId) {
-            // util.request(api.SelectUserPostion, {
-            //     userId: userId
-            // }, "GET").then(function (res) {
-            //     data.teamUsers = res.teamUsers
-            //     data.address = res.address
-            //     console.log(data.address)
-            //     if (!data.address) {
-            //         wx.navigateTo({
-            //             url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer
-            //         });
-            //     }
-            //     that.setData(data);
-            // });
-            wx.switchTab({
-              url: '/pages/index/index',
-            })
+            util.request(api.SelectUserPostion, {
+                userId: userId
+            }, "GET").then(function (res) {
+                data.teamUsers = res.teamUsers
+                data.address = res.address
+                console.log(data.address)
+                if (!data.address) {
+                    wx.navigateTo({
+                        url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer
+                    });
+                }
+                that.setData(data);
+            });
+            // wx.switchTab({
+            //   url: '/pages/index/index',
+            // })
         }
     },
 
