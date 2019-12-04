@@ -54,9 +54,7 @@
                     <view class="money">¥
                         <view class="number">{{item.price}}</view>
                     </view>
-                    <!--TODO： 测试用的数据，需要恢复-->
-<!--                    <view class="refund" data-value="{{item}}" bindtap="feedback" wx:if="{{product.shippingStatus == 3}}" bintap="toRefund">申请退款</view>-->
-                    <view class="refund" data-value="{{item}}" bindtap="feedback"  bintap="toRefund">申请退款</view>
+                    <view class="refund" data-value="{{item}}" bindtap="feedback" wx:if="{{product.shippingStatus == 3}}">申请退款</view>
                 </view>
             </view>
         </view>
