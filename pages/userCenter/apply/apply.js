@@ -79,8 +79,8 @@ Page({
         name: this.data.name,
         street: this.data.addressDetail,
         userId: util.getUserInfo().userId,
-        latitude: this.data.latitude,
-        longitude: this.data.longitude,
+        latitude: this.data.addressLatitude,
+        longitude: this.data.addressLongitude,
         pointAddress: this.data.pointAddress
       }
       util.request(api.MasterApply, requestData, 'POST').then(res => {
