@@ -12,6 +12,7 @@ Page({
         groupInfo: [],
         shippingStatus: 0,   //shippingStatus 1 热卖   2 爆款    3 秒杀 4  团长推荐
         orderList: [],
+        isShow: false,
         isLogin: false,
         userId: "",
         pageNo: 1,// 分页相关
@@ -231,6 +232,34 @@ Page({
         wx.navigateTo({
             url: "/pages/search/search"
         })
-    }
+    },
+
+    //点击分享
+    openService:function () {
+        this.setData({
+            isShow:true
+        })
+    },
+
+    //关闭分享
+    closeService:function () {
+        this.setData({
+            isShow:false
+        })
+    },
+
+    //点击分享取消按钮
+    cancel:function () {
+        this.setData({
+            isShow:false
+        })
+    },
+
+    //生成海报
+    poster:function () {
+        wx.navigateTo({
+            url:'/pages/userCenter/poster/poster'
+        })
+    },
 
 });
