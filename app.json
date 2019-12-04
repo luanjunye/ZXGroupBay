@@ -3,7 +3,6 @@
     "pages/login/login",
     "pages/userCenter/mine/mine",
     "pages/index/index",
-    "pages/userCenter/mine/mine",
     "pages/userCenter/feedbackApply/feedbackApply",
     "pages/video/video",
     "pages/userCenter/feedback/feedback",
