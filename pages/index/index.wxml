@@ -69,14 +69,6 @@
         <text class="text">{{item.name}}</text>
       </view>
     </view>
-    <!--        <view class="second">-->
-    <!--            <view class="second_info" wx:for="{{second_i}}" wx:for-item="item" wx:key="{{item.id}}"-->
-    <!--                  data-value="{{item}}" id="{{item.id}}" bindtap="toSecond">-->
-    <!--                <image class="img" src="{{item.url}}" background-size="cover" data-value="{{item}}"-->
-    <!--                       data-index="{{ index }}"/>-->
-    <!--                <text class="text">{{item.title}}</text>-->
-    <!--            </view>-->
-    <!--        </view>-->
   </view>
 
 

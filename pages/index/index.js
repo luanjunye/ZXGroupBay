@@ -205,9 +205,13 @@ Page({
     toSecond: function (e) {
         let data = e.currentTarget.dataset.value;
         if (data.id) {
-            wx.navigateTo({
-                url: "/pages/index/secondIndex/secondIndex?id=" + data.id,
-            })
+            if(this.data.targetTime > 0){
+                wx.navigateTo({
+                    url: "/pages/index/secondIndex/secondIndex?id=" + data.id,
+                })
+            }else {
+                Toast("商品采购中，敬请期待！")
+            }
         }
     },
 
