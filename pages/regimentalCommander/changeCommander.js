@@ -64,6 +64,7 @@ Page({
         console.log(location)
         let that = this;
         var data = new Object();
+
         if (location) {
             var land = location.name
             that.setData({
@@ -120,9 +121,23 @@ Page({
     },
 
     changeAddress: function () {
-        wx.navigateTo({
-            url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer
-        });
+        wx.getSetting({
+            success(res) {
+                console.log(res)
+                if (res.authSetting['scope.userLocation']) {
+                    wx.navigateTo({
+                        url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer
+                    });
+                } else {
+                    wx.openSetting({
+                        success(res) {
+                            console.log(res.authSetting)
+                        }
+                    })
+                }
+            }
+        })
+
     },
 
     checkAndToBuy: function (e) {
