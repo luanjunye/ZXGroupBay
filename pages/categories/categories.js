@@ -57,7 +57,7 @@ Page({
   },
 
   // 获取类别列表
-  getCategoriesList(){
+  getCategoriesList(callback){
     let that = this;
     // 载入类别列表
     util.request(api.Categories, {}, 'GET').then(res => {
@@ -73,6 +73,9 @@ Page({
       that.setData({
         categories: tempArray
       })
+      if(callback){
+        callback();
+      }
     })
   },
 
@@ -138,6 +141,11 @@ Page({
     util.updateCartCount();
   },
 
+  // 下拉刷新后更新时走的方法
+  pulldownRefresh(){
+    this.switchToCategory(this.data.currentCategoryId) // 类别切换到对应id标签
+  },
+
 
 // ========================
   onPullDownRefresh: function () {
@@ -148,8 +156,7 @@ Page({
       perPageCount: this.data.perPageCount,
       hasMore: true,
     })
-    this.getCategoriesList(); // 刷新类别列表
-    // this.switchToCategory(this.data.currentCategoryId) // 类别切换到对应id标签
+    this.getCategoriesList(this.pulldownRefresh); // 刷新类别列表
   },
   onReachBottom: function () {
     // util.toast('Has Reached Bottom');
