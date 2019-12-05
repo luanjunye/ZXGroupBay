@@ -56,7 +56,10 @@
   margin: 0 auto;
 }
 .buyer .buy {
-  background: #E3E4E4;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: #C5E3F4;
   height: 20px;
   font-size: 14px;
 }

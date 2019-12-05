@@ -58,7 +58,8 @@
   width: 90%;
   margin: 0 auto;
   .buy{
-    background: $bg-count-down;
+    @include border-radius(5px);
+    background: #C5E3F4;
     height: 20px;
     font-size: 14px;
     .text{
