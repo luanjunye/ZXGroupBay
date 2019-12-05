@@ -1,0 +1,70 @@
+<!--pages/ucenter/companyProfile/companyProfile.wxml-->
+<view class="article-bg">
+    <view class="article-container">
+        <view class="article-content">
+            <view class="title bold">免费退换货准则</view>
+
+            <view class="ask">一：退换货受理时限</view>
+            <view class="answer">
+                泽轩优选平台所有商品，自客户签收商品算起的24小时内：生鲜品在未经食用的情况下，如发现商品变质，我们将提供退换货的服务；非生鲜品如发现质量问题，我们将提供退换货的服务
+            </view>
+            <view class="ask">二：退换货申请途径</view>
+            <view class="answer">
+                如商品有质量问题，团员可联系团长说明情况，需团长提交售后申请，等待平台处理。
+            </view>
+            <view class="ask">三：退换货条件</view>
+            <view class="answer">
+                <view>出现下列情况，给予免费退换货：</view>
+                <view>1）验收现场发现商品损坏（品质、外包装）；</view>
+                <view>2）所有产品，验收后24小时内发现商品变质投诉至客服并拍照取得认可的。</view>
+            </view>
+            <view class="ask"> 四：退换货要求</view>
+            <view class="answer">
+                <view>签收后24小时内产生退换货需求时，客户必须留存下列全部物品至退换货完成：</view>
+                <view>1）问题商品；</view>
+                <view>2）如有相关特惠品，退货时，如不满足特惠品赠送条件，需将特惠品一同退回。如特惠商品一经拆封或食用，则订单商品只换不退；</view>
+                <view>3）相关完整的外包装袋/纸箱。</view>
+            </view>
+            <view class="ask">五：退换货执行时限</view>
+            <view class="answer">
+                产生退换货需求时，原则上由客服与团长双方协议决定具体取货、补货日期。
+            </view>
+            <view class="ask">六：退款说明</view>
+            <view class="answer">
+                产生退款时，在线支付退回原支付账户，如微信余额和微信绑定的银行卡。
+            </view>
+
+
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </view>
+    </view>
+</view>
