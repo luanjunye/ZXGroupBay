@@ -42,7 +42,7 @@ Page({
   openAddressPlugin() {
     wx.getSetting({
       success(res) {
-        if (res.authSetting['scope.userLocation']) {
+        if (res.authSetting['scope.userLocation'] == undefined || res.authSetting['scope.userLocation']) {
           wx.navigateTo({
             url: 'plugin://chooseLocation/index?key=' + key + '&referer=' + referer
           });

@@ -134,6 +134,7 @@ Page({
     util.toast('功能开发中...')
   },
 
+  // 显示优惠活动
   showDiscountActivity(){
     util.request(api.ActivityDiscount, {}, 'GET').then(res => {
       wx.showModal({
