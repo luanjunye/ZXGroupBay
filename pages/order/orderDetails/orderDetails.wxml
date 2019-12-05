@@ -60,7 +60,7 @@
                         <view wx:if="{{product.isShow == 1}}" bindtap="toRefund">申请退款</view>
                     </view>
 
-                    <view class="refund" data-value="{{item}}" bindtap="feedback" wx:if="{{product.shippingStatus === 3 && Boolean(isMaster)}}" bintap="toRefund">申请售后</view>
+<!--                    <view class="refund" data-value="{{item}}" bindtap="feedback" wx:if="{{product.shippingStatus === 3 && Boolean(isMaster)}}" bintap="toRefund">申请售后</view>-->
 
                 </view>
             </view>
@@ -90,6 +90,8 @@
         <view class="time">下单时间:{{product.createTime}}</view>
         <view class="time" wx:if="{{product.shippingStatus == 3}}">完成时间:{{product.payTime}}</view>
     </view>
+
+    <van-toast id="van-toast" />
 
     <view class="cart-bottom" wx:if="{{product.shippingStatus == 1}}" bindtap="toPay">去支付</view>
 </view>

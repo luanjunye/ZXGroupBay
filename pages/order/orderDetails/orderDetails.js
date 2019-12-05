@@ -1,4 +1,7 @@
 // pages/order/orderDetails/orderDetails.js
+import Dialog from './../../../lib/vant-weapp/dialog/dialog';
+import Toast from '../../../lib/vant-weapp/toast/toast';
+
 const api = require('../../../config/url.js');
 const util = require('../../../utils/util.js');
 Page({
@@ -10,11 +13,11 @@ Page({
         isMaster: false,  // 是否是团长
         orderId: "",
         product: {},
-        failPayTime:0
+        failPayTime: 0
     },
 
     // 申请退款
-    feedback(e){
+    feedback(e) {
         // 在跳转到申请页面之前，保存当前订单的一些信息
         let currentProduct = e.currentTarget.dataset.value;
         let infoFeedback = {
@@ -64,7 +67,7 @@ Page({
             let failPayTime = res.failPayTime - timeStamp
             that.setData({
                 product: res,
-                failPayTime : failPayTime
+                failPayTime: failPayTime
             });
         });
     },
@@ -103,11 +106,11 @@ Page({
     onShareAppMessage: function () {
 
     },
-    
+
     //去支付
-    toPay:function () {
+    toPay: function () {
         let orderId = this.data.orderId
-        if(orderId){
+        if (orderId) {
             util.request(api.Pay, {
                 id: orderId,
             }, "POST").then(function (res) {
@@ -140,17 +143,25 @@ Page({
             });
         }
     },
-    
+
     //退款
-    toRefund:function () {
+    toRefund: function () {
         let that = this
-        //获取订单详情
-        util.request(api.OrderRefund, {id: this.data.orderId}, "POST").then(function (res) {
-            console.log(res)
-            // that.setData({
-            //     product: res,
-            //     failPayTime : failPayTime
-            // });
+        Dialog.confirm({
+            message: '是否确认退款？'
+        }).then(() => {
+            //获取订单详情
+            util.request(api.OrderRefund, {id: this.data.orderId}, "POST").then(function (res) {
+                console.log(res)
+                Toast('退款成功')
+                that.setData({
+                    product: {}
+                })
+                that.onShow()
+            });
+
+        }).catch(() => {
+            // on cancel
         });
     }
 })

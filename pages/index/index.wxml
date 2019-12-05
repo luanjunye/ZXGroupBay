@@ -133,7 +133,7 @@
 
   <van-toast id="van-toast" />
 
-  <van-popup show="{{isShow}}" position="bottom" bind:close="closeService">
+  <van-popup show="{{isShow}}" overlay-style="opacity:0" position="bottom" bind:close="closeService">
 <!--    <view class="all">-->
       <view class="popup_title">分享</view>
       <view class="pt_center">
