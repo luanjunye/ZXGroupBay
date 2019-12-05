@@ -36,3 +36,10 @@ page{
   line-height: $height-btn-feedback - 20px;
   background-color: $bg-active;
 }
+
+.no-data{
+  font-size: $font-size-title;
+  text-align: center;
+  padding: 20px;
+  color: $text-subtitle;
+}

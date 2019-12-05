@@ -15,9 +15,12 @@ Page({
   getPoster(){
     let that = this;
     util.request(api.TuanPoster, {}, 'GET').then(res=>{
-      that.setData({
-        postUrl: res
-      })
+      if (res){
+        that.setData({
+          postUrl: res
+        })
+      }
+
     })
   },
 
