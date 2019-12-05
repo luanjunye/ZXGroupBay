@@ -126,7 +126,7 @@ Page({
   toOrderDetail(e){
     let orderId = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/order/orderDetails/orderDetails?orderId=' + orderId
+      url: `/pages/order/orderDetails/orderDetails?orderId=${orderId}&fromMaster=true`
     })
   },
 

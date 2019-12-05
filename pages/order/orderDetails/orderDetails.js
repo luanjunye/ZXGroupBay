@@ -7,7 +7,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        isMaster: false,  // 是否是团长
+        fromMaster: false,  // 是否从团长那边过来的
         orderId: "",
         product: {},
         failPayTime:0
@@ -33,17 +33,20 @@ Page({
      */
     onLoad: function (options) {
         let orderId = options.orderId
+        let fromMaster = options.fromMaster
 
         if (orderId) {
             this.setData({
                 orderId: orderId
             })
         }
+        if (fromMaster){
+            // 更新是否从团长那边过来的标识
+            this.setData({
+                fromMaster: true
+            })
+        }
 
-        // 更新是否是团长的标识
-        this.setData({
-            isMaster: util.getUserInfo().isMaster
-        })
     },
 
     /**
