@@ -49,7 +49,7 @@ Page({
       {id: 1, title: '优惠券',      type: 'method',  url: 'showDeveloping' ,iconUrl: '/assets/mine/icon-coupon.png', badge: 0},
       {id: 2, title: '更换团长',    type: 'page',    url: '/pages/regimentalCommander/changeCommander' ,iconUrl: '/assets/mine/icon-switch.png', badge: 0},
       {id: 3, title: '关于泽轩优选', type: 'page',    url: '/pages/userCenter/about/about' ,iconUrl: '/assets/mine/icon-about.png', badge: 0},
-      {id: 4, title: '视频播放', type: 'page',    url: '/pages/video/video' ,iconUrl: '/assets/mine/icon-about.png', badge: 0},
+      // {id: 4, title: '视频播放', type: 'page',    url: '/pages/video/video' ,iconUrl: '/assets/mine/icon-about.png', badge: 0},
     ],
 
     // 团长菜单
@@ -63,6 +63,7 @@ Page({
 
   onLoad: function (options) {
     this.getUserInformation();
+    util.updateCartCount(); // 更新购物车图标 badge
   },
 
   // 申请团长点击时
@@ -137,7 +138,8 @@ Page({
   },
 
   onReady: function () { },
-  onShow: function () { },
+  onShow: function () {
+  },
 
   // onHide: function () { },
   // onUnload: function () { },

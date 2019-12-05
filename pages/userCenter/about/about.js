@@ -3,10 +3,9 @@ const util = require('../../../utils/util');
 Page({
   data: {
     list: [
-      {id: 0, title: '关于泽轩', url: '/pages/userCenter/aboutUs/aboutUs'},
+      {id: 0, title: '', url: '/pages/userCenter/aboutUs/aboutUs'},
       {id: 1, title: '用户协议', url: '/pages/userCenter/agreement/agreement'},
-      {id: 2, title: '常见问题', url: '/pages/userCenter/questions/questions'},
-      {id: 3, title: '名词解释', url: ''},
+      {id: 2, title: '退换货说明', url: '/pages/userCenter/annouceRefund6/annouceRefund6'},
     ]
   },
 

@@ -32,6 +32,7 @@ Page({
     },
 
     onLoad: function (options) {
+        util.updateCartCount(); // 刷新购物车数量
 
     },
 
