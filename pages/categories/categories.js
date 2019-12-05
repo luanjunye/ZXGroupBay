@@ -47,7 +47,6 @@ Page({
   },
 
   onLoad: function (options) {
-    util.updateCartCount(); // 刷新购物车数量
     this.getGoodsListOf(this.data.currentCategoryId, 1); // 载入【猜你喜欢】类别的商品列表
     this.getCategoriesList();
     // INIT screenHeight
@@ -176,7 +175,9 @@ Page({
   },
 
   onReady: function () { },
-  onShow: function () { },
+  onShow: function () {
+    util.updateCartCount(); // 更新购物车图标 badge
+  },
 
   // onHide: function () { },
   // onUnload: function () { },

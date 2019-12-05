@@ -137,7 +137,9 @@ Page({
   },
 
   onReady: function () { },
-  onShow: function () { },
+  onShow: function () {
+    util.updateCartCount(); // 更新购物车图标 badge
+  },
 
   // onHide: function () { },
   // onUnload: function () { },

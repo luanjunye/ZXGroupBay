@@ -44,6 +44,7 @@ Page({
     onReady: function () {
     },
     onShow: function () {
+        util.updateCartCount(); // 更新购物车图标 badge
         let that = this;
         var userId = wx.getStorageSync("userId")
         let isLogin = wx.getStorageSync("isLogin");
