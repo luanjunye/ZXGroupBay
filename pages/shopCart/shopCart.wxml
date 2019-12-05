@@ -39,15 +39,15 @@
     <!-- 购物车布局开始 -->
 
     <view class="cart-wrap" wx:if="{{cartList.length > 0 && isLogin}}">
-      <i-swipeout i-class="item" operateWidth="{{70}}" wx:for="{{cartList}}" wx:for-item="item" wx:key="{{itme.id}}">
-        <view slot="content" class="product">
+      <i-swipeout i-class="item" operateWidth="{{70}}" wx:for="{{cartList}}" wx:for-item="item" wx:key="{{itme.id}}" >
+        <view slot="content" class="product" >
           <van-checkbox data-value="{{item}}" data-index="{{index}}" class="check" value="{{item.checked}}" checked-color="#E9A23D" bind:change="changeCheck" />
-          <image data-value="{{item}}" class="image" src="{{item.picUrl}}" bindtap="toProduct"></image>
+          <image data-value="{{item}}" class="image" src="{{item.picUrl}}" data-value="{{item}}" bindtap="toProduct"></image>
           <view class="info">
             <view class="top">
               <view class="main">
                 <!--                                <van-tag wx:if="{{item.label}}" round color="#FFA42F" text-color="FFA42F" class="tlabel">{{item.label}}</van-tag>-->
-                <text class="title" data-value="{{item}}" bindtap="toProduct">{{item.name}}</text>
+                <text class="title" data-value="{{item}}" >{{item.name}}</text>
               </view>
               <view class="spec">{{item.spec}}
                 <van-icon class="arrow" color="#F7F7F7" name="arrow-down" />

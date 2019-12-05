@@ -185,6 +185,7 @@ Page({
                 userId: this.data.userId,
             }, "POST").then(function (res) {
                 //that.selectCart()
+                util.updateCartCount()
                 Toast("加入购物车成功")
             });
         }

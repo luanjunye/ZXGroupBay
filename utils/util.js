@@ -213,6 +213,10 @@ function updateCartCount() {
                 success: () => {
                 }
             })
+        }else {
+            wx.removeTabBarBadge({
+                index: 2
+            })
         }
     })
 }

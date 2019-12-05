@@ -55,7 +55,7 @@ Page({
                 userId: userId
             })
         }
-
+        util.updateCartCount()
         this.setData({
             shippingStatus: 0,
             orderList: [],
@@ -227,6 +227,7 @@ Page({
                 userId: this.data.userId,
             }, "POST").then(function (res) {
                 //that.selectCart()
+                util.updateCartCount()
                 Toast("加入购物车成功")
             });
         }

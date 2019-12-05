@@ -212,6 +212,7 @@
 
 .like_text{
   padding: 20px 20px 0 20px;
+  margin-bottom: 20px;
 }
 
 .like {
@@ -221,6 +222,7 @@
   width: 100%;
   font-size: 18px;
   padding: 10px 20px 100rpx 20px;
+  margin-bottom: 20px;
 
 
   .likeList {
@@ -338,11 +340,10 @@
   bottom: 0;
   z-index: 120;
   width: 750rpx;
-  height: 100rpx;
+  height: 120rpx;
   display: flex;
   background: #fff;
   padding: 5px 20px;
-  margin-bottom: 20px;
   justify-content: space-between;
   align-items: center;
   border-top: 1rpx solid $bg-bottom-line;

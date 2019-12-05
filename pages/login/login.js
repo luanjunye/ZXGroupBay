@@ -125,12 +125,12 @@ Page({
                                     wx.setStorageSync('isLogin', true);
                                     wx.setStorageSync('isMaster', Boolean(res.isRegimental));
                                     if (res.isRegimental){
-                                        wx.navigateTo({
-                                            url: '/pages/regimentalCommander/changeCommander',
-                                        })
-                                    }else{
                                         wx.switchTab({
                                             url: '/pages/index/index',
+                                        })
+                                    }else{
+                                        wx.navigateTo({
+                                            url: '/pages/regimentalCommander/changeCommander',
                                         })
                                     }
 
