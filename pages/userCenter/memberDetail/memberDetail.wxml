@@ -53,7 +53,7 @@
                 <view class="user-info">
 
                     <view class="user-detail">
-                        <view class="name">[{{item.code}}]</view>
+                        <view class="name">[团ID: {{item.code}}]</view>
                         <view class="date">{{item.time}}</view>
                     </view>
                 </view>
