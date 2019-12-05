@@ -138,27 +138,34 @@ Page({
 
   //底部统计全选事件
   changeCheckedAll: function(e) {
-    let isCheck = []
-    this.setData({
-      checkedAll: e.detail
-    });
 
-    for (let i = 0; i < this.data.cartList.length; i++) {
+    if (this.data.cartList.length > 0){
+      let isCheck = []
       this.setData({
-        [`cartList[${i}].checked`]: e.detail
-      })
-      if (this.data.checkedAll === true) {
-        isCheck.push(this.data.cartList[i].id)
+        checkedAll: e.detail
+      });
+      for (let i = 0; i < this.data.cartList.length; i++) {
+        this.setData({
+          [`cartList[${i}].checked`]: e.detail
+        })
+        if (this.data.checkedAll === true) {
+          isCheck.push(this.data.cartList[i].id)
+        }
       }
+
+      this.setData({
+        isCheck: isCheck
+      })
+      console.log(isCheck)
+      this.setCheckedTotalPrice();
+      this.setCheckedTotalCount();
+      this.judgeCheckedAll();
+    }else {
+      this.setData({
+        checkedAll: false
+      });
     }
 
-    this.setData({
-      isCheck: isCheck
-    })
-    console.log(isCheck)
-    this.setCheckedTotalPrice();
-    this.setCheckedTotalCount();
-    this.judgeCheckedAll();
   },
   //选中的产品数量
   setCheckedTotalCount: function() {
@@ -257,20 +264,26 @@ Page({
   },
 
   judgeCheckedAll: function() {
-    let noChecked = true;
-    this.data.cartList.forEach(function(v) {
-      if (v.checked) {
-        noChecked = false;
-        return;
-      }
-    })
-    let checkedAll = true;
-    this.data.cartList.forEach(function(v) {
-      if (!v.checked) {
-        checkedAll = false;
-        return;
-      }
-    })
+    if (this.data.cartList.length > 0){
+      var noChecked = true;
+      this.data.cartList.forEach(function(v) {
+        if (v.checked) {
+          noChecked = false;
+          return;
+        }
+      })
+      var checkedAll = true;
+      this.data.cartList.forEach(function(v) {
+        if (!v.checked) {
+          checkedAll = false;
+          return;
+        }
+      })
+    }else {
+      noChecked = false;
+    }
+
+
     this.setData({
       noChecked: noChecked,
       checkedAll: checkedAll
