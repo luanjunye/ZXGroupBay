@@ -21,7 +21,6 @@ Page({
       buyer: '',
       description: ''
     },
-    memberUserId: 2,
     evidenceUrls: []
   },
 
@@ -119,7 +118,7 @@ Page({
         state: that.data.product.refundType,
         type: that.data.product.ticketType,
         url: that.data.evidenceUrls,
-        userId: that.data.memberUserId
+        userId: util.getUserInfo().userId
       }, 'POST').then(res=>{
         // console.log(res);
         util.toastSuccess('提交成功');

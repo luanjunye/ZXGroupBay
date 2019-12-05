@@ -1,6 +1,6 @@
 @charset "UTF-8";
 .article-bg {
-  background-color: #DD8083;
+  background-color: #0BE7C5;
   padding: 8px 8px 18px 8px;
 }
 
@@ -17,18 +17,18 @@
   -webkit-border-radius: 18px;
   -moz-border-radius: 18px;
   border-radius: 18px;
-  border: 1rpx solid #DD8083;
+  border: 1rpx solid #0BE7C5;
   padding: 10px;
 }
 
 .title {
   margin-bottom: 20px;
-  border-bottom: 1rpx solid #DD8083;
+  border-bottom: 1rpx solid #0BE7C5;
   line-height: 1;
   padding: 15px 0;
   text-align: center;
   font-size: 1.2rem;
-  color: #FF3948;
+  color: #0BE7C5;
 }
 
 .p {

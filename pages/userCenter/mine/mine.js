@@ -28,7 +28,7 @@ Page({
     // 我的团购菜单组
     menuListGroup: [
       {id: 0, title: '团购订单', type: 'page', url: '/pages/userCenter/groupOrder/groupOrder?from=mine' ,iconUrl: '/assets/mine/load-cargo.png', badge: 0},
-      {id: 1, title: '签收码',   type: 'page', url: '/pages/userCenter/receiveCode/receiveCode' ,iconUrl: '/assets/mine/receive-code.png', badge: 0},
+      {id: 1, title: '签收码',   type: 'method', url: 'showDeveloping' ,iconUrl: '/assets/mine/receive-code.png', badge: 0},
       {id: 2, title: '售后反馈', type: 'page', url: '/pages/userCenter/feedback/feedback' ,iconUrl: '/assets/mine/feedback.png', badge: 0},
       {id: 3, title: '佣金记录', type: 'page', url: '/pages/userCenter/commission/commission' ,iconUrl: '/assets/mine/commission.png', badge: 0},
       {id: 4, title: '团员管理', type: 'page', url: '/pages/userCenter/memberManage/memberManage' ,iconUrl: '/assets/mine/member-manage.png', badge: 0},
@@ -134,6 +134,7 @@ Page({
     util.toast('功能开发中...')
   },
 
+  // 显示优惠活动
   showDiscountActivity(){
     util.request(api.ActivityDiscount, {}, 'GET').then(res => {
       wx.showModal({
