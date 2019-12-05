@@ -73,12 +73,7 @@ Page({
      */
     onShow: function () {
         let that = this
-        this.setData({
-            groupList: [],
-            pageNo: 1,// 分页相关
-            hasMore: true, // 标记是否还有更多
-            key: ""
-        });
+
         console.log(this.data.userId)
         util.request(api.OrderSubmit, {
             userId: this.data.userId,
@@ -109,6 +104,13 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
+        this.setData({
+            groupList: [],
+            pageNo: 1,// 分页相关
+            hasMore: true, // 标记是否还有更多
+            key: "",
+            isShow: 0
+        });
         this.onShow()
     },
 
@@ -215,9 +217,12 @@ Page({
             util.request(api.OrderConfirm, {
                 userId: userId,
             }, "POST").then(function (res) {
-               wx.showToast({
-                 title:'确认收货成功',
-               })
+                wx.showToast({
+                    title: '确认收货成功',
+                })
+                that.setData({
+                    isShow: 0
+                })
             });
 
         }).catch(() => {
