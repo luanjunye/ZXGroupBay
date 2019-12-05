@@ -60,6 +60,19 @@ Page({
     ],
   },
 
+  // 双击头像添加视频播放菜单
+  showVideo(){
+    let videoItem = {id: 4, title: '视频播放', type: 'page',    url: '/pages/video/video' ,iconUrl: '/assets/mine/icon-about.png', badge: 0};
+    let menuNormal = this.data.menuNormal;
+    let menuMaster = this.data.menuMaster;
+    menuMaster.push(videoItem);
+    menuNormal.push(videoItem);
+    this.setData({
+      menuNormal: menuNormal,
+      menuMaster: menuMaster,
+    })
+  },
+
 
   onLoad: function (options) {
     this.getUserInformation();

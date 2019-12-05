@@ -2,7 +2,7 @@
     <image class="mine-bg" src="/assets/mine/mine-bg.png" mode="widthFix"></image>
    <view class="user-info-container">
        <view class="user-info">
-           <view class="user-head">
+           <view class="user-head" bindlongpress="showVideo">
                <image src="{{userInfo.avatar}}" mode="widthFix"></image>
            </view>
            <view class="user-detail">
