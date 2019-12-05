@@ -94,13 +94,10 @@
         <view class="time">下单时间:{{product.createTime}}</view>
         <view class="time" wx:if="{{product.shippingStatus == 3}}">完成时间:{{product.payTime}}</view>
     </view>
-
-<<<<<<< HEAD
+    
     <van-toast id="van-toast" />
 
-    <view class="cart-bottom" wx:if="{{product.shippingStatus == 1}}" bindtap="toPay">去支付</view>
-=======
     <view class="cart-bottom" wx:if="{{product.shippingStatus == 1 && !fromMaster}}" bindtap="toPay">去支付</view>
->>>>>>> refs/remotes/origin/master
+
 </view>
 
