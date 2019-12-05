@@ -1,7 +1,9 @@
-<view class="poster-container">
+<view wx:if="{{postUrl}}" class="poster-container">
     <view class="poster light-shadow">
         <image src="{{postUrl}}" mode="widthFix"></image>
     </view>
-
     <view class="download-btn btn" bindtap="downloadPoster">下载图片</view>
 </view>
+<view wx:else class="no-data">暂无开团海报</view>
+
+
