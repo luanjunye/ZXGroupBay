@@ -32,6 +32,7 @@ Page({
         // this.setData({
         //     targetTime: new Date().getTime() + 6430000
         // });
+        util.updateCartCount(); // 刷新购物车数量
 
         getApp().globalData.type = 0;
     },
@@ -44,7 +45,6 @@ Page({
     onReady: function () {
     },
     onShow: function () {
-        util.updateCartCount(); // 更新购物车图标 badge
         let that = this;
         var userId = wx.getStorageSync("userId")
         let isLogin = wx.getStorageSync("isLogin");

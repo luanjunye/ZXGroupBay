@@ -63,6 +63,7 @@ Page({
 
   onLoad: function (options) {
     this.getUserInformation();
+    util.updateCartCount(); // 更新购物车图标 badge
   },
 
   // 申请团长点击时
@@ -138,7 +139,6 @@ Page({
 
   onReady: function () { },
   onShow: function () {
-    util.updateCartCount(); // 更新购物车图标 badge
   },
 
   // onHide: function () { },

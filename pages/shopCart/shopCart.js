@@ -32,6 +32,7 @@ Page({
     },
 
     onLoad: function (options) {
+        util.updateCartCount(); // 刷新购物车数量
 
     },
 
@@ -39,7 +40,6 @@ Page({
     onReady: function () {
     },
     onShow: function () {
-        util.updateCartCount(); // 刷新购物车数量
         let isLogin = wx.getStorageSync('isLogin')
         let userId = wx.getStorageSync('userId')
         if (isLogin && userId) {
