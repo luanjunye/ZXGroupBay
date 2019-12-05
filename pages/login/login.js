@@ -12,7 +12,8 @@ Page({
      */
     data: {
         code: '',
-        userInfo: []
+        userInfo: [],
+        isRegimental:0,
     },
 
     /**
@@ -123,9 +124,16 @@ Page({
                                     wx.setStorageSync('openId', res.openid);
                                     wx.setStorageSync('isLogin', true);
                                     wx.setStorageSync('isMaster', Boolean(res.isRegimental));
-                                    wx.navigateTo({
-                                        url: '/pages/regimentalCommander/changeCommander',
-                                    })
+                                    if (res.isRegimental){
+                                        wx.navigateTo({
+                                            url: '/pages/regimentalCommander/changeCommander',
+                                        })
+                                    }else{
+                                        wx.switchTab({
+                                            url: '/pages/index/index',
+                                        })
+                                    }
+
                                 });
                             }
                         }

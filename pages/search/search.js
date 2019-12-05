@@ -45,12 +45,7 @@ Page({
                 userId: userId
             })
         }
-        this.setData({
-            key: "",
-            orderList: [],
-            pageNo: 1,// 分页相关
-            hasMore: true, // 标记是否还有更多
-        });
+
     },
 
     /**
@@ -71,6 +66,12 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
+        this.setData({
+            key: "",
+            orderList: [],
+            pageNo: 1,// 分页相关
+            hasMore: true, // 标记是否还有更多
+        });
         this.onShow()
     },
 
@@ -109,6 +110,11 @@ Page({
     submit: function () {
         let key = this.data.key
         let that = this
+        this.setData({
+            orderList: [],
+            pageNo: 1,// 分页相关
+            hasMore: true, // 标记是否还有更多
+        })
         if (key) {
             this.changeOrderList(key, this.data.pageNo)
         }

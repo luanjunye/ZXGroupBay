@@ -176,6 +176,7 @@
   bottom: 0;
   background: #0BE7C5;
   display: flex;
+  margin-bottom: 20px;
   align-items: center;
   padding: 20rpx 0rpx;
   justify-content: space-around;

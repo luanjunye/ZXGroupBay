@@ -14,6 +14,7 @@ Page({
         orderList: [],
         isShow: false,
         isLogin: false,
+        isOverlay: false,
         userId: "",
         pageNo: 1,// 分页相关
         perPageCount: 15, // 每次请求的数量条数

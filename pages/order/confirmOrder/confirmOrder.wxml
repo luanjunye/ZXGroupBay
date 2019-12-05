@@ -67,4 +67,6 @@
     </view>
 
     <view class="cart-bottom" bindtap="toPay">去支付</view>
+
+    <van-dialog confirm-button-color="#b4282d" id="van-dialog" />
 </view>
