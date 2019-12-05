@@ -38,6 +38,8 @@ Page({
         let orderId = options.orderId
         let fromMaster = options.fromMaster
 
+        console.log('fromMaster:', fromMaster)
+
         if (orderId) {
             this.setData({
                 orderId: orderId
