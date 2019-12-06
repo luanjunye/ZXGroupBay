@@ -88,13 +88,13 @@
   align-items: center;
 }
 .order .orderInfo .img {
-  width: 120px;
-  height: 120px;
+  width: 170rpx;
+  height: 170rpx;
   flex-shrink: 0;
 }
 .order .orderInfo .info {
   width: 200px;
-  height: 120px;
+  height: 170rpx;
   padding-left: 10px;
   display: flex;
   flex-direction: column;
@@ -158,14 +158,10 @@
 }
 
 .orderRemark {
-  margin: 5px 10px;
+  margin: 5px 10px 80px 10px;
   background: #FFF;
-  padding: 20px 20px 60px 20px;
+  padding: 10px 20px;
   font-size: 16px;
-}
-.orderRemark .top {
-  display: flex;
-  justify-content: space-between;
 }
 .orderRemark .time {
   margin-top: 10px;

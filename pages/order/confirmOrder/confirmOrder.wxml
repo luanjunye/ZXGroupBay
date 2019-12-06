@@ -34,7 +34,7 @@
 <!--            <view class="name">{{ConfirmOrder.myNickname}}</view>-->
 <!--        </view>-->
         <view class="orderInfo" wx:for="{{ConfirmOrder.orderInfoGoodsListVOList}}" wx:for-item="item" wx:key="item.id">
-            <image class="img" mode="widthFix" src="{{item.url}}"></image>
+            <image class="img"  src="{{item.url}}"></image>
             <view class="info">
                 <view class="title">{{item.name}}</view>
                 <view class="second">

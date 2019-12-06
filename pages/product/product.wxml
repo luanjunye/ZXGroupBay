@@ -78,8 +78,7 @@
     <!--    商品规格及活动-->
     <view class="parameter">已选{{product.specification}}</view>
     <view class="activity">
-        <view>{{activity1}}</view>
-        <view>{{activity2}}</view>
+        <view>{{activity}}</view>
     </view>
 
 
