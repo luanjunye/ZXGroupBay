@@ -76,6 +76,7 @@ Page({
     let mins = Number((timeLeft / 60).toFixed());
     let hours = (mins / 60).toFixed();
     let seconds = timeLeft % 60;
+    util.toast(`时分秒：${hours}:${mins}:${seconds}`);
     return `剩余时间 ${hours.toString().padStart(2,'00')}:${mins.toString().padStart(2,'00')}:${seconds.toString().padStart(2,'00')}`;
     // return `剩余时间 ${mins.toString().padStart(2,'00')}:${seconds.toString().padStart(2,'00')}`;
   },
@@ -144,10 +145,8 @@ Page({
   // 返回两个时间的差：秒
   getTimeDifference(endTimeString) {
     let timeNow = new Date().getTime();
-    let endTimeArray = endTimeString.split('');
-    endTimeArray.splice(10,1, 'T');
-    endTimeString = endTimeArray.join('');
-    let timeEnd = new Date(endTimeString).getTime();
+    let newEndString = endTimeString.replace(/-/g, '/');
+    let timeEnd = new Date(newEndString).getTime();
     let timeLeft = (timeEnd - timeNow)/1000;
     return  Number(timeLeft.toFixed())
   },
