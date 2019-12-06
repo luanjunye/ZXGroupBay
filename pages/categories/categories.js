@@ -144,11 +144,12 @@ Page({
       "goodsId": goodId,
       "userId": util.getUserInfo().userId
     }, 'POST').then(res => {
-      util.toastSuccess('成功添加至购物车')
+      util.toastSuccess('成功添加至购物车');
+      // 更新购物车
+      util.updateCartCount();
     })
 
-    // 更新购物车
-    util.updateCartCount();
+
   },
 
   // 下拉刷新后更新时走的方法
