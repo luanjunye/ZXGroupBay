@@ -25,7 +25,7 @@ Page({
     ids: [],
     shipping: 0,
     freight: 0,
-    activity: "满60元减5元",
+    activity: "",
     isCheck: [],
     ConfirmOrder: {}
 
@@ -33,6 +33,12 @@ Page({
 
   onLoad: function(options) {
     util.updateCartCount(); // 刷新购物车数量
+    let that = this
+    util.request(api.ActivityDiscount, {}, "GET").then(function (res) {
+      that.setData({
+        activity: res.replace('\r\n',"")
+      })
+    });
 
   },
 
@@ -53,6 +59,9 @@ Page({
       pageNo: 1, // 分页相关
       hasMore: true, // 标记是否还有更多
     });
+
+
+
     this.changeCartList(userId, this.data.pageNo)
   },
   onHide: function() {},

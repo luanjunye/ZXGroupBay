@@ -10,10 +10,8 @@ Page({
      */
     data: {
         autoplay: true,
-
         id: "",
-        activity1: "满即送：满30元送泽轩基金奶茶一杯；",
-        activity2: "满立减：满60元立减10元；",
+        activity:"",
         isLogin: false,
         userId: "",
         cartList: [],
@@ -57,6 +55,12 @@ Page({
         }, "GET").then(function (res) {
             that.setData({
                 likeList: res.list
+            })
+        });
+
+        util.request(api.ActivityDiscount, {}, "GET").then(function (res) {
+            that.setData({
+                activity: res.replace('\r\n',"")
             })
         });
     },

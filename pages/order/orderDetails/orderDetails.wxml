@@ -81,10 +81,7 @@
     </view>
 
     <view class="orderRemark">
-        <view class="top">
-            <view class="number">订单编号:{{product.orderNum}}</view>
-            <view class="copy" bindtap="copy">复制</view>
-        </view>
+        <view class="time">订单编号:{{product.orderNum}}</view>
         <view class="time">下单时间:{{product.createTime}}</view>
         <view class="time" wx:if="{{product.shippingStatus == 3}}">完成时间:{{product.payTime}}</view>
         <view class="time" wx:if="{{product.shippingStatus == 3}}">收货时间:{{product.confirmTime}}</view>

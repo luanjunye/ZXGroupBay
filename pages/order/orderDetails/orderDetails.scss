@@ -176,15 +176,10 @@
 }
 
 .orderRemark{
-  margin: 5px 10px;
+  margin: 5px 10px 80px 10px;
   background: $bg-info;
-  padding: 20px 20px 60px 20px;
+  padding: 10px 20px;
   font-size: 16px;
-
-  .top{
-    display: flex;
-    justify-content: space-between;
-  }
 
   .time{
     margin-top: 10px;
