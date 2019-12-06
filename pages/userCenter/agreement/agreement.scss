@@ -78,3 +78,8 @@ $font-size: $font-size-title * 0.9;
   margin-bottom: 5px;
   padding-left: 20px;
 }
+
+.tip{
+  font-size: $font-size-comment;
+  color: $text-comment;
+}

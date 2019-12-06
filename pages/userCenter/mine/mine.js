@@ -3,6 +3,7 @@ const api = require('../../../config/url.js');
 
 Page({
   data: {
+    videoAdded: false,
     groupMaster: true,  // 是否为团长
     messageCount: 0,
     userInfo: {
@@ -60,18 +61,7 @@ Page({
     ],
   },
 
-  // 双击头像添加视频播放菜单
-  showVideo(){
-    let videoItem = {id: 4, title: '视频播放', type: 'page',    url: '/pages/video/video' ,iconUrl: '/assets/mine/icon-about.png', badge: 0};
-    let menuNormal = this.data.menuNormal;
-    let menuMaster = this.data.menuMaster;
-    menuMaster.push(videoItem);
-    menuNormal.push(videoItem);
-    this.setData({
-      menuNormal: menuNormal,
-      menuMaster: menuMaster,
-    })
-  },
+
 
 
   onLoad: function (options) {
@@ -131,7 +121,7 @@ Page({
 
   // 提示开发中
   showDeveloping(){
-    util.toast('功能开发中...')
+    util.toast('功能开发中...');
   },
 
   // 显示优惠活动
@@ -150,10 +140,34 @@ Page({
       url: "/pages/userCenter/notice/notice"
     })
   },
+
+
+  // 添加视频播放菜单
+  showVideo(){
+    let videoItem = {id: 4, title: '视频播放', type: 'page',    url: '/pages/video/video' ,iconUrl: '/assets/mine/icon-about.png', badge: 0};
+    let menuNormal = this.data.menuNormal;
+    let menuMaster = this.data.menuMaster;
+    menuMaster.push(videoItem);
+    menuNormal.push(videoItem);
+    this.setData({
+      videoAdded: true,
+      menuNormal: menuNormal,
+      menuMaster: menuMaster,
+    })
+  },
+
+  // 刷新菜单展示与否
+  updateVideoStatus(){
+    let showSwitch = wx.getStorageSync('showVideo');
+    if(showSwitch && !this.data.videoAdded){
+      this.showVideo()
+    }
+  },
   
 // ========================
   onPullDownRefresh: function () {
     this.getUserInformation();
+    this.updateVideoStatus();
   },
 
   onReady: function () { },
@@ -162,6 +176,6 @@ Page({
 
   // onHide: function () { },
   // onUnload: function () { },
-  // onReachBottom: function () { },
+  // onReachBottom: function () {},
   // onShareAppMessage: function () { }
 });

@@ -148,8 +148,6 @@ Page({
       // 更新购物车
       util.updateCartCount();
     })
-
-
   },
 
   // 下拉刷新后更新时走的方法
