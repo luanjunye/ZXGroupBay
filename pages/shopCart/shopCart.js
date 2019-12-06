@@ -206,11 +206,11 @@ Page({
       id: this.data.ids
     }, "POST").then(function(res) {
       console.log(res)
+      this.updateHistory();
     });
     this.setCheckedTotalPrice();
     this.setCheckedTotalCount();
     this.judgeCheckedAll();
-    this.updateHistory();
   },
   //改变后的列表
   updateHistory: function(e) {
