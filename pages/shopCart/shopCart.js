@@ -193,6 +193,7 @@ Page({
     let id = e.currentTarget.dataset.value.id;
     let data = [];
     let ids = [];
+    let that = this
     this.data.cartList.forEach(function(v) {
       if (id != v.id) {
         data.push(v);
@@ -206,7 +207,7 @@ Page({
       id: this.data.ids
     }, "POST").then(function(res) {
       console.log(res)
-      this.updateHistory();
+      that.updateHistory();
     });
     this.setCheckedTotalPrice();
     this.setCheckedTotalCount();
@@ -290,6 +291,7 @@ Page({
       })
     }else {
       noChecked = true;
+     checkedAll = false;
     }
 
 
