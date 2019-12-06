@@ -76,7 +76,7 @@ Page({
     let mins = Number((timeLeft / 60).toFixed());
     let hours = (mins / 60).toFixed();
     let seconds = timeLeft % 60;
-    util.toast(`时分秒：${hours}:${mins}:${seconds}`);
+    // util.toast(`时分秒：${hours}:${mins}:${seconds}`);
     return `剩余时间 ${hours.toString().padStart(2,'00')}:${mins.toString().padStart(2,'00')}:${seconds.toString().padStart(2,'00')}`;
     // return `剩余时间 ${mins.toString().padStart(2,'00')}:${seconds.toString().padStart(2,'00')}`;
   },
