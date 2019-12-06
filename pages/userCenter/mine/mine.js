@@ -56,8 +56,9 @@ Page({
     // 团长菜单
     menuMaster: [
       {id: 0, title: '优惠券',         type: 'method', url: 'showDeveloping' ,iconUrl: '/assets/mine/icon-coupon.png', badge: 0},
-      {id: 1, title: '关于泽轩优选',    type: 'page', url: '/pages/userCenter/about/about' ,iconUrl: '/assets/mine/icon-about.png', badge: 0},
-      {id: 2, title: '邀请好友注册团长', type: 'page', url: '/pages/userCenter/invitation/invitation' ,iconUrl: '/assets/mine/icon-invitation.png', badge: 0},
+      {id: 1, title: '邀请好友注册团长', type: 'method', url: 'showDeveloping' ,iconUrl: '/assets/mine/icon-invitation.png', badge: 0},
+      // {id: 1, title: '邀请好友注册团长', type: 'page', url: '/pages/userCenter/invitation/invitation' ,iconUrl: '/assets/mine/icon-invitation.png', badge: 0},
+      {id: 2, title: '关于泽轩优选',    type: 'page', url: '/pages/userCenter/about/about' ,iconUrl: '/assets/mine/icon-about.png', badge: 0},
     ],
   },
 
