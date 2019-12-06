@@ -290,6 +290,7 @@ Page({
       })
     }else {
       noChecked = true;
+     checkedAll = false;
     }
 
 

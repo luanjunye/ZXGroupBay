@@ -15,7 +15,7 @@ Page({
         isLogin: false,
         list: [],
         type:0,
-       // isPay:false
+        isPay:false
     },
 
 
@@ -64,7 +64,7 @@ Page({
                 ConfirmOrder : ConfirmOrder,
                 list : list,
                 type : 1,
-                // isPay : false
+                 isPay : false
             })
         }
         let isLogin = wx.getStorageSync('isLogin')
@@ -88,9 +88,9 @@ Page({
         } else if (!(util.REGEX.mobile.test(this.data.mobile))) {
             util.toast('请输入正确的手机号')
         }else {
-            // that.setData({
-            //     isPay : true
-            // })
+            that.setData({
+                isPay : true
+            })
             util.request(api.OrderSave, {
                 fullOutPrice: this.data.ConfirmOrder.fullOutPrice,
                 goodsPrice: this.data.ConfirmOrder.goodsPrice,
