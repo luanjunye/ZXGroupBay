@@ -34,7 +34,7 @@
 </view>
 
 <!--    团长任务情况-->
-<view wx:if="{{groupMaster}}" class="group-progress">
+<view wx:if="{{false}}" class="group-progress">
     <view class="grade-title">─── 团长进阶之路 ───</view>
     <view class="grade-description light-shadow">您当月还有任务待完成，若未完成任务，将会关闭团长身份</view>
     <view class="grade-progress-content">
