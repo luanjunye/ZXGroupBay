@@ -104,6 +104,7 @@ Page({
   getOrderList(currentStateId, pageNo){
     let that = this;
     util.request(api.MemberOrderList, {
+      teamUserId: util.getUserInfo().userId,
       userId: that.data.memberUserId,
       status: currentStateId,
       page: pageNo,
