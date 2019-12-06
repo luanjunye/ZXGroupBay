@@ -229,8 +229,8 @@ Page({
       }
     })
     this.setData({
-      totalPrice: Number(totalPrice.toFixed(1)),
-      difference: Number(difference.toFixed(1))
+      totalPrice: Number(totalPrice.toFixed(2)),
+      difference: Number(difference.toFixed(2))
     })
 
   },
