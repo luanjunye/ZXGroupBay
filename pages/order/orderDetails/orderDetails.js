@@ -168,5 +168,12 @@ Page({
         }).catch(() => {
             // on cancel
         });
-    }
+    },
+
+    //退换货协议
+    toAgreement: function () {
+        wx.navigateTo({
+            url: '/pages/userCenter/annouceRefund/annouceRefund',
+        })
+    },
 })

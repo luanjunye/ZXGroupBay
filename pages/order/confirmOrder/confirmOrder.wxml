@@ -1,7 +1,7 @@
 <!--pages/order/confirmOrder/confirmOrder.wxml-->
 <view class="ucenter">
 
-    <view class="prompt">截团五小时后，不支持退款!</view>
+    <view class="prompt" bindtap="toAgreement">截团五小时后，不支持退款!</view>
 
     <view class="commanderInfo">
         <view class="top">

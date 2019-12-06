@@ -1,11 +1,11 @@
 <!--pages/userCenter/notice/notice.wxml-->
 <view class="noticeList" wx:for="{{notice_list}}" wx:for-item="item" wx:key="{{item.id}}"
       data-value="{{item}}" id="{{item.id}}">
-    <view class="info">
-        <image class="img" src="{{item.url}}"></image>
+    <view class="info" wx:if="{{notice_list.length>0}}">
+        <image class="img" src="/assets/mine/notice.jpg"></image>
         <view class="list">
             <view class="title">{{item.title}}</view>
-            <view class="text">{{item.text}}</view>
+            <view class="text">{{item.content}}</view>
         </view>
     </view>
 </view>

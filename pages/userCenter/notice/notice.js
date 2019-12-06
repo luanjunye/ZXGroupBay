@@ -1,49 +1,18 @@
 // pages/userCenter/notice/notice.js
+const util = require('../../../utils/util');
+const api = require('../../../config/url.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    notice_list:[
-      {
-        id:1,
-        url: "/assets/avater.png",
-        title:"参团成功",
-        text:"您已成功参团，我们将尽快为您发货，感谢您的支持"
-      },
-      {
-        id:2,
-        url: "/assets/avater.png",
-        title:"参团成功",
-        text:"您已成功参团，我们将尽快为您发货，感谢您的支持"
-      },
-      {
-        id:3,
-        url: "/assets/avater.png",
-        title:"参团成功",
-        text:"您已成功参团，我们将尽快为您发货，感谢您的支持"
-      },
-      {
-        id:4,
-        url: "/assets/avater.png",
-        title:"参团成功",
-        text:"您已成功参团，我们将尽快为您发货，感谢您的支持"
-      },
-      {
-        id:5,
-        url: "/assets/avater.png",
-        title:"参团成功",
-        text:"您已成功参团，我们将尽快为您发货，感谢您的支持"
-      },
-      {
-        id:6,
-        url: "/assets/avater.png",
-        title:"参团成功",
-        text:"您已成功参团，我们将尽快为您发货，感谢您的支持"
-      }
-    ]
-
+    notice_list:[],
+    isLogin: false,
+    userId: "",
+    pageNo: 1,// 分页相关
+    perPageCount: 15, // 每次请求的数量条数
+    hasMore: true, // 标记是否还有更多
 
   },
 
@@ -51,7 +20,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var userId = wx.getStorageSync("userId")
+    let isLogin = wx.getStorageSync("isLogin");
+    if (isLogin && userId) {
+      this.setData({
+        isLogin: isLogin,
+        userId: userId
+      })
+    }
   },
 
   /**
@@ -65,7 +41,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      notice_list: [],
+      pageNo: 1,// 分页相关
+      hasMore: true, // 标记是否还有更多
+    });
+      this.getNotice(this.data.userId,this.data.pageNo)
   },
 
   /**
@@ -86,14 +67,17 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.onShow()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    let currentPageNo = this.data.pageNo + 1;
+    if (this.data.hasMore) {
+      this.getNotice(this.data.userId, currentPageNo);
+    }
   },
 
   /**
@@ -101,5 +85,30 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  //展示通知
+  getNotice(userId, pageNo) {
+    var that = this
+    this.setData({
+      loading: true
+    });
+    //首页商品列表
+    util.request(api.GetNotice, {
+      page: pageNo,
+      userId: userId,
+      limit: that.data.perPageCount
+    }, "GET").then(function (res) {
+      let currentGoodsArray = that.data.notice_list.concat(res);
+      if (currentGoodsArray.length === res.totalCount) { // 如果当前返回页面跟总页面数相同，说明没有更多内容了
+        that.setData({
+          hasMore: false
+        })
+      }
+      that.setData({
+        notice_list: currentGoodsArray,
+        loading: false
+      });
+    });
+  },
 })

@@ -124,6 +124,7 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
+        margin-bottom: 40px;
 
         .money {
           font-size: 10px;
@@ -142,7 +143,7 @@
 }
 
 .down{
-  margin: 0 10px 30px 10px;
+  margin: 0 10px 70px 10px;
   background: $bg-info;
   padding: 20px;
 

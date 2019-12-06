@@ -9,7 +9,7 @@
                <view class="name">{{userInfo.nickname}}</view>
                <view class="id">userID: <text>{{userInfo.code}}</text></view>
            </view>
-           <view class="message-wrapper">
+           <view class="message-wrapper" bindtap="toNotice">
                <view class="message">
                    <image src="/assets/mine/message.png" mode="aspectFit"></image>
                    <view wx:if="{{messageCount > 0}}" class="badge">{{messageCount}}</view>

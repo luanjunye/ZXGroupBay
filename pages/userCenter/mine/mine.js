@@ -143,9 +143,14 @@ Page({
       })
     })
   },
+
+  //进入通知
+  toNotice:function(){
+    wx.navigateTo({
+      url: "/pages/userCenter/notice/notice"
+    })
+  },
   
-
-
 // ========================
   onPullDownRefresh: function () {
     this.getUserInformation();

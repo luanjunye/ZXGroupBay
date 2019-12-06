@@ -77,9 +77,10 @@ Page({
 
     },
 
+    //用户协议
     toAgreement: function () {
         wx.navigateTo({
-            url: '/pages/ucenter/agreement/agreement',
+            url: '/pages/userCenter/agreement/agreement',
         })
     },
 

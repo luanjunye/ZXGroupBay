@@ -1,9 +1,9 @@
 <!--pages/order/orderDetails/orderDetails.wxml-->
 <view class="ucenter">
-    <view class="prompt">截团五小时后，不支持退款!</view>
+    <view class="prompt" bindtap="toAgreement">截团五小时后，不支持退款!</view>
     <view class="orderStatus">
         <view class="status" wx:if="{{product.shippingStatus}}">
-            <image class="img" mode="widthFix" src="/assets/order/orderDetails/time.png"></image>
+            <image class="img" src="/assets/order/orderDetails/time.png"></image>
             <text>{{product.shippingStatusName}}</text>
         </view>
         <view class="count" wx:if="{{product.shippingStatus == 1}}">剩
@@ -59,7 +59,7 @@
                     <view class="refund" wx:if="{{product.shippingStatus == 2}}" >
                         <view wx:if="{{product.isShow == 1 && !fromMaster}}" bindtap="toRefund">申请退款</view>
                     </view>
-                    <view class="refund" data-value="{{item}}" bindtap="feedback" wx:if="{{product.shippingStatus === 3 && fromMaster}}" bintap="toRefund">申请售后</view>
+                    <view class="refund" data-value="{{item}}" bindtap="feedback" wx:if="{{product.shippingStatus === 3 && fromMaster}}">申请售后</view>
                 </view>
             </view>
         </view>
@@ -93,6 +93,8 @@
     <van-toast id="van-toast" />
 
     <view class="cart-bottom" wx:if="{{product.shippingStatus == 1 && !fromMaster}}" bindtap="toPay">去支付</view>
+
+    <van-dialog confirm-button-color="#b4282d" id="van-dialog" />
 
 </view>
 

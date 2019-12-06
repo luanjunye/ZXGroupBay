@@ -25,7 +25,7 @@ Page({
     ids: [],
     shipping: 0,
     freight: 0,
-    activity: "满30元送奶茶，满60元减10元",
+    activity: "满60元减5元",
     isCheck: [],
     ConfirmOrder: {}
 
