@@ -45,8 +45,8 @@ function formatNumber(n) {
  * 封封微信的的request
  * showLoading: true | false 请求数据时是否显示'正在加载中'的提示
  */
-function request(url, data = {}, method, showLoading, header = "application/json") {
-    if (showLoading) {
+function request(url, data = {}, method, hideLoading, header = "application/json") {
+    if (!hideLoading) {
         wx.showLoading({
             title: '加载中...',
         });
@@ -62,7 +62,7 @@ function request(url, data = {}, method, showLoading, header = "application/json
             },
             success: function (res) {
                 wx.stopPullDownRefresh();
-                if (showLoading) {
+                if (!hideLoading) {
                     wx.hideLoading();
                 }
                 // console.log(res);
@@ -204,7 +204,7 @@ function getUserInfo() {
 function updateCartCount() {
     this.request(api.CartList, {
         "userId": this.getUserInfo().userId
-    }, 'GET', false).then(res => {
+    }, 'GET', true).then(res => {
         // wx.setStorageSync('cartCount', res.totalCount);
         if (res.totalCount > 0){
             wx.setTabBarBadge({
