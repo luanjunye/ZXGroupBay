@@ -15,6 +15,7 @@ Page({
         isLogin: false,
         list: [],
         type:0,
+       // isPay:false
     },
 
 
@@ -62,7 +63,8 @@ Page({
             this.setData({
                 ConfirmOrder : ConfirmOrder,
                 list : list,
-                type : 1
+                type : 1,
+                // isPay : false
             })
         }
         let isLogin = wx.getStorageSync('isLogin')
@@ -77,11 +79,18 @@ Page({
 
     toPay: function () {
         let that = this
+        if(this.data.isPay){
+            return
+        }
+
         if (this.data.name.length < 1) {
             util.toast('请输入名字')
         } else if (!(util.REGEX.mobile.test(this.data.mobile))) {
             util.toast('请输入正确的手机号')
         }else {
+            // that.setData({
+            //     isPay : true
+            // })
             util.request(api.OrderSave, {
                 fullOutPrice: this.data.ConfirmOrder.fullOutPrice,
                 goodsPrice: this.data.ConfirmOrder.goodsPrice,

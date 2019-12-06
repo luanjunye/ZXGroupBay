@@ -273,7 +273,7 @@ Page({
   },
 
   judgeCheckedAll: function() {
-    if (this.data.cartList.length > 0){
+   if (this.data.cartList.length > 0){
       var noChecked = true;
       this.data.cartList.forEach(function(v) {
         if (v.checked) {
@@ -289,7 +289,7 @@ Page({
         }
       })
     }else {
-      noChecked = false;
+      noChecked = true;
     }
 
 
