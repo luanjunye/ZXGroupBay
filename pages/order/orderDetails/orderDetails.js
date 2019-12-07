@@ -14,7 +14,7 @@ Page({
         orderId: "",
         product: {},
         failPayTime: 0,
-        isPay:false
+        //isPay:false
     },
 
     // 申请退款
@@ -120,44 +120,44 @@ Page({
     toPay: function () {
         let orderId = this.data.orderId
         let that = this
-        console.log(this.data.isPay)
-        if(this.data.isPay){
-            return
-        }
+        // console.log(this.data.isPay)
+        // if(this.data.isPay){
+        //     return
+        // }
         if (orderId) {
-            that.setData({
-                isPay : true
-            })
-            // util.request(api.Pay, {
-            //     id: orderId,
-            // }, "POST").then(function (res) {
-            //     console.log(res);
-            //     if (res) {
-            //         let entity = res;
-            //         wx.requestPayment({
-            //             timeStamp: entity.timeStamp,
-            //             nonceStr: entity.nonceStr,
-            //             package: entity.package,
-            //             signType: entity.signType,
-            //             paySign: entity.sign,
-            //             success(res) {
-            //                 wx.showToast({
-            //                     title: '支付成功',
-            //                 });
-            //                 setTimeout(function () {
-            //                     wx.navigateTo({
-            //                         url: '/pages/order/orderCenter/orderCenter',
-            //                     })
-            //                 }, 1500);
-            //             },
-            //             fail(res) {
-            //                 wx.navigateTo({
-            //                     url: '/pages/order/orderCenter/orderCenter',
-            //                 })
-            //             }
-            //         })
-            //     }
-            // });
+            // that.setData({
+            //     isPay : true
+            // })
+            util.request(api.Pay, {
+                id: orderId,
+            }, "POST").then(function (res) {
+                console.log(res);
+                if (res) {
+                    let entity = res;
+                    wx.requestPayment({
+                        timeStamp: entity.timeStamp,
+                        nonceStr: entity.nonceStr,
+                        package: entity.package,
+                        signType: entity.signType,
+                        paySign: entity.sign,
+                        success(res) {
+                            wx.showToast({
+                                title: '支付成功',
+                            });
+                            setTimeout(function () {
+                                wx.navigateTo({
+                                    url: '/pages/order/orderCenter/orderCenter',
+                                })
+                            }, 1500);
+                        },
+                        fail(res) {
+                            wx.navigateTo({
+                                url: '/pages/order/orderCenter/orderCenter',
+                            })
+                        }
+                    })
+                }
+            });
         }
     },
 
