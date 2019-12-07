@@ -49,7 +49,7 @@
                     <view class="description">{{item.specification}}</view>
                     <view class="description">x{{item.num}}</view>
                 </view>
-                <van-tag round color="#DD3C4A">"次日达"</van-tag>
+                <van-tag round color="#DD3C4A">"截团后次日达"</van-tag>
                 <view class="top_down">
                     <view class="money">¥
                         <view class="number">{{item.price}}</view>

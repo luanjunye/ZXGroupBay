@@ -30,7 +30,7 @@
     <!-- 未登录布局开始 -->
 
     <view class="login-wrap" wx:if="{{!isLogin}}">
-      <navigator url="../auth/tologin/tologin" class="login">登录</navigator>
+      <navigator url="../login/login" class="login">登录</navigator>
     </view>
 
 

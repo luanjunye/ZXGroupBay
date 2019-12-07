@@ -11,7 +11,7 @@ Page({
     data: {
         autoplay: true,
         id: "",
-        activity:"",
+        activity: "",
         isLogin: false,
         userId: "",
         cartList: [],
@@ -19,7 +19,7 @@ Page({
         product: {},
         likeList: [],
         count: 0,
-        ConfirmOrder:[]
+        ConfirmOrder: []
     },
 
     /**
@@ -60,20 +60,20 @@ Page({
 
         util.request(api.ActivityDiscount, {}, "GET").then(function (res) {
             that.setData({
-                activity: res.replace('\r\n',"")
+                activity: res.replace('\r\n', "")
             })
         });
     },
 
     // 轮播自动滚动停止
-    stopAutoSwiper(){
+    stopAutoSwiper() {
         this.setData({
             autoplay: false
         })
     },
 
     // 轮播自动滚动开始
-    startAutoSwiper(){
+    startAutoSwiper() {
         this.setData({
             autoplay: true
         })
@@ -151,7 +151,7 @@ Page({
             let cartList = this.data.cartList;
             cartList.push({
                 id: this.data.product.id,
-                label: "次日达",
+                label: "截团后次日达",
                 checked: true,
                 picUrl: this.data.product.goodsViewList[0],
                 title: this.data.product.name,
@@ -181,19 +181,20 @@ Page({
 
     //添加到购物车
     likeAddCart: function (e) {
-        let that = this
-        var data = e.currentTarget.dataset.value;
-        if (data.id) {
-            util.request(api.CartAdd, {
-                goodsId: data.id,
-                userId: this.data.userId,
-            }, "POST").then(function (res) {
-                //that.selectCart()
-                util.updateCartCount()
-                Toast("加入购物车成功")
-            });
+        if (this.checkLogin()) {
+            let that = this
+            var data = e.currentTarget.dataset.value;
+            if (data.id) {
+                util.request(api.CartAdd, {
+                    goodsId: data.id,
+                    userId: this.data.userId,
+                }, "POST").then(function (res) {
+                    //that.selectCart()
+                    util.updateCartCount()
+                    Toast("加入购物车成功")
+                });
+            }
         }
-
     },
 
     toBuy: function () {
@@ -205,13 +206,13 @@ Page({
             util.request(api.buyInfo, {
                 goodsId: this.data.product.id,
                 userId: this.data.userId,
-                num:1
+                num: 1
             }, "POST").then(function (res) {
                 //that.selectCart()
                 that.setData({
-                    ConfirmOrder : res
+                    ConfirmOrder: res
                 })
-                wx.setStorageSync("ConfirmOrder",that.data.ConfirmOrder)
+                wx.setStorageSync("ConfirmOrder", that.data.ConfirmOrder)
                 wx.navigateTo({
                     url: '/pages/order/confirmOrder/confirmOrder',
                 })

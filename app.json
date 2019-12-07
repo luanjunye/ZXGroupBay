@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/userCenter/mine/mine",
     "pages/login/login",
     "pages/userCenter/about/about",
-    "pages/userCenter/mine/mine",
     "pages/userCenter/feedbackApply/feedbackApply",
     "pages/video/video",
     "pages/userCenter/feedback/feedback",

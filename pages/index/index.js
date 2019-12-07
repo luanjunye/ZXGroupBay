@@ -33,7 +33,7 @@ Page({
         // this.setData({
         //     targetTime: new Date().getTime() + 6430000
         // });
-        util.updateCartCount(); // 刷新购物车数量
+
 
         getApp().globalData.type = 0;
     },
@@ -50,12 +50,20 @@ Page({
         var userId = wx.getStorageSync("userId")
         let isLogin = wx.getStorageSync("isLogin");
         if (isLogin && userId) {
+            util.updateCartCount(); // 刷新购物车数量
+            //首页团长信息
+            util.request(api.IndexRegimental, {userId: userId}, "POST").then(function (res) {
+                that.setData({
+                    ["regimental.address"]: res.address,
+                    ["regimental.nickname"]: res.nickname,
+                    ["regimental.avatar"]: res.avatar,
+                });
+            });
             this.setData({
                 isLogin: isLogin,
                 userId: userId
             })
         }
-        util.updateCartCount()
         this.setData({
             shippingStatus: 0,
             orderList: [],
@@ -70,14 +78,6 @@ Page({
             });
         });
 
-        //首页团长信息
-        util.request(api.IndexRegimental, {userId: userId}, "POST").then(function (res) {
-            that.setData({
-                ["regimental.address"]: res.address,
-                ["regimental.nickname"]: res.nickname,
-                ["regimental.avatar"]: res.avatar,
-            });
-        });
 
         //首页banner
         util.request(api.IndexUrlBanner, {}, "GET").then(function (res) {
@@ -132,9 +132,17 @@ Page({
     onShareAppMessage: function () {
     },
     changeCommander: function () {
-        wx.navigateTo({
-            url: '/pages/regimentalCommander/changeCommander'
-        })
+        if (this.data.userId) {
+            wx.navigateTo({
+                url: '/pages/regimentalCommander/changeCommander'
+            })
+        } else {
+            wx.navigateTo({
+                url: '/pages/login/login'
+            })
+        }
+
+
     },
     copyAnnouncement: function () {
         var that = this;
@@ -207,11 +215,11 @@ Page({
     toSecond: function (e) {
         let data = e.currentTarget.dataset.value;
         if (data.id) {
-            if(this.data.targetTime > 0){
+            if (this.data.targetTime > 0) {
                 wx.navigateTo({
                     url: "/pages/index/secondIndex/secondIndex?id=" + data.id,
                 })
-            }else {
+            } else {
                 Toast("商品采购中，敬请期待！")
             }
         }
@@ -219,19 +227,30 @@ Page({
 
     //添加到购物车
     addCart: function (e) {
-        let that = this
-        var data = e.currentTarget.dataset.value;
-        if (data.id) {
-            util.request(api.CartAdd, {
-                goodsId: data.id,
-                userId: this.data.userId,
-            }, "POST").then(function (res) {
-                //that.selectCart()
-                util.updateCartCount()
-                Toast("加入购物车成功")
-            });
+        if (this.checkLogin()) {
+            let that = this
+            var data = e.currentTarget.dataset.value;
+            if (data.id) {
+                util.request(api.CartAdd, {
+                    goodsId: data.id,
+                    userId: this.data.userId,
+                }, "POST").then(function (res) {
+                    //that.selectCart()
+                    util.updateCartCount()
+                    Toast("加入购物车成功")
+                });
+            }
         }
+    },
 
+    checkLogin: function () {
+        if (!this.data.isLogin) {
+            wx.navigateTo({
+                url: '/pages/login/login',
+            })
+        } else {
+            return true
+        }
     },
 
     //前往搜索页面
@@ -242,30 +261,30 @@ Page({
     },
 
     //点击分享
-    openService:function () {
+    openService: function () {
         this.setData({
-            isShow:true
+            isShow: true
         })
     },
 
     //关闭分享
-    closeService:function () {
+    closeService: function () {
         this.setData({
-            isShow:false
+            isShow: false
         })
     },
 
     //点击分享取消按钮
-    cancel:function () {
+    cancel: function () {
         this.setData({
-            isShow:false
+            isShow: false
         })
     },
 
     //生成海报
-    poster:function () {
+    poster: function () {
         wx.navigateTo({
-            url:'/pages/userCenter/poster/poster'
+            url: '/pages/userCenter/poster/poster'
         })
     },
 
