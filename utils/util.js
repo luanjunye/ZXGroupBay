@@ -76,11 +76,11 @@ function request(url, data = {}, method, hideLoading, header = "application/json
                             case 0:
                                 resolve(res.data.data);
                                 break;
-                            case 300:
+                            /*case 300: // 去掉未登录时自动跳转
                                 wx.navigateTo({
                                     url: '/pages/login/login'
                                 });
-                                break;
+                                break;*/
                             default:
                                 /*// TODO: 测试，显示服务器请求出错提示
                                 wx.showModal({
