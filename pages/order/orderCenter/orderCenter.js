@@ -73,8 +73,8 @@ Page({
 
 // 输入秒数，输出倒计时字符串 时时:分分:秒秒
   formatSecond(timeLeft){
-    let mins = Number((timeLeft / 60).toFixed());
-    let hours = (mins / 60).toFixed();
+    let mins = Math.floor(timeLeft / 60);
+    let hours = Math.floor(mins / 60);
     let seconds = timeLeft % 60;
     // util.toast(`时分秒：${hours}:${mins}:${seconds}`);
     return `剩余时间 ${hours.toString().padStart(2,'00')}:${mins.toString().padStart(2,'00')}:${seconds.toString().padStart(2,'00')}`;
