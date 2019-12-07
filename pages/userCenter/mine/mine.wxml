@@ -3,13 +3,13 @@
    <view class="user-info-container">
        <view class="user-info">
            <view class="user-head">
-               <image src="{{userInfo.avatar}}" mode="widthFix"></image>
+               <image src="{{userInfo.avatar}}" mode="widthFix" bindtap="login"></image>
            </view>
-           <view class="user-detail">
+           <view class="user-detail" bindtap="login">
                <view class="name">{{userInfo.nickname}}</view>
-               <view class="id">userID: <text>{{userInfo.code}}</text></view>
+               <view wx:if="{{userInfo.code}}" class="id">userID: <text>{{userInfo.code}}</text></view>
            </view>
-           <view class="message-wrapper" bindtap="toNotice">
+           <view class="message-wrapper" bindtap="switchMenu" data-url="/pages/userCenter/notice/notice" data-guest="{{false}}" data-type="page">
                <view class="message">
                    <image src="/assets/mine/message.png" mode="aspectFit"></image>
                    <view wx:if="{{messageCount > 0}}" class="badge">{{messageCount}}</view>
@@ -83,6 +83,7 @@
                   data-index="{{item.id}}"
                   data-type="{{item.type}}"
                   data-url="{{item.url}}"
+                  data-guest="{{item.guest}}"
                   class="section-icons-item"
                   bindtap="switchMenu" >
                 <view class="icon">
@@ -103,6 +104,7 @@
                   data-index="{{item.id}}"
                   data-type="{{item.type}}"
                   data-url="{{item.url}}"
+                  data-guest="{{item.guest}}"
                   class="section-icons-item"
                   bindtap="switchMenu" >
                 <view class="icon">
@@ -119,7 +121,7 @@
     <view class="operate light-shadow">
         <view class="operate-header">
             <view class="title">我的个人订单</view>
-            <view class="more" data-type="page" data-url="/pages/order/orderCenter/orderCenter?tab=0" bindtap="switchMenu">查看全部订单 ></view>
+            <view class="more" data-type="page" data-url="/pages/order/orderCenter/orderCenter?tab=0" data-guest="{{false}}" bindtap="switchMenu">查看全部订单 ></view>
         </view>
         <view class="operate-body">
             <view wx:for="{{menuListNormal}}"
@@ -127,6 +129,7 @@
                   data-index="{{item.id}}"
                   data-type="{{item.type}}"
                   data-url="{{item.url}}"
+                  data-guest="{{item.guest}}"
                   class="operate-body-item"
                   bindtap="switchMenu" >
                     <view class="icon">
@@ -144,6 +147,7 @@
               wx:key="{{item.id}}"
               data-url="{{item.url}}"
               data-type="{{item.type}}"
+              data-guest="{{item.guest}}"
               class="menu-list-item"
               bindtap="switchMenu">
             <image mode="aspectFit" class="menu-icon" src="{{item.iconUrl}}"></image>
