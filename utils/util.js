@@ -49,6 +49,7 @@ function request(url, data = {}, method, hideLoading, header = "application/json
     if (!hideLoading) {
         wx.showLoading({
             title: '加载中...',
+            mask: true,
         });
     }
     return new Promise(function (resolve, reject) {
