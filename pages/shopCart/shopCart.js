@@ -11,7 +11,7 @@ Page({
   data: {
     userId: 0,
     isLogin: false,
-    noChecked: false,
+    noChecked: true,
     checkedAll: false,
     //isExpressFree: false,
     pageNo: 1, // 分页相关
@@ -49,6 +49,7 @@ Page({
     let isLogin = wx.getStorageSync('isLogin')
     let userId = wx.getStorageSync('userId')
     if (isLogin && userId) {
+      this.changeCartList(userId, this.data.pageNo)
       this.setData({
         isLogin: isLogin,
         userId: userId
@@ -60,9 +61,6 @@ Page({
       hasMore: true, // 标记是否还有更多
     });
 
-
-
-    this.changeCartList(userId, this.data.pageNo)
   },
   onHide: function() {},
   onUnload: function() {},

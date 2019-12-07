@@ -227,19 +227,30 @@ Page({
 
     //添加到购物车
     addCart: function (e) {
-        let that = this
-        var data = e.currentTarget.dataset.value;
-        if (data.id) {
-            util.request(api.CartAdd, {
-                goodsId: data.id,
-                userId: this.data.userId,
-            }, "POST").then(function (res) {
-                //that.selectCart()
-                util.updateCartCount()
-                Toast("加入购物车成功")
-            });
+        if (this.checkLogin()) {
+            let that = this
+            var data = e.currentTarget.dataset.value;
+            if (data.id) {
+                util.request(api.CartAdd, {
+                    goodsId: data.id,
+                    userId: this.data.userId,
+                }, "POST").then(function (res) {
+                    //that.selectCart()
+                    util.updateCartCount()
+                    Toast("加入购物车成功")
+                });
+            }
         }
+    },
 
+    checkLogin: function () {
+        if (!this.data.isLogin) {
+            wx.navigateTo({
+                url: '/pages/login/login',
+            })
+        } else {
+            return true
+        }
     },
 
     //前往搜索页面
