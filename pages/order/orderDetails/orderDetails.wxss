@@ -181,3 +181,7 @@
   border-top: 2 rpx solid #f0f0f0;
   color: #FFF;
 }
+
+.disabled {
+  background: #ccc !important;
+}
