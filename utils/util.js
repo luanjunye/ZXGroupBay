@@ -202,23 +202,30 @@ function getUserInfo() {
 
 // 更新购物车数量
 function updateCartCount() {
-    this.request(api.CartList, {
-        "userId": this.getUserInfo().userId
-    }, 'GET', true).then(res => {
-        // wx.setStorageSync('cartCount', res.totalCount);
-        if (res.totalCount > 0){
-            wx.setTabBarBadge({
-                index: 2, // 购物车图标 index 从左往右，从0开始
-                text: res.totalCount.toString(),
-                success: () => {
-                }
-            })
-        }else {
-            wx.removeTabBarBadge({
-                index: 2
-            })
-        }
-    })
+    if(this.getUserInfo().userId){
+        this.request(api.CartList, {
+            "userId": this.getUserInfo().userId
+        }, 'GET', true).then(res => {
+            // wx.setStorageSync('cartCount', res.totalCount);
+            if (res.totalCount > 0){
+                wx.setTabBarBadge({
+                    index: 2, // 购物车图标 index 从左往右，从0开始
+                    text: res.totalCount.toString(),
+                    success: () => {
+                    }
+                })
+            }else {
+                wx.removeTabBarBadge({
+                    index: 2
+                })
+            }
+        })
+    } else {
+        wx.removeTabBarBadge({
+            index: 2
+        })
+    }
+
 }
 
 //获取当前时间戳
