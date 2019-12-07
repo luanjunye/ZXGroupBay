@@ -140,21 +140,26 @@ Page({
   increaseIconBadge(e){
     let goodId = e.currentTarget.dataset.id;
     let that = this;
-    util.request(api.CartAdd, {
-      "goodsId": goodId,
-      "userId": util.getUserInfo().userId
-    }, 'POST').then(res => {
-      util.toastSuccess('成功添加至购物车');
-      // 更新购物车
-      util.updateCartCount();
-    })
+    if(util.getUserInfo().userId){
+      util.request(api.CartAdd, {
+        "goodsId": goodId,
+        "userId": util.getUserInfo().userId
+      }, 'POST').then(res => {
+        util.toastSuccess('成功添加至购物车');
+        // 更新购物车
+        util.updateCartCount();
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/login/login'
+      })
+    }
   },
 
   // 下拉刷新后更新时走的方法
   pulldownRefresh(){
     this.switchToCategory(this.data.currentCategoryId) // 类别切换到对应id标签
   },
-
 
 // ========================
   onPullDownRefresh: function () {
