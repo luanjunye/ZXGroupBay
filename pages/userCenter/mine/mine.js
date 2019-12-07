@@ -195,6 +195,20 @@ Page({
       this.getUserInformation();
     } else {
       wx.stopPullDownRefresh();
+      this.setData({
+        groupMaster: false,  // 是否为团长
+        userInfo: {
+        avatar: "/assets/mine/nouser.png",
+          nickname: "点此处前往登录",
+          code: "",
+          amountMoney: 0,
+          isRegimental: 0,  // 1=是团长 0=团员
+          awaitMoney: 0,
+          predictMoney: 0,
+          orderCount: 0,
+          allOrderMoney: 0
+        },
+      })
     }
     this.updateVideoStatus();
   },
