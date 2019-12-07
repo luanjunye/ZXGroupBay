@@ -87,9 +87,9 @@
         <view class="time" wx:if="{{product.shippingStatus == 3}}">收货时间:{{product.confirmTime}}</view>
     </view>
 
-    <van-toast id="van-toast" />
+    <view class="cart-bottom {{isPay ? 'disabled' : ''}}" wx:if="{{product.shippingStatus == 1 && !fromMaster}}" bindtap="toPay">去支付</view>
 
-    <view class="cart-bottom" wx:if="{{product.shippingStatus == 1 && !fromMaster}}" bindtap="toPay">去支付</view>
+    <van-toast id="van-toast" />
 
     <van-dialog confirm-button-color="#b4282d" id="van-dialog" />
 
