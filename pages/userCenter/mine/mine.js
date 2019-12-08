@@ -210,7 +210,7 @@ Page({
         },
       })
     }
-    this.updateVideoStatus();
+    // this.updateVideoStatus();
   },
 
   onReady: function () { },
