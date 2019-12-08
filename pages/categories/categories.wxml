@@ -16,7 +16,7 @@
         <view class="goods-item" wx:for="{{goods}}" wx:key="{{index}}" bindtap="toProductDetail" data-id="{{item.id}}">
             <view class="goods-pic">
                 <image wx:if="{{item.leftCount === 0}}" class="sell-out" src="/assets/sellout.png"></image>
-<!--                <image class="play"></image>-->
+                <image wx:if="{{item.leftCount !== 0 && item.video}}"  class="play" src="/assets/play.png"></image>
                 <image class="good" mode="aspectFit" src="{{item.pictureUrl}}"></image>
             </view>
             <view class="goods-info">
