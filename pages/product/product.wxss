@@ -213,6 +213,16 @@
   height: 80px;
   width: 80px;
 }
+.like .likeList .goods-pic .play {
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  margin-top: -40px;
+  margin-left: -40px;
+  height: 80px;
+  width: 80px;
+}
 .like .likeList .likeInfo {
   padding: 0 5px;
 }
