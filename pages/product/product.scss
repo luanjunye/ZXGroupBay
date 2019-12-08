@@ -215,6 +215,8 @@
   margin-bottom: 20px;
 }
 
+$height-icon: 80px;
+
 .like {
   display: flex;
   flex-flow: row wrap;
@@ -229,8 +231,28 @@
     width: 48%;
     flex-shrink: 0;
     margin-bottom: 10px;
-    .img {
-      width: 100%;
+
+    .goods-pic {
+      position: relative;
+      margin-right: 10px;
+      @include border-radius(5px);
+      overflow: hidden;
+
+      .img {
+        width: 100%;
+        height: 180px;
+      }
+
+      .sell-out{
+        position: absolute;
+        display: block;
+        left: 50%;
+        top: 50%;
+        margin-top: -$height-icon/2;
+        margin-left: -$height-icon/2;
+        height: $height-icon;
+        width: $height-icon;
+      }
     }
 
     .likeInfo {
@@ -282,6 +304,16 @@
         .icon {
           height: 24px;
           width: 24px;
+        }
+
+        .sell-out {
+          margin-bottom: 2px;
+          font-size: $font-size-subtitle;
+          background-color: $text-price;
+          color: white;
+          text-align: center;
+          @include border-radius(20px);
+          padding: 2px 5px;
         }
       }
 
@@ -397,6 +429,16 @@
       background: $bt_green;
       border-radius: 0 50px 50px 0;
     }
+  }
+
+  .bottom_right_end{
+    width: 200px;
+    height: 80rpx;
+    @include border-radius(50px);
+    color: $bg-info;
+    background: $text-price;
+    text-align: center;
+    line-height: 80rpx;
   }
 
 }

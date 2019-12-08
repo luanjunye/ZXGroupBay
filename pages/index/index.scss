@@ -279,6 +279,9 @@
     }
   }
 
+
+  $height-icon: 60px;
+
   .third{
   .list{
     margin-bottom: 5px;
@@ -292,11 +295,29 @@
       justify-content: space-between;
       align-items: center;
 
-      .img{
-        width: 120px;
-        height: 120px;
-        flex-shrink: 0;
+      .goods-pic{
+        position: relative;
+        margin-right: 10px;
+        @include border-radius(5px);
+        overflow: hidden;
+        .img{
+          width: 120px;
+          height: 120px;
+          flex-shrink: 0;
+        }
+
+        .sell-out{
+          position: absolute;
+          display: block;
+          left: 50%;
+          top: 50%;
+          margin-top: -$height-icon/2;
+          margin-left: -$height-icon/2;
+          height: $height-icon;
+          width: $height-icon;
+        }
       }
+
 
       .top_info{
         width: 200px;
@@ -349,6 +370,16 @@
           .icon{
             height: 24px;
             width: 24px;
+          }
+
+          .sell-out {
+            margin-bottom: 2px;
+            font-size: $font-size-subtitle;
+            background-color: $text-price;
+            color: white;
+            text-align: center;
+            @include border-radius(20px);
+            padding: 2px 5px;
           }
         }
       }

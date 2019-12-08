@@ -26,7 +26,6 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        let that = this
         wx.setNavigationBarTitle({
             title: '商品详情',
         })
@@ -36,7 +35,40 @@ Page({
                 id: id
             })
         }
+    },
 
+    // 轮播自动滚动停止
+    stopAutoSwiper() {
+        this.setData({
+            autoplay: false
+        })
+    },
+
+    // 轮播自动滚动开始
+    startAutoSwiper() {
+        this.setData({
+            autoplay: true
+        })
+    },
+
+
+    onReady: function () {
+
+    },
+
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    onShow: function () {
+        let that = this
+        let isLogin = wx.getStorageSync('isLogin')
+        let userId = wx.getStorageSync('userId')
+        if (isLogin && userId) {
+            this.setData({
+                isLogin: isLogin,
+                userId: userId
+            })
+        }
         util.request(api.GoodsInfo, {
             id: this.data.id
         }, "POST").then(function (res) {
@@ -63,40 +95,6 @@ Page({
                 activity: res.replace('\r\n', "")
             })
         });
-    },
-
-    // 轮播自动滚动停止
-    stopAutoSwiper() {
-        this.setData({
-            autoplay: false
-        })
-    },
-
-    // 轮播自动滚动开始
-    startAutoSwiper() {
-        this.setData({
-            autoplay: true
-        })
-    },
-
-
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-        let isLogin = wx.getStorageSync('isLogin')
-        let userId = wx.getStorageSync('userId')
-        if (isLogin && userId) {
-            this.setData({
-                isLogin: isLogin,
-                userId: userId
-            })
-        }
-
         this.selectCart()
     },
 
@@ -118,7 +116,12 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-
+        this.setData({
+            product: {},
+            likeList: [],
+            difference: 0,
+        })
+        this.onShow()
     },
 
     /**
@@ -246,5 +249,15 @@ Page({
                 url: '/pages/product/product?id=' + data.id,
             })
         }
+    },
+
+    countDown: function () {
+        Toast("团购已结束")
+        this.setData({
+            product: {},
+            likeList: [],
+            difference: 0,
+        })
+        this.onShow()
     }
 })

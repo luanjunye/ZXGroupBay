@@ -47,6 +47,9 @@ Page({
   },
 
   onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: '分类',
+    })
     util.updateCartCount(); // 更新购物车图标 badge
 
     this.getGoodsListOf(this.data.currentCategoryId, 1); // 载入【猜你喜欢】类别的商品列表

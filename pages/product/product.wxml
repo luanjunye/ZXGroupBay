@@ -99,7 +99,10 @@
         <view class="likeList" wx:for="{{likeList}}" wx:for-item="item" wx:key="{{item.id}}"
               data-value="{{item}}" id="{{item.id}}" bindtap="toOrder">
             <!--            <view class="info">-->
-            <image class="img" src="{{item.pictureUrl}}" mode="widthFix"></image>
+            <view class="goods-pic">
+                <image class="img" src="{{item.pictureUrl}}"></image>
+                <image wx:if="{{item.leftCount === 0}}" class="sell-out" src="/assets/sellout.png"></image>
+            </view>
             <view class="likeInfo">
                 <view class="likeTitle">{{item.name}}</view>
                 <view class="likeDescription">{{item.info}}</view>
@@ -111,7 +114,8 @@
                             <view class="original">{{item.originalPrice}}</view>
                         </view>
                     </view>
-                    <image class="icon" src="/assets/addCart.png" data-value="{{item}}" capture-catch:tap="likeAddCart"></image>
+                    <image wx:if="{{item.leftCount > 0}}" class="icon" src="/assets/addCart.png" data-value="{{item}}" capture-catch:tap="likeAddCart"></image>
+                    <view wx:else class="sell-out">已售罄</view>
                 </view>
                 <view class="end">
                     <view class="end_left">
@@ -146,10 +150,11 @@
                 <text class="text">购物车</text>
             </view>
         </view>
-        <view class="bottom_right">
+        <view class="bottom_right" wx:if="{{product.sellVolume > 0}}">
             <view class="br_left" bindtap="addCart">加入购物车</view>
             <view class="br_right" bindtap="toBuy">立即购买</view>
         </view>
+        <view class="bottom_right_end" wx:else>已售罄</view>
     </view>
 
     <van-toast id="van-toast" />

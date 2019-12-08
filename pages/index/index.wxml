@@ -94,7 +94,10 @@
     <view class="third" wx:if="{{orderList.length > 0&&!loading && targetTime > 0}}">
       <view class="list" wx:for="{{orderList}}" wx:for-item="item" wx:key="{{item.id}}" data-value="{{item}}" id="{{item.id}}" bindtap="toOrder">
         <view class="top">
-          <image class="img" src="{{item.pictureUrl}}"></image>
+          <view class="goods-pic">
+              <image class="img" src="{{item.pictureUrl}}"></image>
+              <image wx:if="{{item.leftCount === 0}}" class="sell-out" src="/assets/sellout.png"></image>
+          </view>
           <view class="top_info">
             <view class="title">{{item.name}}</view>
             <view class="description">{{item.info}}</view>
@@ -107,7 +110,8 @@
                   <view class="original">{{item.originalPrice}}</view>
                 </view>
               </view>
-              <image class="icon" src="/assets/addCart.png" data-value="{{item}}" capture-catch:tap="addCart"></image>
+              <image wx:if="{{item.leftCount > 0}}" class="icon" src="/assets/addCart.png" data-value="{{item}}" capture-catch:tap="addCart"></image>
+              <view wx:else class="sell-out">已售罄</view>
             </view>
           </view>
         </view>

@@ -267,10 +267,28 @@
   justify-content: space-between;
   align-items: center;
 }
-.third_box .third .list .top .img {
+.third_box .third .list .top .goods-pic {
+  position: relative;
+  margin-right: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.third_box .third .list .top .goods-pic .img {
   width: 120px;
   height: 120px;
   flex-shrink: 0;
+}
+.third_box .third .list .top .goods-pic .sell-out {
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  margin-top: -30px;
+  margin-left: -30px;
+  height: 60px;
+  width: 60px;
 }
 .third_box .third .list .top .top_info {
   width: 200px;
@@ -320,6 +338,17 @@
 .third_box .third .list .top .top_info .top_down .icon {
   height: 24px;
   width: 24px;
+}
+.third_box .third .list .top .top_info .top_down .sell-out {
+  margin-bottom: 2px;
+  font-size: 12.8px;
+  background-color: #FF3948;
+  color: white;
+  text-align: center;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  padding: 2px 5px;
 }
 .third_box .third .list .down {
   display: flex;

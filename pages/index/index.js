@@ -40,6 +40,7 @@ Page({
 
     countDown(e) {
         Toast("团购已结束")
+        this.onShow()
     },
 
     // ========================
