@@ -140,3 +140,7 @@ $height-navbar: 30px;
     @include border-radius()
   }
 }
+
+.disabled {
+  background: #ccc !important;
+}
