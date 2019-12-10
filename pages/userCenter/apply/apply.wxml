@@ -26,6 +26,18 @@
         <input bindchange="handleInputChange" data-model="addressDetail" class="input" type="text" placeholder="如街道、门牌号等"></input>
     </view>
     <view class="input-group">
+        <text>身份证号</text>
+        <input bindchange="handleInputChange" data-model="idCard" class="input" type="text" placeholder="身份证号"></input>
+    </view>
+    <view class="input-group">
+        <text>银行卡号</text>
+        <input bindchange="handleInputChange" data-model="bankCardNo" class="input" type="text" placeholder="银行卡号"></input>
+    </view>
+    <view class="input-group">
+        <text>开户行</text>
+        <input bindchange="handleInputChange" data-model="bankName" class="input" type="text" placeholder="开户行地址"></input>
+    </view>
+    <view class="input-group">
         <text>邀请人 ID</text>
         <input bindchange="handleInputChange" data-model="invitation" class="input" type="text" placeholder="你的邀请人 ID (选填)"></input>
     </view>

@@ -2,6 +2,7 @@ var api = require('../config/url.js');
 
 
 const REGEX = {
+    idCard: /^\d{17}(x|\d)$/i,
     mobile: /^\d{11}$/i
 }
 
