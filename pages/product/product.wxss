@@ -108,6 +108,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #FFF;
+  width: auto;
 }
 .info .info_top .it_right .img {
   width: 14px;

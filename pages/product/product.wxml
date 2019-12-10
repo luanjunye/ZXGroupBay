@@ -53,10 +53,10 @@
                 <view class="title">{{product.name}}</view>
                 <view class="description">{{product.info}}</view>
             </view>
-            <view class="it_right">
+            <button class="it_right" open-type="share">
                 <image class="img" src="/assets/test/share.png"></image>
                 <text class="img_text">分享</text>
-            </view>
+            </button>
         </view>
         <view class="info_down">
             <view class="id_item">
