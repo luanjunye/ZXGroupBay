@@ -1,0 +1,12 @@
+<view class="article-bg" style="min-height: {{contentHeight}}px">
+    <view class="article-container">
+        <view class="article-content">
+            <view class="title bold">名词解释</view>
+
+            <view class="ask">一、佣金到账T+1：</view>
+            <view class="answer">
+                在开团初期，团长在“泽轩优选小程序”发起申请提现，到账时间是T+1，具体是指：发起提现操作成功之后的第二个工作日，通过微信转账或者网银转账的方式，将相应款项支付到该团长指定的账户。待技术开发人员调试系统工作完成后，将会实现实时到账等方式。
+            </view>
+        </view>
+    </view>
+</view>
