@@ -61,7 +61,8 @@ Page({
   getMemberInfo(){
     let that = this;
     util.request(api.MemberInfo, {
-      userId: that.data.memberUserId
+      userId: that.data.memberUserId,
+      teamUserId: util.getUserInfo().userId
     },'POST').then(res => {
       that.setData({
         member: res

@@ -25,6 +25,7 @@
     "pages/userCenter/feedbackDetail/feedbackDetail",
     "pages/userCenter/agreement/agreement",
     "pages/userCenter/annouceRefund/annouceRefund",
+    "pages/userCenter/dictionary/dictionary",
     "pages/map/map",
     "pages/shopCart/shopCart",
     "pages/index/secondIndex/secondIndex",

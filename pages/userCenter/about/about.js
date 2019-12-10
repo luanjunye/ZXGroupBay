@@ -5,6 +5,7 @@ Page({
     list: [
       {id: 0, title: '用户协议', url: '/pages/userCenter/agreement/agreement'},
       {id: 1, title: '退换货说明', url: '/pages/userCenter/annouceRefund/annouceRefund'},
+      {id: 2, title: '名词解释', url: '/pages/userCenter/dictionary/dictionary'},
     ]
   },
 

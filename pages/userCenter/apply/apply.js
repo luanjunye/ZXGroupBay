@@ -18,6 +18,9 @@ Page({
     pointAddress: '',
     addressDetail: '',
     invitation: '',
+    idCard: '',
+    bankCardNo: '',
+    bankName: '',
     countdown: 60, // 验证码倒计时
     verifyCodeReceiving: false,
     intervalHandle: null // 倒计时 handle
@@ -69,6 +72,12 @@ Page({
       util.toast('请选择省市区')
     } else if (this.data.addressDetail.length < 1) {
       util.toast('请填写详细地址')
+    } else if (!(util.REGEX.idCard.test(this.data.idCard))) {
+      util.toast('身份证号有误')
+    } else if (this.data.bankCardNo.length < 1) {
+      util.toast('请填写银行卡号')
+    } else if (this.data.bankName.length < 1) {
+      util.toast('请填写开户行')
     } else if (this.data.pointAddress.length < 1) {
       util.toast('请选择定位地址')
     } else {
@@ -78,6 +87,9 @@ Page({
         mobile: this.data.mobile,
         name: this.data.name,
         street: this.data.addressDetail,
+        idCard: this.data.idCard,
+        bankNumber: this.data.bankCardNo,
+        bankName: this.data.bankName,
         userId: util.getUserInfo().userId,
         latitude: this.data.addressLatitude,
         longitude: this.data.addressLongitude,
@@ -89,7 +101,6 @@ Page({
           wx.navigateBack()
         },1500)
       })
-
     }
   },
 
