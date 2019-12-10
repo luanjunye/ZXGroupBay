@@ -258,6 +258,5 @@ Page({
             likeList: [],
             difference: 0,
         })
-        this.onShow()
     }
 })
