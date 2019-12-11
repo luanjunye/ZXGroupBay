@@ -99,7 +99,7 @@
       </view>
       <view class="likeInfo">
         <view class="likeTitle">{{item.name}}</view>
-        <view class="likeDescription">{{item.info}}</view>
+        <view class="likeDescription">{{item.info ? item.info : ""}}</view>
         <!--                <van-tag round color="#DD3C4A">截团后次日达</van-tag>-->
         <!--                <view class="body">-->
         <!--                    <view class="money_f">¥-->
