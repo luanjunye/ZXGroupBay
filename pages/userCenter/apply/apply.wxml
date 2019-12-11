@@ -45,7 +45,6 @@
         <text>定位地址</text>
         <view wx:if="{{pointAddress}}" class="input" mode="region" bindtap="openAddressPlugin">{{pointAddress}}</view>
         <view wx:else class="input placeholder" mode="region" bindtap="openAddressPlugin">点击选择地址</view>
-
     </view>
 </view>
 
