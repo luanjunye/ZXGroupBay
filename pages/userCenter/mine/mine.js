@@ -5,8 +5,8 @@ Page({
   data: {
     videoAdded: false,
     groupMaster: false,  // 是否为团长
-    messageCount: 0,
     userInfo: {
+      msgCount: 0,
       avatar: "/assets/mine/nouser.png",
       nickname: "点此处前往登录",
       code: "",
@@ -198,7 +198,8 @@ Page({
       this.setData({
         groupMaster: false,  // 是否为团长
         userInfo: {
-        avatar: "/assets/mine/nouser.png",
+          avatar: "/assets/mine/nouser.png",
+          msgCount: 0,
           nickname: "点此处前往登录",
           code: "",
           amountMoney: 0,

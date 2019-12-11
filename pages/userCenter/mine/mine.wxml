@@ -12,7 +12,7 @@
            <view class="message-wrapper" bindtap="switchMenu" data-url="/pages/userCenter/notice/notice" data-guest="{{false}}" data-type="page">
                <view class="message">
                    <image src="/assets/mine/message.png" mode="aspectFit"></image>
-                   <view wx:if="{{messageCount > 0}}" class="badge">{{messageCount}}</view>
+                   <view wx:if="{{userInfo.msgCount > 0}}" class="badge">{{userInfo.msgCount}}</view>
                </view>
                <view class="title">我的消息</view>
            </view>
