@@ -3,7 +3,7 @@
     <!--    banner图-->
     <view class="banner_box">
         <swiper class="banner" indicator-dots="true" indicator-color="#e0e0e0" indicator-active-color="#fff"
-                autoplay="{{autoplay}}" interval="3000" duration="1000">
+                autoplay="{{false}}" interval="3000" duration="1000">
             <swiper-item wx:if="{{product.video}}" class="video-wrapper">
                 <video src="{{product.video}}"
                        bindplay="stopAutoSwiper"

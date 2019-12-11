@@ -9,7 +9,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        autoplay: true,
+        // autoplay: true,
         id: "",
         activity: "",
         isLogin: false,
@@ -37,6 +37,7 @@ Page({
         }
     },
 
+/*
     // 轮播自动滚动停止
     stopAutoSwiper() {
         this.setData({
@@ -50,6 +51,7 @@ Page({
             autoplay: true
         })
     },
+*/
 
 
     onReady: function () {
