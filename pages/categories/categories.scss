@@ -55,7 +55,7 @@ page{
 
 
 $height-good: 100px;
-$height-icon: ($height-good - 20) * .5;
+$height-icon: 30px;
 
 
 .goods {
@@ -93,6 +93,7 @@ $height-icon: ($height-good - 20) * .5;
         width: $height-icon;
       }
       image.play{
+        opacity: 0.6;
         position: absolute;
         display: block;
         left: 50%;
