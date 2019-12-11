@@ -1,164 +1,168 @@
 <!--pages/product/product.wxml-->
 <view class="ucenter">
-    <!--    banner图-->
-    <view class="banner_box">
-        <swiper class="banner" indicator-dots="true" indicator-color="#e0e0e0" indicator-active-color="#fff"
-                autoplay="{{false}}" interval="3000" duration="1000">
-            <swiper-item wx:if="{{product.video}}" class="video-wrapper">
-                <video src="{{product.video}}">
-                </video>
-<!--                <video src="{{product.video}}"
+  <!--    banner图-->
+  <view class="banner_box">
+    <swiper class="banner" indicator-dots="true" indicator-color="#e0e0e0" indicator-active-color="#fff" autoplay="{{false}}" interval="3000" duration="1000">
+      <swiper-item wx:if="{{product.video}}" class="video-wrapper">
+        <video src="{{product.video}}">
+        </video>
+        <!--                <video src="{{product.video}}"
                        bindplay="stopAutoSwiper"
                        bindpause="startAutoSwiper">
                 </video>-->
-            </swiper-item>
+      </swiper-item>
 
-            <swiper-item wx:for="{{product.goodsViewList}}" wx:for-item="iitem" wx:key="{{iitem.id}}">
-                <image src="{{iitem}}"
-                       background-size="cover"
-                       mode="widthFix"
-                       data-value="{{iitem}}"
-                       class="image"
-                       bindtap="handleClick"></image>
-            </swiper-item>
-        </swiper>
-    </view>
+      <swiper-item wx:for="{{product.goodsViewList}}" wx:for-item="iitem" wx:key="{{iitem.id}}">
+        <image src="{{iitem}}" background-size="cover" mode="widthFix" data-value="{{iitem}}" class="image" bindtap="handleClick"></image>
+      </swiper-item>
+    </swiper>
+  </view>
 
-    <!--    团购倒计时-->
-    <view class="groupDown">
-        <view class="groupDown_left">
-            <view class="price">
-                <view class="money_f">¥
-                    <view class="place">{{product.price}}</view>
-                    <view class="money_s">¥
-                        <view class="original">{{product.originalPrice}}</view>
-                    </view>
-                    <view class="remain">仅剩{{product.sellVolume}}件</view>
-                </view>
-
-            </view>
-            <view class="bay">本次已团{{product.sell}}件</view>
-
+  <!--    团购倒计时-->
+  <view class="groupDown">
+    <view class="groupDown_left">
+      <view class="price">
+        <view class="money_f">¥
+          <view class="place">{{product.price}}</view>
+          <view class="money_s">¥
+            <view class="original">{{product.originalPrice}}</view>
+          </view>
+          <view class="remain">仅剩{{product.sellVolume}}件</view>
         </view>
-        <view class="groupDown_right">
-            <text>距本次开团结束</text>
-            <thor-count-down time="{{difference}}" color="#fff" bcolor="#666666" bgcolor="#666666"
-                             colonColor="#666666"
-                             bind:end="countDown"></thor-count-down>
-        </view>
+
+      </view>
+      <view class="bay">本次已团{{product.sell}}件</view>
+
     </view>
-
-    <!--    商品标题-->
-    <view class="info">
-        <view class="info_top">
-            <view class="it_left">
-                <view class="title">{{product.name}}</view>
-                <view class="description">{{product.info}}</view>
-            </view>
-            <button class="it_right" open-type="share">
-                <image class="img" src="/assets/test/share.png"></image>
-                <text class="img_text">分享</text>
-            </button>
-        </view>
-        <view class="info_down">
-            <view class="id_item">
-                <view class="ii_title">到货时间</view>
-                <view class="ii_text">截团后次日达</view>
-            </view>
-            <view class="id_item">
-                <view class="ii_title">商品产地</view>
-                <view class="ii_text">{{product.placeOfOrigin}}</view>
-            </view>
-            <view class="id_item">
-                <view class="ii_title">商品类型</view>
-                <view class="ii_text">POP商品</view>
-            </view>
-
-        </view>
+    <view class="groupDown_right">
+      <text>距本次开团结束</text>
+      <thor-count-down time="{{difference}}" color="#fff" bcolor="#666666" bgcolor="#666666" colonColor="#666666" bind:end="countDown"></thor-count-down>
     </view>
+  </view>
 
-    <!--    商品规格及活动-->
-    <view class="parameter">已选{{product.specification}}</view>
-    <view class="activity">
-        <view>{{activity}}</view>
+  <!--    商品标题-->
+  <view class="info">
+    <view class="info_top">
+      <view class="it_left">
+        <view class="title">{{product.name}}</view>
+        <view class="description">{{product.info}}</view>
+      </view>
+      <button class="it_right" open-type="share">
+        <image class="img" src="/assets/test/share.png"></image>
+        <text class="img_text">分享</text>
+      </button>
     </view>
+    <view class="info_down">
+      <view class="id_item">
+        <view class="ii_title">到货时间</view>
+        <view class="ii_text">截团后次日达</view>
+      </view>
+      <view class="id_item">
+        <view class="ii_title">商品产地</view>
+        <view class="ii_text">{{product.placeOfOrigin}}</view>
+      </view>
+      <view class="id_item">
+        <view class="ii_title">商品类型</view>
+        <view class="ii_text">POP商品</view>
+      </view>
 
-
-    <!-- 商品参数 -->
-    <view class="product-attr">
-        <view class="tui-nomore-box">
-            <tui-nomore text="商品详情" visible="{{true}}" bgcolor="#f7f7f7"></tui-nomore>
-        </view>
     </view>
+  </view>
 
-    <!-- 详情大拉页 -->
-    <view class="detail">
-        <image class="img" mode="widthFix" wx:for="{{product.goodsDetailsList}}" wx:key="{{index}}" src="{{item}}"/>
+  <!--    商品规格及活动-->
+  <view class="parameter">已选{{product.specification}}</view>
+  <view class="activity">
+    <view>{{activity}}</view>
+  </view>
+
+
+  <!-- 商品参数 -->
+  <view class="product-attr">
+    <view class="tui-nomore-box">
+      <tui-nomore text="商品详情" visible="{{true}}" bgcolor="#f7f7f7"></tui-nomore>
     </view>
+  </view>
 
-    <view class="like_text">猜你喜欢</view>
-    <view class="like">
-        <view class="likeList" wx:for="{{likeList}}" wx:for-item="item" wx:key="{{item.id}}"
-              data-value="{{item}}" id="{{item.id}}" bindtap="toOrder">
-            <!--            <view class="info">-->
-            <view class="goods-pic">
-                <image class="img" src="{{item.pictureUrl}}"></image>
-                <image wx:if="{{item.leftCount === 0}}" class="sell-out" src="/assets/sellout.png"></image>
-                <image wx:if="{{item.leftCount !== 0 && item.isVideo}}"  class="play" src="/assets/play.png"></image>
+  <!-- 详情大拉页 -->
+  <view class="detail">
+    <image class="img" mode="widthFix" wx:for="{{product.goodsDetailsList}}" wx:key="{{index}}" src="{{item}}" />
+  </view>
+
+  <view class="like_text">猜你喜欢</view>
+  <view class="like">
+    <view class="likeList" wx:for="{{likeList}}" wx:for-item="item" wx:key="{{item.id}}" data-value="{{item}}" id="{{item.id}}" bindtap="toOrder">
+      <!--            <view class="info">-->
+      <view class="goods-pic">
+        <image class="img" src="{{item.pictureUrl}}"></image>
+        <image wx:if="{{item.leftCount === 0}}" class="sell-out" src="/assets/sellout.png"></image>
+        <image wx:if="{{item.leftCount !== 0 && item.isVideo}}" class="play" src="/assets/play.png"></image>
+      </view>
+      <view class="likeInfo">
+        <view class="likeTitle">{{item.name}}</view>
+        <view class="likeDescription">{{item.info}}</view>
+        <!--                <van-tag round color="#DD3C4A">截团后次日达</van-tag>-->
+        <!--                <view class="body">-->
+        <!--                    <view class="money_f">¥-->
+        <!--                        <view class="place">{{item.price}}</view>-->
+        <!--                        <view class="money_s">¥-->
+        <!--                            <view class="original">{{item.originalPrice}}</view>-->
+        <!--                        </view>-->
+        <!--                    </view>-->
+        <!--                    <image wx:if="{{item.leftCount > 0}}" class="icon" src="/assets/addCart.png" data-value="{{item}}" capture-catch:tap="likeAddCart"></image>-->
+        <!--                    <view wx:else class="sell-out">已售罄</view>-->
+        <!--                </view>-->
+        <view class="top_down">
+          <view class="top_down_left">
+            <van-tag round color="#DD3C4A">截团后次日达</van-tag>
+            <view class="money_f">¥
+              <view class="place">{{item.price}}</view>
+              <view class="money_s">¥
+                <view class="original">{{item.originalPrice}}</view>
+              </view>
             </view>
-            <view class="likeInfo">
-                <view class="likeTitle">{{item.name}}</view>
-                <view class="likeDescription">{{item.info}}</view>
-                <van-tag round color="#DD3C4A">截团后次日达</van-tag>
-                <view class="body">
-                    <view class="money_f">¥
-                        <view class="place">{{item.price}}</view>
-                        <view class="money_s">¥
-                            <view class="original">{{item.originalPrice}}</view>
-                        </view>
-                    </view>
-                    <image wx:if="{{item.leftCount > 0}}" class="icon" src="/assets/addCart.png" data-value="{{item}}" capture-catch:tap="likeAddCart"></image>
-                    <view wx:else class="sell-out">已售罄</view>
-                </view>
-                <view class="end">
-                    <view class="end_left">
-                        <view class="imglist  imglist-{{index}}" wx:for="{{item.url}}" wx:for-item="iitem"
-                              wx:key="{{iitem.id}}"
-                              data-value="{{iitem}}" id="{{iitem.id}}">
-                            <image class="img" src="{{iitem}}"></image>
-                        </view>
-                    </view>
-                    <view class="end_right">
-<!--                        已团{{item.group}}/-->
-                        <text class="down_text">剩余{{item.leftCount}}</text>
-                    </view>
-                </view>
-                <view class="like_down_text">累计销量{{item.sellCount}}</view>
-            </view>
-            <!--            </view>-->
+          </view>
+          <view class="top_down_right">
+            <image wx:if="{{item.leftCount > 0}}" class="icon" src="/assets/addCart.png" data-value="{{item}}" capture-catch:tap="addCart"></image>
+            <view wx:else class="sell-out">已售罄</view>
+          </view>
         </view>
+        <view class="end">
+          <view class="end_left">
+            <view class="imglist  imglist-{{index}}" wx:for="{{item.url}}" wx:for-item="iitem" wx:key="{{iitem.id}}" data-value="{{iitem}}" id="{{iitem.id}}">
+              <image class="img" src="{{iitem}}"></image>
+            </view>
+          </view>
+          <view class="end_right">
+            <!--                        已团{{item.group}}/-->
+            <text class="down_text">剩余{{item.leftCount}}</text>
+          </view>
+        </view>
+        <view class="like_down_text">累计销量{{item.sellCount}}</view>
+      </view>
+      <!--            </view>-->
     </view>
+  </view>
 
-    <!--    底部按钮-->
-    <view class="bottom">
-        <view class="bottom_left">
-            <view class="bl_item" bindtap="toIndex">
-                <van-icon name="wap-home-o" color="#777" size="20px" />
-<!--                <image class="icon" src="/assets/test/index.png"></image>-->
-                <text class="text">首页</text>
-            </view>
-            <view class="bl_item" bindtap="toShopCart">
-                <van-icon custom-class="icon-info" name="shopping-cart-o" info="{{count>0 ? count:''}}" color="#777" size="20px" />
-<!--                <image class="icon" src="/assets/test/cart.png"></image>-->
-                <text class="text">购物车</text>
-            </view>
-        </view>
-        <view class="bottom_right" wx:if="{{product.sellVolume > 0}}">
-            <view class="br_left" bindtap="addCart">加入购物车</view>
-            <view class="br_right" bindtap="toBuy">立即购买</view>
-        </view>
-        <view class="bottom_right_end" wx:else>已售罄</view>
+  <!--    底部按钮-->
+  <view class="bottom">
+    <view class="bottom_left">
+      <view class="bl_item" bindtap="toIndex">
+        <van-icon name="wap-home-o" color="#777" size="20px" />
+        <!--                <image class="icon" src="/assets/test/index.png"></image>-->
+        <text class="text">首页</text>
+      </view>
+      <view class="bl_item" bindtap="toShopCart">
+        <van-icon custom-class="icon-info" name="shopping-cart-o" info="{{count>0 ? count:''}}" color="#777" size="20px" />
+        <!--                <image class="icon" src="/assets/test/cart.png"></image>-->
+        <text class="text">购物车</text>
+      </view>
     </view>
+    <view class="bottom_right" wx:if="{{product.sellVolume > 0}}">
+      <view class="br_left" bindtap="addCart">加入购物车</view>
+      <view class="br_right" bindtap="toBuy">立即购买</view>
+    </view>
+    <view class="bottom_right_end" wx:else>已售罄</view>
+  </view>
 
-    <van-toast id="van-toast" />
+  <van-toast id="van-toast" />
 </view>

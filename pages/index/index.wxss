@@ -325,32 +325,36 @@
 .third_box .third .list .top .top_info .top_down {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
 }
-.third_box .third .list .top .top_info .top_down .money_f {
+.third_box .third .list .top .top_info .top_down .top_down_left .money_f {
+  margin-top: 5px;
   font-size: 10px;
   color: #DD3C4A;
   display: flex;
   align-items: center;
 }
-.third_box .third .list .top .top_info .top_down .money_f .place {
+.third_box .third .list .top .top_info .top_down .top_down_left .money_f .place {
   font-size: 14px;
 }
-.third_box .third .list .top .top_info .top_down .money_f .money_s {
+.third_box .third .list .top .top_info .top_down .top_down_left .money_f .money_s {
   padding-left: 10px;
   color: #999999;
   display: flex;
   align-items: center;
   text-decoration: line-through;
 }
-.third_box .third .list .top .top_info .top_down .money_f .money_s .original {
+.third_box .third .list .top .top_info .top_down .top_down_left .money_f .money_s .original {
   font-size: 14px;
 }
-.third_box .third .list .top .top_info .top_down .icon {
+.third_box .third .list .top .top_info .top_down .top_down_right {
+  margin: 10px;
+}
+.third_box .third .list .top .top_info .top_down .top_down_right .icon {
   height: 24px;
   width: 24px;
 }
-.third_box .third .list .top .top_info .top_down .sell-out {
+.third_box .third .list .top .top_info .top_down .top_down_right .sell-out {
   margin-bottom: 2px;
   font-size: 12.8px;
   background-color: #FF3948;

@@ -152,44 +152,55 @@
             color: $text-comment;
           }
 
-          .top_down{
+          .top_down {
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
-            .money_f{
-              font-size: 10px;
-              color: #DD3C4A;
-              display: flex;
-              align-items: center;
-              .place{
-                font-size: 14px;
-              }
-              .money_s{
-                padding-left: 10px;
-                color: $text-comment;
+            align-items: center;
+
+            .top_down_left {
+              .money_f {
+                margin-top: 5px;
+                font-size: 10px;
+                color: #DD3C4A;
                 display: flex;
                 align-items: center;
-                text-decoration: line-through;
-                .original{
-                  font-size: 14px;
 
+                .place {
+                  font-size: 14px;
+                }
+
+                .money_s {
+                  padding-left: 10px;
+                  color: $text-comment;
+                  display: flex;
+                  align-items: center;
+                  text-decoration: line-through;
+
+                  .original {
+                    font-size: 14px;
+
+                  }
                 }
               }
             }
 
-            .icon{
-              height: 24px;
-              width: 24px;
-            }
+            .top_down_right {
+              margin: 10px;
 
-            .sell-out {
-              margin-bottom: 2px;
-              font-size: $font-size-subtitle;
-              background-color: $text-price;
-              color: white;
-              text-align: center;
-              @include border-radius(20px);
-              padding: 2px 5px;
+              .icon {
+                height: 24px;
+                width: 24px;
+              }
+
+              .sell-out {
+                margin-bottom: 2px;
+                font-size: $font-size-subtitle;
+                background-color: $text-price;
+                color: white;
+                text-align: center;
+                @include border-radius(20px);
+                padding: 2px 5px;
+              }
             }
           }
         }

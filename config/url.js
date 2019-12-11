@@ -76,5 +76,6 @@ module.exports = {
     HistoryGroup: API_BASE_URL + 'teamuser/myteams',  // 历史开团
     GroupInfo: API_BASE_URL + 'teamuser/waitorder',  // 待提货/历史开团详情
     GetNotice: API_BASE_URL + 'inform/page',  // 获取通知
+    IsRead: API_BASE_URL + 'inform/isread',  // 标记消息已读
 };
 

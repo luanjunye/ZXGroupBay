@@ -47,6 +47,12 @@ Page({
       hasMore: true, // 标记是否还有更多
     });
       this.getNotice(this.data.userId,this.data.pageNo)
+
+    util.request(api.IsRead, {
+      userId: this.data.userId,
+    }, "POST").then(function (res) {
+        
+    });
   },
 
   /**
@@ -99,7 +105,7 @@ Page({
       userId: userId,
       limit: that.data.perPageCount
     }, "GET").then(function (res) {
-      let currentGoodsArray = that.data.notice_list.concat(res);
+      let currentGoodsArray = that.data.notice_list.concat(res.list);
       if (currentGoodsArray.length === res.totalCount) { // 如果当前返回页面跟总页面数相同，说明没有更多内容了
         that.setData({
           hasMore: false
