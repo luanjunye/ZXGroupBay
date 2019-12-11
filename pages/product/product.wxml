@@ -5,10 +5,12 @@
         <swiper class="banner" indicator-dots="true" indicator-color="#e0e0e0" indicator-active-color="#fff"
                 autoplay="{{false}}" interval="3000" duration="1000">
             <swiper-item wx:if="{{product.video}}" class="video-wrapper">
-                <video src="{{product.video}}"
+                <video src="{{product.video}}">
+                </video>
+<!--                <video src="{{product.video}}"
                        bindplay="stopAutoSwiper"
                        bindpause="startAutoSwiper">
-                </video>
+                </video>-->
             </swiper-item>
 
             <swiper-item wx:for="{{product.goodsViewList}}" wx:for-item="iitem" wx:key="{{iitem.id}}">
