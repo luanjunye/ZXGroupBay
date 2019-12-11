@@ -36,7 +36,7 @@
   }
 }
 
-$height-icon: 60px;
+$height-icon: 46px;
 
 .order{
   margin: 5px 10px;
@@ -84,6 +84,7 @@ $height-icon: 60px;
           display: block;
           left: 50%;
           top: 50%;
+          opacity: 0.6;
           margin-top: -$height-icon/2;
           margin-left: -$height-icon/2;
           height: $height-icon;
