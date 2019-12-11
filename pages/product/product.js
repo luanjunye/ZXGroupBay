@@ -120,8 +120,7 @@ Page({
     onPullDownRefresh: function () {
         this.setData({
             product: {},
-            likeList: [],
-            difference: 0,
+            likeList: []
         })
         this.onShow()
     },

@@ -26,7 +26,7 @@
                     <view class="goods-pic">
                         <image class="img" src="{{item.pictureUrl}}"></image>
                         <image wx:if="{{item.leftCount === 0}}" class="sell-out" src="/assets/sellout.png"></image>
-                        <image wx:if="{{item.leftCount !== 0 && item.video}}"  class="play" src="/assets/play.png"></image>
+                        <image wx:if="{{item.leftCount !== 0 && item.isVideo}}"  class="play" src="/assets/play.png"></image>
                     </view>
                     <view class="top_info">
                         <view class="title">{{item.name}}</view>
