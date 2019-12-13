@@ -63,7 +63,7 @@ $height-icon: 30px;
 
   .goods-item {
     border-bottom: 1rpx solid $color-border;
-    padding: 10px 20px 10px 10px;
+    padding: 10px;
     display: flex;
     flex-flow: row nowrap;
     background-color: white;
@@ -74,7 +74,10 @@ $height-icon: 30px;
 
     .goods-pic {
       position: relative;
+      flex-shrink: 0;
       margin-right: 10px;
+      width: $height-good - 10px * 2;
+      height: $height-good - 10px * 2;
       @include border-radius(5px);
       overflow: hidden;
       image.good {
@@ -113,9 +116,9 @@ $height-icon: 30px;
       justify-content: space-between;
 
       .name {
-        line-height: 25px;
+        line-height: 1.2;
         flex-shrink: 0;
-        font-size: $font-size-title;
+        font-size: $font-size-title *0.9;
         color: $text-main;
       }
 
