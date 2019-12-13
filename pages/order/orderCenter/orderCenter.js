@@ -32,7 +32,7 @@ Page({
 
         // 分页相关
         pageNo: 1,
-        perPageCount: 15, // 每次请求的数量条数
+        perPageCount: 30, // 每次请求的数量条数
         hasMore: true, // 标记是否还有更多
     },
 
