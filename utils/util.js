@@ -83,6 +83,11 @@ function request(url, data = {}, method, hideLoading, header = "application/json
                                     url: '/pages/login/login'
                                 });
                                 break;*/
+                            case 444:
+                                wx.showModal({
+                                    title: res.data.msg
+                                });
+                                break;
                             default:
                                 /*// TODO: 测试，显示服务器请求出错提示
                                 wx.showModal({
