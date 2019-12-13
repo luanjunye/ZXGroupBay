@@ -1,6 +1,5 @@
 page {
-  background: #F6F6F6;
-}
+  background: #F6F6F6; }
 
 .tui-searchbox {
   margin-top: 10px;
@@ -8,8 +7,7 @@ page {
   padding: 30rpx 20px;
   box-sizing: border-box;
   display: flex;
-  align-items: center;
-}
+  align-items: center; }
 
 .tui-search-input {
   margin-left: 15px;
@@ -21,117 +19,95 @@ page {
   background: #f2f2f2;
   display: flex;
   align-items: center;
-  flex-wrap: nowrap;
-}
+  flex-wrap: nowrap; }
 
 .tui-input {
   flex: 1;
   color: #333;
   padding: 0 16rpx;
-  font-size: 28rpx;
-}
+  font-size: 28rpx; }
 
 .tui-input-plholder {
   font-size: 24rpx;
-  color: #b2b2b2;
-}
+  color: #b2b2b2; }
 
 .tui-cancle {
   color: #888;
   font-size: 28rpx;
   padding-left: 30rpx;
-  flex-shrink: 0;
-}
+  flex-shrink: 0; }
 
 .body {
-  margin: 10px 20px;
-}
-.body .groupList {
-  padding: 20px;
-  margin-bottom: 10px;
-  background: #FFF;
-}
-.body .groupList .top {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.body .groupList .top .avatar {
-  width: 36px;
-  height: 36px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  border: 1rpx solid #F0F0EC;
-}
-.body .groupList .top .remark {
-  margin-left: 10px;
-}
-.body .groupList .top .remark .title {
-  font-size: 15px;
-}
-.body .groupList .top .remark .text {
-  font-size: 13px;
-  display: flex;
-  align-items: center;
-}
-.body .groupList .top .remark .text .phone {
-  font-size: 13px;
-  margin-left: 5px;
-}
-.body .groupList .orderList {
-  margin: 10px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.body .groupList .orderList .img {
-  width: 80px;
-}
-.body .groupList .orderList .info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 80px;
-  flex-grow: 1;
-  margin-left: 10px;
-}
-.body .groupList .orderList .info .info_top {
-  font-size: 16px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-}
-.body .groupList .orderList .info .info_center {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 14px;
-  color: #BEBEBE;
-}
-.body .groupList .orderList .info .time {
-  font-size: 13px;
-  color: #BEBEBE;
-}
-.body .groupList .order-time {
-  font-size: 14px;
-}
-.body .groupList .order-number {
-  font-size: 14px;
-  margin-top: 10px;
-}
-.body .last {
-  display: flex;
-  justify-content: flex-end;
-  padding-bottom: 30px;
-}
-.body .last .submit {
-  background: #0BE7C5;
-  padding: 3px 5px;
-  color: #FFF;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
+  margin: 10px 20px; }
+  .body .groupList {
+    padding: 20px;
+    margin-bottom: 10px;
+    background: #FFF; }
+    .body .groupList .top {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center; }
+      .body .groupList .top .avatar {
+        width: 36px;
+        height: 36px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        border: 1rpx solid #F0F0EC; }
+      .body .groupList .top .remark {
+        margin-left: 10px; }
+        .body .groupList .top .remark .title {
+          font-size: 15px; }
+        .body .groupList .top .remark .text {
+          font-size: 13px;
+          display: flex;
+          align-items: center; }
+          .body .groupList .top .remark .text .phone {
+            font-size: 13px;
+            margin-left: 5px; }
+    .body .groupList .orderList {
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .body .groupList .orderList .img {
+        width: 80px; }
+      .body .groupList .orderList .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 80px;
+        flex-grow: 1;
+        margin-left: 10px; }
+        .body .groupList .orderList .info .info_top {
+          font-size: 16px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical; }
+        .body .groupList .orderList .info .info_center {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 14px;
+          color: #BEBEBE; }
+        .body .groupList .orderList .info .time {
+          font-size: 13px;
+          color: #BEBEBE; }
+    .body .groupList .order-time {
+      font-size: 14px; }
+    .body .groupList .order-number {
+      font-size: 14px;
+      margin-top: 10px; }
+  .body .last {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 30px; }
+    .body .last .submit {
+      background: #0BE7C5;
+      padding: 3px 5px;
+      color: #FFF;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px; }
