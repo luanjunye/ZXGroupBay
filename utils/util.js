@@ -84,8 +84,9 @@ function request(url, data = {}, method, hideLoading, header = "application/json
                                 });
                                 break;*/
                             case 444:
-                                wx.showModal({
-                                    title: res.data.msg
+                                wx.showToast({
+                                    title: res.data.msg,
+                                    icon:"none"
                                 });
                                 break;
                             default:
