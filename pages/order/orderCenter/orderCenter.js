@@ -10,7 +10,7 @@ Page({
             {id: 1, title: '待付款', active: false},
             {id: 2, title: '待收货', active: false},
             {id: 3, title: '已完成', active: false},
-            {id: 4, title: '退款售后', active: false},
+            {id: 4, title: '售后', active: false},
         ],
         currentStateId: 0,
         orders: [

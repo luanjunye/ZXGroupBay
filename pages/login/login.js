@@ -1,5 +1,4 @@
 // pages/login/login.js
-import Dialog from '../../lib/vant-weapp/dialog/dialog';
 
 const api = require('../../config/url.js');
 const util = require('../../utils/util.js');
@@ -101,16 +100,6 @@ Page({
             success(res) {
                 console.log(res.authSetting['scope.userInfo'])
                 if (res.authSetting['scope.userInfo']) {
-                    // // 获取用户信息
-                    //that.getUserInfo()
-                    // // 记录登录状态
-                    // wx.setStorageSync('isLogin', true);
-                    // Dialog.alert({
-                    //   message: '模拟登录成功，此处还需调用微信登录开放接口'
-                    // }).then(() => {
-                    //   // 返回上一级
-
-                    // });
                     wx.login({
                         success: res => {
 

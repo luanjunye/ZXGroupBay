@@ -20,12 +20,15 @@
     <!--    团长信息-->
     <view class="head">
       <view class="head_info">
-        <view class="head_info_left">
+        <view class="head_info_left" wx:if="{{isLogin}}">
           <image class="head-avater" src="{{regimental.avatar}}"></image>
           <view class="box">
             <text class="name">{{regimental.nickname}}</text>
             <text class="address">{{regimental.address}}</text>
           </view>
+        </view>
+        <view class="head_info_left" wx:else>
+          <view class="info_left_text">暂无团长</view>
         </view>
         <view class="head_info_right">
           <view class="box_a" bindtap="openService">

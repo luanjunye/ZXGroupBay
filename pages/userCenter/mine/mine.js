@@ -35,7 +35,7 @@ Page({
       {id: 0, title: '待付款', guest: false, type: 'page',   url: '/pages/order/orderCenter/orderCenter?tab=1' ,iconUrl: '/assets/mine/tab-unpaid.png', badge: 0},
       {id: 1, title: '待收货', guest: false, type: 'page',   url: '/pages/order/orderCenter/orderCenter?tab=2' ,iconUrl: '/assets/mine/tab-receive.png', badge: 0},
       {id: 2, title: '已完成', guest: false, type: 'page',   url: '/pages/order/orderCenter/orderCenter?tab=3' ,iconUrl: '/assets/mine/tab-finished.png', badge: 0},
-      {id: 3, title: '退款售后', guest: false, type: 'page', url: '/pages/order/orderCenter/orderCenter?tab=4' ,iconUrl: '/assets/mine/tab-service.png', badge: 0},
+      {id: 3, title: '售后', guest: false, type: 'page', url: '/pages/order/orderCenter/orderCenter?tab=4' ,iconUrl: '/assets/mine/tab-service.png', badge: 0},
     ],
 
     // 我的团购菜单组

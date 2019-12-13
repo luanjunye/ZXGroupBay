@@ -1,5 +1,4 @@
 // pages/order/orderDetails/orderDetails.js
-import Dialog from './../../../lib/vant-weapp/dialog/dialog';
 import Toast from '../../../lib/vant-weapp/toast/toast';
 
 const api = require('../../../config/url.js');
@@ -164,22 +163,23 @@ Page({
     //退款
     toRefund: function () {
         let that = this
-        Dialog.confirm({
-            message: '是否确认退款？'
-        }).then(() => {
-            //获取订单详情
-            util.request(api.OrderRefund, {id: this.data.orderId}, "POST").then(function (res) {
-                console.log(res)
-                Toast('退款成功')
-                that.setData({
-                    product: {}
-                })
-                that.onShow()
-            });
+        wx.showModal({
+            title: '是否确认退款?',
+            success (res) {
+                if (res.confirm) {
+                    util.request(api.OrderRefund, {id: that.data.orderId}, "POST").then(function (res) {
+                        console.log(res)
+                        Toast('退款成功')
+                        that.setData({
+                            product: {}
+                        })
+                        that.onShow()
+                    });
+                } else if (res.cancel) {
 
-        }).catch(() => {
-            // on cancel
-        });
+                }
+            }
+        })
     },
 
     //退换货协议

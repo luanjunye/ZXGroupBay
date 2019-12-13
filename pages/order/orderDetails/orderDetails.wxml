@@ -26,7 +26,7 @@
             <view class="address">{{product.name}}</view>
         </view>
         <view class="body">
-            <view class="delivery">手机号</view>
+            <view class="delivery">手机</view>
             <view class="address">{{product.mobile}}</view>
         </view>
         <view class="body">

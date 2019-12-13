@@ -1,5 +1,4 @@
 // pages/userCenter/groupOrder/groupOrder.js
-import Dialog from './../../../lib/vant-weapp/dialog/dialog';
 
 const util = require('../../../utils/util');
 const api = require('../../../config/url.js');
@@ -208,26 +207,26 @@ Page({
     //确认收货
     submitOrder: function () {
         let that = this;
-        Dialog.confirm({
-            message: '是否确认收货？'
-        }).then(() => {
-            // on confirm
-            let userId = this.data.userId
 
-            util.request(api.OrderConfirm, {
-                userId: userId,
-            }, "POST").then(function (res) {
-                wx.showToast({
-                    title: '确认收货成功',
-                })
-                that.setData({
-                    isShow: 0
-                })
-            });
-
-        }).catch(() => {
-            // on cancel
-        });
-
+        wx.showModal({
+            title: '是否确认收货',
+            success (res) {
+                if (res.confirm) {
+                    let userId = that.data.userId
+                    util.request(api.OrderConfirm, {
+                        userId: userId,
+                    }, "POST").then(function (res) {
+                        wx.showToast({
+                            title: '确认收货成功',
+                        })
+                        that.setData({
+                            isShow: 0
+                        })
+                    });
+                } else if (res.cancel) {
+                    
+                }
+            }
+        })
     }
 })
