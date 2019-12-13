@@ -136,8 +136,12 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
+        let product = this.data.product;
+        let productInfo = `${product.name}\n￥${product.price}`
         return {
-            title:this.data.product.name
+            title: productInfo,
+            // path: '/pages/userCenter/agreement/agreement',
+            imageUrl: this.data.product.goodsViewList[0]
         }
     },
     toIndex: function () {
