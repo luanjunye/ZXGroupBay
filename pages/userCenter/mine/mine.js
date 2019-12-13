@@ -80,6 +80,7 @@ Page({
       this.getUserInformation();
     }
     util.updateCartCount(); // 更新购物车图标 badge
+    this.updateVideoStatus()
   },
 
   // 申请团长点击时
@@ -211,7 +212,7 @@ Page({
         },
       })
     }
-    // this.updateVideoStatus();
+    this.updateVideoStatus();
   },
 
   onReady: function () { },
