@@ -1,6 +1,5 @@
 @charset "UTF-8";
 .ucenter {
-  background: #F6F6F6;
   width: 100%;
   z-index: -1;
   position: absolute;
