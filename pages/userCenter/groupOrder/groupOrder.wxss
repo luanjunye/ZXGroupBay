@@ -115,11 +115,11 @@ page {
   font-size: 13px;
   color: #BEBEBE;
 }
-.body .groupList .orderList .orderTime {
-  font-size: 13px;
+.body .groupList .order-time {
+  font-size: 14px;
 }
-.body .groupList .orderList .orderNumber {
-  font-size: 13px;
+.body .groupList .order-number {
+  font-size: 14px;
   margin-top: 10px;
 }
 .body .last {

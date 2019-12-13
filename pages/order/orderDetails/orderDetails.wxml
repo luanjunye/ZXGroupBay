@@ -19,7 +19,7 @@
         </view>
         <view class="body">
             <view class="delivery">配送地址</view>
-            <view class="address">济南泽轩优选团购-{{product.street}}{{product.address}}</view>
+            <view class="address">泽轩优选-{{product.address}}{{product.street}}</view>
         </view>
         <view class="body">
             <view class="delivery">姓名</view>

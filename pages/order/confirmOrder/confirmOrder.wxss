@@ -43,7 +43,8 @@
   font-size: 14px;
 }
 .commanderInfo .body .delivery {
-  width: 70px;
+  width: 40px;
+  margin-right: 10px;
 }
 .commanderInfo .body .address {
   overflow: hidden;

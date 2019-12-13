@@ -10,7 +10,7 @@
         </view>
         <view class="body">
             <view class="delivery">配送地址</view>
-            <view class="address">济南泽轩优选团购-{{ConfirmOrder.street}}{{ConfirmOrder.adress}}</view>
+            <view class="address">泽轩优选-{{ConfirmOrder.adress}}{{ConfirmOrder.street}}</view>
         </view>
         <view class="input_info">
             <view class="input_class">
