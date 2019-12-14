@@ -140,7 +140,7 @@ Page({
         let productInfo = `${product.name}\n￥${product.price}`
         return {
             title: productInfo,
-            // path: '/pages/userCenter/agreement/agreement',
+            // path: '/pages/userCenter/mine/mine?master=123456',
             imageUrl: this.data.product.goodsViewList[0]
         }
     },

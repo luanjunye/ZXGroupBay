@@ -30,7 +30,6 @@ Page({
     },
   },
   onLoad(options) {
-
   },
 
   countDown(e) {

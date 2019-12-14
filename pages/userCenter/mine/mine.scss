@@ -290,7 +290,7 @@ page{
 // 用户操作
 .mine-container{
   z-index: $z-menu;
-  padding: 10px 10px 60px 10px
+  padding: 10px;
 }
 
 .group-progress{
@@ -404,5 +404,13 @@ page{
   &:last-child{
     margin-bottom: 0;
   }
+}
+
+.version{
+  padding-top: 10px;
+  padding-bottom: 60px;
+  text-align: center;
+  font-size: $font-size-comment;
+  color: #ddd;
 }
 
