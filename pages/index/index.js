@@ -29,13 +29,8 @@ Page({
       avatar: ""
     },
   },
-  onload() {
-    // this.setData({
-    //     targetTime: new Date().getTime() + 6430000
-    // });
+  onLoad(options) {
 
-
-    getApp().globalData.type = 0;
   },
 
   countDown(e) {
