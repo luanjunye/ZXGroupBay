@@ -160,4 +160,4 @@
     </view>
 </view>
 
-<view class="version">泽轩团购 v{{1.3}}</view>
+<view class="version">泽轩团购 v1.0.3</view>
