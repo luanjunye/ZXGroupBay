@@ -40,7 +40,7 @@
         <view class="order-number">订单编号:{{item.orderNum}}</view>
     </view>
     <view class="last">
-        <view class="submit" bindtap="submitOrder" wx:if="{{isShow == 1}}">确认订单</view>
+        <view class="submit" bindtap="submitOrder" wx:if="{{isShow == 1}}">确认收货</view>
     </view>
 
     <van-dialog confirm-button-color="#b4282d" id="van-dialog" />
