@@ -9,6 +9,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        fromMaster: false,  // 是否从团长那边过来的
         orderId: "",
         product: {},
         failPayTime: 0,
@@ -16,19 +17,32 @@ Page({
     },
 
 
-
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
         let orderId = options.orderId
+        let fromMaster = options.fromMaster
+
+        console.log('fromMaster:', fromMaster)
+
         if (orderId) {
             this.setData({
                 orderId: orderId
             })
         }
+        if (fromMaster){
+            // 更新是否从团长那边过来的标识
+            this.setData({
+                fromMaster: true
+            })
+        }
+
     },
 
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
     onReady: function () {
 
     },
