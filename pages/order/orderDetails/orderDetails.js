@@ -9,54 +9,26 @@ Page({
      * 页面的初始数据
      */
     data: {
-        fromMaster: false,  // 是否从团长那边过来的
         orderId: "",
         product: {},
         failPayTime: 0,
         isPay:false
     },
 
-    // 申请退款
-    feedback(e) {
-        // 在跳转到申请页面之前，保存当前订单的一些信息
-        let currentProduct = e.currentTarget.dataset.value;
-        let infoFeedback = {
-            product: currentProduct,
-            buyer: this.data.product.consignee,
-            orderNum: this.data.product.orderNum,
-        };
-        wx.setStorageSync('infoFeedback', infoFeedback);
-        wx.navigateTo({
-            url: '/pages/userCenter/feedbackApply/feedbackApply'
-        })
-    },
+
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
         let orderId = options.orderId
-        let fromMaster = options.fromMaster
-
-        console.log('fromMaster:', fromMaster)
-
         if (orderId) {
             this.setData({
                 orderId: orderId
             })
         }
-        if (fromMaster){
-            // 更新是否从团长那边过来的标识
-            this.setData({
-                fromMaster: true
-            })
-        }
-
     },
 
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
     onReady: function () {
 
     },
