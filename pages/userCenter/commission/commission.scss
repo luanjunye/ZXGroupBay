@@ -49,6 +49,8 @@ page{
         image{
           height: $height-product-pic;
           width: $height-product-pic;
+          @include border-radius();
+          border: 1px solid $color-border;
           display: block;
         }
       }

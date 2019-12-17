@@ -5,6 +5,7 @@
     "pages/login/login",
     "pages/userCenter/about/about",
     "pages/userCenter/feedbackApply/feedbackApply",
+    "pages/userCenter/qualification/qualification",
     "pages/video/video",
     "pages/userCenter/feedback/feedback",
     "pages/order/orderCenter/orderCenter",

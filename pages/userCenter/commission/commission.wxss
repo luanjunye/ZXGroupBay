@@ -1,11 +1,9 @@
 page {
-  background-color: #F6F6F6;
-}
+  background-color: #F6F6F6; }
 
 .commission {
   margin-top: 5px;
-  background-color: white;
-}
+  background-color: white; }
 
 .commission-filter {
   border-bottom: 1px solid #F0F0EC;
@@ -13,91 +11,76 @@ page {
   display: flex;
   padding: 10px;
   justify-content: space-between;
-  font-size: 12.8px;
-}
-.commission-filter .time-picker {
-  border: 1px solid #D9D9D6;
-  padding: 3px 5px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
-  background-color: #F6F6F6;
-  text-align: center;
-}
-.commission-filter .btn-search {
-  padding: 5px 8px;
-  text-align: center;
-}
+  font-size: 12.8px; }
+  .commission-filter .time-picker {
+    border: 1px solid #D9D9D6;
+    padding: 3px 5px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    background-color: #F6F6F6;
+    text-align: center; }
+  .commission-filter .btn-search {
+    padding: 5px 8px;
+    text-align: center; }
 
 .commission-list {
   padding: 10px;
-  margin-bottom: 10px;
-}
-.commission-list-item {
-  border-bottom: 1px solid #F0F0EC;
-  padding: 15px;
-}
-.commission-list-item:last-child {
-  border-bottom: none;
-}
-.commission-list-item .product-info {
-  display: flex;
-}
-.commission-list-item .product-info .product-pic {
-  flex-shrink: 0;
-  margin-right: 10px;
-}
-.commission-list-item .product-info .product-pic image {
-  height: 80px;
-  width: 80px;
-  display: block;
-}
-.commission-list-item .product-info .product-meta {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  flex-grow: 1;
-}
-.commission-list-item .product-info .product-meta .name {
-  margin-bottom: 10px;
-  font-size: 12.8px;
-  font-weight: bold;
-  color: #333333;
-}
-.commission-list-item .product-info .product-meta .meta {
-  font-size: 12.8px;
-  color: #666666;
-}
-.commission-list-item .product-info .product-price {
-  color: #333333;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  flex-flow: column nowrap;
-  text-align: center;
-}
-.commission-list-item .product-info .product-price .label {
-  font-size: 12.8px;
-}
-.commission-list-item .product-info .product-price .price {
-  font-weight: bold;
-  font-size: 16px;
-}
-.commission-list-item .footer {
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.commission-list-item .footer .date {
-  font-size: 12.8px;
-  color: #666666;
-}
-.commission-list-item .footer .commission-price {
-  font-size: 12.8px;
-  color: #666666;
-}
-.commission-list-item .footer .commission-price .price {
-  font-size: 16px;
-  color: #FF3948;
-}
+  margin-bottom: 10px; }
+  .commission-list-item {
+    border-bottom: 1px solid #F0F0EC;
+    padding: 15px; }
+    .commission-list-item:last-child {
+      border-bottom: none; }
+    .commission-list-item .product-info {
+      display: flex; }
+      .commission-list-item .product-info .product-pic {
+        flex-shrink: 0;
+        margin-right: 10px; }
+        .commission-list-item .product-info .product-pic image {
+          height: 80px;
+          width: 80px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
+          border: 1px solid #F0F0EC;
+          display: block; }
+      .commission-list-item .product-info .product-meta {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        flex-grow: 1; }
+        .commission-list-item .product-info .product-meta .name {
+          margin-bottom: 10px;
+          font-size: 12.8px;
+          font-weight: bold;
+          color: #333333; }
+        .commission-list-item .product-info .product-meta .meta {
+          font-size: 12.8px;
+          color: #666666; }
+      .commission-list-item .product-info .product-price {
+        color: #333333;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        flex-flow: column nowrap;
+        text-align: center; }
+        .commission-list-item .product-info .product-price .label {
+          font-size: 12.8px; }
+        .commission-list-item .product-info .product-price .price {
+          font-weight: bold;
+          font-size: 16px; }
+    .commission-list-item .footer {
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      .commission-list-item .footer .date {
+        font-size: 12.8px;
+        color: #666666; }
+      .commission-list-item .footer .commission-price {
+        font-size: 12.8px;
+        color: #666666; }
+        .commission-list-item .footer .commission-price .price {
+          font-size: 16px;
+          color: #FF3948; }

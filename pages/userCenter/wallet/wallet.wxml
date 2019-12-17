@@ -3,6 +3,7 @@
     <view class="label">账户余额</view>
     <view class="amount">￥{{amount}}</view>
     <view class="btn btn-withdraw" bindtap="onWidthDraw">申请提现</view>
+    <view class="notice">有10元佣金不可提现 <view class="icon btn" bindtap="noticeTaped">?</view></view>
 </view>
 
 <view class="withdraw-log">

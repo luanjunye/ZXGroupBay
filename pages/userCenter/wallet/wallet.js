@@ -26,6 +26,13 @@ Page({
     this.getMoneyAmount();
   },
 
+  noticeTaped(){
+    wx.showModal({
+      title: "说明",
+      content: "10元佣金作为退款储备佣金，如您想解除团长身份，可联系泽轩优选客服处理"
+    })
+  },
+
   // 获取可提现余额
   getMoneyAmount(){
     let that = this;
@@ -62,7 +69,7 @@ Page({
 
   // 提现操作
   onWidthDraw(){
-    if(this.data.amount === 0){
+    if(this.data.amount === 10 || this.data.amount < 10){
       util.toast('可提现余额不足')
     } else {
       wx.showModal({

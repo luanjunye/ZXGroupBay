@@ -52,6 +52,8 @@ module.exports = {
     FeedbackList: API_BASE_URL + 'aftersales/page',  // 反馈列表
     FeedbackInfo: API_BASE_URL + 'aftersales/info',  // 反馈详情
     FeedbackApply: API_BASE_URL + 'aftersales/save/json',  // 反馈提交
+    GetGroupInfo: API_BASE_URL + 'teamuser/selectendtime',  // 开团、结团时间
+
 
     // 佣金相关
     CommissionList: API_BASE_URL + 'teamuser/commissionlist',  // 佣金记录列表
