@@ -124,7 +124,6 @@ Page({
 
     toInfo:function (e) {
         let data = e.currentTarget.dataset.value;
-        console.log(data);
         if (data.tuanTeamId) {
             wx.navigateTo({
                 url: '/pages/userCenter/groupOrder/groupOrder?from=historyGroup&&groupId=' + data.tuanTeamId,

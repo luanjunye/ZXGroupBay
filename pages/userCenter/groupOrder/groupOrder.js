@@ -6,8 +6,10 @@ const api = require('../../../config/url.js');
 Page({
 
     data: {
+        canApplyFeedback: false,  // 是否能申请售后
 
-        canApplyFeedback: true,  // 是否能申请售后
+        timeStart: 0,  // 开团时间
+        timeEnd: 0, // 截团时间
 
         groupId: "",
         from: "",
@@ -28,8 +30,6 @@ Page({
         type: 1,
     },
 
-
-
     onLoad: function (options) {
         let from = options.from
         console.log(from)
@@ -45,6 +45,7 @@ Page({
                         groupId: groupId,
                         from: "historyGroup"
                     })
+                    this.updateGroupInfo(); // 更新跟团有关的信息
                 }
             }
         }
@@ -57,6 +58,35 @@ Page({
                 userId: userId
             })
         }
+
+    },
+
+    // 更新开团相关时间信息
+    // 只有从 历史过来的才刷新这个数据
+    updateGroupInfo(){
+        let that = this;
+        // 更新开团相关时间信息
+        util.request(api.GetGroupInfo, {
+            id: that.data.groupId
+        }, "POST").then( res => {
+            let timeStart = res.startTime;
+            let timeEnd = res.endTime;
+
+            // 更新是否显示售后按钮
+            let timeNow = new Date().getTime();
+            let timeDuration = 3600 * 48 * 1000;
+
+            // console.log(util.formateDate(new Date(timeStart), 'yyyy-MM-dd hh:mm:ss'));
+            // console.log(util.formateDate(new Date(timeEnd), 'yyyy-MM-dd hh:mm:ss'));
+            // console.log(util.formateDate(new Date(timeNow), 'yyyy-MM-dd hh:mm:ss'));
+            // console.log(util.formateDate(new Date(timeEnd + timeDuration), 'yyyy-MM-dd hh:mm:ss'));
+
+            that.setData({
+                timeStart: res.startTime,
+                timeEnd: res.endTime,
+                canApplyFeedback: timeNow > timeEnd && timeNow < timeEnd + timeDuration
+            });
+        })
     },
 
 
@@ -83,8 +113,6 @@ Page({
     onReady: function () {},
     onShow: function () {
         let that = this
-
-        console.log(this.data.userId)
         util.request(api.OrderSubmit, {
             userId: this.data.userId,
         }, "POST").then(function (res) {
@@ -106,7 +134,12 @@ Page({
             key: "",
             isShow: 0
         });
-        this.onShow()
+        this.onShow();
+
+        // 只有从 历史过来的才刷新这个数据
+        if(this.data.groupId) {
+            this.updateGroupInfo(); //更新截团相关信息
+        }
     },
     hBottom: function () {
         let currentPageNo = this.data.pageNo + 1;
