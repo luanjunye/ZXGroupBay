@@ -13,7 +13,7 @@
 </view>
 
 <view class="body">
-    <view class="groupList" wx:for="{{groupList}}" wx:for-item="item" wx:key="{{item.id}}"
+    <view class="groupList light-shadow" wx:for="{{groupList}}" wx:for-item="item" wx:key="{{item.id}}"
           data-value="{{item}}" id="{{item.id}}">
         <view class="top">
             <image src="{{item.avatar}}" class="avatar"></image>

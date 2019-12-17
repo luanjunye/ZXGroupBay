@@ -11,7 +11,8 @@ page {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 12.8px; }
+      font-size: 12.8px;
+      color: #333333; }
       .historyGroup .info .top .top_right {
         display: flex;
         justify-content: flex-start;
@@ -19,6 +20,7 @@ page {
         .historyGroup .info .top .top_right .count_down {
           margin-left: 5px; }
     .historyGroup .info .time {
+      color: #333333;
       font-size: 12.8px;
       margin-top: 5px; }
     .historyGroup .info .scroll {
@@ -43,6 +45,7 @@ page {
       align-items: center;
       font-size: 15px; }
       .historyGroup .info .bottom .bottom-left {
+        color: #333333;
         font-size: 12.8px; }
       .historyGroup .info .bottom .bottom-right {
         font-size: 13px;

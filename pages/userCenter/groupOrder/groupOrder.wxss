@@ -4,8 +4,7 @@ page {
 .tui-searchbox {
   margin-top: 10px;
   background: #FFF;
-  padding: 30rpx 20px;
-  box-sizing: border-box;
+  padding: 10px 20px;
   display: flex;
   align-items: center; }
 
@@ -15,7 +14,6 @@ page {
   height: 66rpx;
   border-radius: 35rpx;
   padding: 0 30rpx;
-  box-sizing: border-box;
   background: #f2f2f2;
   display: flex;
   align-items: center;
@@ -38,9 +36,12 @@ page {
   flex-shrink: 0; }
 
 .body {
-  margin: 10px 20px; }
+  padding: 10px; }
   .body .groupList {
-    padding: 20px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 15px;
     margin-bottom: 10px;
     background: #FFF; }
     .body .groupList .top {
@@ -71,8 +72,14 @@ page {
       justify-content: space-between;
       align-items: center; }
       .body .groupList .orderList .img {
-        width: 80px; }
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        overflow: hidden;
+        width: 80px;
+        border: 1px solid #F0F0EC; }
       .body .groupList .orderList .info {
+        padding: 5px 0;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -91,15 +98,18 @@ page {
           justify-content: space-between;
           align-items: center;
           font-size: 14px;
-          color: #BEBEBE; }
+          color: #666666; }
         .body .groupList .orderList .info .time {
           font-size: 13px;
-          color: #BEBEBE; }
+          color: #666666; }
     .body .groupList .order-time {
-      font-size: 14px; }
+      color: #333333;
+      margin-top: 10px;
+      font-size: 12.8px;
+      margin-bottom: 3px; }
     .body .groupList .order-number {
-      font-size: 14px;
-      margin-top: 10px; }
+      color: #333333;
+      font-size: 12.8px; }
   .body .last {
     display: flex;
     justify-content: flex-end;

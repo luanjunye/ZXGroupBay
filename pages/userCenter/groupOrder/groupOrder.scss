@@ -7,8 +7,7 @@ page {
 .tui-searchbox {
   margin-top: 10px;
   background: $bg-info;
-  padding: 30rpx 20px;
-  box-sizing: border-box;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
 }
@@ -19,132 +18,142 @@ page {
   height: 66rpx;
   border-radius: 35rpx;
   padding: 0 30rpx;
-  box-sizing: border-box;
   background: #f2f2f2;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
 }
-.tui-input{
+
+.tui-input {
   flex: 1;
   color: #333;
-  padding:0 16rpx;
+  padding: 0 16rpx;
   font-size: 28rpx;
 }
-.tui-input-plholder{
+
+.tui-input-plholder {
   font-size: 24rpx;
   color: #b2b2b2;
 }
-.tui-cancle{
+
+.tui-cancle {
   color: #888;
   font-size: 28rpx;
   padding-left: 30rpx;
   flex-shrink: 0;
 }
 
-.body{
-  margin: 10px 20px;
+.body {
+  padding: 10px;
+  .groupList {
+    @include border-radius(3px);
+    padding: 15px;
+    margin-bottom: 10px;
+    background: $bg-info;
 
-.groupList{
-  padding: 20px;
-  margin-bottom: 10px;
-  background: $bg-info;
+    .top {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
 
-  .top{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
-    .avatar{
-      width: 36px;
-      height: 36px;
-      @include border-radius(50%);
-      border: 1rpx solid $color-border;
-    }
-
-    .remark{
-      margin-left: 10px;
-
-      .title{
-        font-size: 15px;
+      .avatar {
+        width: 36px;
+        height: 36px;
+        @include border-radius(50%);
+        border: 1rpx solid $color-border;
       }
 
-      .text{
-        font-size: 13px;
-        display: flex;
-        align-items: center;
+      .remark {
+        margin-left: 10px;
 
-        .phone{
+        .title {
+          font-size: 15px;
+        }
+
+        .text {
           font-size: 13px;
-          margin-left: 5px;
+          display: flex;
+          align-items: center;
+
+          .phone {
+            font-size: 13px;
+            margin-left: 5px;
+          }
         }
       }
     }
-  }
-  .orderList{
-    margin: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 
-    .img{
-      width: 80px;
-    }
-
-    .info{
+    .orderList {
+      margin: 10px 0;
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
-      height: 80px;
-      flex-grow: 1;
-      margin-left: 10px;
+      align-items: center;
 
-      .info_top{
-        font-size: 16px;
-        overflow:hidden;//一定要写
-        text-overflow: ellipsis;//超出省略号
-        display:-webkit-box;//一定要写
-        -webkit-line-clamp: 1;//控制行数
-        -webkit-box-orient: vertical;//一定要写
+      .img {
+        @include border-radius();
+        overflow: hidden;
+        width: 80px;
+        border: 1px solid $color-border;
       }
 
-      .info_center{
+      .info {
+        padding: 5px 0;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        align-items: center;
-        font-size: 14px;
-        color: $bg-refund;
-      }
+        height: 80px;
+        flex-grow: 1;
+        margin-left: 10px;
 
-      .time{
-        font-size: 13px;
-        color: $bg-refund;
+        .info_top {
+          font-size: 16px;
+          overflow: hidden; //一定要写
+          text-overflow: ellipsis; //超出省略号
+          display: -webkit-box; //一定要写
+          -webkit-line-clamp: 1; //控制行数
+          -webkit-box-orient: vertical; //一定要写
+        }
+
+        .info_center {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 14px;
+          color: $text-subtitle;
+        }
+
+        .time {
+          font-size: 13px;
+          color: $text-subtitle;
+        }
       }
+    }
+
+    .order-time {
+      color: $text-main;
+      margin-top: 10px;
+      font-size: $font-size-subtitle;
+      margin-bottom: 3px;
+    }
+
+    .order-number {
+      color: $text-main;
+      font-size: $font-size-subtitle;
     }
   }
 
-  .order-time{
-    font-size: 14px;
-  }
-
-  .order-number{
-    font-size: 14px;
-    margin-top: 10px;
-  }
-}
-  .last{
+  .last {
     display: flex;
     justify-content: flex-end;
     padding-bottom: 30px;
-    .submit{
+
+    .submit {
       background: $bg-active;
       padding: 3px 5px;
       color: $bg-info;
       @include border-radius(5px);
     }
-
   }
-
 }
 
 
