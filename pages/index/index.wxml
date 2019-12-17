@@ -74,6 +74,16 @@
     </view>
   </view>
 
+  <view class="newcomer">
+    <view class="newcomer_title">
+      <view class="title_left">新人专享</view>
+      <view class="title_right">新用户首下单福利</view>
+    </view>
+    <view class="newcomer_body">
+      <image></image>
+    </view>
+  </view>
+
 
   <!--    推荐商品-->
   <view class="third_box">
