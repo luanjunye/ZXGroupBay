@@ -23,11 +23,28 @@ page{
     color: $text-main;
   }
   .btn-withdraw{
+    margin-bottom: 10px;
     font-size: $font-size-subtitle;
     background-color: $bg-active;
     color: white;
     padding: 5px 10px;
     @include border-radius(3px);
+  }
+  .notice{
+    position: relative;
+    font-size: $font-size-comment;
+    color: $text-comment;
+    .icon{
+      right: -23px;
+      top: 0;
+      position: absolute;
+      display: inline-block;
+      line-height: 1;
+      padding: 3px 6px;
+      @include border-radius(20px);
+      border: 1px solid $color-border;
+      text-align: center;
+    }
   }
 }
 
