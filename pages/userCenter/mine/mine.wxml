@@ -21,7 +21,7 @@
        <view wx:if="{{groupMaster}}" class="amount">
            <view class="amount-card light-shadow">
                <view class="number">{{userInfo.amountMoney}}</view>
-               <view class="label">累计收益(元)</view>
+               <view class="label">已提现金额(元)</view>
            </view>
            <view class="amount-card light-shadow">
                <navigator url="/pages/userCenter/wallet/wallet">
