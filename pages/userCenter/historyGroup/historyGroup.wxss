@@ -1,59 +1,54 @@
 page {
   background: #F6F6F6;
-}
+  padding: 10px; }
 
 .historyGroup {
-  margin: 10px 20px;
   background: #FFF;
-}
-.historyGroup .info {
-  padding: 10px;
-}
-.historyGroup .info .top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 15px;
-}
-.historyGroup .info .top .top_right {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-.historyGroup .info .top .top_right .count_down {
-  margin-left: 5px;
-}
-.historyGroup .info .time {
-  font-size: 15px;
-  margin-top: 5px;
-}
-.historyGroup .info .scroll {
-  width: 100%;
-  height: 120px;
-  margin-top: 10px;
-  white-space: nowrap;
-}
-.historyGroup .info .scroll .urlList {
-  margin-right: 5px;
-  width: 120px;
-  display: inline-block;
-}
-.historyGroup .info .scroll .urlList .img {
-  width: 120px;
-}
-.historyGroup .info .bottom {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 15px;
-}
-.historyGroup .info .bottom .bottom_right {
-  font-size: 13px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  padding: 3px 6px;
-  background: #0BE7C5;
-  color: #FFF;
-}
+  margin-bottom: 10px; }
+  .historyGroup .info {
+    padding: 10px; }
+    .historyGroup .info .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12.8px; }
+      .historyGroup .info .top .top_right {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center; }
+        .historyGroup .info .top .top_right .count_down {
+          margin-left: 5px; }
+    .historyGroup .info .time {
+      font-size: 12.8px;
+      margin-top: 5px; }
+    .historyGroup .info .scroll {
+      width: 100%;
+      height: 100px;
+      margin-top: 10px;
+      white-space: nowrap; }
+      .historyGroup .info .scroll .urlList {
+        margin-right: 5px;
+        width: 100px;
+        display: inline-block; }
+        .historyGroup .info .scroll .urlList .img {
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
+          overflow: hidden;
+          width: 100px; }
+    .historyGroup .info .bottom {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 15px; }
+      .historyGroup .info .bottom .bottom-left {
+        font-size: 12.8px; }
+      .historyGroup .info .bottom .bottom-right {
+        font-size: 13px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        padding: 5px 8px;
+        background: #0BE7C5;
+        color: #FFF; }
