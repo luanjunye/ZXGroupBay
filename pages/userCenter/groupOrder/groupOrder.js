@@ -5,10 +5,10 @@ const api = require('../../../config/url.js');
 
 Page({
 
-    /**
-     * 页面的初始数据
-     */
     data: {
+
+        canApplyFeedback: true,  // 是否能申请售后
+
         groupId: "",
         from: "",
         isShow: 0,
@@ -28,9 +28,8 @@ Page({
         type: 1,
     },
 
-    /**
-     * 生命周期函数--监听页面加载
-     */
+
+
     onLoad: function (options) {
         let from = options.from
         console.log(from)
@@ -60,16 +59,28 @@ Page({
         }
     },
 
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
 
+    // 申请退款
+    feedback(e) {
+        // 在跳转到申请页面之前，保存当前订单的一些信息
+        let currentProduct = e.currentTarget.dataset.value;
+        let orderNo = e.currentTarget.dataset.ordernum;
+        let buyer = e.currentTarget.dataset.buyer;
+
+        let infoFeedback = {
+            product: currentProduct,
+            buyer: buyer,
+            orderNum: orderNo,
+        };
+
+        console.log(infoFeedback);
+        wx.setStorageSync('infoFeedback', infoFeedback);
+        wx.navigateTo({
+            url: '/pages/userCenter/feedbackApply/feedbackApply'
+        })
     },
 
-    /**
-     * 生命周期函数--监听页面显示
-     */
+    onReady: function () {},
     onShow: function () {
         let that = this
 
@@ -85,23 +96,8 @@ Page({
 
     },
 
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
+    onHide: function () {},
+    onUnload: function () {},
     onPullDownRefresh: function () {
         this.setData({
             groupList: [],
@@ -112,11 +108,7 @@ Page({
         });
         this.onShow()
     },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
+    hBottom: function () {
         let currentPageNo = this.data.pageNo + 1;
         if (this.data.hasMore) {
             if (this.data.key) {
@@ -127,12 +119,7 @@ Page({
         }
     },
 
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
-    },
+    onShareAppMessage: function () {},
 
     //团购列表详情
     HistoryGroupInfo(userId, pageNo, grpuoId, type, key) {

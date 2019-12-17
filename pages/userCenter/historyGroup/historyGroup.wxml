@@ -1,5 +1,5 @@
 <!--pages/userCenter/historyGroup/historyGroup.wxml-->
-<view class="historyGroup" wx:for="{{historyGroupList}}" wx:for-item="item" wx:key="{{item.id}}"
+<view class="historyGroup light-shadow" wx:for="{{historyGroupList}}" wx:for-item="item" wx:key="{{item.id}}"
       data-value="{{item}}" id="{{item.id}}">
     <view class="info">
         <view class="top">
@@ -18,8 +18,8 @@
             </view>
         </scroll-view>
         <view class="bottom">
-            <view class="bottom_left">参团人数:{{item.userNum}}</view>
-            <view class="bottom_right" data-value="{{item}}" bindtap="toInfo">查看订单</view>
+            <view class="bottom-left">参团人数:{{item.userNum}}</view>
+            <view class="bottom-right btn" data-value="{{item}}" bindtap="toInfo">查看订单</view>
         </view>
     </view>
 </view>

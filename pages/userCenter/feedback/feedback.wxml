@@ -29,6 +29,6 @@
 </view>
 
 <!--<navigator url="/pages/userCenter/feedbackApply/feedbackApply">-->
-<navigator url="/pages/userCenter/memberManage/memberManage">
+<navigator url="/pages/userCenter/historyGroup/historyGroup">
     <view class="btn btn-feedback">创建工单</view>
 </navigator>
