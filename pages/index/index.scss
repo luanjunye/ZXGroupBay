@@ -269,6 +269,90 @@
   }
 }
 
+.newcomer{
+  margin: 5px 10px;
+
+  .title_img{
+    width: 100%;
+    height: 40px;
+  }
+
+  .newcomer_body{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .img{
+      width: 120px;
+      height: 120px;
+      flex-shrink: 0;
+    }
+
+    .newcomer_info{
+      width: 200px;
+      height: 120px;
+      padding-left: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 14px;
+      flex-grow: 1;
+
+      .info_title {
+        overflow: hidden; //一定要写
+        text-overflow: ellipsis; //超出省略号
+        display: -webkit-box; //一定要写
+        -webkit-line-clamp: 2; //控制行数
+        -webkit-box-orient: vertical; //一定要写
+      }
+
+      .info_number{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        .progress{
+          width: 50%;
+        }
+
+        .info_num{
+          margin-left: 5px;
+          font-size: 12px;
+        }
+      }
+
+      .money_f {
+        margin-top: 5px;
+        font-size: 10px;
+        color: #DD3C4A;
+        display: flex;
+        align-items: center;
+
+        .place {
+          font-size: 14px;
+        }
+
+        .money_s {
+          padding-left: 10px;
+          color: $text-comment;
+          display: flex;
+          align-items: center;
+          text-decoration: line-through;
+
+          .original {
+            font-size: 14px;
+
+          }
+        }
+      }
+    }
+  }
+
+
+
+}
+
 
 .third_box {
   margin: 5px 10px;
@@ -428,6 +512,10 @@
                 @include border-radius(20px);
                 padding: 2px 5px;
               }
+            }
+
+            .spike{
+              font-size: 12px;
             }
 
           }

@@ -74,15 +74,28 @@
     </view>
   </view>
 
-  <view class="newcomer">
-    <view class="newcomer_title">
-      <view class="title_left">新人专享</view>
-      <view class="title_right">新用户首下单福利</view>
-    </view>
-    <view class="newcomer_body">
-      <image></image>
-    </view>
-  </view>
+<!--  2.0需求 还没有接口-->
+<!--  <view class="newcomer">-->
+
+<!--    <image class="title_img" src="/assets/index/title.png"></image>-->
+
+<!--    <view class="newcomer_body">-->
+<!--      <image class="img" src="/assets/index/noOrder.png"></image>-->
+<!--      <view class="newcomer_info">-->
+<!--        <view class="info_title">sadsadasdsadasdsa</view>-->
+<!--        <view class="info_number">-->
+<!--          <progress class="progress" backgroundColor="#999999" activeColor="#FB304A"></progress>-->
+<!--          <view class="info_num">已购500</view>-->
+<!--        </view>-->
+<!--        <view class="money_f">¥-->
+<!--          <view class="place">{{item.price}}</view>-->
+<!--          <view class="money_s">¥-->
+<!--            <view class="original">{{item.originalPrice}}</view>-->
+<!--          </view>-->
+<!--        </view>-->
+<!--      </view>-->
+<!--    </view>-->
+<!--  </view>-->
 
 
   <!--    推荐商品-->
@@ -131,6 +144,8 @@
                 <image wx:if="{{item.leftCount > 0}}" class="icon" src="/assets/addCart.png" data-value="{{item}}" capture-catch:tap="addCart"></image>
                 <view wx:else class="sell-out">已售罄</view>
               </view>
+<!--              2.0需求还没有接口-->
+<!--              <view class="spike">12-13 15:00 - 12-25 14:00</view>-->
             </view>
           </view>
         </view>
