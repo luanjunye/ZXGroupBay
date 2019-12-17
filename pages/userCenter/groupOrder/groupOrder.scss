@@ -67,7 +67,8 @@ page {
         margin-left: 10px;
 
         .title {
-          font-size: 15px;
+          font-size: $font-size-title;
+          color: $text-main;
         }
 
         .text {
@@ -106,12 +107,27 @@ page {
         margin-left: 10px;
 
         .info_top {
-          font-size: 16px;
+          font-size: $font-size-title;
+          color: $text-main;
           overflow: hidden; //一定要写
           text-overflow: ellipsis; //超出省略号
           display: -webkit-box; //一定要写
           -webkit-line-clamp: 1; //控制行数
           -webkit-box-orient: vertical; //一定要写
+        }
+
+        .tools{
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-end;
+          .feedback{
+
+            font-size: $font-size-subtitle;
+            padding: 3px 6px;
+            text-align: center;
+            @include border-radius();
+            background-color: rgba(0,0,0,0.1);
+          }
         }
 
         .info_center {
@@ -149,7 +165,7 @@ page {
 
     .submit {
       background: $bg-active;
-      padding: 3px 5px;
+      padding: 5px 10px;
       color: $bg-info;
       @include border-radius(5px);
     }

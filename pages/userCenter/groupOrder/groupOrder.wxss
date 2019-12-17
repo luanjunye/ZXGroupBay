@@ -58,7 +58,8 @@ page {
       .body .groupList .top .remark {
         margin-left: 10px; }
         .body .groupList .top .remark .title {
-          font-size: 15px; }
+          font-size: 16px;
+          color: #333333; }
         .body .groupList .top .remark .text {
           font-size: 13px;
           display: flex;
@@ -88,11 +89,24 @@ page {
         margin-left: 10px; }
         .body .groupList .orderList .info .info_top {
           font-size: 16px;
+          color: #333333;
           overflow: hidden;
           text-overflow: ellipsis;
           display: -webkit-box;
           -webkit-line-clamp: 1;
           -webkit-box-orient: vertical; }
+        .body .groupList .orderList .info .tools {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-end; }
+          .body .groupList .orderList .info .tools .feedback {
+            font-size: 12.8px;
+            padding: 3px 6px;
+            text-align: center;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.1); }
         .body .groupList .orderList .info .info_center {
           display: flex;
           justify-content: space-between;
@@ -116,7 +130,7 @@ page {
     padding-bottom: 30px; }
     .body .last .submit {
       background: #0BE7C5;
-      padding: 3px 5px;
+      padding: 5px 10px;
       color: #FFF;
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;

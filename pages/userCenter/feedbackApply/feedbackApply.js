@@ -32,7 +32,7 @@ Page({
       ['product.goodsCount']: infoFeedback.product.num,
       ['product.specs']: infoFeedback.product.specification? infoFeedback.product.specification: '',
       ['product.picUrl']: infoFeedback.product.url,
-      ['product.goodsId']: infoFeedback.product.id,
+      ['product.goodsId']: infoFeedback.product.goodsId,
       ['product.buyer']: infoFeedback.buyer,
       ['product.orderNum']: infoFeedback.orderNum,
     })

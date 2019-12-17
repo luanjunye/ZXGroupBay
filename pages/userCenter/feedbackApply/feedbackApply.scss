@@ -23,6 +23,9 @@ page{
     flex-shrink: 0;
     margin-right: 10px;
     image{
+      border: 1px solid $color-border;
+      @include border-radius();
+      overflow: hidden;
       height: $height-product-pic;
       width: $height-product-pic;
       display: block;
