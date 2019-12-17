@@ -3,7 +3,7 @@
     <view class="tui-searchbox">
         <view class="tui-search-input">
             <icon type="search" size='13' color='#333'></icon>
-            <input confirm-type="search" placeholder="搜索你要的商品" auto-focus="{{true}}" placeholder-class="tui-input-plholder" class="tui-input" value="{{key}}" bindinput="input"/>
+            <input confirm-type="search" placeholder="搜索你要的商品" auto-focus="{{true}}" placeholder-class="tui-input-plholder" class="tui-input" value="{{key}}" bindinput="input" bindconfirm="submit"/>
             <icon type="clear" size='13' color='#bcbcbc' bindtap="cleanKey" hidden="{{!key}}"></icon>
         </view>
         <view class="tui-cancle" bindtap="submit">搜索</view>
