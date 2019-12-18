@@ -1,4 +1,7 @@
 @charset "UTF-8";
+.image-wrapper {
+  margin-bottom: 10px; }
+
 .article-bg {
   background-color: #0BE7C5;
   padding: 8px 8px 18px 8px; }
