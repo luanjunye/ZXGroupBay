@@ -128,7 +128,7 @@
           <view class="top_info">
             <view class="title">{{item.name}}</view>
             <view class="description">{{item.info ? item.info : ""}}</view>
-            <view class="description">{{item.placeOfOrigin}}</view>
+            <view class="description">{{item.placeOfOrigin ? item.placeOfOrigin : ""}}</view>
 
             <view class="top_down">
               <view class="top_down_left">

@@ -334,7 +334,12 @@
           -webkit-box-orient: vertical; }
         .third_box .third .list .top .top_info .description {
           font-size: 12px;
-          color: #999999; }
+          color: #999999;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical; }
         .third_box .third .list .top .top_info .top_down {
           display: flex;
           justify-content: space-between;
