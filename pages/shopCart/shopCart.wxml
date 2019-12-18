@@ -5,7 +5,7 @@
 
     <view class="service-policy" >
       <view class="item">
-        <image class="red-point" src="/assets/shopCart/redPoint.png"></image>{{activity}}</view>
+        <image class="red-point" src="/assets/shopCart/redPoint.png"></image>{{activity ? activity : "暂时没有优惠活动"}}</view>
     </view>
 
     <!-- 包邮显示 -->
