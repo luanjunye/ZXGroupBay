@@ -33,12 +33,6 @@ Page({
 
   onLoad: function(options) {
     util.updateCartCount(); // 刷新购物车数量
-    let that = this
-    util.request(api.ActivityDiscount, {}, "GET").then(function (res) {
-      that.setData({
-        activity: res.replace('\r\n',"")
-      })
-    });
 
   },
 
@@ -46,6 +40,12 @@ Page({
   onReady: function() {},
   onShow: function() {
     util.updateCartCount()
+    let that = this
+    util.request(api.ActivityDiscount, {}, "GET").then(function (res) {
+      that.setData({
+        activity: res.replace('\r\n',"")
+      })
+    });
     let isLogin = wx.getStorageSync('isLogin')
     let userId = wx.getStorageSync('userId')
     if (isLogin && userId) {
