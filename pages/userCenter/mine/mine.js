@@ -155,10 +155,16 @@ Page({
   // 显示优惠活动
   showDiscountActivity(){
     util.request(api.ActivityDiscount, {}, 'GET').then(res => {
-      wx.showModal({
-        title: '优惠活动',
-        content: res,
-      })
+      if (res){
+        wx.showModal({
+          title: '优惠活动',
+          content: res,
+        })
+      } else {
+        wx.showModal({
+          title: '暂时没有优惠活动',
+        })
+      }
     })
   },
 
