@@ -61,7 +61,7 @@
                             <image class="img" src="{{item}}"></image>
                         </view>
                          <!--                        已团{{item.group}}/-->
-                     <text class="down_text">剩余{{item.leftCount ? item.leftCount : ""}}</text>
+                     <text class="down_text">剩余{{item.leftCount ? item.leftCount : "0"}}</text>
                     </view>
                 </view>
             </view>
