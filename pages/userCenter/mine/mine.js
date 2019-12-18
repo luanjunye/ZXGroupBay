@@ -157,7 +157,7 @@ Page({
     util.request(api.ActivityDiscount, {}, 'GET').then(res => {
       wx.showModal({
         title: '优惠活动',
-        content: res,
+        content: res? res: '暂时没有优惠活动'
       })
     })
   },
