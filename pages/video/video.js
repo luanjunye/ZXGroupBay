@@ -1,8 +1,9 @@
 const util = require('../../utils/util');
+const rootDir = 'http://www.zexuangroup.com/';
+
 
 Page({
   data: {
-    rootDir: 'http://www.zexuangroup.com/',
     videos: [
       {id: 101, group: 'food', type: 'portrait', title: '人参玛咖鸽子汤', url: rootDir + 'videos/food/人参玛咖鸽子汤.mp4', poster: rootDir + 'videos/food/人参玛咖鸽子汤.jpg',  description: '', },
       {id: 102, group: 'food', type: 'portrait', title: '冬瓜虾汤', url: rootDir + 'videos/food/冬瓜虾汤.mp4', poster: rootDir + 'videos/food/冬瓜虾汤.jpg',  description: '', },
