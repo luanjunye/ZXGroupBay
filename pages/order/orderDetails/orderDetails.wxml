@@ -1,7 +1,7 @@
 <!--pages/order/orderDetails/orderDetails.wxml-->
 <view class="ucenter">
     <view class="prompt" bindtap="toAgreement">截团五小时后，不支持退款!</view>
-    <view class="orderStatus">
+    <view class="orderStatus light-shadow">
         <view class="status" wx:if="{{product.shippingStatus}}">
             <image class="img" src="/assets/order/orderDetails/time.png"></image>
             <text>{{product.shippingStatusName}}</text>
@@ -12,7 +12,7 @@
         </view>
     </view>
 
-    <view class="commanderInfo">
+    <view class="commanderInfo light-shadow">
         <view class="top">
             <image class="img" src="{{product.avatar}}"></image>
             <view class="name">{{product.name}}</view>
@@ -36,7 +36,7 @@
 
     </view>
 
-    <view class="order">
+    <view class="order light-shadow" >
 <!--        <view class="top">-->
 <!--            <image class="img" src="{{product.avatar}}"></image>-->
 <!--            <view class="name">{{product.nickname}}</view>-->
@@ -49,7 +49,7 @@
                     <view class="description">{{item.specification}}</view>
                     <view class="description">x{{item.num}}</view>
                 </view>
-                <van-tag round color="#DD3C4A">"截团后次日达"</van-tag>
+                <van-tag round color="#DD3C4A">截团后次日达</van-tag>
                 <view class="top_down">
                     <view class="money">¥
                         <view class="number">{{item.price}}</view>
@@ -64,7 +64,7 @@
         </view>
     </view>
 
-    <view class="down">
+    <view class="down light-shadow">
         <view class="down_info">
             <view class="title">本单合计</view>
             <view class="text">¥{{product.goodsPrice}}</view>
@@ -79,7 +79,7 @@
         </view>
     </view>
 
-    <view class="orderRemark">
+    <view class="orderRemark light-shadow">
         <view class="time">订单编号:{{product.orderNum}}</view>
         <view class="time">下单时间:{{product.createTime}}</view>
         <view class="time" wx:if="{{product.shippingStatus == 3}}">完成时间:{{product.payTime}}</view>
