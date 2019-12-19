@@ -49,7 +49,7 @@
                 <!--                                <van-tag wx:if="{{item.label}}" round color="#FFA42F" text-color="FFA42F" class="tlabel">{{item.label}}</van-tag>-->
                 <text class="title" data-value="{{item}}" >{{item.name}}</text>
               </view>
-              <view class="spec">{{item.spec}}
+              <view class="spec" wx:if="{{item.spec}}">{{item.spec}}
                 <van-icon class="arrow" color="#F7F7F7" name="arrow-down" />
               </view>
             </view>
