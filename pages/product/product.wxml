@@ -134,7 +134,7 @@
           </view>
           <view class="end_right">
             <!--                        已团{{item.group}}/-->
-            <text class="down_text">剩余{{item.leftCount}}</text>
+            <text class="down_text">剩余{{item.leftCount ? item.leftCount : "0"}}</text>
           </view>
         </view>
         <view class="like_down_text">累计销量{{item.sellCount}}</view>
