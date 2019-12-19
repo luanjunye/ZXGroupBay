@@ -81,6 +81,9 @@ $height-icon: 30px;
       @include border-radius(5px);
       overflow: hidden;
       image.good {
+        border: 1px solid $color-border;
+        @include border-radius();
+        overflow: hidden;
         width: $height-good - 10px * 2;
         height: $height-good - 10px * 2;
         display: block;

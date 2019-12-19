@@ -7,14 +7,19 @@
   flex-direction: column;
   position: absolute;
   z-index: -2;
+  padding: 0 10px 80px 10px;
 }
 
 .prompt {
-  margin: 10px auto;
-  font-size: 14px;
+  font-size: $font-size-title;
+  color: $text-main;
+  padding: 10px;
+  text-align: center;
 }
 
 .top {
+  @include border-radius();
+  margin-bottom: 10px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -33,9 +38,10 @@
 }
 
 .orderStatus{
-  margin: 0px 10px 5px 10px;
+  @include border-radius();
+  margin-bottom: 10px;
   background: $bg-info;
-  padding: 20px;
+  padding: 15px;
 
   .status{
     display: flex;
@@ -59,22 +65,24 @@
 }
 
 .commanderInfo {
-  margin: 0 10px;
+  margin-bottom: 10px;
   background: $bg-info;
-  padding: 20px;
+  padding: 15px;
+  @include border-radius();
 
   .body {
-    margin-top: 10px;
+    margin-bottom: 5px;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    font-size: 14px;
+    font-size: $font-size-subtitle;
+    color: $text-main;
     .delivery {
-      width: 40px;
+      flex-shrink: 0;
+      width: 4rem;
       margin-right: 10px;
     }
 
     .address {
+      flex-grow: 1;
       overflow: hidden; //一定要写
       text-overflow: ellipsis; //超出省略号
       display: -webkit-box; //一定要写
@@ -85,12 +93,13 @@
 }
 
 .order {
-  margin: 5px 10px;
-  padding: 20px;
+  @include border-radius();
+  margin-bottom: 10px;
+  padding: 15px;
   background: $bg-info;
 
   .orderInfo {
-    padding: 10px 0;
+    margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -160,16 +169,17 @@
 }
 
 .down{
-  margin: 0 10px;
+  @include border-radius();
+  margin-bottom: 10px;
   background: $bg-info;
-  padding: 20px;
-
+  padding: 15px;
+  font-size: $font-size-title;
+  color: $text-main;
   .down_info{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 0;
-
+    margin-bottom: 5px;
     .text_a{
       color: $text-price;
     }
@@ -177,13 +187,14 @@
 }
 
 .orderRemark{
-  margin: 5px 10px 80px 10px;
+  color: $text-main;
+  @include border-radius();
+  margin-bottom: 10px;
   background: $bg-info;
   padding: 10px 20px;
-  font-size: 16px;
-
+  font-size: $font-size-subtitle;
   .time{
-    margin-top: 10px;
+    margin-top: 5px;
   }
 }
 
