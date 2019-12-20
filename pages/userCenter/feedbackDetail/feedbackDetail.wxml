@@ -1,6 +1,9 @@
 
 <view class="state">
-    <view class="state-text"><image mode="aspectFit" src="{{ticketState[ticket.status-1].icon}}"></image>{{ticket.statusName}}</view>
+    <view class="state-text">
+        <image mode="aspectFit" src="{{ticketState[ticket.status-1].icon}}"></image>
+        {{ticket.statusName}}
+    </view>
     <view class="state-return">应退款金额: {{ticket.money}}元 <text wx:if="{{ticket.realMoney}}">，实际退款金额: {{ticket.realMoney}}元</text></view>
 </view>
 
