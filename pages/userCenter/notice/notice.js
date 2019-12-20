@@ -80,8 +80,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    let that = this
     let currentPageNo = this.data.pageNo + 1;
     if (this.data.hasMore) {
+      that.setData({
+        pageNo : currentPageNo
+      })
       this.getNotice(this.data.userId, currentPageNo);
     }
   },

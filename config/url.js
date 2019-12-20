@@ -3,8 +3,6 @@
 //const API_BASE_URL = 'https://shop.zexuanshipin.com/freeterapi/';
  const API_BASE_URL = 'https://shop03.zexuanshipin.com/freeterapi/';
 
-
-
 module.exports = {
 
     //首页

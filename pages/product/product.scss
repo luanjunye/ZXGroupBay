@@ -125,6 +125,11 @@
         margin-top: 3px;
         font-size: 14px;
         color: $text-comment;
+        overflow: hidden; //一定要写
+        text-overflow: ellipsis; //超出省略号
+        display: -webkit-box; //一定要写
+        -webkit-line-clamp: 1; //控制行数
+        -webkit-box-orient: vertical; //一定要写
       }
     }
 

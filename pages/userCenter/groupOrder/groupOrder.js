@@ -142,8 +142,12 @@ Page({
         }
     },
     hBottom: function () {
+        let that = this
         let currentPageNo = this.data.pageNo + 1;
         if (this.data.hasMore) {
+            that.setData({
+                pageNo : currentPageNo
+            })
             if (this.data.key) {
                 this.HistoryGroupInfo(this.data.userId, currentPageNo, this.data.groupId, this.data.type, this.data.key);
             } else {

@@ -141,8 +141,12 @@ Page({
         this.onShow()
     },
     onReachBottom: function () {
+        let that = this
         let currentPageNo = this.data.pageNo + 1;
         if (this.data.hasMore) {
+            that.setData({
+                pageNo : currentPageNo
+            })
             this.changeOrderList(this.data.shippingStatus, currentPageNo);
         }
     },
