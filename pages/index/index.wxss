@@ -209,10 +209,36 @@
     display: flex;
     align-items: center;
     justify-content: space-between; }
-    .newcomer .newcomer_body .img {
-      width: 120px;
-      height: 120px;
-      flex-shrink: 0; }
+    .newcomer .newcomer_body .goods-pic {
+      position: relative;
+      margin-right: 10px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      overflow: hidden; }
+      .newcomer .newcomer_body .goods-pic .img {
+        width: 120px;
+        height: 120px;
+        flex-shrink: 0; }
+      .newcomer .newcomer_body .goods-pic .sell-out {
+        position: absolute;
+        display: block;
+        left: 50%;
+        top: 50%;
+        margin-top: -23px;
+        margin-left: -23px;
+        height: 46px;
+        width: 46px; }
+      .newcomer .newcomer_body .goods-pic .play {
+        position: absolute;
+        display: block;
+        left: 50%;
+        top: 50%;
+        opacity: 0.6;
+        margin-top: -23px;
+        margin-left: -23px;
+        height: 46px;
+        width: 46px; }
     .newcomer .newcomer_body .newcomer_info {
       width: 200px;
       height: 120px;

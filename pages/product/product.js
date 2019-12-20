@@ -177,14 +177,14 @@ Page({
             }, "POST").then(function (res) {
                 console.log(res)
                 that.selectCart()
-
+                Toast("加入购物车成功")
             });
             wx.setStorageSync("cartList", cartList)
             this.setData({
                 cartList: cartList
             });
 
-            Toast("加入购物车成功")
+
         }
 
     },

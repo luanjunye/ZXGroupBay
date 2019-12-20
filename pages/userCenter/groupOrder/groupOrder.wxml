@@ -26,7 +26,7 @@
         </view>
         <view class="orderList" wx:for="{{item.orderInfoGoodsListVOList}}" wx:for-item="product" wx:key="{{product.id}}"
               data-value="{{product}}" id="{{product.id}}">
-            <image class="img" src="{{product.url}}" mode="widthFix"></image>
+            <image class="img" src="{{product.url}}" ></image>
             <view class="info">
                 <view class="info_top">{{product.name}}</view>
 

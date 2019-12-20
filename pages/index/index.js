@@ -28,6 +28,8 @@ Page({
             nickname: "",
             avatar: ""
         },
+        newGift:{},
+        sold:0
     },
     onLoad(options) {
     },
@@ -47,6 +49,7 @@ Page({
     },
     onShow: function () {
         let that = this;
+        var sold = 0;
         var userId = wx.getStorageSync("userId")
         let isLogin = wx.getStorageSync("isLogin");
         if (isLogin && userId) {
@@ -97,6 +100,16 @@ Page({
                 targetTime: difference
             })
 
+        });
+
+        //查询新人礼
+        util.request(api.NewGift, {}, "GET").then(function (res) {
+            let total = res.leftCount + res.sellCount
+            sold =  res.sellCount / total * 100
+            that.setData({
+                newGift : res,
+                sold : Number(sold.toFixed(2))
+            })
         });
 
 

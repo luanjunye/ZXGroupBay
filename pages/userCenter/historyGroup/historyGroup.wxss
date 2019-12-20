@@ -37,7 +37,8 @@ page {
           -moz-border-radius: 5px;
           border-radius: 5px;
           overflow: hidden;
-          width: 100px; }
+          width: 100px;
+          height: 100px; }
     .historyGroup .info .bottom {
       margin-top: 10px;
       display: flex;

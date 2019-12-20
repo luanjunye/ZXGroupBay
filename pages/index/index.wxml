@@ -75,27 +75,31 @@
   </view>
 
 <!--  2.0需求 还没有接口-->
-<!--  <view class="newcomer">-->
+ <view class="newcomer" wx:if="{{newGift}}">
 
-<!--    <image class="title_img" src="/assets/index/title.png"></image>-->
+    <image class="title_img" src="/assets/index/title.png"></image>
 
-<!--    <view class="newcomer_body">-->
-<!--      <image class="img" src="/assets/index/noOrder.png"></image>-->
-<!--      <view class="newcomer_info">-->
-<!--        <view class="info_title">sadsadasdsadasdsa</view>-->
-<!--        <view class="info_number">-->
-<!--          <progress class="progress" backgroundColor="#999999" activeColor="#FB304A"></progress>-->
-<!--          <view class="info_num">已购500</view>-->
-<!--        </view>-->
-<!--        <view class="money_f">¥-->
-<!--          <view class="place">{{item.price}}</view>-->
-<!--          <view class="money_s">¥-->
-<!--            <view class="original">{{item.originalPrice}}</view>-->
-<!--          </view>-->
-<!--        </view>-->
-<!--      </view>-->
-<!--    </view>-->
-<!--  </view>-->
+    <view class="newcomer_body" data-value="{{newGift}}" bindtap="toOrder">
+      <view class="goods-pic">
+        <image class="img" src="{{newGift.pictureUrl}}"></image>
+        <image wx:if="{{newGift.leftCount === 0}}" class="sell-out" src="/assets/sellout.png"></image>
+        <image wx:if="{{newGift.leftCount !== 0 && newGift.isVideo}}"  class="play" src="/assets/play.png"></image>
+      </view>
+      <view class="newcomer_info">
+        <view class="info_title">{{newGift.name}}</view>
+        <view class="info_number">
+          <progress class="progress" backgroundColor="#999999" activeColor="#FB304A" percent="{{sold}}"></progress>
+          <view class="info_num">已抢{{newGift.sellCount}}份</view>
+       </view>
+        <view class="money_f">¥
+          <view class="place">{{newGift.price}}</view>
+         <view class="money_s">¥
+            <view class="original">{{newGift.originalPrice}}</view>
+          </view>
+        </view>
+      </view>
+    </view> 
+ </view>
 
 
   <!--    推荐商品-->

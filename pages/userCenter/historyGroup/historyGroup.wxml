@@ -21,7 +21,7 @@
                   wx:key="{{iitem.id}}"
                   data-value="{{iitem}}"
                   id="{{iiyem.id}}">
-                <image class="img" src="{{iitem}}" mode="widthFix"></image>
+                <image class="img" src="{{iitem}}"></image>
             </view>
         </scroll-view>
         <view class="bottom">

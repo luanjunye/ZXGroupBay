@@ -25,6 +25,7 @@ module.exports = {
     Categories: API_BASE_URL + 'category/categorylist', // 商品分类列表
     GoodsList: API_BASE_URL + 'goods/goodslist',  // 商品列表
     GoodsInfo: API_BASE_URL + 'goods/info',  // 商品详情
+    NewGift: API_BASE_URL + 'goods/selectnewgift',  // 新人礼
     // 购物车
     CartAdd: API_BASE_URL + 'cart/add',  // 添加
     CartList: API_BASE_URL + 'cart/list',  // 列表

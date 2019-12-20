@@ -78,6 +78,7 @@ page {
         border-radius: 5px;
         overflow: hidden;
         width: 80px;
+        height: 80px;
         border: 1px solid #F0F0EC; }
       .body .groupList .orderList .info {
         padding: 5px 0;

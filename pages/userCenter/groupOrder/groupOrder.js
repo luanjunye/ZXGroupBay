@@ -49,7 +49,6 @@ Page({
                 }
             }
         }
-
         let isLogin = wx.getStorageSync('isLogin')
         let userId = wx.getStorageSync('userId')
         if (isLogin && userId) {
@@ -112,6 +111,13 @@ Page({
 
     onReady: function () {},
     onShow: function () {
+        this.setData({
+            groupList: [],
+            pageNo: 1,// 分页相关
+            hasMore: true, // 标记是否还有更多
+            key: "",
+            isShow: 0
+        });
         let that = this
         util.request(api.OrderSubmit, {
             userId: this.data.userId,
@@ -127,13 +133,7 @@ Page({
     onHide: function () {},
     onUnload: function () {},
     onPullDownRefresh: function () {
-        this.setData({
-            groupList: [],
-            pageNo: 1,// 分页相关
-            hasMore: true, // 标记是否还有更多
-            key: "",
-            isShow: 0
-        });
+
         this.onShow();
 
         // 只有从 历史过来的才刷新这个数据
