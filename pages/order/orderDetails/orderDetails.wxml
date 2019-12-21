@@ -23,7 +23,7 @@
         </view>
         <view class="body">
             <view class="delivery">姓名</view>
-            <view class="address">{{product.name}}</view>
+            <view class="address">{{product.consignee}}</view>
         </view>
         <view class="body">
             <view class="delivery">手机</view>

@@ -99,9 +99,7 @@ Page({
   //展示购物车
   changeCartList(userId, pageNo) {
     var that = this
-    this.setData({
-      loading: true
-    });
+
     //首页商品列表
     util.request(api.CartList, {
       page: pageNo,
@@ -116,7 +114,6 @@ Page({
       }
       that.setData({
         cartList: currentGoodsArray,
-        loading: false
       });
       that.setCheckedTotalPrice();
       that.setCheckedTotalCount();

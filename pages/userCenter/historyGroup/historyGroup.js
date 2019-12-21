@@ -27,6 +27,13 @@ Page({
                 userId: userId
             })
         }
+        this.setData({
+            historyGroupList: [],
+            pageNo: 1,// 分页相关
+            hasMore: true, // 标记是否还有更多
+        });
+        //获取历史开团列表
+        this.HistoryGroupList(userId, this.data.pageNo)
     },
 
     /**
@@ -40,13 +47,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        this.setData({
-            historyGroupList: [],
-            pageNo: 1,// 分页相关
-            hasMore: true, // 标记是否还有更多
-        });
-        //获取历史开团列表
-        this.HistoryGroupList(this.data.userId, this.data.pageNo)
+
     },
 
     /**
@@ -67,19 +68,15 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-        this.onShow()
+        this.onLoad()
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-        let that = this
         let currentPageNo = this.data.pageNo + 1;
         if (this.data.hasMore) {
-            that.setData({
-                pageNo : currentPageNo
-            })
             this.HistoryGroupList(this.data.userId, currentPageNo);
         }
     },
@@ -94,9 +91,6 @@ Page({
     //展示商品
     HistoryGroupList(userId, pageNo) {
         var that = this
-        this.setData({
-            loading: true
-        });
         //首页商品列表
         util.request(api.HistoryGroup, {
             page: pageNo,
@@ -114,7 +108,7 @@ Page({
 
             that.setData({
                 historyGroupList: currentGoodsArray,
-                loading: false,
+                page: pageNo
             });
 
             for (let i = 0; i < that.data.historyGroupList.length; i++) {

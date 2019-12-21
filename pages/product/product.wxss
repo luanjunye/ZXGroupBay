@@ -73,7 +73,8 @@
     .info .info_top .it_left {
       display: flex;
       flex-direction: column;
-      flex-grow: 1; }
+      flex-grow: 1;
+      width: 80%; }
       .info .info_top .it_left .title {
         font-size: 16px;
         color: #666666; }
