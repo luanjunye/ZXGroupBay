@@ -9,6 +9,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        shareImageUrl: '',
         // autoplay: true,
         id: "",
         activity: "",
@@ -26,11 +27,15 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+
+
         wx.setNavigationBarTitle({
             title: '商品详情',
         })
         let id = options.id
         if (id) {
+            this.getSharePic(id); // 获取转发用的商品图片
+
             this.setData({
                 id: id
             })
@@ -130,20 +135,34 @@ Page({
      */
     onReachBottom: function () {
 
+    },  
+
+    // 获取转发商品用的图片
+    getSharePic(id){
+        let that = this;
+        util.request(api.GoodsShare, {
+            id: id
+        }, "POST").then(res => {
+            that.setData({
+                shareImageUrl: res
+            })
+        })
     },
 
     /**
-     * 用户点击右上角分享
+     * 商品分享
      */
     onShareAppMessage: function () {
+        let that = this;
         let product = this.data.product;
-        let productInfo = `${product.name}\n￥${product.price}`
+        let productInfo = `${product.name}\n￥${product.price}`;
         return {
             title: productInfo,
-            // path: '/pages/userCenter/mine/mine?master=123456',
-            imageUrl: this.data.product.goodsViewList[0]
+            imageUrl: that.data.shareImageUrl
         }
     },
+
+
     toIndex: function () {
         wx.switchTab({
             url: '/pages/index/index',

@@ -42,7 +42,7 @@ Page({
       {id: 303, group: 'msSoup', type: 'portrait', title: '汤婆婆分手篇', url: rootDir + 'videos/mssoup/汤婆婆分手篇.mp4', poster: rootDir + 'videos/mssoup/汤婆婆分手篇.jpg',  description: '', },
       {id: 303, group: 'msSoup', type: 'portrait', title: '汤婆婆兄弟篇', url: rootDir + 'videos/mssoup/汤婆婆兄弟篇.mp4', poster: rootDir + 'videos/mssoup/汤婆婆兄弟篇.jpg',  description: '', },
     ],
-    videoUrl: 'http://www.zexuangroup.com/videos/%E5%8A%9E%E5%85%AC%E5%AE%A4%E6%B8%B8%E6%88%8F%E7%8C%9C%E7%89%87%E5%90%8D2.mp4',
+    videoUrl: 'http://www.zexuangroup.com/videos/office/%E6%80%AA%E8%AF%8D%E7%BB%84%E5%8F%A5.mp4',
     videoContext: {}
   },
 
