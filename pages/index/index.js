@@ -32,22 +32,6 @@ Page({
         sold:0
     },
     onLoad(options) {
-    },
-
-    countDown(e) {
-        Toast("团购已结束")
-        this.setData({
-            shippingStatus: 0,
-            orderList: [],
-            pageNo: 1, // 分页相关
-            hasMore: true, // 标记是否还有更多
-        });
-    },
-
-    // ========================
-    onReady: function () {
-    },
-    onShow: function () {
         let that = this;
         var sold = 0;
         var userId = wx.getStorageSync("userId")
@@ -131,6 +115,23 @@ Page({
 
         //首页商品列表
         this.changeOrderList(0, 1)
+    },
+
+    countDown(e) {
+        Toast("团购已结束")
+        this.setData({
+            shippingStatus: 0,
+            orderList: [],
+            pageNo: 1, // 分页相关
+            hasMore: true, // 标记是否还有更多
+        });
+    },
+
+    // ========================
+    onReady: function () {
+    },
+    onShow: function () {
+
 
     },
     onHide: function () {
@@ -138,15 +139,11 @@ Page({
     onUnload: function () {
     },
     onPullDownRefresh: function () {
-        this.onShow()
+        this.onLoad()
     },
     onReachBottom: function () {
-        let that = this
         let currentPageNo = this.data.pageNo + 1;
         if (this.data.hasMore) {
-            that.setData({
-                pageNo : currentPageNo
-            })
             this.changeOrderList(this.data.shippingStatus, currentPageNo);
         }
     },
@@ -217,7 +214,8 @@ Page({
             }
             that.setData({
                 orderList: currentGoodsArray,
-                loading: false
+                loading: false,
+                pageNo : pageNo
             });
         });
     },
