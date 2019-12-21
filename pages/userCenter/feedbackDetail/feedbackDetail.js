@@ -6,15 +6,9 @@ Page({
       ticketState: [
         {id: 1, name: '待审核', icon: '/assets/mine/ticket-processing.png'},
         {id: 2, name: '处理中', icon: '/assets/mine/ticket-processing.png'},
-        {id: 3, name: '已关闭', icon: '/assets/mine/ticket-reject.png'},
-        {id: 4, name: '已完成', icon: '/assets/mine/ticket-solved.png'},
-        {id: 5, name: '已完成', icon: '/assets/mine/ticket-reject.png'},
-    ],
-    stateIcon: {
-      1: '/assets/mine/ticket-processing.png',
-      2: '/assets/mine/ticket-solved.png',
-      3: '/assets/mine/ticket-reject.png',
-    },
+        {id: 3, name: '已完成', icon: '/assets/mine/ticket-solved.png'},
+        {id: 4, name: '拒绝', icon: '/assets/mine/ticket-reject.png'},
+      ],
     ticketNo: 0,
     ticket: {
       /*      statusName: "待审核",

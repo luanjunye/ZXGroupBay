@@ -22,6 +22,7 @@
         <view wx:if="{{item.state === 1}}" class="state">待审核 ></view>
         <view wx:if="{{item.state === 2}}" class="state">待解决 ></view>
         <view wx:if="{{item.state === 3}}" class="state">已完成 ></view>
+        <view wx:if="{{item.state === 4}}" class="state">拒绝 ></view>
     </view>
     <view wx:if="{{!hasMore}}" class="hasNoMore">
         -- 到底了 --
