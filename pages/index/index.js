@@ -21,7 +21,6 @@ Page({
         hasMore: true, // 标记是否还有更多
         targetTime: 0,
         clearTimer: false,
-        loading: false,
         buyerList: [],
         regimental: {
             address: "",
@@ -197,9 +196,7 @@ Page({
     //展示商品
     changeOrderList(shippingStatus, pageNo) {
         var that = this
-        this.setData({
-            loading: true
-        });
+
         //首页商品列表
         util.request(api.GoodsList, {
             page: pageNo,
@@ -214,7 +211,6 @@ Page({
             }
             that.setData({
                 orderList: currentGoodsArray,
-                loading: false,
                 pageNo : pageNo
             });
         });

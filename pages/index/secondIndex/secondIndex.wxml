@@ -1,14 +1,11 @@
 <!--pages/index/secondIndex/secondIndex.wxml-->
 <view class="ucenter">
-    <view wx:if="{{loading}}" class="loading-center">
-        <van-loading type="spinner" />
-    </view>
 
-    <view class="no-order" wx:if="{{orderList.length == 0&&!loading}}">
+    <view class="no-order" wx:if="{{orderList.length == 0}}">
         <image class="img" src="/assets/index/noOrder.png"></image>
         <view class="txt">当前商品正在采购，尽请期待⁽⁽٩(๑˃̶͈̀▽ ˂̶͈́)۶⁾⁾！</view>
     </view>
-    <view class="order" wx:if="{{orderList.length > 0&&!loading}}">
+    <view class="order" wx:if="{{orderList.length > 0}}">
         <view class="list" wx:for="{{orderList}}" wx:for-item="item" wx:key="{{item.id}}"
               data-value="{{item}}" id="{{item.id}}" bindtap="toOrder">
             <view class="top">

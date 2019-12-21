@@ -9,7 +9,6 @@ Page({
      * 页面的初始数据
      */
     data: {
-        loading: false,
         typeId: "",
         pageNo: 1,// 分页相关
         perPageCount: 30, // 每次请求的数量条数
@@ -27,20 +26,6 @@ Page({
         this.setData({
             typeId: id
         })
-
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
         var userId = wx.getStorageSync("userId")
         let isLogin = wx.getStorageSync("isLogin");
         if (isLogin && userId) {
@@ -55,7 +40,21 @@ Page({
             pageNo: 1,// 分页相关
             hasMore: true, // 标记是否还有更多
         });
-        this.changeOrderList(this.data.typeId, this.data.pageNo)
+        this.changeOrderList(id, this.data.pageNo)
+    },
+
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady: function () {
+
+    },
+
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    onShow: function () {
+
     },
 
     /**
@@ -77,19 +76,15 @@ Page({
      */
     onPullDownRefresh: function () {
 
-        this.onShow()
+        this.onLoad()
     },
 
     /**
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-        let that = this
         let currentPageNo = this.data.pageNo + 1;
         if (this.data.hasMore) {
-            that.setData({
-                pageNo : currentPageNo
-            })
             this.changeOrderList(this.data.typeId, currentPageNo);
         }
     },
@@ -103,9 +98,6 @@ Page({
     //展示商品
     changeOrderList(categoryId, pageNo) {
         var that = this
-        this.setData({
-            loading: true
-        });
         //首页商品列表
         util.request(api.GoodsList, {
             page: pageNo,
@@ -120,7 +112,7 @@ Page({
             }
             that.setData({
                 orderList: currentGoodsArray,
-                loading: false
+                page: pageNo
             });
         });
     },

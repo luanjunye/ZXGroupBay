@@ -111,18 +111,15 @@
       <van-tab title="秒杀"></van-tab>
       <van-tab title="团长推荐"></van-tab>
     </van-tabs>
-    <view wx:if="{{loading}}" class="loading-center">
-      <van-loading type="spinner" />
-    </view>
 
-    <view class="no-order" wx:if="{{targetTime == 0 || orderList.length == 0&&!loading}}">
+    <view class="no-order" wx:if="{{targetTime == 0 || orderList.length == 0}}">
       <image class="img" src="/assets/index/noOrder.png"></image>
       <view class="txt" wx:if="{{targetTime}}">暂无商品</view>
       <view class="txt" wx:else>当前团长没有开团，尽请期待⁽⁽٩(๑˃̶͈̀▽ ˂̶͈́)۶⁾⁾！</view>
     </view>
 
 
-    <view class="third" wx:if="{{orderList.length > 0&&!loading && targetTime > 0}}">
+    <view class="third" wx:if="{{orderList.length > 0 && targetTime > 0}}">
       <view class="list" wx:for="{{orderList}}" wx:for-item="item" wx:key="{{item.id}}" data-value="{{item}}" id="{{item.id}}" bindtap="toOrder">
         <view class="top">
           <view class="goods-pic">

@@ -45,7 +45,7 @@
     <view class="info_top">
       <view class="it_left">
         <view class="title">{{product.name}}</view>
-        <view class="description">{{product.info}}</view>
+        <view class="description">{{product.info ? product.info : ""}}</view>
       </view>
       <button class="it_right" open-type="share">
         <image class="img" src="/assets/test/share.png"></image>
