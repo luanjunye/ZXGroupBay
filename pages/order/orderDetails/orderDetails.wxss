@@ -8,7 +8,7 @@
   padding: 0 10px 80px 10px; }
 
 .prompt {
-  font-size: 16px;
+  font-size: 12.8px;
   color: #333333;
   padding: 10px;
   text-align: center; }
@@ -43,7 +43,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-size: 16px; }
+    font-size: 12.8px; }
     .orderStatus .status .img {
       width: 24px;
       height: 24px;
@@ -93,6 +93,10 @@
     .order .orderInfo .img {
       width: 170rpx;
       height: 170rpx;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      overflow: hidden;
       flex-shrink: 0; }
     .order .orderInfo .info {
       width: 200px;
@@ -143,7 +147,7 @@
   margin-bottom: 10px;
   background: #FFF;
   padding: 15px;
-  font-size: 16px;
+  font-size: 12.8px;
   color: #333333; }
   .down .down_info {
     display: flex;

@@ -11,7 +11,7 @@
 }
 
 .prompt {
-  font-size: $font-size-title;
+  font-size: $font-size-subtitle;
   color: $text-main;
   padding: 10px;
   text-align: center;
@@ -47,7 +47,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-size: 16px;
+    font-size: $font-size-subtitle;
 
     .img{
       width: 24px;
@@ -107,6 +107,8 @@
     .img {
       width: 170rpx;
       height: 170rpx;
+      @include border-radius();
+      overflow: hidden;
       flex-shrink: 0;
     }
 
@@ -173,7 +175,7 @@
   margin-bottom: 10px;
   background: $bg-info;
   padding: 15px;
-  font-size: $font-size-title;
+  font-size: $font-size-subtitle;
   color: $text-main;
   .down_info{
     display: flex;

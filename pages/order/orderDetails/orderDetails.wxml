@@ -14,7 +14,7 @@
 
     <view class="commanderInfo light-shadow">
         <view class="top">
-            <image class="img" src="{{product.avatar}}"></image>
+            <image class="img" mode="aspectFit" src="{{product.avatar}}"></image>
             <view class="name">{{product.name}}</view>
         </view>
         <view class="body">
@@ -42,7 +42,7 @@
 <!--            <view class="name">{{product.nickname}}</view>-->
 <!--        </view>-->
         <view class="orderInfo" wx:for="{{product.orderInfoGoodsListVOList}}" wx:for-item="item" wx:key="item.id">
-            <image class="img" src="{{item.url}}"></image>
+            <image class="img" mode="aspectFill" src="{{item.url}}"></image>
             <view class="info">
                 <view class="title">{{item.name}}</view>
                 <view class="second">
