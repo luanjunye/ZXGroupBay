@@ -4,7 +4,7 @@ page {
 .tui-searchbox {
   margin-top: 10px;
   background: #FFF;
-  padding: 10px 20px;
+  padding: 5px 20px;
   display: flex;
   align-items: center; }
 
@@ -47,7 +47,8 @@ page {
     .body .groupList .top {
       display: flex;
       justify-content: flex-start;
-      align-items: center; }
+      align-items: center;
+      margin-bottom: 10px; }
       .body .groupList .top .avatar {
         width: 36px;
         height: 36px;
@@ -68,7 +69,7 @@ page {
             font-size: 13px;
             margin-left: 5px; }
     .body .groupList .orderList {
-      margin: 10px 0;
+      margin-bottom: 10px;
       display: flex;
       justify-content: space-between;
       align-items: center; }
@@ -89,7 +90,7 @@ page {
         flex-grow: 1;
         margin-left: 10px; }
         .body .groupList .orderList .info .info_top {
-          font-size: 16px;
+          font-size: 12.8px;
           color: #333333;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -117,14 +118,15 @@ page {
         .body .groupList .orderList .info .time {
           font-size: 13px;
           color: #666666; }
-    .body .groupList .order-time {
-      color: #333333;
-      margin-top: 10px;
+    .body .groupList .order-meta {
+      padding-top: 10px;
+      border-top: 1rpx solid #F0F0EC;
       font-size: 12.8px;
-      margin-bottom: 3px; }
-    .body .groupList .order-number {
-      color: #333333;
-      font-size: 12.8px; }
+      color: #666666; }
+      .body .groupList .order-meta > view {
+        margin-bottom: 3px; }
+        .body .groupList .order-meta > view .notice {
+          color: #FF3948; }
   .body .last {
     display: flex;
     justify-content: flex-end;

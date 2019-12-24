@@ -45,8 +45,12 @@
 <!--                <view class="time">发货日期:{{product.time}}</view>-->
             </view>
         </view>
-        <view class="order-time">下单时间: {{item.time}}</view>
-        <view class="order-number">订单编号: {{item.orderNum}}</view>
+        <view class="order-meta">
+            <view >备注: <text class="notice">{{item.remark}}</text></view>
+            <view>下单时间: {{item.time}}</view>
+            <view>订单编号: {{item.orderNum}}</view>
+        </view>
+
     </view>
     <view class="last">
         <view class="submit" bindtap="submitOrder" wx:if="{{isShow == 1}}">确认收货</view>
