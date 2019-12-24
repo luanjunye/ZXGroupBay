@@ -36,18 +36,18 @@ page {
 
     .scroll {
       width: 100%;
-      height: 100px;
+      height: 80px;
       margin-top: 10px;
       white-space:nowrap;
       .urlList {
         margin-right: 5px;
-        width: 100px;
+        width: 80px;
         display: inline-block;
         .img {
           @include border-radius();
           overflow: hidden;
-          width: 100px;
-          height: 100px;
+          width: 80px;
+          height: 80px;
         }
       }
     }
