@@ -14,7 +14,7 @@
 
     <view class="commanderInfo light-shadow">
         <view class="top">
-            <image class="img" mode="aspectFit" src="{{product.avatar}}"></image>
+            <image class="img" mode="aspectFill" src="{{product.avatar}}"></image>
             <view class="name">{{product.name}}</view>
         </view>
         <view class="body">

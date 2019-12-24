@@ -17,7 +17,7 @@
             <view class="goods-pic">
                 <image wx:if="{{item.leftCount === 0}}" class="sell-out" src="/assets/sellout.png"></image>
                 <image wx:if="{{item.leftCount !== 0 && item.isVideo}}"  class="play" src="/assets/play.png"></image>
-                <image class="good" mode="aspectFit" src="{{item.pictureUrl}}"></image>
+                <image class="good" mode="aspectFill" src="{{item.pictureUrl}}"></image>
             </view>
             <view class="goods-info">
                 <view class="name">{{item.name}}</view>

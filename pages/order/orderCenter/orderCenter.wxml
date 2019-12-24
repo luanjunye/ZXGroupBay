@@ -35,7 +35,7 @@
                        wx:for="{{item.url}}"
                        wx:key="{{index}}"
                        wx:for-item="imgUrl"
-                       mode="aspectFit">
+                       mode="aspectFill">
                 </image>
             </view>
             <view class="amount">共{{item.num}}件商品 总价: ￥{{item.money}}</view>

@@ -9,7 +9,7 @@
 
 <view class="product-info">
     <view class="product-pic">
-        <image src="{{ticket.goodsUrl}}" mode="aspectFit"></image>
+        <image src="{{ticket.goodsUrl}}" mode="aspectFill"></image>
     </view>
     <view class="product-meta">
         <view class="name">{{ticket.name}}</view>

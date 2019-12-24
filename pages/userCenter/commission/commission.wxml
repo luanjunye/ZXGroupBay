@@ -18,7 +18,7 @@
         <view class="commission-list-item" wx:for="{{list}}" wx:key="{{index}}">
             <view class="product-info">
                 <view class="product-pic">
-                    <image src="{{item.url}}" mode="aspectFit"></image>
+                    <image src="{{item.url}}" mode="aspectFill"></image>
                 </view>
                 <view class="product-meta">
                     <view class="name">{{item.name}}</view>
