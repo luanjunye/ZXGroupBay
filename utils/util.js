@@ -1,5 +1,7 @@
 var api = require('../config/url.js');
 
+const mapKey = 'EQQBZ-FNHWI-J2HGV-5FO5V-6M46S-Q6FTX'
+const mapName = '泽轩优选'
 
 const REGEX = {
     idCard: /^\d{17}(x|\d)$/i,
@@ -260,4 +262,6 @@ module.exports = {
     updateCartCount,
     getTimeStamp,
     trim,
+    mapKey,
+    mapName
 }
