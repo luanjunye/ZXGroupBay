@@ -2,8 +2,8 @@
 const chooseLocation = requirePlugin('chooseLocation');
 const api = require('../../config/url.js');
 const util = require('../../utils/util.js');
-const key = 'HYZBZ-EX3CJ-CR2F6-KZDG3-AX3C2-CKFDF'; //使用在腾讯位置服务申请的key
-const referer = '泽轩优选'; //调用插件的app的名称
+const key = util.mapKey;  //使用在腾讯位置服务申请的key
+const referer = util.mapName; //调用插件的app的名称
 var app = getApp();
 Page({
 
