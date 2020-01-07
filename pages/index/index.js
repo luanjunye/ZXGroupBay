@@ -27,8 +27,8 @@ Page({
             nickname: "",
             avatar: ""
         },
-        newGift:{},
-        sold:0
+        newGift: {},
+        sold: 0
     },
     onLoad(options) {
         let that = this;
@@ -88,10 +88,10 @@ Page({
         //查询新人礼
         util.request(api.NewGift, {}, "GET").then(function (res) {
             let total = res.leftCount + res.sellCount
-            sold =  res.sellCount / total * 100
+            sold = res.sellCount / total * 100
             that.setData({
-                newGift : res,
-                sold : Number(sold.toFixed(2))
+                newGift: res,
+                sold: Number(sold.toFixed(2))
             })
         });
 
@@ -127,16 +127,31 @@ Page({
     },
 
     // ========================
-    onReady: function () {
-    },
+    onReady: function () {},
     onShow: function () {
-
-
+        let that = this
+        var userId = wx.getStorageSync("userId")
+        let isLogin = wx.getStorageSync("isLogin");
+        if (isLogin && userId) {
+            util.updateCartCount(); // 刷新购物车数量
+            //首页团长信息
+            util.request(api.IndexRegimental, {
+                userId: userId
+            }, "POST").then(function (res) {
+                that.setData({
+                    ["regimental.address"]: res.address,
+                    ["regimental.nickname"]: res.nickname,
+                    ["regimental.avatar"]: res.avatar,
+                });
+            });
+            this.setData({
+                isLogin: isLogin,
+                userId: userId
+            })
+        }
     },
-    onHide: function () {
-    },
-    onUnload: function () {
-    },
+    onHide: function () {},
+    onUnload: function () {},
     onPullDownRefresh: function () {
         this.onLoad()
     },
@@ -146,8 +161,7 @@ Page({
             this.changeOrderList(this.data.shippingStatus, currentPageNo);
         }
     },
-    onShareAppMessage: function () {
-    },
+    onShareAppMessage: function () {},
     changeCommander: function () {
         if (this.data.userId) {
             wx.navigateTo({
@@ -211,7 +225,7 @@ Page({
             }
             that.setData({
                 orderList: currentGoodsArray,
-                pageNo : pageNo
+                pageNo: pageNo
             });
         });
     },
