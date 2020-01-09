@@ -82,8 +82,8 @@ Page({
             }, 'POST').then(res => {
               util.toastSuccess('提现申请已提交')
               setTimeout(()=>{
-                that.onload();
-              },1500)
+                this.onLoad();
+              },1000)
             })
           }
         },

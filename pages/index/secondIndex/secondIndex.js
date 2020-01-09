@@ -34,6 +34,12 @@ Page({
                 userId: userId
             })
         }
+        this.setData({
+            orderList: [],
+            pageNo: 1,// 分页相关
+            hasMore: true, // 标记是否还有更多
+        });
+        this.changeOrderList(this.data.typeId, this.data.pageNo)
 
     },
 
@@ -48,12 +54,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-        this.setData({
-            orderList: [],
-            pageNo: 1,// 分页相关
-            hasMore: true, // 标记是否还有更多
-        });
-        this.changeOrderList(this.data.typeId, this.data.pageNo)
+        
     },
 
     /**
@@ -74,7 +75,12 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-        this.onShow()
+        this.setData({
+            orderList: [],
+            pageNo: 1,// 分页相关
+            hasMore: true, // 标记是否还有更多
+        });
+        this.changeOrderList(this.data.typeId, this.data.pageNo)
     },
 
     /**
