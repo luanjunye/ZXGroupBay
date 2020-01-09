@@ -59,6 +59,8 @@ Page({
       cartList: [],
       pageNo: 1, // 分页相关
       hasMore: true, // 标记是否还有更多
+      totalPrice: 0,
+      difference: 0
     });
 
   },
