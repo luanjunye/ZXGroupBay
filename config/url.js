@@ -27,6 +27,7 @@ module.exports = {
     // 购物车
     CartAdd: API_BASE_URL + 'cart/add',  // 添加
     CartList: API_BASE_URL + 'cart/list',  // 列表
+    CartPrice: API_BASE_URL + 'cart/calculate',  // 价格
     updateCartList: API_BASE_URL + 'cart/update/num',  // 修改购物车数量
     deleteCartList: API_BASE_URL + 'cart/delete',  // 删除
     ProductInCart: API_BASE_URL + 'cart/goodscount',//查询对应商品在购物车的数量

@@ -222,16 +222,31 @@ Page({
   setCheckedTotalPrice: function() {
     let totalPrice = 0;
     let difference = 0;
+    let that = this
+
     this.data.cartList.forEach(function(v) {
+      console.log(v)
       if (v.checked) {
-        totalPrice += v.price * v.count;
-        difference += (v.originPrice - v.price) * v.count
+        difference += v.price * v.count;
+
+        util.request(api.CartPrice,{
+          userId: that.data.userId,
+          ids : that.data.isCheck
+        },"POST").then(function (res) {
+          totalPrice = res
+          that.setData({
+            totalPrice: Number(totalPrice.toFixed(2)),
+            difference: Number((difference - totalPrice).toFixed(2))
+          })
+        })
+      }else {
+        that.setData({
+          totalPrice : 0,
+          difference : 0
+        })
       }
     })
-    this.setData({
-      totalPrice: Number(totalPrice.toFixed(2)),
-      difference: Number(difference.toFixed(2))
-    })
+
 
   },
 
