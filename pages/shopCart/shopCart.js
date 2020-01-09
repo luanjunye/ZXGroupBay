@@ -264,7 +264,7 @@ Page({
     //wx.setStorageSync("totalPrice", this.data.totalPrice);
     //wx.setStorageSync("isExpressFree", this.data.isExpressFree)
 
-    wx.
+    
     //确认订单接口
     util.request(api.OrderBuyInfo, {
       ids: this.data.isCheck,
