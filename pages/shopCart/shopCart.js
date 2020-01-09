@@ -115,9 +115,9 @@ Page({
       that.setData({
         cartList: currentGoodsArray,
       });
-      that.setCheckedTotalPrice();
-      that.setCheckedTotalCount();
       that.judgeCheckedAll();
+      that.setCheckedTotalCount();
+      that.setCheckedTotalPrice();
     });
 
   },
@@ -139,9 +139,9 @@ Page({
       isCheck: isCheck
     })
     console.log(isCheck)
-    this.setCheckedTotalPrice();
-    this.setCheckedTotalCount();
     this.judgeCheckedAll();
+    this.setCheckedTotalCount();
+    this.setCheckedTotalPrice();
   },
 
   //底部统计全选事件
@@ -165,9 +165,9 @@ Page({
         isCheck: isCheck
       })
       console.log(isCheck)
-      this.setCheckedTotalPrice();
-      this.setCheckedTotalCount();
       this.judgeCheckedAll();
+      this.setCheckedTotalCount();
+      this.setCheckedTotalPrice();
     }else {
       this.setData({
         checkedAll: false
@@ -208,9 +208,9 @@ Page({
       console.log(res)
       that.updateHistory();
     });
-    this.setCheckedTotalPrice();
-    this.setCheckedTotalCount();
     this.judgeCheckedAll();
+    this.setCheckedTotalCount();
+    this.setCheckedTotalPrice();
   },
   //改变后的列表
   updateHistory: function(e) {
@@ -229,16 +229,19 @@ Page({
       if (v.checked) {
         difference += v.price * v.count;
 
-        util.request(api.CartPrice,{
-          userId: that.data.userId,
-          ids : that.data.isCheck
-        },"POST").then(function (res) {
-          totalPrice = res
-          that.setData({
-            totalPrice: Number(totalPrice.toFixed(2)),
-            difference: Number((difference - totalPrice).toFixed(2))
+        setTimeout(function () {
+          util.request(api.CartPrice,{
+            userId: that.data.userId,
+            ids : that.data.isCheck
+          },"POST").then(function (res) {
+            totalPrice = res
+            that.setData({
+              totalPrice: Number(totalPrice.toFixed(2)),
+              difference: Number((difference - totalPrice).toFixed(2))
+            })
           })
-        })
+      }, 200);
+       
       }else {
         that.setData({
           totalPrice : 0,
@@ -261,6 +264,7 @@ Page({
     //wx.setStorageSync("totalPrice", this.data.totalPrice);
     //wx.setStorageSync("isExpressFree", this.data.isExpressFree)
 
+    wx.
     //确认订单接口
     util.request(api.OrderBuyInfo, {
       ids: this.data.isCheck,
