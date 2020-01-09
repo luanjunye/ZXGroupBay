@@ -504,6 +504,15 @@ $height-icon: 46px;
             align-items: center;
 
             .top_down_left {
+              .act{
+                display: flex;
+                align-content: center;
+                justify-content: flex-start;
+
+                .discount{
+                  margin-left: 10px;
+                }
+              }
               .money_f {
                 margin-top: 5px;
                 font-size: 10px;

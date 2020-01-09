@@ -20,7 +20,12 @@
                     <view class="description">{{item.placeOfOrigin ? item.placeOfOrigin : ""}}</view>
                     <view class="top_down">
                         <view class="top_down_left">
-                            <van-tag round color="#DD3C4A">截团后次日达</van-tag>
+                            <view class="act">
+                                <van-tag round color="#DD3C4A">截团后次日达</van-tag>
+                                <view class="discount" wx:if="{{item.isSpecial}}">
+                                    <van-tag round color="#DD3C4A">打折</van-tag>
+                                </view>
+                            </view>
                             <view class="money_f">¥
                                 <view class="place">{{item.price}}</view>
                                 <view class="money_s">¥

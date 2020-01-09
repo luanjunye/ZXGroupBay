@@ -131,6 +131,12 @@
           display: flex;
           justify-content: space-between;
           align-items: center; }
+          .product .third .list .top .top_info .top_down .top_down_left .act {
+            display: flex;
+            align-content: center;
+            justify-content: flex-start; }
+            .product .third .list .top .top_info .top_down .top_down_left .act .discount {
+              margin-left: 10px; }
           .product .third .list .top .top_info .top_down .top_down_left .money_f {
             margin-top: 5px;
             font-size: 10px;
