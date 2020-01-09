@@ -41,7 +41,12 @@
                     <view class="description">{{item.specification}}</view>
                     <view class="description">x{{item.num}}</view>
                 </view>
-                <van-tag round color="#DD3C4A">截团后次日达</van-tag>
+                <view class="act">
+                    <van-tag round color="#DD3C4A">截团后次日达</van-tag>
+                    <view class="discount" wx:if="{{item.isSpecial}}">
+                        <van-tag round color="#DD3C4A">打折</van-tag>
+                    </view>
+                </view>
                 <view class="top_down">
                     <view class="money">¥
                         <view class="number">{{item.price}}</view>

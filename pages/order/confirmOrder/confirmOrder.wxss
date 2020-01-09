@@ -87,6 +87,12 @@
         .order .orderInfo .info .second .description {
           font-size: 12px;
           color: #999999; }
+      .order .orderInfo .info .act {
+        display: flex;
+        align-content: center;
+        justify-content: flex-start; }
+        .order .orderInfo .info .act .discount {
+          margin-left: 10px; }
       .order .orderInfo .info .top_down {
         display: flex;
         justify-content: space-between;
