@@ -2,28 +2,23 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
-}
+  align-items: center; }
 
 .logo {
   width: 400rpx;
   margin-top: 200rpx;
-  margin-bottom: 100rpx;
-}
+  margin-bottom: 100rpx; }
 
 .login-btn {
   width: 90%;
   background-color: #74BD3F !important;
   color: #fff !important;
-  border: none;
-}
+  border: none; }
 
 .foot {
   font-size: 30rpx;
   position: fixed;
   bottom: 30rpx;
-  color: #6E6F6F;
-}
-.foot .and {
-  color: #669DB5;
-}
+  color: #6E6F6F; }
+  .foot .and {
+    color: #669DB5; }

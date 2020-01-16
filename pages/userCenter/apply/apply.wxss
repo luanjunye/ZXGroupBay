@@ -1,54 +1,45 @@
 page {
-  background-color: #F6F6F6;
-}
+  background-color: #F6F6F6; }
 
 .apply-content {
-  margin: 10px 0;
-}
+  margin: 10px 0; }
 
 .placeholder {
-  color: #999999;
-}
+  color: #999999; }
 
 .input-group {
   justify-content: space-between;
   background-color: white;
   padding: 10px 20px;
   margin-bottom: 1px;
-  display: flex;
-}
-.input-group text {
-  width: 30%;
-  flex-shrink: 0;
-  line-height: 26px;
-  display: block;
-  color: #333333;
-  font-size: 16px;
-}
-.input-group .input {
-  line-height: 26px;
-  flex-grow: 1;
-}
-.input-group .add-on {
-  margin-left: 1rem;
-}
-.input-group .add-on .btn-verify {
-  min-width: 4rem;
-  text-align: center;
-  white-space: nowrap;
-  font-size: 11.2px;
-  padding: 3px 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  color: #666666;
-  background-color: #DCDCDC;
-  line-height: 20px;
-}
+  display: flex; }
+  .input-group text {
+    width: 30%;
+    flex-shrink: 0;
+    line-height: 26px;
+    display: block;
+    color: #333333;
+    font-size: 16px; }
+  .input-group .input {
+    line-height: 26px;
+    flex-grow: 1; }
+  .input-group .add-on {
+    margin-left: 1rem; }
+    .input-group .add-on .btn-verify {
+      min-width: 4rem;
+      text-align: center;
+      white-space: nowrap;
+      font-size: 11.2px;
+      padding: 3px 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      color: #666666;
+      background-color: #DCDCDC;
+      line-height: 20px; }
 
 .footer {
-  padding: 15px;
-}
+  padding: 15px; }
 
 .submit {
   display: block;
@@ -62,10 +53,8 @@ page {
   font-size: 16px;
   text-align: center;
   padding: 15px;
-  margin-bottom: 10px;
-}
+  margin-bottom: 10px; }
 
 .comment {
   font-size: 11.2px;
-  color: #999999;
-}
+  color: #999999; }

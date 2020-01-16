@@ -14,7 +14,7 @@ Page({
       orderId: 33,
       orderNum: '',
       number: 1, // 申请数量
-      refundType: 0, // 处理方式  1 | 2
+      refundType: 0, // 处理方式  1 | 2 | 3
       ticketType: 0, // 工单类型  1 | 2
       name: '',
       picUrl: '',

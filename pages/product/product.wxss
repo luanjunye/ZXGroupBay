@@ -157,7 +157,6 @@
     margin-bottom: 10px; }
     .like .likeList .goods-pic {
       position: relative;
-      margin-right: 10px;
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       border-radius: 5px;

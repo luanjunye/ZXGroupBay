@@ -42,6 +42,7 @@
                 <radio-group bindchange="radioChanged" data-model="ticketType">
                     <radio value="1">质量问题</radio>
                     <radio value="2">其它</radio>
+                    <radio value="3">缺货</radio>
                 </radio-group>
             </view>
 

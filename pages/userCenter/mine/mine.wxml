@@ -5,7 +5,11 @@
            <view class="user-head">
                <image src="{{userInfo.avatar}}" mode="widthFix" bindtap="login"></image>
            </view>
-           <view class="user-detail" bindtap="login">
+           <view class="user-detail" bindtap="login" wx:if="{{userInfo.isRegimental}}">
+               <view class="name">{{userInfo.nickname}}(我是团长)</view>
+               <view wx:if="{{userInfo.code}}" class="id">userID: <text>{{userInfo.code}}</text></view>
+           </view>
+           <view class="user-detail" bindtap="login" wx:else>
                <view class="name">{{userInfo.nickname}}</view>
                <view wx:if="{{userInfo.code}}" class="id">userID: <text>{{userInfo.code}}</text></view>
            </view>
@@ -76,7 +80,7 @@
 
 <!--    团购菜单-->
     <view wx:if="{{groupMaster}}" class="section operate light-shadow">
-        <view class="section-title">我的团购</view>
+        <view class="section-title">我是团长</view>
         <view class="section-icons">
             <view wx:for="{{menuListGroup}}"
                   wx:key="{{item.id}}"
@@ -87,10 +91,10 @@
                   class="section-icons-item"
                   bindtap="switchMenu" >
                 <view class="icon">
-                    <image src="{{item.iconUrl}}" mode="aspectFit"></image>
+                    <image src="{{item.iconUrl}}" mode="widthFix"></image>
                     <view wx:if="{{item.badge > 0}}" class="badge">{{item.badge}}</view>
                 </view>
-                <text>{{item.title}}</text>
+<!--                <text>{{item.title}}</text>-->
             </view>
         </view>
     </view>
@@ -98,14 +102,14 @@
     <!--    工具菜单-->
     <view wx:if="{{groupMaster}}" class="section operate light-shadow">
         <view class="section-title">营销工具</view>
-        <view class="section-icons">
+        <view class="section-icons-market">
             <view wx:for="{{menuListSell}}"
                   wx:key="{{item.id}}"
                   data-index="{{item.id}}"
                   data-type="{{item.type}}"
                   data-url="{{item.url}}"
                   data-guest="{{item.guest}}"
-                  class="section-icons-item"
+                  class="section-icons-market-item"
                   bindtap="switchMenu" >
                 <view class="icon">
                     <image src="{{item.iconUrl}}" mode="aspectFit"></image>
@@ -160,4 +164,5 @@
     </view>
 </view>
 
-<view class="version">测试分支V1.0.11</view>
+<view class="version">测试分支V1.0.12</view>
+

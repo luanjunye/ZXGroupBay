@@ -33,7 +33,8 @@
     "pages/test/test",
     "pages/order/confirmOrder/confirmOrder",
     "pages/userCenter/notice/notice",
-    "pages/userCenter/historyGroup/historyGroup"
+    "pages/userCenter/historyGroup/historyGroup",
+    "pages/order/orderShare/orderShare"
   ],
   "window": {
     "backgroundTextStyle": "light",

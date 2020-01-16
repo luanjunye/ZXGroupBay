@@ -74,7 +74,7 @@
     </view>
   </view>
 
-<!--  2.0需求 还没有接口-->
+<!--  新人礼-->
  <view class="newcomer" wx:if="{{newGift}}">
 
     <image class="title_img" src="/assets/index/title.png"></image>
@@ -122,9 +122,13 @@
     <view class="third" wx:if="{{orderList.length > 0 && targetTime > 0}}">
       <view class="list" wx:for="{{orderList}}" wx:for-item="item" wx:key="{{item.id}}" data-value="{{item}}" id="{{item.id}}" bindtap="toOrder">
         <view class="top">
-          <view class="goods-pic">
-              <image class="img" src="{{item.pictureUrl}}"></image>
+          <view class="goods-pic" wx:if="{{item.leftCount === 0}}" >
+              <image class="img mask" src="{{item.pictureUrl}}"></image>
               <image wx:if="{{item.leftCount === 0}}" class="sell-out" src="/assets/sellout.png"></image>
+            <image wx:if="{{item.leftCount !== 0 && item.isVideo}}"  class="play" src="/assets/play.png"></image>
+          </view>
+          <view class="goods-pic" wx:else >
+            <image class="img" src="{{item.pictureUrl}}"></image>
             <image wx:if="{{item.leftCount !== 0 && item.isVideo}}"  class="play" src="/assets/play.png"></image>
           </view>
           <view class="top_info">

@@ -41,6 +41,11 @@
   padding-left: 30rpx;
   flex-shrink: 0; }
 
+.mask {
+  -webkit-filter: saturate(0);
+  /* Chrome, Safari, Opera */
+  filter: saturate(0); }
+
 .product {
   margin: 5px 10px;
   display: flex;

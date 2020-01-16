@@ -40,12 +40,12 @@ Page({
 
     // 我的团购菜单组
     menuListGroup: [
-      {id: 0, title: '团购订单', guest: false, type: 'page', url: '/pages/userCenter/groupOrder/groupOrder?from=mine' ,iconUrl: '/assets/mine/load-cargo.png', badge: 0},
-      {id: 1, title: '签收码',   guest: false, type: 'method', url: 'showDeveloping' ,iconUrl: '/assets/mine/receive-code.png', badge: 0},
-      {id: 2, title: '售后反馈', guest: false, type: 'page', url: '/pages/userCenter/feedback/feedback' ,iconUrl: '/assets/mine/feedback.png', badge: 0},
-      {id: 3, title: '佣金记录', guest: false, type: 'page', url: '/pages/userCenter/commission/commission' ,iconUrl: '/assets/mine/commission.png', badge: 0},
-      {id: 4, title: '团员管理', guest: false, type: 'page', url: '/pages/userCenter/memberManage/memberManage' ,iconUrl: '/assets/mine/member-manage.png', badge: 0},
-      {id: 5, title: '历史开团', guest: false, type: 'page', url: '/pages/userCenter/historyGroup/historyGroup' ,iconUrl: '/assets/mine/tuan-history.png', badge: 0},
+      {id: 0, title: '团购订单', guest: false, type: 'page', url: '/pages/userCenter/groupOrder/groupOrder?from=mine' ,iconUrl: 'https://xiaochengxu-tuan.oss-cn-hangzhou.aliyuncs.com/20200115/1c62d150e81e48d6af2bd161454620b9.png', badge: 0},
+      {id: 1, title: '售后反馈', guest: false, type: 'page', url: '/pages/userCenter/feedback/feedback' ,iconUrl: 'https://xiaochengxu-tuan.oss-cn-hangzhou.aliyuncs.com/20200115/00938c9c81f74c3bb83b2f9d20356179.png', badge: 0},
+      {id: 2, title: '历史开团', guest: false, type: 'page', url: '/pages/userCenter/historyGroup/historyGroup' ,iconUrl: 'https://xiaochengxu-tuan.oss-cn-hangzhou.aliyuncs.com/20200115/36221bce8a9f4542b134b1a053dbc3bf.png', badge: 0},
+      {id: 3, title: '佣金记录', guest: false, type: 'page', url: '/pages/userCenter/commission/commission' ,iconUrl: 'https://xiaochengxu-tuan.oss-cn-hangzhou.aliyuncs.com/20200115/75ac6cd998f847d8a6262e70e12a9ea4.png', badge: 0},
+      {id: 4, title: '团员管理', guest: false, type: 'page', url: '/pages/userCenter/memberManage/memberManage' ,iconUrl: 'https://xiaochengxu-tuan.oss-cn-hangzhou.aliyuncs.com/20200115/9ef50314571a4c94a79a17024ba90ce5.png', badge: 0},
+      {id: 5, title: '签收码',   guest: false, type: 'method', url: 'showDeveloping' ,iconUrl: 'https://xiaochengxu-tuan.oss-cn-hangzhou.aliyuncs.com/20200115/e319425e632b4cdcbabf71cb4217279d.png', badge: 0},
     ],
 
     // 营销工具菜单组

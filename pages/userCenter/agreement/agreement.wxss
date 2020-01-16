@@ -1,25 +1,22 @@
 @charset "UTF-8";
 .article-bg {
   background-color: #0BE7C5;
-  padding: 8px 8px 18px 8px;
-}
+  padding: 8px 8px 18px 8px; }
 
 .article-container {
   padding: 8px;
   background-color: white;
   -webkit-border-radius: 23px;
   -moz-border-radius: 23px;
-  border-radius: 23px;
-}
+  border-radius: 23px; }
 
 .article-content {
-  font-family: "宋体", sans-serif;
+  font-family: '宋体',sans-serif;
   -webkit-border-radius: 18px;
   -moz-border-radius: 18px;
   border-radius: 18px;
   border: 1rpx solid #0BE7C5;
-  padding: 10px;
-}
+  padding: 10px; }
 
 .title {
   margin-bottom: 20px;
@@ -28,25 +25,21 @@
   padding: 15px 0;
   text-align: center;
   font-size: 1.2rem;
-  color: #0BE7C5;
-}
+  color: #0BE7C5; }
 
 .p {
   line-height: 1.5;
   font-size: 14.4px;
   color: #333333;
-  text-indent: 0.5rem;
-  margin-bottom: 5px;
-}
+  text-indent: .5rem;
+  margin-bottom: 5px; }
 
 .subtitle {
   margin-top: 10px;
-  text-indent: 0;
-}
+  text-indent: 0; }
 
 .bold {
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 .footer {
   font-weight: bold;
@@ -54,34 +47,29 @@
   margin-right: 30px;
   text-align: right;
   color: #666666;
-  font-size: 14.4px;
-}
+  font-size: 14.4px; }
 
 .section-title {
   color: #FF3948;
   font-weight: bold;
   font-size: 1.2rem;
   margin-bottom: 15px;
-  margin-top: 20px;
-}
+  margin-top: 20px; }
 
 .ask {
   font-size: 14.4px;
   font-weight: bold;
   color: #333333;
   line-height: 1.4;
-  padding: 5px 0;
-}
+  padding: 5px 0; }
 
 .answer {
   color: #666666;
   line-height: 1.5;
   font-size: 14.4px;
   margin-bottom: 5px;
-  padding-left: 20px;
-}
+  padding-left: 20px; }
 
 .tip {
   font-size: 11.2px;
-  color: #999999;
-}
+  color: #999999; }

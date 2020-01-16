@@ -38,6 +38,11 @@
 
 $height-icon: 46px;
 
+.mask{
+  -webkit-filter: saturate(0); /* Chrome, Safari, Opera */
+  filter:saturate(0);
+}
+
 .order{
   margin: 5px 10px;
   display: flex;
