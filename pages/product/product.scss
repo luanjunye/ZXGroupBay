@@ -97,6 +97,11 @@
   }
 }
 
+.mask{
+  -webkit-filter: saturate(0); /* Chrome, Safari, Opera */
+  filter:saturate(0);
+}
+
 .info {
   width: 100%;
   height: auto;
