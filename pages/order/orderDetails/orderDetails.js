@@ -13,7 +13,8 @@ Page({
         orderId: "",
         product: {},
         failPayTime: 0,
-        isPay:false
+        isPay:false,
+        shareImageUrl:""
     },
 
 
@@ -64,6 +65,13 @@ Page({
                 failPayTime: failPayTime
             });
         });
+
+        //获取分享订单生成的图片
+        util.request(api.ShareOrderImage, {id: this.data.orderId}, "POST").then(function (res) {
+            that.setData({
+                shareImageUrl: res,
+            });
+        });
     },
 
     /**
@@ -98,7 +106,12 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
-
+        let that = this;
+        return {
+            title: "订单分享" + "\n" + "团长快来接单～",
+            path:"pages/order/orderShare/orderShare?orderId=" + this.data.orderId,
+            imageUrl: that.data.shareImageUrl
+        }
     },
 
     //去支付

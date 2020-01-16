@@ -3,12 +3,21 @@
     <view class="prompt" bindtap="toAgreement">截团五小时后，不支持退款!</view>
     <view class="orderStatus light-shadow">
         <view class="status" wx:if="{{product.shippingStatus}}">
-            <image class="img" src="/assets/order/orderDetails/time.png"></image>
-            <text>{{product.shippingStatusName}}</text>
+            <view class="left">
+                <image class="img" src="/assets/order/orderDetails/time.png"></image>
+                <text>{{product.shippingStatusName}}</text>
+            </view>
+            <button class="right" size="mini"  wx:if="{{product.shippingStatus === 2}}" open-type="share">
+                <image class="r-img" src="/assets/order/orderDetails/fenxiang.png"></image>
+                <text>分享清单</text>
+            </button>
         </view>
-        <view class="count" wx:if="{{product.shippingStatus == 1}}">剩
-            <thor-count-down time="{{failPayTime}}" bcolor="transparent" color="#70C5A8" isColon="{{false}}" hours="{{false}}" scale="{{true}}"></thor-count-down>
-            订单自动关闭
+        <view class="count" wx:if="{{product.shippingStatus === 1}}">剩
+
+            <thor-count-down time="{{failPayTime}}" bcolor="transparent" color="#70C5A8" isColon="{{false}}" hours="{{false}}"
+                    scale="{{true}}"></thor-count-down>
+        订单自动关闭
+
         </view>
     </view>
 
@@ -36,11 +45,11 @@
 
     </view>
 
-    <view class="order light-shadow" >
-<!--        <view class="top">-->
-<!--            <image class="img" src="{{product.avatar}}"></image>-->
-<!--            <view class="name">{{product.nickname}}</view>-->
-<!--        </view>-->
+    <view class="order light-shadow">
+        <!--        <view class="top">-->
+        <!--            <image class="img" src="{{product.avatar}}"></image>-->
+        <!--            <view class="name">{{product.nickname}}</view>-->
+        <!--        </view>-->
         <view class="orderInfo" wx:for="{{product.orderInfoGoodsListVOList}}" wx:for-item="item" wx:key="item.id">
             <image class="img" mode="aspectFill" src="{{item.url}}"></image>
             <view class="info">
@@ -52,11 +61,12 @@
                 <van-tag round color="#DD3C4A">截团后次日达</van-tag>
                 <view class="top_down">
                     <view class="money">¥
+
                         <view class="number">{{item.price}}</view>
                     </view>
 
 
-                    <view class="refund" wx:if="{{product.shippingStatus == 2}}" >
+                    <view class="refund" wx:if="{{product.shippingStatus == 2}}">
                         <view wx:if="{{product.isShow == 1 && !fromMaster}}" bindtap="toRefund">申请退款</view>
                     </view>
                 </view>
@@ -88,9 +98,9 @@
 
     <view class="cart-bottom {{isPay ? 'disabled' : ''}}" wx:if="{{product.shippingStatus == 1 && !fromMaster}}" bindtap="toPay">去支付</view>
 
-    <van-toast id="van-toast" />
+    <van-toast id="van-toast"/>
 
-    <van-dialog confirm-button-color="#b4282d" id="van-dialog" />
+    <van-dialog confirm-button-color="#b4282d" id="van-dialog"/>
 
 </view>
 

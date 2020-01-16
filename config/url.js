@@ -24,6 +24,7 @@ module.exports = {
     GoodsList: API_BASE_URL + 'goods/goodslist',  // 商品列表
     GoodsInfo: API_BASE_URL + 'goods/info',  // 商品详情
     NewGift: API_BASE_URL + 'goods/selectnewgift',  // 新人礼
+    ShareOrderImage: API_BASE_URL + 'goods/shareddimge',  // 分享订单生成的图片
     // 购物车
     CartAdd: API_BASE_URL + 'cart/add',  // 添加
     CartList: API_BASE_URL + 'cart/list',  // 列表
@@ -45,8 +46,9 @@ module.exports = {
     buyInfo: API_BASE_URL + 'order/buyInfo',  // 直接购买
     OrderInfo: API_BASE_URL + 'order/info',  // 订单详情
     OrderRefund: API_BASE_URL + 'order/refund',  // 待收货下申请退款
-    OrderConfirm: API_BASE_URL + '/teamuser/confirm',  // 确认收货
-    OrderSubmit: API_BASE_URL + '/teamuser/waitOrderCheck',  // 是否展示确认收货按钮
+    OrderConfirm: API_BASE_URL + 'teamuser/confirm',  // 确认收货
+    OrderSubmit: API_BASE_URL + 'teamuser/waitOrderCheck',  // 是否展示确认收货按钮
+    OrderShare: API_BASE_URL + 'order/shareorder',  // 是否展示确认收货按钮
 
     // 售后反馈
     FeedbackList: API_BASE_URL + 'aftersales/page',  // 反馈列表

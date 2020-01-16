@@ -1,0 +1,111 @@
+page {
+  background: #E6E6E6; }
+
+.top {
+  background: #FFF;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px; }
+  .top .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-right: 15px;
+    border-right: 1px solid #DFDFDF;
+    width: 80%; }
+    .top .left .title {
+      font-size: 16px; }
+    .top .left .address {
+      font-size: 15px; }
+  .top .right {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px; }
+    .top .right .img {
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px; }
+
+.body {
+  background: #FFF;
+  margin-top: 5px;
+  padding: 10px; }
+  .body .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #DFDFDF; }
+    .body .head .head_left {
+      display: flex;
+      align-items: center; }
+      .body .head .head_left .head_img {
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        margin-right: 10px; }
+    .body .head .head_right {
+      color: #999999;
+      font-size: 14px; }
+  .body .goodsList {
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-start; }
+    .body .goodsList .goods_img {
+      width: 120px;
+      height: 120px;
+      margin-right: 10px; }
+    .body .goodsList .list_right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .body .goodsList .list_right .right_title {
+        font-size: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical; }
+      .body .goodsList .list_right .right_remark {
+        font-size: 14px;
+        color: #666666; }
+      .body .goodsList .list_right .right_money {
+        color: #FF3948; }
+
+.down {
+  position: fixed;
+  bottom: 20px;
+  z-index: 120;
+  font-size: 20px;
+  display: flex;
+  width: 90%;
+  left: 0;
+  right: 0;
+  margin: 0 auto; }
+  .down .down_left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 80rpx;
+    background: #E6E6E6;
+    color: #0BE7C5;
+    border-radius: 50px 0 0 50px;
+    border: 1px solid #0BE7C5; }
+  .down .down_right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    height: 80rpx;
+    padding: 0 auto;
+    background: #0BE7C5;
+    color: #FFF;
+    border-radius: 0 50px 50px 0; }

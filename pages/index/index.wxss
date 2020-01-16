@@ -199,6 +199,11 @@
         color: #333333;
         font-size: 14px; }
 
+.mask {
+  -webkit-filter: saturate(0);
+  /* Chrome, Safari, Opera */
+  filter: saturate(0); }
+
 .newcomer {
   margin: 5px 10px; }
   .newcomer .title_img {

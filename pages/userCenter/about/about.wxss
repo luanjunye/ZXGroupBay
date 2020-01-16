@@ -1,10 +1,8 @@
 page {
-  background-color: #F6F6F6;
-}
+  background-color: #F6F6F6; }
 
 .list-group {
-  margin-top: 5px;
-}
+  margin-top: 5px; }
 
 .list-group-item {
   margin-bottom: 1px;
@@ -12,19 +10,15 @@ page {
   display: flex;
   justify-content: space-between;
   padding: 10px 15px 10px 20px;
-  background: white;
-}
-.list-group-item:active {
-  background-color: transparent;
-}
-.list-group-item .title {
-  font-size: 16px;
-  color: #333333;
-  margin-right: 10px;
-  flex-grow: 1;
-  line-height: 26px;
-}
-.list-group-item .more {
-  display: block;
-  width: 10px;
-}
+  background: white; }
+  .list-group-item:active {
+    background-color: transparent; }
+  .list-group-item .title {
+    font-size: 16px;
+    color: #333333;
+    margin-right: 10px;
+    flex-grow: 1;
+    line-height: 26px; }
+  .list-group-item .more {
+    display: block;
+    width: 10px; }

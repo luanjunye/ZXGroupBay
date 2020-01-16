@@ -60,7 +60,7 @@ page {
       width: 100%;
       justify-content: space-between; }
       .form .input-group .input radio-group radio {
-        width: 45%; }
+        width: 33%; }
   .form .input-group textarea {
     padding: 5px !important;
     -webkit-border-radius: 5px;

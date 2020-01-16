@@ -3,44 +3,36 @@
   top: 0;
   left: 0;
   width: 100%;
-  border-bottom: 1px solid #F0F0EC;
-}
+  border-bottom: 1px solid #F0F0EC; }
 
 video {
   display: block;
   margin-bottom: 0;
   height: 300px;
-  width: 100%;
-}
+  width: 100%; }
 
 .control {
   background-color: white;
   display: flex;
-  justify-content: space-around;
-}
-.control .btn-video {
-  font-weight: bold;
-  display: block;
-  font-size: 12px;
-  line-height: 15px;
-  padding: 10px;
-  text-align: center;
-  min-height: none;
-  height: auto;
-}
-.control .btn-video:active {
-  background-color: #F6F6F6;
-}
+  justify-content: space-around; }
+  .control .btn-video {
+    font-weight: bold;
+    display: block;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 10px;
+    text-align: center;
+    min-height: none;
+    height: auto; }
+    .control .btn-video:active {
+      background-color: #F6F6F6; }
 
 .video-list {
-  padding-top: 335px;
-}
-.video-list-item {
-  border-bottom: 1px solid #F0F0EC;
-  font-size: 12px;
-  line-height: 1;
-  padding: 8px 10px;
-}
-.video-list-item:active {
-  background-color: #F6F6F6;
-}
+  padding-top: 335px; }
+  .video-list-item {
+    border-bottom: 1px solid #F0F0EC;
+    font-size: 12px;
+    line-height: 1;
+    padding: 8px 10px; }
+    .video-list-item:active {
+      background-color: #F6F6F6; }

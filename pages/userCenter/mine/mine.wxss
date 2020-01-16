@@ -142,11 +142,39 @@ page {
         font-size: 11.2px; }
   .section .section-icons {
     background-color: white;
-    padding: 10px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between; }
     .section .section-icons-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-flow: column nowrap;
+      position: relative;
+      width: 50%;
+      flex-shrink: 0; }
+      .section .section-icons-item:active {
+        background-color: #F6F6F6; }
+      .section .section-icons-item .icon {
+        position: relative;
+        width: 100%; }
+        .section .section-icons-item .icon image {
+          margin: 0 auto;
+          width: 100%;
+          display: block; }
+      .section .section-icons-item text {
+        line-height: 2;
+        display: block;
+        text-align: center;
+        font-size: 12.8px;
+        color: #666666; }
+  .section .section-icons-market {
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between; }
+    .section .section-icons-market-item {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -156,17 +184,17 @@ page {
       position: relative;
       width: 33%;
       flex-shrink: 0; }
-      .section .section-icons-item:active {
+      .section .section-icons-market-item:active {
         background-color: #F6F6F6; }
-      .section .section-icons-item .icon {
+      .section .section-icons-market-item .icon {
         position: relative;
         width: 35px; }
-        .section .section-icons-item .icon image {
+        .section .section-icons-market-item .icon image {
           margin: 0 auto;
           width: 35px;
           height: 35px;
           display: block; }
-      .section .section-icons-item text {
+      .section .section-icons-market-item text {
         line-height: 2;
         display: block;
         text-align: center;
