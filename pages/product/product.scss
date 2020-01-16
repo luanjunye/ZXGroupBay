@@ -219,6 +219,11 @@
 
 $height-icon: 60px;
 
+.mask{
+  -webkit-filter: saturate(0); /* Chrome, Safari, Opera */
+  filter:saturate(0);
+}
+
 .like {
   display: flex;
   flex-flow: row wrap;
