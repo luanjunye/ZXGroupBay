@@ -1,0 +1,70 @@
+page {
+  background: #426378;
+  width: 100%;
+  height: 100%; }
+
+.top {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #F5913E;
+  font-size: 14px; }
+  .top .topImg {
+    height: 40%;
+    width: 70%;
+    margin-bottom: 20px; }
+
+.body {
+  width: 100%;
+  height: 100%;
+  background: #9E6A46;
+  -webkit-border-radius: 15pt;
+  -moz-border-radius: 15pt;
+  border-radius: 15pt;
+  padding: 10px; }
+  .body .box {
+    background: #4B2D20;
+    -webkit-border-radius: 10pt;
+    -moz-border-radius: 10pt;
+    border-radius: 10pt;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px;
+    height: 100%; }
+    .body .box .title {
+      background: #9E6A46;
+      height: 30px;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      border-radius: 50px;
+      text-align: center;
+      line-height: 30px;
+      margin-bottom: 10px;
+      color: #FFF; }
+      .body .box .title .buy {
+        height: 30px;
+        font-size: 14px; }
+        .body .box .title .buy .text {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical; }
+    .body .box .seedList {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 18px;
+      padding: 10px;
+      margin-bottom: 20px; }
+      .body .box .seedList .list {
+        width: 48%;
+        flex-shrink: 0;
+        margin-bottom: 10px; }
+        .body .box .seedList .list .listImg {
+          width: 100%;
+          height: 180px; }

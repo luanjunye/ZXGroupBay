@@ -1,0 +1,21 @@
+<!--pages/plant/seed/seed.wxml-->
+<view class="top">
+    <image class="topImg" src="{{seedTop}}"/>
+    <text>种下果树，成熟后包邮送到家</text>
+</view>
+<view class="body">
+    <view class="box">
+        <view class="title">
+            <swiper class="buy" vertical="true" circular="true" autoplay="true" interval="3000" duration="1000">
+                <swiper-item wx:for="{{buyerList}}" wx:key="{{item.index}}">
+                    <view class="text">{{item}}</view>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="seedList">
+            <view class="list" wx:for="{{seedList}}" wx:for-item="item" wx:key="{{item.id}}" data-value="{{item}}" id="{{item.id}}" bind:tap="toSown">
+                <image class="listImg" src="{{item.url}}"/>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,6 @@
+<!--pages/plant/sown/sown.wxml-->
+<image class="background" src="{{backgroundUrl}}" />
+<view class="center">
+    <image src="{{treeUrl}}" class="tree"/>
+    <progress class="progress" stroke-width="15"  activeColor="#FB304A" border-radius="15px" percent="{{sold}}"></progress>
+</view>

@@ -1,0 +1,85 @@
+@import "../../../utils/mixin";
+
+page {
+  background: #426378;
+  width: 100%;
+  height: 100%;
+}
+
+.top {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color:#F5913E;
+  font-size: 14px;
+
+  .topImg {
+    height: 40%;
+    width: 70%;
+    margin-bottom: 20px;
+  }
+}
+
+.body{
+  width: 100%;
+  height: 100%;
+  background: #9E6A46;
+  @include border-radius(15pt);
+  padding: 10px;
+
+  .box{
+    background: #4B2D20;
+    @include border-radius(10pt);
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px;
+    height: 100%;
+
+    .title{
+      background: #9E6A46;
+      height: 30px;
+      @include border-radius(50px);
+      text-align: center;
+      line-height: 30px;
+      margin-bottom: 10px;
+      color: $bg-info;
+
+      .buy {
+        height: 30px;
+        font-size: 14px;
+
+        .text {
+          overflow: hidden; //一定要写
+          text-overflow: ellipsis; //超出省略号
+          display: -webkit-box; //一定要写
+          -webkit-line-clamp: 1; //控制行数
+          -webkit-box-orient: vertical; //一定要写
+        }
+      }
+    }
+
+    .seedList{
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 18px;
+      padding: 10px;
+      margin-bottom: 20px;
+
+      .list{
+        width: 48%;
+        flex-shrink: 0;
+        margin-bottom: 10px;
+
+        .listImg{
+          width: 100%;
+          height: 180px;
+        }
+      }
+    }
+  }
+}

@@ -1,2 +1,5 @@
-<button bindtap="increaseIconBadge(1)">UP</button>
-<button bindtap="decreaseIconBadge(1)">DOWN</button>
+<image src="/assets/test/background.jpg" class="background"/>
+<view class="center">
+    <image src="/assets/test/tree3.jpg" class="tree"/>
+</view>
+<view class=""></view>

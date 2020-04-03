@@ -30,7 +30,7 @@
                 </view>
 
                 <view class="address">{{item.address}}</view>
-                <view class="cheak" bindtap="checkAndToBuy" data-id="{{item.teamUserId}}">选择团长</view>
+                <view class="cheak" bindtap="checkAndToBuy" data-id="{{item.teamUserId}}">请他/她做团长</view>
             </view>
         </view>
     </scroll-view>

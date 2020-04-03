@@ -30,11 +30,13 @@
     "pages/map/map",
     "pages/shopCart/shopCart",
     "pages/index/secondIndex/secondIndex",
-    "pages/test/test",
     "pages/order/confirmOrder/confirmOrder",
     "pages/userCenter/notice/notice",
     "pages/userCenter/historyGroup/historyGroup",
-    "pages/order/orderShare/orderShare"
+    "pages/order/orderShare/orderShare",
+    "pages/plant/sown/sown",
+    "pages/plant/seed/seed",
+    "pages/test/test"
   ],
   "window": {
     "backgroundTextStyle": "light",
